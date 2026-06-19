@@ -1,0 +1,20 @@
+@import "tailwindcss";
+@media(prefers-color-scheme: dark){
+    :root{
+        --bg-color: rgb(241, 241, 241);
+    }
+}
+
+@media(prefers-color-scheme: light){
+    :root{
+        --bg-color: rgb(200, 200, 200);
+    }
+}
+
+body{
+    padding: 0.5rem;
+    background: var(--bg-color);
+}
+.nav{
+    box-shadow: 1rem 1rem 1rem #0000007a;
+}
