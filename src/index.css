@@ -12,9 +12,21 @@
 }
 
 body{
-    padding: 0.5rem;
+    padding: 1rem;
     background: var(--bg-color);
 }
-.nav{
-    box-shadow: 1rem 1rem 1rem #0000007a;
+
+
+@layer utilities {
+  @keyframes shine {
+    0% {
+      transform: translateX(0%) translateY(14rem);
+    }
+    100% {
+      transform: translateX(10000%) translateY(10rem);
+    }
+  }
+}
+.box{
+  box-shadow: 25px 30px 20px rgba(0, 0, 0, 0.137);
 }
