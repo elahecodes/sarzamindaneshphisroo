@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "img": "/public/images/portfolio1.jpg",
+    "title": "داشبورد مدیریت فروش",
+    "description": "توضیحات لازم",
+    "tecnology": "React-js , Tailwindcss"
+  },
+  {
+    "id": 2,
+    "img": "/public/images/portfolio1.jpg",
+    "title": "داشبورد مدیریت فروش",
+    "description": "توضیحات لازم",
+    "tecnology": "React-js , Tailwindcss"
+  },
+  {
+    "id": 3,
+    "img": "/public/images/portfolio1.jpg",
+    "title": "داشبورد مدیریت فروش",
+    "description": "توضیحات لازم",
+    "tecnology": "React-js , Tailwindcss"
+  },
+  {
+    "id": 4,
+    "img": "/public/images/portfolio1.jpg",
+    "title": "داشبورد مدیریت فروش",
+    "description": "توضیحات لازم",
+    "tecnology": "React-js , Tailwindcss"
+  },
+  {
+    "id": 5,
+    "img": "/public/images/portfolio1.jpg",
+    "title": "داشبورد مدیریت فروش",
+    "description": "توضیحات لازم",
+    "tecnology": "React-js , Tailwindcss"
+  },
+  {
+    "id": 6,
+    "img": "/public/images/portfolio1.jpg",
+    "title": "داشبورد مدیریت فروش",
+    "description": "توضیحات لازم",
+    "tecnology": "React-js , Tailwindcss"
+  },
+  {
+    "id": 7,
+    "img": "/public/images/portfolio1.jpg",
+    "title": "داشبورد مدیریت فروش",
+    "description": "توضیحات لازم",
+    "tecnology": "React-js , Tailwindcss"
+  },
+  {
+    "id": 8,
+    "img": "/public/images/portfolio1.jpg",
+    "title": "داشبورد مدیریت فروش",
+    "description": "توضیحات لازم",
+    "tecnology": "React-js , Tailwindcss"
+  }
+]

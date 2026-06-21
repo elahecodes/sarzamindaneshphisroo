@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
+import logo from "/src/assets/logo/Levels 1.png"
 const Header = () => {
   return (
     <header className="bg-purple-500 h-20 rounded-xl flex justify-between items-center px-2">
-      <div>
-        <img src="" alt="" />
+      <div className="flex justify-start items-center gap-8">
+        <img className="w-48" src={logo} alt="" />
         <nav>
           <ul className="flex justify-start items-center gap-4">
             <li className="text-white">

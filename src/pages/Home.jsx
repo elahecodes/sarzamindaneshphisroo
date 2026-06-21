@@ -1,5 +1,6 @@
 import Introduction from "../components/introduction";
 import Services from "./Services";
+import Portfolio from "../components/portfolio";
 const Home = () => {
   return (
     <>
@@ -8,6 +9,9 @@ const Home = () => {
       </div>
       <div>
         <Services />
+      </div>
+      <div>
+        <Portfolio/>
       </div>
     </>
   );

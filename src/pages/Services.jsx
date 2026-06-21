@@ -36,15 +36,15 @@ const Services = () => {
 
   return (
     <div className="flex flex-col items-start gap-8 relative mt-56">
-      <div className="z-30 grid grid-cols-2 lg:grid-cols-4 gap-20">
+      <div className="w-[95%] mx-auto z-30 grid grid-cols-2 lg:grid-cols-4 gap-20">
         {data.map((box, Index) => {
           return (
             <div
               className={`${
                 Index % 2 === 0
-                  ? "bg-purple-800/50 shadow-purple-400 text-white sm:translate-y-10"
-                  : "bg-white/20 border-t-2 border-t-purple-400 text-neutral-800"
-              } rounded-2xl h-[23rem] backdrop-blur-sm hover:scale-105 origin-center box cursor-pointer shadow-xl transition-all p-2 flex flex-col justify-center items-center gap-8`}
+                  ? "bg-purple-800/50 shadow-purple-400 text-white sm:translate-y-12"
+                  : "bg-white/10 border-t-2 border-t-purple-400 text-neutral-800"
+              } rounded-2xl h-[25rem] backdrop-blur-sm hover:scale-105 origin-center box cursor-pointer shadow-xl transition-all p-2 flex flex-col justify-center items-center gap-8`}
             >
               <img className="w-16 animate-pulse" src={box.icon} alt="" />
 
@@ -57,8 +57,8 @@ const Services = () => {
           );
         })}
       </div>
-      <div className="relative -top-[32rem] w-11/12 mx-auto h-52 rounded-2xl bg-white/60 flex justify-between items-start p-4 overflow-hidden shadow-lg">
-        <h2 className="text-4xl mr-6 font-bold z-10">خدمات</h2>
+      <div className="relative -top-[34rem] w-11/12 mx-auto h-52 rounded-2xl bg-white/60 flex justify-between items-start p-4 overflow-hidden shadow-lg">
+        <h2 className="text-4xl mr-6 font-bold z-10">خدمات اصلی ما</h2>
         <span
           className="
             relative

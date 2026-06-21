@@ -8,8 +8,6 @@ const Introduction = () => {
   async function getData() {
     try {
       const response = await fetch("/api/images.json");
-      console.log(response);
-
       if (!response.ok) {
         throw new Error("خطا در دریافت عکس ها");
       }
