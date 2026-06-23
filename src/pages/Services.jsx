@@ -1,7 +1,7 @@
-import softIcon from "/projects/SarzaminDaneshPishroo/src/assets/icons/soft.png";
-import smartHomeIcon from "/projects/SarzaminDaneshPishroo/src/assets/icons/smartHome.png";
-import hardwareIcon from "/projects/SarzaminDaneshPishroo/src/assets/icons/mouse.png";
-import robotIcon from "/projects/SarzaminDaneshPishroo/src/assets/icons/robot.png";
+import softIcon from "../assets/icons/soft.png";
+import smartHomeIcon from "../assets/icons/smartHome.png";
+import hardwareIcon from "../assets/icons/mouse.png";
+import robotIcon from "../assets/icons/robot.png";
 const Services = () => {
   const data = [
     {
@@ -43,10 +43,10 @@ const Services = () => {
               className={`${
                 Index % 2 === 0
                   ? "bg-purple-800/50 shadow-purple-400 text-white sm:translate-y-12"
-                  : "bg-white/10 border-t-2 border-t-purple-400 text-neutral-800"
-              } rounded-2xl h-[25rem] backdrop-blur-sm hover:scale-105 origin-center box cursor-pointer shadow-xl transition-all p-2 flex flex-col justify-center items-center gap-8`}
+                  : "bg-white/50 border-t-2 border-t-purple-400 text-neutral-800"
+              } rounded-xl h-[25rem] backdrop-blur-sm hover:scale-105 origin-center box cursor-pointer shadow-xl transition-all p-2 flex flex-col justify-center items-center gap-8`}
             >
-              <img className="w-16 animate-pulse" src={box.icon} alt="" />
+              <img className="w-16" src={box.icon} alt="" />
 
               <h4 className="text-2xl font-bold">{box.title}</h4>
 
@@ -69,7 +69,7 @@ const Services = () => {
             px-4 
             py-3
             text-xl
-            rounded-xl
+            rounded
             text-white
             cursor-pointer
             before:content-['']

@@ -78,7 +78,7 @@ const Introduction = () => {
         />
       </div>
 
-      <div className="w-11/12 mx-auto -mt-28 bg-white/20 backdrop-blur-sm rounded-2xl py-4">
+      <div className="w-11/12 mx-auto -mt-28 bg-white/50 backdrop-blur-sm rounded-2xl py-4">
         <div className="flex justify-evenly items-center gap-20 mt-8">
           {counters.map((counter, index) => (
             <div

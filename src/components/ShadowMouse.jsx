@@ -5,7 +5,9 @@ const ShadowMouse = () => {
   useEffect(() => {
     const shadowCursor = (event) => {
       if (!shadowRef.current) return;
-      shadowRef.current.style.transform = `translate(${event.clientX - 20}px, ${event.clientY}px)`;
+      setTimeout(() => {
+        shadowRef.current.style.transform = `translate(${event.clientX + 20}px, ${event.clientY+20}px)`;
+      }, 100);
     };
 
     window.addEventListener("mousemove", shadowCursor);
