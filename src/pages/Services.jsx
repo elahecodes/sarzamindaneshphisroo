@@ -2,87 +2,95 @@ import softIcon from "../assets/icons/soft.png";
 import smartHomeIcon from "../assets/icons/smartHome.png";
 import hardwareIcon from "../assets/icons/mouse.png";
 import robotIcon from "../assets/icons/robot.png";
+
 const Services = () => {
   const data = [
     {
       id: 1,
       icon: robotIcon,
+      title: "ربات های صنعتی",
       description:
         "ربات‌های صنعتی دستگاه‌های خودکار برای انجام وظایف کارخانه‌ای هستند.",
-      title: "ربات های صنعتی",
     },
     {
       id: 2,
       icon: smartHomeIcon,
+      title: "خانه های هوشمند",
       description:
         "خانه‌های هوشمند با دستگاه‌های متصل، امکانات کنترل و اتوماسیون را فراهم می‌کنند.",
-      title: "خانه های هوشمند",
     },
     {
       id: 3,
       icon: hardwareIcon,
+      title: "سیستم های سخت افزاری",
       description:
         "سیستم‌های سخت‌افزاری شامل اجزای فیزیکی و قابل لمس یک دستگاه هستند.",
-      title: "سیستم های سخت افزاری",
     },
     {
       id: 4,
       icon: softIcon,
+      title: "سامانه های نرم افزاری",
       description:
         "سامانه‌های نرم‌افزاری برنامه‌هایی برای اجرای وظایف و مدیریت داده‌ها هستند.",
-      title: "سامانه های نرم افزاری",
+    },
+    {
+      id: 5,
+      icon: softIcon,
+      title: "طراحی و تولید دیتابیس",
+      description:
+        "طراحی ساختار داده‌ها برای ذخیره‌سازی و مدیریت اطلاعات بهینه.",
+    },
+    {
+      id: 6,
+      icon: softIcon,
+      title: "مشاوره",
+      description:
+        "ارائه مشاوره تخصصی برای انتخاب و اجرای راهکارهای نرم‌افزاری و سخت‌افزاری.",
     },
   ];
 
   return (
-    <div className="flex flex-col items-start gap-8 relative mt-56">
-      <div className="w-[95%] mx-auto z-30 grid grid-cols-2 lg:grid-cols-4 gap-20">
-        {data.map((box, Index) => {
-          return (
-            <div
-              className={`${
-                Index % 2 === 0
-                  ? "bg-purple-800/50 shadow-purple-400 text-white sm:translate-y-12"
-                  : "bg-white/50 border-t-2 border-t-purple-400 text-neutral-800"
-              } rounded-xl h-[25rem] backdrop-blur-sm hover:scale-105 origin-center box cursor-pointer shadow-xl transition-all p-2 flex flex-col justify-center items-center gap-8`}
-            >
-              <img className="w-16" src={box.icon} alt="" />
+    <section className="px-6 py-20 bg-white">
+      {/* Header */}
+      <div className="flex justify-center items-center w-full">
+        <div className="w-2 h-2 rounded-full bg-accent"></div>
+        <hr className="border w-[40%] border-neutral-200" />
+        <h2 className="text-2xl text-center font-bold mx-4">
+          <span className="text-primary">خدماتی</span> که ارائه میدهیم
+        </h2>
+        <hr className="border w-[40%] border-neutral-200" />
+        <div className="w-2 h-2 rounded-full bg-accent"></div>
+      </div>
 
-              <h4 className="text-2xl font-bold">{box.title}</h4>
+      {/* Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-20">
+        {data.map((box) => (
+          <div
+            key={box.id}
+            className="group relative rounded-2xl border border-violet-100 bg-gradient-to-br from-white to-violet-50 p-6 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer"
+          >
+            {/* Icon */}
+            <div className="flex items-center justify-between mb-6">
+              <h3 className="text-lg font-bold text-neutral-800 group-hover:text-primary transition">
+                {box.title}
+              </h3>
 
-              <p className="text-lg px-4 leading-relaxed text-center">
-                {box.description}
-              </p>
+              <div className="w-12 h-12 rounded-xl bg-violet-100 flex items-center justify-center">
+                <img src={box.icon} alt="" className="w-6 h-6" />
+              </div>
             </div>
-          );
-        })}
+
+            {/* Description */}
+            <p className="text-sm leading-7 text-neutral-600">
+              {box.description}
+            </p>
+
+            {/* Hover Accent */}
+            <div className="absolute bottom-0 left-0 h-1 w-0 bg-primary group-hover:w-full transition-all duration-300 rounded-b-2xl"></div>
+          </div>
+        ))}
       </div>
-      <div className="relative -top-[34rem] w-11/12 mx-auto h-52 rounded-2xl bg-white/60 flex justify-between items-start p-4 overflow-hidden shadow-lg">
-        <h2 className="text-4xl mr-6 font-bold z-10">خدمات اصلی ما</h2>
-        <span
-          className="
-            relative
-            inline-block
-            bg-orange-500
-            shadow-lg 
-            shadow-orange-400
-            px-4 
-            py-3
-            text-xl
-            rounded
-            text-white
-            cursor-pointer
-            before:content-['']
-            before:absolute
-            before:top-0
-            before:left-0
-            before:animate-pulse
-          "
-        >
-          برای کسب اطلاعات بیشتر کلیک کنید
-        </span>
-      </div>
-    </div>
+    </section>
   );
 };
 

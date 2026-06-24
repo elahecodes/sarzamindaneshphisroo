@@ -3,23 +3,27 @@ import Services from "./Services";
 import Portfolio from "../components/portfolio";
 import Steps from "../components/Steps";
 import Workingwhitus from "../components/Workingwhitus";
+import Comments from "../components/Comments";
 const Home = () => {
   return (
     <>
-      <div className="mt-10">
+      <div className="">
         <Introduction />
       </div>
-      <div>
+      <div className="">
         <Services />
       </div>
-      <div>
+      <div className="">
         <Portfolio />
       </div>
       <div className="mt-20">
         <Steps />
       </div>
-      <div className="p-6 mt-20">
+      <div className="mt-12">
         <Workingwhitus />
+      </div>
+      <div className=" p-[24px] bg-bg">
+      <Comments/>
       </div>
     </>
   );

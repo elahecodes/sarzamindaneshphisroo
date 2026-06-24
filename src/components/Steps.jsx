@@ -42,10 +42,15 @@ const Steps = () => {
     },
   ];
   return (
-    <section className="bg-neutral-50 py-16 flex flex-col justify-center items-start gap-20">
-      <div className="w-full justify-start items-center">
-        <img className="w-14" src={steps} alt="" />
-        <h2 className="text-2xl font-bold">مراحل انجام پروژه</h2>
+    <section className="bg-neutral-50 pb-16 flex flex-col justify-center items-start gap-20 p-[24px]">
+      <div className="flex justify-center items-center w-full">
+        <div className="w-2 h-2 rounded-full bg-accent"></div>
+        <hr className="border w-[40%] border-neutral-200" />
+        <h2 className="text-2xl text-center font-bold mx-4">
+          فرایند <span className="text-primary">همکاری</span> با ما
+        </h2>
+        <hr className="border w-[40%] border-neutral-200" />
+        <div className="w-2 h-2 rounded-full bg-accent"></div>
       </div>
       <div className="w-[90%] mx-auto relative">
         {/* خط وسط */}

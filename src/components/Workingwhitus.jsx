@@ -1,43 +1,81 @@
 import projectIcon from "../assets/icons/project.png";
-const Workingwhitus = () => {
-  const card = [
+import teamIcon from "../assets/icons/team.png";
+
+const WorkingWithUs = () => {
+  const cards = [
     {
       id: 1,
       icon: projectIcon,
       title: "سفارش پروژه",
-
       description:
         "اگر برای کسب‌وکار یا استارتاپ خود به یک وب‌سایت حرفه‌ای نیاز داری، خوشحال می‌شویم در مسیر طراحی و توسعه کنارت باشیم.",
+      className:
+        "bg-gradient-to-br from-violet-600 via-purple-600 to-orange-500 text-white",
     },
     {
       id: 2,
+      icon: teamIcon,
       title: "همکاری با ما",
       description:
-        "ما همیشه به دنبال افراد خلاق و باانگیزه برای همکاری در پروژه‌های طراحی و توسعه هستیم.اگر اهل کار تیمی و رشد در پروژه‌های واقعی هستید، مشتاق همکاری با شما هستیم.",
+        "ما همیشه به دنبال افراد خلاق و باانگیزه برای همکاری در پروژه‌های طراحی و توسعه هستیم. اگر اهل کار تیمی و رشد در پروژه‌های واقعی هستید، مشتاق همکاری با شما هستیم.",
+      className:
+        "bg-slate-50 border border-slate-200 text-slate-800",
     },
   ];
+
   return (
-    <section className="grid grid-cols-2 gap-4">
-      {card.map((card, index) => {
-        const iszooj = index % 2 === 0;
-        return (
+    <section className="bg-white px-6 py-8">
+      <div className="grid gap-6 md:grid-cols-2">
+        {cards.map((card) => (
           <div
-            className={`h-56 flex px-10 justify-between items-center rounded-md cursor-pointer hover:scale-105 duration-500 ${iszooj ? "bg-pink-100" : "bg-amber-100"}`}
+            key={card.id}
+            className={`group relative overflow-hidden rounded-2xl p-8 min-h-[280px] transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${card.className}`}
           >
-            <div className="flex flex-col justify-center item-start gap-6">
-              <span className="text-2xl text-neutral-700 font-bold">
-                {card.title}
-              </span>
-              <p className="text-neutral-800">{card.description}</p>
+            {/* Decoration */}
+            <div className="absolute -left-10 -bottom-10 h-40 w-40 rounded-full bg-white/10 blur-xl" />
+
+            {/* Content */}
+            <div className="relative z-10 flex h-full flex-col justify-between">
+              <div>
+                <h3 className="mb-5 text-3xl font-extrabold">
+                  {card.title}
+                </h3>
+
+                <p
+                  className={`max-w-md text-lg leading-8 ${
+                    card.id === 1
+                      ? "text-white/90"
+                      : "text-slate-600"
+                  }`}
+                >
+                  {card.description}
+                </p>
+              </div>
+
+              <button
+                className={`mt-8 w-fit rounded-xl px-6 py-3 font-bold transition ${
+                  card.id === 1
+                    ? "bg-white text-violet-700 hover:bg-slate-100"
+                    : "bg-primary text-white hover:opacity-90"
+                }`}
+              >
+                {card.id === 1 ? "ثبت درخواست" : "ارسال رزومه"}
+              </button>
             </div>
-            <img className="w-32" src={card.icon} alt="" />
+
+            {/* Icon */}
+            <img
+              src={card.icon}
+              alt={card.title}
+              className={`absolute left-3 bottom-3 transition duration-500 group-hover:scale-110 ${
+                card.id === 1 ? "opacity-20 w-44" : "opacity-40 w-32"
+              }`}
+            />
           </div>
-        );
-      })}
+        ))}
+      </div>
     </section>
   );
 };
 
-export default Workingwhitus;
-
-//   it('should first', () => { second })
+export default WorkingWithUs;

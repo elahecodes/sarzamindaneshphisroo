@@ -1,21 +1,37 @@
 @import "tailwindcss";
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg-color: rgb(255, 255, 255);
-  }
-}
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --bg-color: rgb(255, 255, 255);
-  }
+@import "tailwindcss";
+
+/* 🎨 Theme Variables (Tailwind v4) */
+@theme {
+  /* 🟣 Primary (Purple) */
+  --color-primary: #7C3AED;
+  --color-primary-dark: #6D28D9;
+  --color-primary-light: #EDE9FE;
+  --color-primary-soft: #F5F3FF;
+
+  /* 🟠 Accent (Orange CTA) */
+  --color-accent: #F97316;
+  --color-accent-dark: #EA580C;
+  --color-accent-light: #FED7AA;
+  --color-accent-soft: #FFF7ED;
+
+  /* ⚪ Neutral */
+  --color-text: #111827;
+  --color-muted: #6B7280;
+  --color-border: #E5E7EB;
+  --color-bg: #F9FAFB;
 }
 
 body {
-  background: var(--bg-color);
+  background: var( --color-bg)
 }
 
 @layer utilities {
+  .swiper-button-next,
+  .swiper-button-prev {
+    @apply bg-purple-600 text-white rounded-full p-3;
+  }
   @keyframes shine {
     0% {
       transform: translateX(0%) translateY(14rem);
@@ -29,15 +45,43 @@ body {
   box-shadow: 25px 30px 20px rgba(0, 0, 0, 0.137);
 }
 .shadowCursor {
-  width: 50px;
-  height: 50px;
+  width: 28px;
+  height: 28px;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 999;
-  background-color: rgb(55, 225, 255);
+  background-color: #da37ff2a;
   pointer-events: none;
-  filter: blur(20px);
   border-radius: 50%;
+  border: 2px solid #da37ff;
   transform: translate(-50%, -50%);
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(1 * var(--marquee-width)));
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 50s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+.card {
+  background: linear-gradient(
+  135deg,
+  #8b5cf6,
+  #a855f7,
+  #f97316
+);
 }

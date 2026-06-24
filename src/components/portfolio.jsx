@@ -1,19 +1,24 @@
 import { useEffect, useState } from "react";
 import arrow from "../assets/icons/back.png";
-const portfolio = () => {
+
+const Portfolio = () => {
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   async function getData() {
     try {
-      const response = await fetch("/public/api/portfolio.json");
-      const dataPortfolio = await response.json();
+      setLoading(true);
 
-      if (!response.ok) {
-        throw new Error("خطا در دریافت  اطلاعات");
-      }
+      const response = await fetch("/api/portfolio.json"); // 👈 اصلاح شد
+      if (!response.ok) throw new Error("خطا در دریافت اطلاعات");
+
+      const dataPortfolio = await response.json();
       setData(dataPortfolio);
-    } catch (error) {
-      console.log(error);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -22,83 +27,93 @@ const portfolio = () => {
   }, []);
 
   return (
-    <div className="h-auto w-full bg-white py-3">
-      <div className="flex justify-center items-center flex-col gap-8">
-        <h2 className="w-full text-center text-4xl text-neutral-700 font-bold">
-          جدیدترین پروژه ها
-        </h2>
-        <p className="mx-auto w-2/3 text-center text-lg">
-          در این بخش، نمونه‌کارهایی نمایش داده می‌شود که برای مشتریان و
-          پروژه‌های واقعی طراحی و پیاده‌سازی شده‌اند. هر پروژه حاصل همکاری با
-          دیگران است و نشان‌دهنده تجربه عملی ما در اجرای نیازهای واقعی کاربران
-          می‌باشد.
-        </p>
-        <div className="flex w-full justify-center items-center gap-2">
-          <a className="text-orange-500" href="">
-            مشاهده بیشتر پروژه ها
-          </a>
-          <img className="w-4 mt-1" src={arrow} alt="" />
+    <div className="w-full bg-white py-12 px-6 md:px-12">
+      {/* Header */}
+      <div className="flex flex-col items-center gap-6 text-center">
+        <div className="flex items-center w-full max-full">
+          <div className="w-2 h-2 rounded-full bg-accent" />
+          <hr className="flex-1 border-neutral-200" />
+
+          <h2 className="text-2xl md:text-3xl font-bold mx-4">
+            جدیدترین <span className="text-primary">پروژه</span> های ما
+          </h2>
+
+          <hr className="flex-1 border-neutral-200" />
+          <div className="w-2 h-2 rounded-full bg-accent" />
         </div>
+
+        <p className="text-neutral-600 max-w-2xl leading-7">
+          نمونه‌کارهایی که در این بخش می‌بینید حاصل طراحی و توسعه پروژه‌های واقعی
+          هستند و تجربه عملی تیم ما را نشان می‌دهند.
+        </p>
+
+        <a
+          href="#"
+          className="flex items-center gap-2 text-orange-500 hover:gap-3 transition-all"
+        >
+          مشاهده بیشتر پروژه‌ها
+          <img className="w-4" src={arrow} alt="arrow" />
+        </a>
       </div>
-      <section className="relative grid grid-cols-2 md:grid-cols-4 gap-3 mt-6">
-        {data.map((portfolio) => (
-          <div
-            key={portfolio.id}
-            className="h-[18rem] p-2 shadow-2xl overflow-hidden rounded hover:h-[40rem] bg-white transition-all delay-200 cursor-grab"
-          >
-            <div className="h-[18rem] overflow-hidden">
-              <div
-                className="
-                    w-full
-                    group 
-                    relative
-                    overflow-hidden
-                    rounded
-                    before:content-['']
-                    hover:before:content-['توضیحات']
-                    before:flex  
-                    before:justify-center
-                    before:items-center
-                    before:text-sm
-                    before:text-white
-                    hover:before:text-2xl
-                    before:font-bold
-                    before:absolute
-                    before:inset-0
-                   hover:before:bg-neutral-500/30
-                    before:z-10
-                    before:duration-300
-                    "
-              >
+
+      {/* States */}
+      {loading && (
+        <p className="text-center mt-10 text-neutral-500">در حال بارگذاری...</p>
+      )}
+
+      {error && (
+        <p className="text-center mt-10 text-red-500">{error}</p>
+      )}
+
+      {/* Grid */}
+      {!loading && !error && (
+        <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
+          {data.map((item) => (
+            <div
+              key={item.id}
+              className="group relative rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all bg-white"
+            >
+              {/* Image */}
+              <div className="relative h-56 overflow-hidden">
                 <img
-                  className="w-full transition-all group-hover:scale-110"
-                  src={portfolio.img}
-                  alt={portfolio.title}
+                  src={item.img}
+                  alt={item.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
+
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300 flex items-center justify-center">
+                  <p className="text-white opacity-0 group-hover:opacity-100 text-sm md:text-base font-bold transition-all">
+                    مشاهده جزئیات
+                  </p>
+                </div>
               </div>
-            </div>
-            <div className="h-[21rem] w-full rounded-md p-1">
-              <h4 className="text-xl font-bold text-purple-500">
-                {portfolio.title}
-              </h4>
-              <div className="bg-white mt-2 rounded flex flex-col gap-2 justify-center items-satrt">
-                <h6>تکنولوژی های استفاده شده</h6>
-                <span className="text-xs text-neutral-600 bg-neutral-100 p-2 rounded-full">
-                  {portfolio.technology}
-                </span>
-              </div>
-              <div className="mt-2 flex flex-col gap-2 justify-center items-satrt">
-                <h6>توضیحات پروژه</h6>
-                <p className="text-neutral-600 text-justify rounded-lg text bg-neutral-100 text-sm p-1">
-                  {portfolio.description}
+
+              {/* Content */}
+              <div className="p-4 flex flex-col gap-3">
+                <h4 className="text-lg font-bold text-purple-600">
+                  {item.title}
+                </h4>
+
+                <div>
+                  <p className="text-xs text-neutral-500 mb-1">
+                    تکنولوژی‌ها
+                  </p>
+                  <span className="text-xs bg-neutral-100 px-2 py-1 rounded-full text-neutral-700">
+                    {item.technology}
+                  </span>
+                </div>
+
+                <p className="text-sm text-neutral-600 leading-6 line-clamp-3">
+                  {item.description}
                 </p>
               </div>
             </div>
-          </div>
-        ))}
-      </section>
+          ))}
+        </section>
+      )}
     </div>
   );
 };
 
-export default portfolio;
+export default Portfolio;

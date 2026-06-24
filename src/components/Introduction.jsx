@@ -70,7 +70,7 @@ const Introduction = () => {
   }, []);
 
   return (
-    <section className="w-full rounded-2xl">
+    <section className="w-full p-[24px] bg-white">
       <div className="relative w-full h-[25rem]">
         <img
           className="w-full h-full rounded-2xl object-cover"
@@ -83,9 +83,9 @@ const Introduction = () => {
           {counters.map((counter, index) => (
             <div
               key={index}
-              className={`w-40 h-40 rounded-2xl bg-white/60 shadow-2xl flex items-center justify-center ${index % 2 === 0 ? "border-t-2 border-purple-500" : "border-b-2 border-orange-500"} `}
+              className={`w-40 h-40 rounded-2xl bg-neutral-50/60 shadow-2xl flex items-center justify-center ${index % 2 === 0 ? "border-t-2 border-purple-500" : "border-b-2 border-orange-500"} `}
             >
-              <b className="text-purple-500 text-7xl">{counter}</b>
+              <b className="text-primary text-7xl">{counter}</b>
             </div>
           ))}
         </div>
@@ -111,7 +111,7 @@ const Introduction = () => {
 
           <div className="flex gap-4 mt-11">
             <button
-              className="w-48 h-12 bg-purple-600 relative overflow-hidden text-white rounded-md shadow-xl shadow-purple-500 hover:scale-105 transition-all cursor-pointer
+              className="w-48 h-12 bg-primary relative overflow-hidden text-white rounded-md shadow-xl shadow-purple-500 hover:scale-105 transition-all cursor-pointer
                 before:content-['']
                 before:absolute
                 before:bottom-28
@@ -124,7 +124,7 @@ const Introduction = () => {
             >
               مطالعه بیشتر
             </button>
-            <button className="w-48 h-12 rounded-md bg-orange-500 text-white shadow-xl shadow-orange-400 hover:scale-105 transition-all cursor-pointer">
+            <button className="w-48 h-12 rounded-md bg-accent text-white shadow-xl shadow-orange-400 hover:scale-105 transition-all cursor-pointer">
               همکاری با ما
             </button>
           </div>
