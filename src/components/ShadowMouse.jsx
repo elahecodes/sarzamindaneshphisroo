@@ -14,7 +14,7 @@ const ShadowMouse = () => {
     return () => window.removeEventListener("mousemove", shadowCursor);
   }, []);
 
-  return <div ref={shadowRef} className="shadowCursor"></div>;
+  return <div ref={shadowRef} className="shadowCursor lg:block hidden"></div>;
 };
 
 export default ShadowMouse;

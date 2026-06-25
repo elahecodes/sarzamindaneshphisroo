@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import softIcon from "../assets/icons/soft.png";
 import smartHomeIcon from "../assets/icons/smartHome.png";
 import hardwareIcon from "../assets/icons/mouse.png";
@@ -54,20 +55,32 @@ const Services = () => {
       {/* Header */}
       <div className="flex justify-center items-center w-full">
         <div className="w-2 h-2 rounded-full bg-accent"></div>
-        <hr className="border w-[40%] border-neutral-200" />
+        <hr className="border flex-1 border-neutral-200" />
         <h2 className="text-2xl text-center font-bold mx-4">
           <span className="text-primary">خدماتی</span> که ارائه میدهیم
         </h2>
-        <hr className="border w-[40%] border-neutral-200" />
+        <hr className="border flex-1 border-neutral-200" />
         <div className="w-2 h-2 rounded-full bg-accent"></div>
       </div>
-
       {/* Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-20">
-        {data.map((box) => (
-          <div
+        {data.map((box, index) => (
+          <motion.div
             key={box.id}
-            className="group relative rounded-2xl border border-violet-100 bg-gradient-to-br from-white to-violet-50 p-6 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer"
+            initial={{ opacity: 0, y: 40, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            whileHover={{
+              scale: 1.05,
+              y: -8,
+              transition: { duration: 0.2 },
+            }}
+            viewport={{once: true}}
+            transition={{
+              duration: 0.6,
+              delay: index * 0.15,
+              ease: "easeOut",
+            }}
+            className="group relative rounded-2xl border border-violet-100 bg-gradient-to-br from-white to-violet-50 p-6 shadow-sm hover:shadow-xl cursor-pointer"
           >
             {/* Icon */}
             <div className="flex items-center justify-between mb-6">
@@ -87,7 +100,7 @@ const Services = () => {
 
             {/* Hover Accent */}
             <div className="absolute bottom-0 left-0 h-1 w-0 bg-primary group-hover:w-full transition-all duration-300 rounded-b-2xl"></div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

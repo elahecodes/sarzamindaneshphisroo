@@ -41,17 +41,18 @@ const Comments = () => {
   }, [comments]);
 
   return (
-    <section className="overflow-hidden relative py-20 bg-white">
-
+    <section className="overflow-hidden relative py-20 bg-white px-[16px]">
       {/* Header */}
       <div className="text-center mb-14">
-        <span className="text-primary font-semibold">
-          نظرات مشتریان
-        </span>
-
-        <h2 className="text-4xl font-extrabold mt-3 text-neutral-900">
-          تجربه همکاری با ما
-        </h2>
+        <div className="mb-20 flex items-center justify-center">
+          <div className="h-2 w-2 rounded-full bg-accent" />
+          <hr className="flex-1 border-neutral-300" />
+          <h2 className="mx-5 text-center text-2xl md:text-3xl font-bold text-neutral-900">
+             <span className="text-primary"> تجربه همکاری</span> با ما
+          </h2>
+          <hr className="flex-1 border-neutral-300" />
+          <div className="h-2 w-2 rounded-full bg-accent" />
+        </div>
 
         <p className="text-neutral-500 mt-3">
           بخشی از دیدگاه کارفرمایانی که به ما اعتماد کرده‌اند
@@ -59,10 +60,7 @@ const Comments = () => {
       </div>
 
       {/* Marquee */}
-      <div
-        ref={marqueeRef}
-        className="flex w-max gap-6 animate-marquee"
-      >
+      <div ref={marqueeRef} className="flex w-max gap-6 animate-marquee">
         {[...comments, ...comments].map((item, index) => (
           <div
             key={index}
@@ -72,7 +70,7 @@ const Comments = () => {
             <img
               src={chatIcon}
               alt=""
-              className="absolute left-5 top-5 w-12 opacity-50"
+              className="absolute left-5 top-5 w-12 opacity-60"
             />
 
             {/* User */}
@@ -84,13 +82,9 @@ const Comments = () => {
               />
 
               <div>
-                <h3 className="font-bold text-neutral-800">
-                  {item.fullName}
-                </h3>
+                <h3 className="font-bold text-neutral-800">{item.fullName}</h3>
 
-                <span className="text-sm text-primary">
-                  کارفرما
-                </span>
+                <span className="text-sm text-primary">کارفرما</span>
               </div>
             </div>
 

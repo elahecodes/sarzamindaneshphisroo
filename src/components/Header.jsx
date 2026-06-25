@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 import logo from "/src/assets/logo/Levels 1.png"
 const Header = () => {
   return (
-    <header className="bg-primary h-20 m-[24px] rounded-xl flex justify-between items-center px-2">
+    <header className="bg-primary h-20 rounded-xl flex justify-between items-center px-3.5">
       <div className="flex justify-start items-center gap-8">
         <img className="w-48" src={logo} alt="" />
         <nav>
-          <ul className="flex justify-start items-center gap-4">
+          <ul className="md:flex justify-start items-center gap-4 hidden">
             <li className="text-white">
               <Link to={"/question"}>سوالات</Link>
             </li>

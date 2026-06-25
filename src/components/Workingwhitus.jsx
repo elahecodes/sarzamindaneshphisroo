@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import projectIcon from "../assets/icons/project.png";
 import teamIcon from "../assets/icons/team.png";
 
@@ -26,10 +27,22 @@ const WorkingWithUs = () => {
   return (
     <section className="bg-white px-6 py-8">
       <div className="grid gap-6 md:grid-cols-2">
-        {cards.map((card) => (
-          <div
+        {cards.map((card,index) => (
+          <motion.div
+           initial={{ opacity: 0, y: 40, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            whileHover={{
+              scale: 1.02,
+              y: -8,
+              transition: { duration: 0.2 },
+            }}
+            transition={{
+              duration: 0.6,
+              delay: index * 0.15,
+              ease: "easeOut",
+            }}
             key={card.id}
-            className={`group relative overflow-hidden rounded-2xl p-8 min-h-[280px] transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${card.className}`}
+            className={`group relative overflow-hidden rounded-2xl p-8 min-h-[280px] hover:shadow-xl ${card.className}`}
           >
             {/* Decoration */}
             <div className="absolute -left-10 -bottom-10 h-40 w-40 rounded-full bg-white/10 blur-xl" />
@@ -68,10 +81,10 @@ const WorkingWithUs = () => {
               src={card.icon}
               alt={card.title}
               className={`absolute left-3 bottom-3 transition duration-500 group-hover:scale-110 ${
-                card.id === 1 ? "opacity-20 w-44" : "opacity-40 w-32"
+                card.id === 1 ? "opacity-40 w-44" : "opacity-40 w-32"
               }`}
             />
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
