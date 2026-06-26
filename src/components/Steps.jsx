@@ -97,7 +97,7 @@ const Steps = () => {
                 <motion.div
                   initial={{ opacity: 0, y: 40, scale: 0.95 }}
                   whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                  viewport={{ once: true, amount: 0.3 }}
+                  viewport={{ amount: 0.3 }}
                   transition={{
                     duration: 0.7,
                     ease: [0.22, 1, 0.36, 1],
@@ -129,20 +129,30 @@ const Steps = () => {
       {/* موبایل */}
       <div className="mx-auto max-w-2xl xl:hidden">
         <ul className="relative space-y-8 border-r-2 border-purple-200 pr-8">
-          {steps.map((item) => {
+          {steps.map((item, index) => {
             const Icon = item.icon;
-
             return (
               <li key={item.id} className="relative">
                 {/* شماره */}
                 <div
-                  className={`absolute right-[-46px] top-5 flex h-12 w-12 items-center justify-center rounded-full shadow-md ring-4 ring-white ${item.color}`}
+                  className={`absolute z-30 right-[-46px] top-5 flex h-12 w-12 items-center justify-center rounded-full shadow-md ring-4 ring-white ${item.color}`}
                 >
                   {item.id}
                 </div>
 
                 {/* کارت */}
-                <div className="group rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-lg">
+                <motion.div
+                  initial={{ opacity: 0, y: 40, scale: 0.95 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  viewport={{ amount: 0.3 }}
+                  transition={{
+                    duration: 0.7,
+                    ease: [0.22, 1, 0.36, 1],
+                    delay: index * 0.2,
+                  }}
+                  whileHover={{ y: -6, scale: 1.03 }}
+                  className="group rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm  hover:shadow-lg"
+                >
                   <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-purple-50">
                     <Icon
                       className={`text-3xl transition-transform duration-300 group-hover:scale-110 ${item.iconColor}`}
@@ -156,7 +166,7 @@ const Steps = () => {
                   <p className="text-sm leading-7 text-neutral-600">
                     {item.description}
                   </p>
-                </div>
+                </motion.div>
               </li>
             );
           })}

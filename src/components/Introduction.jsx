@@ -67,8 +67,8 @@ const Introduction = () => {
       {/* HERO IMAGE */}
       <motion.div
         key={currentIndex}
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ duration: 0.7 }}
         className="relative w-full h-[22rem] md:h-[30rem] rounded-2xl overflow-hidden shadow-xl"
       >

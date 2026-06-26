@@ -70,7 +70,7 @@ const Comments = () => {
             <img
               src={chatIcon}
               alt=""
-              className="absolute left-5 top-5 w-12 opacity-60"
+              className="absolute left-5 top-5 w-12 opacity-30"
             />
 
             {/* User */}
