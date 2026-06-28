@@ -5,16 +5,12 @@ import ShadowMouse from "../components/ShadowMouse";
 const MainLayout = () => {
   return (
     <>
-    <ShadowMouse/>
-    <div>
+      <ShadowMouse />
       <Header />
-
       <main>
         <Outlet />
       </main>
-
       <Footer />
-    </div>
     </>
   );
 };

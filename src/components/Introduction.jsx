@@ -62,7 +62,7 @@ const Introduction = () => {
   }, []);
 
   return (
-    <section className="w-full bg-neutral-50 md:p-10">
+    <section className="w-full bg-neutral-50 mt-2 md:mt-0 md:p-8">
 
       {/* HERO IMAGE */}
       <motion.div

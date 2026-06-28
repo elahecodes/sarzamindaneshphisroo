@@ -1,11 +1,11 @@
 [
   {
     "id": 0,
-    "url": "/public/images/image-one.webp"
+    "url": "/images/image-one.webp"
   },
   
   {
     "id": 1,
-    "url": "/public/images/image-two.webp"
+    "url": "/images/image-two.webp"
   }
 ]

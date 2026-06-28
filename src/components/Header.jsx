@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaUser, FaBars, FaMoon } from "react-icons/fa";
 import logo from "/src/assets/logo/Levels 1.png";
+import logo2 from "/src/assets/logo/لوگو سربرگ3.png";
 import {
   FaHome,
   FaCogs,
@@ -71,10 +72,10 @@ const Header = () => {
           />
           <nav className="hidden lg:block">
             <ul className="flex items-center gap-6 xl:gap-8">
-              <li className="bg-primary-soft w-full h-14 flex justify-start items-center">
+              <li>
                 <Link
                   to="/home"
-                  className="text-primary hover:bg-white/20 p-2 rounded-md transition-all duration-300"
+                  className="text-white hover:bg-white/20 p-2 rounded-md transition-all duration-300"
                 >
                   صفحه اصلی
                 </Link>
@@ -122,10 +123,12 @@ const Header = () => {
           </button>
 
           {/* Login */}
-          <button className="hidden cursor-pointer sm:flex h-10 md:h-12 px-4 md:px-5 items-center gap-2 rounded-lg bg-white text-primary shadow-lg hover:scale-105 transition">
-            <FaUser className="text-lg" />
-            <span className="text-sm md:text-base">ورود | ثبت نام</span>
-          </button>
+          <Link to={'/login'}>
+            <button className="hidden cursor-pointer sm:flex h-10 md:h-12 px-4 md:px-5 items-center gap-2 rounded-lg bg-white text-primary shadow-lg hover:scale-105 transition">
+              <FaUser className="text-lg" />
+              <span className="text-sm md:text-base">ورود | ثبت نام</span>
+            </button>
+          </Link>
 
           {/* Mobile Menu */}
           <button
@@ -142,38 +145,39 @@ const Header = () => {
           )}
           <nav
             className={`
-    fixed top-0 right-0
-    w-[80%] max-w-sm h-dvh
-    bg-bg shadow-2xl z-50
-    transition-transform duration-500 ease-in-out
-    lg:hidden
-    ${isOpen ? "translate-x-0" : "translate-x-full"}
-  `}
+              lg:hidden
+              absolute top-0 right-0
+              w-[80%] max-w-sm h-dvh
+              bg-bg shadow-2xl z-50
+              transition-transform duration-500 ease-in-out
+              lg:hidden
+              ${isOpen ? "translate-x-0" : "translate-x-full"}
+                `}
           >
             {/* Header */}
             <div className="w-full flex justify-between items-center p-4 border-b border-neutral-200">
               <img
-                className="w-16 object-contain"
-                src={logo}
+                className="w-32 object-contain"
+                src={logo2}
                 alt="Company Logo"
               />
 
               <button
                 onClick={() => setIsOpen(false)}
                 className="
-        w-10 h-10
-        rounded-full
-        flex justify-center items-center
-        cursor-pointer
-        bg-primary/10
-        text-primary
-        shadow-sm
-        hover:bg-primary
-        hover:text-white
-        hover:scale-105
-        transition-all
-        duration-300
-      "
+                  w-10 h-10
+                  rounded-full
+                  flex justify-center items-center
+                  cursor-pointer
+                  bg-primary/10
+                  text-primary
+                  shadow-sm
+                  hover:bg-primary
+                  hover:text-white
+                  hover:scale-105
+                  transition-all
+                  duration-300
+                "
               >
                 <FaTimes />
               </button>

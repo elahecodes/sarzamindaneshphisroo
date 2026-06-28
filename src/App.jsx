@@ -5,6 +5,7 @@ import AuthLayout from "./layouts/AuthLayout";
 
 import "./App.css";
 
+const SignIn = lazy(()=> import("./pages/SignIn"))
 const Home = lazy(() => import("./pages/Home"));
 const Login = lazy(() => import("./pages/Login"));
 const Blogs = lazy(() => import("./pages/Blogs"));
@@ -19,7 +20,8 @@ function App() {
         </Route>
 
         <Route element={<AuthLayout />}>
-          <Route path="/" element={<Login />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signin" element={<SignIn/>} />
         </Route>
       </Routes>
     </Suspense>

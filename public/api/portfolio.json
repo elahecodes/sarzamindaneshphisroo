@@ -1,56 +1,56 @@
 [
   {
     "id": 1,
-     "img": "/public/images/portfolio1.jpg",
+     "img": "/images/portfolio1.jpg",
     "title": "داشبورد مدیریت فروش",
     "description": "یک داشبورد مدیریتی پیشرفته برای تحلیل و مدیریت فروش که امکان مشاهده آمار لحظه‌ای، بررسی نمودارهای درآمد، مدیریت سفارش‌ها، مشتریان و محصولات را فراهم می‌کند. این پروژه با تمرکز روی سرعت دسترسی به اطلاعات و تجربه کاربری ساده اما کاربردی طراحی شده و مناسب استفاده در سیستم‌های فروشگاهی و کسب‌وکارهای کوچک تا متوسط است.",
     "technology": "React.js , TailwindCSS , Recharts , React Query , Context API"
   },
   {
     "id": 2,
-     "img": "/public/images/portfolio1.jpg",
+     "img": "/images/portfolio1.jpg",
     "title": "فروشگاه آنلاین محصولات آرایشی",
     "description": "یک فروشگاه اینترنتی کامل با قابلیت نمایش محصولات، دسته‌بندی حرفه‌ای، جستجوی سریع، فیلتر بر اساس قیمت و برند و امکان افزودن محصول به سبد خرید. این پروژه با هدف شبیه‌سازی تجربه واقعی خرید آنلاین طراحی شده و روی رابط کاربری روان و واکنش‌گرا تمرکز دارد.",
     "technology": "React.js , TailwindCSS , React Router , Redux Toolkit , Axios"
   },
   {
     "id": 3,
-     "img": "/public/images/portfolio1.jpg",
+     "img": "/images/portfolio1.jpg",
     "title": "پنل مدیریت رستوران",
     "description": "سیستم مدیریت داخلی رستوران برای کنترل کامل سفارش‌ها، مدیریت منو، ثبت و پیگیری رزرو میزها و مشاهده گزارش فروش روزانه. این پروژه به‌گونه‌ای طراحی شده که فرآیندهای دستی رستوران را دیجیتالی کرده و سرعت مدیریت را افزایش دهد.",
     "technology": "React.js , TailwindCSS , Context API , Axios , React Hook Form"
   },
   {
     "id": 4,
-     "img": "/public/images/portfolio1.jpg",
+     "img": "/images/portfolio1.jpg",
     "title": "وب‌سایت معرفی شرکت",
     "description": "یک وب‌سایت شرکتی مدرن برای معرفی خدمات، تیم، نمونه‌کارها و راه‌های ارتباطی. طراحی این پروژه بر پایه سادگی، خوانایی و هویت بصری برند انجام شده و کاملاً ریسپانسیو برای موبایل، تبلت و دسکتاپ است.",
     "technology": "HTML , CSS , JavaScript , TailwindCSS"
   },
   {
     "id": 5,
-     "img": "/public/images/portfolio1.jpg",
+     "img": "/images/portfolio1.jpg",
     "title": "اپلیکیشن آب و هوا",
     "description": "اپلیکیشن نمایش وضعیت آب و هوا که اطلاعات لحظه‌ای مانند دما، رطوبت، سرعت باد و پیش‌بینی چند روز آینده را از API دریافت کرده و به‌صورت بصری نمایش می‌دهد. هدف این پروژه ارائه تجربه سریع و ساده برای بررسی شرایط جوی است.",
     "technology": "React.js , TailwindCSS , OpenWeather API , Axios , Day.js"
   },
   {
     "id": 6,
-     "img": "/public/images/portfolio1.jpg",
+     "img": "/images/portfolio1.jpg",
     "title": "مدیریت وظایف و پروژه‌ها",
     "description": "یک ابزار مدیریت کارهای روزانه که به کاربران اجازه می‌دهد وظایف خود را ایجاد، دسته‌بندی، ویرایش و حذف کنند. همچنین وضعیت انجام هر کار قابل پیگیری است. این پروژه با هدف افزایش بهره‌وری و مدیریت بهتر زمان طراحی شده است.",
     "technology": "React.js , TailwindCSS , LocalStorage , Zustand"
   },
   {
     "id": 7,
-     "img": "/public/images/portfolio1.jpg",
+     "img": "/images/portfolio1.jpg",
     "title": "وبلاگ آموزشی برنامه‌نویسی",
     "description": "یک پلتفرم وبلاگ برای انتشار مقالات آموزشی در حوزه برنامه‌نویسی که شامل دسته‌بندی مطالب، جستجو، نمایش مقاله به‌صورت خوانا و تجربه مطالعه روان است. این پروژه برای تمرین ساخت سیستم محتوایی طراحی شده.",
     "technology": "Next.js , TailwindCSS , Markdown , Prisma"
   },
   {
     "id": 8,
-     "img": "/public/images/portfolio1.jpg",
+     "img": "/images/portfolio1.jpg",
     "title": "سامانه رزرو آنلاین خدمات",
     "description": "سیستم رزرو خدمات و وقت ملاقات که کاربران می‌توانند زمان دلخواه خود را انتخاب کرده، فرم رزرو را تکمیل کنند و وضعیت درخواست خود را مشاهده کنند. این پروژه فرآیند رزرو سنتی را ساده و دیجیتالی کرده است.",
     "technology": "React.js , Node.js , Express , MongoDB , JWT"

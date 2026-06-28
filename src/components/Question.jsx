@@ -52,7 +52,7 @@ const Question = () => {
               ${
                 currentIndex === realIndex
                   ? "bg-primary text-white shadow-lg shadow-primary/20"
-                  : "bg-white border border-primary/10 text-text hover:border-primary/30 hover:-translate-y-1 hover:shadow-md"
+                  : "bg-white border border-primary/10 text-text hover:border-primary/30 hover:-translate-y-1 transition hover:shadow-md"
               }
               w-full cursor-pointer flex justify-between items-center
               p-4 min-h-16 rounded-2xl
