@@ -45,16 +45,16 @@ body {
   box-shadow: 25px 30px 20px rgba(0, 0, 0, 0.137);
 }
 .shadowCursor {
-  width: 28px;
-  height: 28px;
+  width: 40px;
+  height: 40px;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 999;
-  background-color: #da37ff2a;
+  background-color: #7c3aed2b;
   pointer-events: none;
   border-radius: 50%;
-  border: 2px solid #da37ff;
+  border: 2px solid #7c3aed80;
   transform: translate(-50%, -50%);
 }
 

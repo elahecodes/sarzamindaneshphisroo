@@ -18,7 +18,7 @@ import {
 const menuItems = [
   {
     title: "صفحه اصلی",
-    path: "/",
+    path: "/home",
     icon: <FaHome />,
   },
   {

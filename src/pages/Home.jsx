@@ -1,5 +1,5 @@
 import Introduction from "../components/introduction";
-import Services from "./Services";
+import Services from "../components/Services";
 import Portfolio from "../components/portfolio";
 import Steps from "../components/Steps";
 import Workingwhitus from "../components/Workingwhitus";

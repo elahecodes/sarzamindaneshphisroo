@@ -5,7 +5,6 @@ const Introduction = () => {
   const [images, setImages] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [counters, setCounters] = useState([0, 0, 0, 0]);
-
   const targets = [100, 27, 30, 56];
 
   const counterTitles = [
@@ -31,7 +30,7 @@ const Introduction = () => {
     const timer = setInterval(() => {
       setCounters((prev) => {
         const updated = prev.map((count, i) =>
-          count < targets[i] ? count + 1 : count
+          count < targets[i] ? count + 1 : count,
         );
 
         if (updated.every((v, i) => v >= targets[i])) {
@@ -49,9 +48,7 @@ const Introduction = () => {
     if (!images.length) return;
 
     const timer = setInterval(() => {
-      setCurrentIndex((prev) =>
-        prev === images.length - 1 ? 0 : prev + 1
-      );
+      setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
     }, 4000);
 
     return () => clearInterval(timer);
@@ -63,13 +60,13 @@ const Introduction = () => {
 
   return (
     <section className="w-full bg-neutral-50 mt-2 md:mt-0 md:p-8">
-
       {/* HERO IMAGE */}
       <motion.div
         key={currentIndex}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.7 }}
+        viewport={{ once: true }}
         className="relative w-full h-[22rem] md:h-[30rem] rounded-2xl overflow-hidden shadow-xl"
       >
         {images.length > 0 && (
@@ -86,12 +83,9 @@ const Introduction = () => {
 
       {/* MAIN CARD */}
       <div className="w-full md:w-11/12 mx-auto -mt-24 md:-mt-28">
-
         <div className="bg-white/70 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/40 p-6 md:p-10">
-
           {/* COUNTERS */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-
             {counters.map((counter, index) => (
               <motion.div
                 key={index}
@@ -129,14 +123,13 @@ const Introduction = () => {
             </h2>
 
             <p className="text-sm md:text-lg leading-8 text-neutral-600 text-justify">
-              شرکت «سرزمین دانش» با هدف توسعه دانش، مهارت و فناوری‌های نوین فعالیت می‌کند.
-              این مجموعه تلاش دارد یادگیری را ساده‌تر، کاربردی‌تر و جذاب‌تر کند و
-              پلی بین دانش نظری و مهارت عملی بسازد.
+              شرکت «سرزمین دانش» با هدف توسعه دانش، مهارت و فناوری‌های نوین
+              فعالیت می‌کند. این مجموعه تلاش دارد یادگیری را ساده‌تر، کاربردی‌تر
+              و جذاب‌تر کند و پلی بین دانش نظری و مهارت عملی بسازد.
             </p>
 
             {/* BUTTONS */}
             <div className="flex flex-col md:flex-row justify-center md:justify-start gap-4 mt-6">
-
               <button className="px-6 py-3 rounded-xl bg-purple-600 text-white shadow-lg hover:shadow-purple-300 hover:-translate-y-1 transition-all">
                 مطالعه بیشتر
               </button>
@@ -144,10 +137,8 @@ const Introduction = () => {
               <button className="px-6 py-3 rounded-xl bg-orange-400 text-white shadow-lg hover:shadow-orange-300 hover:-translate-y-1 transition-all">
                 همکاری با ما
               </button>
-
             </div>
           </motion.div>
-
         </div>
       </div>
     </section>

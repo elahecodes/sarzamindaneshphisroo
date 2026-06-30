@@ -19,18 +19,18 @@ const WorkingWithUs = () => {
       title: "همکاری با ما",
       description:
         "ما همیشه به دنبال افراد خلاق و باانگیزه برای همکاری در پروژه‌های طراحی و توسعه هستیم. اگر اهل کار تیمی و رشد در پروژه‌های واقعی هستید، مشتاق همکاری با شما هستیم.",
-      className:
-        "bg-slate-50 border border-slate-200 text-slate-800",
+      className: "bg-slate-50 border border-slate-200 text-slate-800",
     },
   ];
 
   return (
     <section className="bg-white px-6 py-8">
       <div className="grid gap-6 md:grid-cols-2">
-        {cards.map((card,index) => (
+        {cards.map((card, index) => (
           <motion.div
-           initial={{ opacity: 0, y: 40, scale: 0.95 }}
+            initial={{ opacity: 0, y: 40, scale: 0.95 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true }}
             whileHover={{
               scale: 1.02,
               y: -8,
@@ -50,15 +50,11 @@ const WorkingWithUs = () => {
             {/* Content */}
             <div className="relative z-10 flex h-full flex-col justify-between">
               <div>
-                <h3 className="mb-5 text-3xl font-extrabold">
-                  {card.title}
-                </h3>
+                <h3 className="mb-5 text-3xl font-extrabold">{card.title}</h3>
 
                 <p
                   className={`max-w-md text-lg leading-8 ${
-                    card.id === 1
-                      ? "text-white/90"
-                      : "text-slate-600"
+                    card.id === 1 ? "text-white/90" : "text-slate-600"
                   }`}
                 >
                   {card.description}

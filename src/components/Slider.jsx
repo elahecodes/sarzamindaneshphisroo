@@ -6,26 +6,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-const Slider = () => {
-  const [members, setMembers] = useState([]);
-
-  async function getData() {
-    try {
-      const response = await fetch("/api/members.json");
-
-      if (!response.ok) return;
-
-      const data = await response.json();
-      setMembers(data);
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  useEffect(() => {
-    getData();
-  }, []);
-
+const Slider = (items) => {
   return (
     <section>
       <div>
@@ -37,9 +18,10 @@ const Slider = () => {
         navigation
         pagination={{ clickable: true }}
         spaceBetween={50}
+        
         slidesPerView={4}
       >
-        {members.map((item) => (
+        {items.map((item) => (
           <SwiperSlide
             key={item.id}
             className=" border flex flex-col justify-center items-center overflow-hidden rounded-lg"
