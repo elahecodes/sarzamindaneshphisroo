@@ -82,7 +82,6 @@ const Services = () => {
             }}
             className="group relative rounded-2xl border border-violet-100 bg-gradient-to-br from-white to-violet-50 p-6 shadow-sm hover:shadow-xl cursor-pointer"
           >
-            {/* Icon */}
             <div className="flex items-center justify-between mb-6">
               <h3 className="text-lg font-bold text-neutral-800 group-hover:text-primary transition">
                 {box.title}
@@ -92,13 +91,9 @@ const Services = () => {
                 <img src={box.icon} alt="" className="w-6 h-6" />
               </div>
             </div>
-
-            {/* Description */}
             <p className="text-sm leading-7 text-neutral-600">
               {box.description}
             </p>
-
-            {/* Hover Accent */}
             <div className="absolute bottom-0 left-0 h-1 w-0 bg-primary group-hover:w-full transition-all duration-300 rounded-b-2xl"></div>
           </motion.div>
         ))}
