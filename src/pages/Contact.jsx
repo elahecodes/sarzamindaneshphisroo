@@ -41,19 +41,19 @@ const Contact = () => {
   ];
 
   return (
-    <section className="w-11/12 max-w-7xl mx-auto py-20">
-      <div className="text-center mb-14">
-        <h2 className="text-3xl font-extrabold text-primary mb-4">
+    <section className="w-11/12 max-w-7xl mx-auto py-10">
+      <div className="mb-7 flex flex-col item-start gap-2">
+        <h2 className="text-2xl font-extrabold text-primary">
           ارتباط با ما
         </h2>
 
-        <p className="text-neutral-600 max-w-2xl mx-auto leading-8">
+        <p className="text-neutral-600 leading-8">
           برای ثبت سفارش، دریافت مشاوره یا پاسخ به سوالات خود می‌توانید از
           طریق راه‌های ارتباطی زیر با ما در تماس باشید.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {contactItems.map((item) => (
           <a
             key={item.title}

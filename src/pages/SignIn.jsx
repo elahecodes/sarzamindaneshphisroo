@@ -61,9 +61,11 @@ const SignIn = () => {
   }
 
   return (
-    <div className="w-full bg-primary-light h-dvh flex justify-center items-center pt-12">
+    <div className="w-full max-w-[35rem] mx-auto h-dvh flex justify-center items-center pt-12">
+      <div className="absolute w-[22rem] h-[22rem] bg-accent/10 blur-3xl bottom-0 left-0 pointer-events-none" />
+      <div className="absolute w-[40rem] h-[40rem] bg-primary/10 blur-3xl top-0 right-0 pointer-events-none" />
       <form
-        className="w-11/12 h-full flex flex-col justify-start items-center gap-3"
+        className="z-20 w-11/12 h-full flex flex-col justify-start items-center gap-3"
         action=""
       >
         <label className="text-2xl text-primary font-bold mb-8" htmlFor="">
@@ -113,7 +115,7 @@ const SignIn = () => {
             </div>
           </div>
         </div>
-        <button className="bg-primary w-full h-12 rounded text-white mt-5">
+        <button className="bg-primary hover:bg-primary/90 transition-all cursor-pointer w-full h-12 rounded text-white mt-5">
           ثبت
         </button>
         <div className="relative w-full">

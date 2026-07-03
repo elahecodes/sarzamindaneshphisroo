@@ -51,65 +51,26 @@ const menuItems = [
     path: "/projectorder",
     icon: <FaEnvelope />,
   },
-
 ];
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <header className="sticky top-0 z-50 bg-primary shadow-md">
-      <div className="w-full max-w-[1600px] mx-auto h-20 px-3 md:px-6 flex items-center justify-between">
+      <div className="w-full max-w-[1600px] mx-auto h-20 px-3 flex items-center justify-between">
         {/* Logo & Navigation */}
         <div className="flex items-center gap-4 lg:gap-10">
-          <img
-            src={logo}
-            alt="Company Logo"
-            className="w-32 md:w-40 lg:w-44 object-contain"
-          />
+          <img src={logo} alt="Company Logo" className="w-32 object-contain" />
           <nav className="hidden lg:block">
-            <ul className="flex items-center gap-6 xl:gap-8">
-              <li>
-                <Link
-                  to="/home"
-                  className="text-white hover:bg-white/20 p-2 rounded-md transition-all duration-300"
-                >
-                  صفحه اصلی
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  to="/services"
-                  className="text-white hover:bg-white/20 p-2 rounded-md transition-all duration-300"
-                >
-                  خدمات
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  to="/blogs"
-                  className="text-white hover:bg-white/20 p-2 rounded-md transition-all duration-300"
-                >
-                  وبلاگ‌ها
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/projectorder"
-                  className="text-white hover:bg-white/20 p-2 rounded-md transition-all duration-300"
-                >
-                  سفارش پروژه
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-white hover:bg-white/20 p-2 rounded-md transition-all duration-300"
-                  to="/contact"
-                >
-                  راه های ارتباطی
-                </Link>
-              </li>
+            <ul className="flex items-center gap-2 md:gap-6 lg:gap-8">
+              {menuItems.map((item) => (
+                <li className="flex justify-start items-center gap-2 hover:bg-white/20 hover:p-2 transition-all duration-300 ease-in-out rounded-md">
+                  <span className="text-white text-sm mt-1 hidden xl:block">{item.icon}</span>
+                  <Link className="text-white text-sm" to={item.path}>
+                    {item.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </nav>
         </div>
@@ -127,9 +88,11 @@ const Header = () => {
 
           {/* Login */}
           <Link to={"/login"}>
-            <button className="hidden cursor-pointer sm:flex h-10 md:h-12 px-4 md:px-5 items-center gap-2 rounded-lg bg-white text-primary shadow-lg hover:scale-105 transition">
+            <button className="hidden cursor-pointer lg:flex h-10 md:h-12 px-4 md:px-5 items-center gap-2 rounded-lg bg-white text-primary shadow-lg hover:scale-105 transition">
               <FaUser className="text-lg" />
-              <span className="text-sm md:text-base">ورود | ثبت نام</span>
+              <span className="text-sm md:text-base hidden xl:block">
+                ورود | ثبت نام
+              </span>
             </button>
           </Link>
 
@@ -190,7 +153,7 @@ const Header = () => {
             <ul className="flex flex-col gap-3 py-6">
               {menuItems.map((item) => (
                 <li
-                  key={item.path}
+                  key={item.id}
                   className="
                     bg-white
                     border border-neutral-100
@@ -215,6 +178,14 @@ const Header = () => {
                   </Link>
                 </li>
               ))}
+              <Link to={"/login"}>
+                <button className="w-11/12 mx-auto px-4 cursor-pointer h-12 flex justify-center items-center gap-2 rounded-lg bg-primary text-white shadow-lg hover:scale-105 transition">
+                  <FaUser className="text-lg" />
+                  <span className="text-sm md:text-base">
+                    ورود | ثبت نام
+                  </span>
+                </button>
+              </Link>
             </ul>
           </nav>
         </div>

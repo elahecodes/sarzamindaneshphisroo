@@ -271,7 +271,7 @@ const ProjectOrder = () => {
           <h4 className="text-xl font-bold text-primary">اطلاعات پروژه</h4>
           {/* عنوان پروژه */}
 
-          <section className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <section className="grid grid-cols-2 md:grid-cols-3 gap-6">
             <div className="flex flex-col gap-3">
               <label className={lableStyles}>عنوان پروژه</label>
               <input className={inputStyles} type="text" />
@@ -330,9 +330,7 @@ const ProjectOrder = () => {
                 />
               )}
             </div>
-          </section>
-
-          <section className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      
             {/* زمان تحویل */}
             <div className="relative">
               <label className={lableStyles}>زمان تحویل مورد انتظار</label>
@@ -359,7 +357,6 @@ const ProjectOrder = () => {
                 />
               )}
             </div>
-
             {/* اولویت */}
             <div className="relative">
               <label className={lableStyles}>اولویت پروژه</label>
@@ -414,6 +411,9 @@ const ProjectOrder = () => {
               )}
             </div>
           </section>
+
+
+        
 
           {/* توضیحات */}
           <div className="my-8">
