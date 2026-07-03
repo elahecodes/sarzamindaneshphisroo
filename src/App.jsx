@@ -10,7 +10,8 @@ const Home = lazy(() => import("./pages/Home"));
 const Login = lazy(() => import("./pages/Login"));
 const Blogs = lazy(() => import("./pages/Blogs"));
 const Services = lazy(() => import("./pages/ServicesPage"));
-
+const Projectorder = lazy(() => import("./pages/ProjectOrder"));
+const Contact = lazy(() => import("./pages/Contact"));
 function App() {
   return (
     <Suspense fallback={<p>loading...</p>}>
@@ -20,6 +21,8 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/projectorder" element={<Projectorder />} />
+          <Route path="/contact" element={<Contact />} />
         </Route>
 
         <Route element={<AuthLayout />}>

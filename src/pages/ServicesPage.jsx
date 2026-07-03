@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import {
   FaLaptopCode,
   FaUserCog,
@@ -459,8 +460,11 @@ const ServicesPage = () => {
               اطمینان، خلاقیت و تجربه پیش می‌بریم.
             </p>
 
-            <button
+            <Link
+              to="/projectorder"
               className="
+                flex
+                justify-center items-center
                 w-64 h-16
                 rounded-2xl
                 bg-accent
@@ -489,7 +493,7 @@ const ServicesPage = () => {
                 "
             >
               سفارش پروژه
-            </button>
+            </Link>
           </div>
 
           {/* تصویر */}

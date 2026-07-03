@@ -42,20 +42,16 @@ const menuItems = [
     icon: <FaBlog />,
   },
   {
-    title: "سوالات متداول",
-    path: "/question",
-    icon: <FaQuestionCircle />,
-  },
-  {
     title: "تماس با ما",
     path: "/contact",
     icon: <FaPhoneAlt />,
   },
   {
     title: "درخواست پروژه",
-    path: "/request",
+    path: "/projectorder",
     icon: <FaEnvelope />,
   },
+
 ];
 
 const Header = () => {
@@ -98,13 +94,20 @@ const Header = () => {
                   وبلاگ‌ها
                 </Link>
               </li>
-
               <li>
                 <Link
-                  to="/question"
+                  to="/projectorder"
                   className="text-white hover:bg-white/20 p-2 rounded-md transition-all duration-300"
                 >
-                  سوالات متداول
+                  سفارش پروژه
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-white hover:bg-white/20 p-2 rounded-md transition-all duration-300"
+                  to="/contact"
+                >
+                  راه های ارتباطی
                 </Link>
               </li>
             </ul>
@@ -123,7 +126,7 @@ const Header = () => {
           </button>
 
           {/* Login */}
-          <Link to={'/login'}>
+          <Link to={"/login"}>
             <button className="hidden cursor-pointer sm:flex h-10 md:h-12 px-4 md:px-5 items-center gap-2 rounded-lg bg-white text-primary shadow-lg hover:scale-105 transition">
               <FaUser className="text-lg" />
               <span className="text-sm md:text-base">ورود | ثبت نام</span>
