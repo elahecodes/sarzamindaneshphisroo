@@ -4,6 +4,7 @@ import MainLayout from "./layouts/MainLayout";
 import AuthLayout from "./layouts/AuthLayout";
 
 import "./App.css";
+import Portfolio from "./components/portfolio";
 
 const SignIn = lazy(() => import("./pages/SignIn"));
 const Home = lazy(() => import("./pages/Home"));
@@ -12,6 +13,8 @@ const Blogs = lazy(() => import("./pages/Blogs"));
 const Services = lazy(() => import("./pages/ServicesPage"));
 const Projectorder = lazy(() => import("./pages/ProjectOrder"));
 const Contact = lazy(() => import("./pages/Contact"));
+const PortfolioPage = lazy(()=>import("./pages/PortfolioPage"))
+
 function App() {
   return (
     <Suspense fallback={<p>loading...</p>}>
@@ -23,6 +26,7 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/projectorder" element={<Projectorder />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/portfolio" element={<PortfolioPage />} />
         </Route>
 
         <Route element={<AuthLayout />}>
