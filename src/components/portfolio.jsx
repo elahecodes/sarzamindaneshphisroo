@@ -28,7 +28,7 @@ const Portfolio = () => {
   }, []);
 
   return (
-    <div className="w-full py-12 px-6 md:px-12">
+    <div className="w-full py-12 px-6 md:px-12 dark:bg-[#1E293B]">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -44,17 +44,17 @@ const Portfolio = () => {
       >
         <div className="flex items-center w-full max-full">
           <div className="w-2 h-2 rounded-full bg-accent" />
-          <hr className="flex-1 border-neutral-200" />
+          <hr className="flex-1 border-neutral-200 dark:border-[#334155]" />
 
-          <h2 className="text-2xl font-bold mx-4">
+          <h2 className="text-2xl font-bold mx-4 dark:text-[#F8FAFC] ">
             جدیدترین <span className="text-primary">پروژه</span> های ما
           </h2>
 
-          <hr className="flex-1 border-neutral-200" />
+          <hr className="flex-1 border-neutral-200 dark:border-[#334155]" />
           <div className="w-2 h-2 rounded-full bg-accent" />
         </div>
 
-        <p className="text-neutral-600 max-w-2xl leading-7">
+        <p className="text-neutral-600 dark:text-[#F8FAFC]  max-w-2xl leading-7">
           نمونه‌کارهایی که در این بخش می‌بینید حاصل طراحی و توسعه پروژه‌های
           واقعی هستند و تجربه عملی تیم ما را نشان می‌دهند.
         </p>
@@ -91,7 +91,7 @@ const Portfolio = () => {
                 }}
                 whileHover={{ y: -6, scale: 1.03 }}
                 key={item.id}
-                className="group relative rounded-xl overflow-hidden shadow-md hover:shadow-xl bg-white"
+                className="group relative rounded-xl overflow-hidden shadow-md hover:shadow-xl bg-white dark:bg-[#334155]"
               >
                 {/* Image */}
                 <div className="relative h-56 overflow-hidden">
@@ -111,18 +111,18 @@ const Portfolio = () => {
 
                 {/* Content */}
                 <div className="p-4 flex flex-col gap-3">
-                  <h4 className="text-lg font-bold text-purple-600">
+                  <h4 className="text-lg font-bold text-purple-600 dark:text-[#8B5CF6]">
                     {item.title}
                   </h4>
 
                   <div>
-                    <p className="text-xs text-neutral-500 mb-1">تکنولوژی‌ها</p>
-                    <span className="text-xs bg-neutral-100 px-2 py-1 rounded-full text-neutral-700">
+                    <p className="text-xs font-bold text-neutral-500 dark:text-[#F8FAFC] py-4">تکنولوژی‌ها</p>
+                    <div className="text-xs dark:text-[#F8FAFC]  bg-primary/10 px-2 py-1 rounded-xl text-neutral-700">
                       {item.technology}
-                    </span>
+                    </div>
                   </div>
 
-                  <p className="text-sm text-neutral-600 leading-6 line-clamp-3">
+                  <p className="text-sm text-neutral-600 dark:text-[#F8FAFC]  leading-6 line-clamp-3">
                     {item.description}
                   </p>
                 </div>
@@ -141,7 +141,7 @@ const Portfolio = () => {
                 }}
                 whileHover={{ y: -6, scale: 1.03 }}
                 key={item.id}
-                className="group relative rounded-xl overflow-hidden shadow-md hover:shadow-xl bg-white"
+                className="group relative rounded-xl overflow-hidden shadow-md hover:shadow-xl bg-white dark:bg-[#334155]"
               >
                 {/* Image */}
                 <div className="relative h-56 overflow-hidden">
@@ -161,18 +161,19 @@ const Portfolio = () => {
 
                 {/* Content */}
                 <div className="p-4 flex flex-col gap-3">
-                  <h4 className="text-lg font-bold text-purple-600">
+                  <h4 className="text-lg font-bold text-primary dark:text-[#8B5CF6]">
                     {item.title}
                   </h4>
 
+                 
                   <div>
-                    <p className="text-xs text-neutral-500 mb-1">تکنولوژی‌ها</p>
-                    <span className="text-xs bg-neutral-100 px-2 py-1 rounded-full text-neutral-700">
+                    <p className="text-xs font-bold text-neutral-500 dark:text-[#F8FAFC] py-4">تکنولوژی‌ها</p>
+                    <div className="text-xs dark:text-[#F8FAFC]  bg-primary/10 px-2 py-1 rounded-xl text-neutral-700">
                       {item.technology}
-                    </span>
+                    </div>
                   </div>
 
-                  <p className="text-sm text-neutral-600 leading-6 line-clamp-3">
+                  <p className="text-sm dark:text-[#F8FAFC] text-neutral-600 leading-6 line-clamp-3">
                     {item.description}
                   </p>
                 </div>

@@ -51,15 +51,15 @@ const Services = () => {
   ];
 
   return (
-    <section className="px-6 py-20 bg-white">
+    <section className="px-6 py-20 bg-white dark:bg-[#1E293B]">
       {/* Header */}
       <div className="flex justify-center items-center w-full">
         <div className="w-2 h-2 rounded-full bg-accent"></div>
-        <hr className="border flex-1 border-neutral-200" />
-        <h2 className="text-2xl text-center font-bold mx-4">
-          <span className="text-primary">خدماتی</span> که ارائه میدهیم
+        <hr className="border flex-1 border-neutral-200 dark:border-[#334155]" />
+        <h2 className="text-2xl text-center font-bold mx-4 dark:text-white">
+          <span className="text-primary ">خدماتی</span> که ارائه میدهیم
         </h2>
-        <hr className="border flex-1 border-neutral-200" />
+        <hr className="border flex-1 border-neutral-200 dark:border-[#334155]" />
         <div className="w-2 h-2 rounded-full bg-accent"></div>
       </div>
       {/* Grid */}
@@ -80,18 +80,18 @@ const Services = () => {
               delay: index * 0.15,
               ease: "easeOut",
             }}
-            className="group relative rounded-2xl border border-violet-100 bg-gradient-to-br from-white to-violet-50 p-6 shadow-sm hover:shadow-xl cursor-pointer"
+            className="group relative rounded-2xl border border-violet-100 dark:border-[#334155] bg-gradient-to-br from-white to-violet-50 dark:from-[#37475c] dark:to-[#1b2535] p-6 shadow-sm hover:shadow-xl cursor-pointer"
           >
             <div className="flex items-center justify-between mb-6">
-              <h3 className="text-lg font-bold text-neutral-800 group-hover:text-primary transition">
+              <h3 className="text-lg font-bold text-neutral-800 dark:text-neutral-100 group-hover:text-primary dark:group-hover:text-white transition">
                 {box.title}
               </h3>
 
-              <div className="w-12 h-12 rounded-xl bg-violet-100 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-xl bg-violet-100 dark:bg-neutral-400 flex items-center justify-center">
                 <img src={box.icon} alt="" className="w-6 h-6" />
               </div>
             </div>
-            <p className="text-sm leading-7 text-neutral-600">
+            <p className="text-sm leading-7 dark:text-neutral-100 text-neutral-600">
               {box.description}
             </p>
             <div className="absolute bottom-0 left-0 h-1 w-0 bg-primary group-hover:w-full transition-all duration-300 rounded-b-2xl"></div>

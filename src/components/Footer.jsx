@@ -15,21 +15,21 @@ import { FaWhatsapp } from "react-icons/fa6";
 
 const Footer = () => {
   const itemStyle =
-    "cursor-pointer rounded-lg px-3 py-2 transition-all duration-300 hover:bg-white/40 hover:text-primary hover:translate-x-1";
+    "cursor-pointer dark:text-[#94A3B8] rounded-lg px-3 py-2 transition-all duration-300 hover:bg-white/40 hover:text-primary hover:translate-x-1";
 
   return (
-  <footer className="w-full border-t border-neutral-300 bg-gradient-to-l from-accent-light/30 to-primary-light py-10 md:py-12">
+  <footer className="w-full border-t border-neutral-300 dark:border-[#334155] bg-gradient-to-l from-accent-light/30 dark:from-[#1a2848] dark:to-[#121924] to-primary-light py-10 md:py-12">
 
   <div className="w-11/12 max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10">
 
     {/* معرفی شرکت */}
     <div className="col-span-2 lg:col-span-1">
-      <h4 className="text-lg md:text-xl font-bold mb-3 md:mb-4 flex items-center gap-2">
+      <h4 className="text-lg md:text-xl dark:text-[#F8FAFC] font-bold mb-3 md:mb-4 flex items-center gap-2">
         <FaBuilding className="text-primary text-lg md:text-xl" />
         سرزمین دانش پیشرو
       </h4>
 
-      <p className="text-xs md:text-sm leading-7 md:leading-8 text-neutral-700 text-justify">
+      <p className="text-xs md:text-sm dark:text-[#94A3B8] leading-7 md:leading-8 text-neutral-700 text-justify">
         ارائه‌دهنده راهکارهای نوین نرم‌افزاری در زمینه طراحی وب‌سایت،
         توسعه سامانه‌های تحت وب، نرم‌افزارهای سازمانی و مشاوره تحول
         دیجیتال برای کسب‌وکارهای مدرن.
@@ -38,7 +38,7 @@ const Footer = () => {
 
     {/* خدمات اصلی */}
     <div>
-      <h4 className="text-base md:text-xl font-bold mb-3 md:mb-4 flex items-center gap-2">
+      <h4 className="text-base md:text-xl dark:text-[#F8FAFC] font-bold mb-3 md:mb-4 flex items-center gap-2">
         <FaBriefcase className="text-primary text-lg md:text-xl" />
         خدمات اصلی
       </h4>
@@ -53,7 +53,7 @@ const Footer = () => {
 
     {/* خدمات جانبی */}
     <div>
-      <h4 className="text-base md:text-xl font-bold mb-3 md:mb-4 flex items-center gap-2">
+      <h4 className="text-base md:text-xl dark:text-[#F8FAFC] font-bold mb-3 md:mb-4 flex items-center gap-2">
         <FaCogs className="text-primary text-lg md:text-xl" />
         خدمات جانبی
       </h4>
@@ -68,7 +68,7 @@ const Footer = () => {
 
     {/* ارتباط با ما */}
     <div>
-      <h4 className="text-base md:text-xl font-bold mb-3 md:mb-4 flex items-center gap-2">
+      <h4 className="text-base md:text-xl dark:text-[#F8FAFC] font-bold mb-3 md:mb-4 flex items-center gap-2">
         <FaHeadset className="text-primary text-lg md:text-xl" />
         ارتباط با ما
       </h4>
@@ -77,7 +77,7 @@ const Footer = () => {
 
         <a
           href="tel:02112345678"
-          className="flex items-center gap-2 md:gap-3 hover:text-primary"
+          className="flex dark:text-[#94A3B8] items-center gap-2 md:gap-3 hover:text-primary"
         >
           <FaPhone className="text-primary text-sm md:text-base" />
           <span>۰۲۱-۱۲۳۴۵۶۷۸</span>
@@ -85,7 +85,7 @@ const Footer = () => {
 
         <a
           href="mailto:info@sarzamindanesh.ir"
-          className="flex items-center gap-2 md:gap-3 hover:text-primary"
+          className="flex dark:text-[#94A3B8] items-center gap-2 md:gap-3 hover:text-primary"
         >
           <FaEnvelope className="text-primary text-sm md:text-base" />
           <span>info@sarzamindanesh.ir</span>
@@ -93,7 +93,7 @@ const Footer = () => {
 
         <div className="flex items-start gap-2 md:gap-3 hover:text-primary">
           <FaMapMarkerAlt className="mt-1 text-primary text-sm md:text-base" />
-          <span>تهران، خیابان ولیعصر، پلاک ۱۲۵</span>
+          <span className="dark:text-[#94A3B8]">تهران، خیابان ولیعصر، پلاک ۱۲۵</span>
         </div>
       </div>
     </div>
@@ -117,7 +117,7 @@ const Footer = () => {
   </div>
 
   {/* کپی‌رایت */}
-  <div className="w-11/12 max-w-7xl mx-auto mt-8 pt-5 border-t border-neutral-300 text-center text-xs md:text-sm text-neutral-600">
+  <div className="w-11/12 max-w-7xl mx-auto mt-8 pt-5 dark:border-[#334155] border-t dark:text-[#F8FAFC] border-neutral-300 text-center text-xs md:text-sm text-neutral-600">
     © 2026 تمامی حقوق برای شرکت سرزمین دانش پیشرو محفوظ است.
   </div>
 

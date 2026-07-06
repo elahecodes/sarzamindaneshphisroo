@@ -41,16 +41,16 @@ const Comments = () => {
   }, [comments]);
 
   return (
-    <section className="overflow-hidden relative py-20 bg-white px-[16px]">
+    <section className="overflow-hidden relative py-20 bg-white dark:bg-[#1E293B] px-[16px]">
       {/* Header */}
       <div className="text-center mb-14">
         <div className="mb-20 flex items-center justify-center">
           <div className="h-2 w-2 rounded-full bg-accent" />
-          <hr className="flex-1 border-neutral-300" />
-          <h2 className="mx-5 text-center text-2xl md:text-3xl font-bold text-neutral-900">
+          <hr className="flex-1 border-neutral-300 dark:border-[#334155]" />
+          <h2 className="mx-5 text-center text-2xl dark:text-[#F8FAFC] md:text-3xl font-bold text-neutral-900">
              <span className="text-primary"> تجربه همکاری</span> با ما
           </h2>
-          <hr className="flex-1 border-neutral-300" />
+          <hr className="flex-1 border-neutral-300 dark:border-[#334155]" />
           <div className="h-2 w-2 rounded-full bg-accent" />
         </div>
 
@@ -64,7 +64,7 @@ const Comments = () => {
         {[...comments, ...comments].map((item, index) => (
           <div
             key={index}
-            className="group relative w-[360px] shrink-0 rounded-2xl bg-gradient-to-br from-white to-violet-50 border border-violet-100 p-6 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
+            className="group relative w-[360px] shrink-0 rounded-2xl dark:border-[#334155] dark:from-[#334155] dark:to-[#1E293B] bg-gradient-to-br from-white to-violet-50 border border-violet-100 p-6 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
           >
             {/* Quote Icon */}
             <img
@@ -82,14 +82,14 @@ const Comments = () => {
               />
 
               <div>
-                <h3 className="font-bold text-neutral-800">{item.fullName}</h3>
+                <h3 className="font-bold text-neutral-800 dark:text-[#F8FAFC]">{item.fullName}</h3>
 
                 <span className="text-sm text-primary">کارفرما</span>
               </div>
             </div>
 
             {/* Review */}
-            <p className="text-neutral-600 text-sm leading-7 line-clamp-4">
+            <p className="text-neutral-600 dark:text-[#94A3B8] text-sm leading-7 line-clamp-4">
               {item.review}
             </p>
 

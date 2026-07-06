@@ -57,15 +57,15 @@ const Steps = () => {
   ];
 
   return (
-    <section className="bg-neutral-50 px-6 py-20 overflow-hidden">
+    <section className="bg-neutral-50 dark:bg-[#0F172A] px-6 py-20 overflow-hidden">
       {/* عنوان */}
       <div className="mb-20 flex items-center justify-center">
         <div className="h-2 w-2 rounded-full bg-accent" />
-        <hr className="flex-1 border-neutral-300" />
-        <h2 className="mx-5 text-center text-2xl md:text-3xl font-bold text-neutral-900">
+        <hr className="flex-1 border-neutral-300 dark:border-[#334155]" />
+        <h2 className="mx-5 text-center text-2xl md:text-3xl font-bold text-neutral-900 dark:text-[#F8FAFC] ">
           فرایند <span className="text-primary">همکاری</span> با ما
         </h2>
-        <hr className="flex-1 border-neutral-300" />
+        <hr className="flex-1 border-neutral-300 dark:border-[#334155]" />
         <div className="h-2 w-2 rounded-full bg-accent" />
       </div>
 
@@ -104,19 +104,19 @@ const Steps = () => {
                     delay: index * 0.2,
                   }}
                   whileHover={{ y: -6, scale: 1.03 }}
-                  className="group mt-6 flex min-h-[250px] w-full flex-col items-center gap-4 rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm hover:shadow-xl"
+                  className="group mt-6 flex min-h-[250px] dark:bg-[#334155] dark:border-[#334155] w-full flex-col items-center gap-4 rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm hover:shadow-xl"
                 >
-                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-purple-50">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-purple-50 dark:bg-[#1E293B]">
                     <Icon
                       className={`text-3xl transition-transform duration-300 group-hover:scale-110 ${item.iconColor}`}
                     />
                   </div>
 
-                  <h3 className="text-center text-lg font-bold text-neutral-800">
+                  <h3 className="text-center text-lg font-bold text-neutral-800 dark:text-[#F8FAFC]">
                     {item.title}
                   </h3>
 
-                  <p className="text-center text-sm leading-7 text-neutral-600">
+                  <p className="text-center text-sm leading-7 text-neutral-600 dark:text-[#94A3B8]">
                     {item.description}
                   </p>
                 </motion.div>
@@ -151,19 +151,19 @@ const Steps = () => {
                     delay: index * 0.2,
                   }}
                   whileHover={{ y: -6, scale: 1.03 }}
-                  className="group rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm  hover:shadow-lg"
+                  className="group rounded-2xl dark:bg-[#334155] dark:border-[#334155] border border-neutral-200 bg-white p-6 shadow-sm  hover:shadow-lg"
                 >
-                  <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-purple-50">
+                  <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-purple-50 dark:bg-[#1E293B]">
                     <Icon
                       className={`text-3xl transition-transform duration-300 group-hover:scale-110 ${item.iconColor}`}
                     />
                   </div>
 
-                  <h3 className="mb-3 text-lg font-bold text-neutral-800">
+                  <h3 className="mb-3 text-lg font-bold dark:text-[#F8FAFC] text-neutral-800">
                     {item.title}
                   </h3>
 
-                  <p className="text-sm leading-7 text-neutral-600">
+                  <p className="text-sm leading-7 text-neutral-600 dark:text-[#94A3B8]">
                     {item.description}
                   </p>
                 </motion.div>

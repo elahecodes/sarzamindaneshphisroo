@@ -207,14 +207,14 @@ const ProjectOrder = () => {
   const toggleBudget = () => setbudgetOpen((prev) => !prev);
 
   const inputStyles =
-    "h-12 bg-primary/10 text-neutral-700 px-2 outline-none border-primary border text-sm outline-none border-primary rounded-xl";
+    "h-12 bg-primary/10 dark:border-[#8B5CF6] text-[#111827] dark:text-[#94A3B8] px-2 outline-none border-primary border text-sm outline-none border-primary rounded-xl";
 
-  const lableStyles = "text-neutral-800";
+  const lableStyles = "text-neutral-800 dark:text-[#F8FAFC]";
   return (
     <div>
       <form className="p-4" action="">
         <div>
-          <h4 className="text-xl font-bold text-primary mb-6">
+          <h4 className="text-xl font-bold dark:text-[#8B5CF6] text-primary mb-6">
             اطلاعات کارفرما
           </h4>
 
@@ -448,42 +448,42 @@ const ProjectOrder = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                <label className="flex items-center gap-2 bg-white p-2 border border-neutral-200 rounded-md cursor-pointer hover:scale-105 transition-all hover:shadow-xl h-12 text-neutral-700">
+                <label className="flex items-center gap-2 bg-white dark:bg-[#1E293B] dark:text-white p-2 dark:border-[#334155] border border-neutral-200 rounded-md cursor-pointer hover:scale-105 transition-all hover:shadow-xl h-12 text-neutral-700">
                   <input type="checkbox" />
                   <span>پنل مدیریت</span>
                 </label>
 
-                <label className="flex items-center gap-2 bg-white p-2 border border-neutral-200 rounded-md cursor-pointer hover:scale-105 transition-all hover:shadow-xl h-12 text-neutral-700">
+                <label className="flex items-center gap-2 bg-white dark:bg-[#1E293B] dark:text-white p-2 dark:border-[#334155] border border-neutral-200 rounded-md cursor-pointer hover:scale-105 transition-all hover:shadow-xl h-12 text-neutral-700">
                   <input type="checkbox" />
                   <span>درگاه پرداخت</span>
                 </label>
 
-                <label className="flex items-center gap-2 bg-white p-2 border border-neutral-200 rounded-md cursor-pointer hover:scale-105 transition-all hover:shadow-xl h-12 text-neutral-700">
+                <label className="flex items-center gap-2 bg-white dark:bg-[#1E293B] dark:text-white p-2 dark:border-[#334155] border border-neutral-200 rounded-md cursor-pointer hover:scale-105 transition-all hover:shadow-xl h-12 text-neutral-700">
                   <input type="checkbox" />
                   <span>چند زبانه</span>
                 </label>
 
-                <label className="flex items-center gap-2 bg-white p-2 border border-neutral-200 rounded-md cursor-pointer hover:scale-105 transition-all hover:shadow-xl h-12 text-neutral-700">
+                <label className="flex items-center gap-2 bg-white dark:bg-[#1E293B] dark:text-white p-2 dark:border-[#334155] border border-neutral-200 rounded-md cursor-pointer hover:scale-105 transition-all hover:shadow-xl h-12 text-neutral-700">
                   <input type="checkbox" />
                   <span>سئو</span>
                 </label>
 
-                <label className="flex items-center gap-2 bg-white p-2 border border-neutral-200 rounded-md cursor-pointer hover:scale-105 transition-all hover:shadow-xl h-12 text-neutral-700">
+                <label className="flex items-center gap-2 bg-white dark:bg-[#1E293B] dark:text-white p-2 dark:border-[#334155] border border-neutral-200 rounded-md cursor-pointer hover:scale-105 transition-all hover:shadow-xl h-12 text-neutral-700">
                   <input type="checkbox" />
                   <span>اپلیکیشن موبایل</span>
                 </label>
 
-                <label className="flex items-center gap-2 bg-white p-2 border border-neutral-200 rounded-md cursor-pointer hover:scale-105 transition-all hover:shadow-xl h-12 text-neutral-700">
+                <label className="flex items-center gap-2 bg-white dark:bg-[#1E293B] dark:text-white p-2 dark:border-[#334155] border border-neutral-200 rounded-md cursor-pointer hover:scale-105 transition-all hover:shadow-xl h-12 text-neutral-700">
                   <input type="checkbox" />
                   <span>اتصال به API</span>
                 </label>
 
-                <label className="flex items-center gap-2 bg-white p-2 border border-neutral-200 rounded-md cursor-pointer hover:scale-105 transition-all hover:shadow-xl h-12 text-neutral-700">
+                <label className="flex items-center gap-2 bg-white dark:bg-[#1E293B] dark:text-white p-2 dark:border-[#334155] border border-neutral-200 rounded-md cursor-pointer hover:scale-105 transition-all hover:shadow-xl h-12 text-neutral-700">
                   <input type="checkbox" />
                   <span>سیستم پیامک</span>
                 </label>
 
-                <label className="flex items-center gap-2 bg-white p-2 border border-neutral-200 rounded-md cursor-pointer hover:scale-105 transition-all hover:shadow-xl h-12 text-neutral-700">
+                <label className="flex items-center gap-2 bg-white dark:bg-[#1E293B] dark:text-white p-2 dark:border-[#334155] border border-neutral-200 rounded-md cursor-pointer hover:scale-105 transition-all hover:shadow-xl h-12 text-neutral-700">
                   <input type="checkbox" />
                   <span>سایر موارد</span>
                 </label>
@@ -516,6 +516,7 @@ const ProjectOrder = () => {
               h-14
               rounded-xl
               bg-primary
+              dark:bg-[#8B5CF6]
               text-white
               font-bold
               hover:scale-105

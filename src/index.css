@@ -1,6 +1,5 @@
 @import "tailwindcss";
-
-@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 /* 🎨 Theme Variables (Tailwind v4) */
 @theme {
@@ -23,9 +22,8 @@
   --color-bg: #F9FAFB;
 }
 
-body {
-  background: var( --color-bg)
-}
+
+
 
 @layer utilities {
   .swiper-button-next,

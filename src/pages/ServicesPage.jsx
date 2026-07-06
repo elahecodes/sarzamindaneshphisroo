@@ -139,16 +139,16 @@ const ServicesPage = () => {
   return (
     <div className="relative overflow-hidden">
       {/* background blobs (کنترل شده) */}
-      <div className="absolute w-[22rem] h-[22rem] bg-accent/10 blur-3xl top-0 -right-10 pointer-events-none" />
-      <div className="absolute w-[40rem] h-[40rem] bg-primary/10 blur-3xl top-[50rem] -left-12 pointer-events-none" />
+      <div className="absolute w-[22rem] h-[22rem] bg-accent/10 dark:bg-accent/20 blur-3xl top-0 -right-10 pointer-events-none" />
+      <div className="absolute w-[40rem] h-[40rem] bg-primary/10 dark:bg-primary/20 blur-3xl top-[50rem] -left-12 pointer-events-none" />
       <div className="absolute w-[22rem] h-[22rem] bg-accent/10 blur-3xl bottom-0 -left-10 pointer-events-none" />
 
       <section className="py-12 md:py-20 relative z-10 overflow-hidden">
-        <h4 className={`${SectionTitle} tracking-tight`}>
+        <h4 className={`${SectionTitle} tracking-tight dark:text-[#8B5CF6]`}>
           اعتماد، بزرگ‌ترین سرمایه ما
         </h4>
 
-        <p className="mt-5 md:mt-6 mx-auto w-11/12 md:w-8/12 text-center text-sm md:text-base text-neutral-600 leading-8 md:leading-9">
+        <p className="mt-5 md:mt-6 mx-auto w-11/12 md:w-8/12 dark:text-[#94A3B8] text-center text-sm md:text-base text-neutral-600 leading-8 md:leading-9">
           ما مفتخریم که طی سال‌ها فعالیت حرفه‌ای، با اجرای ده‌ها پروژه موفق در
           حوزه طراحی و توسعه نرم‌افزار، اعتماد مشتریان خود را به دست آورده‌ایم.
           این اعتماد نتیجه تعهد، کیفیت، شفافیت و همراهی مستمر ما در تمامی مراحل
@@ -184,6 +184,8 @@ const ServicesPage = () => {
 
                 flex items-center gap-2 md:gap-3
                 bg-white/85
+                dark:bg-[#334155]/20
+                 
                 backdrop-blur-xl
                 border border-white/40
                 shadow-xl md:shadow-2xl
@@ -215,13 +217,13 @@ const ServicesPage = () => {
         <div className="flex items-center w-full max-w-full mb-16">
           <div className="w-2 h-2 rounded-full bg-accent shrink-0" />
 
-          <hr className="flex-1 bg-neutral-200 border border-neutral-200" />
+          <hr className="flex-1 bg-neutral-200 dark:border-[#334155] border border-neutral-200" />
 
-          <h2 className="mx-4 text-2xl font-bold whitespace-nowrap">
+          <h2 className="mx-4 text-2xl dark:text-[#F8FAFC] font-bold whitespace-nowrap">
             خدماتی که ما ارائه می‌دهیم
           </h2>
 
-          <hr className="flex-1 bg-neutral-200 border border-neutral-200" />
+          <hr className="flex-1 bg-neutral-200 dark:border-[#334155] border border-neutral-200" />
 
           <div className="w-2 h-2 rounded-full bg-accent shrink-0" />
         </div>
@@ -230,17 +232,19 @@ const ServicesPage = () => {
           {items.map((item) => (
             <article
               key={item.id}
-              className="group p-6 rounded-3xl bg-white/70 backdrop-blur-xl border border-purple-200/40 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center gap-4"
+              className="group p-6 rounded-3xl bg-white/70 dark:bg-[#334155] dark:border-[#334155] backdrop-blur-xl border border-purple-200/40 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center gap-4"
             >
               <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-600 via-violet-500 to-orange-500 flex items-center justify-center text-white text-2xl shadow-md group-hover:scale-110 transition">
                 {icons[item.id]}
               </div>
 
-              <h2 className="text-lg font-bold text-primary min-h-[50px]">
+              <h2 className="text-lg font-bold text-primary dark:text-[#8B5CF6] min-h-[50px]">
                 {item.title}
               </h2>
 
-              <p className="text-neutral-600 text-sm leading-6">{item.text}</p>
+              <p className="text-neutral-600 text-sm leading-6 dark:text-[#F8FAFC]">
+                {item.text}
+              </p>
             </article>
           ))}
         </div>
@@ -257,13 +261,13 @@ const ServicesPage = () => {
             <div className="flex items-center w-full max-w-full">
               <div className="w-2 h-2 rounded-full bg-accent shrink-0" />
 
-              <hr className="flex-1 md:flex-[2] lg:flex-[3] h-px bg-neutral-200 border-0" />
+              <hr className="flex-1 md:flex-[2] lg:flex-[3] dark:border-[#334155] bg-neutral-200 border" />
 
-              <h2 className="mx-4 text-2xl font-bold whitespace-nowrap">
+              <h2 className="mx-4 text-2xl dark:text-[#F8FAFC] font-bold whitespace-nowrap">
                 چرا مارا انتخاب کنید؟
               </h2>
 
-              <hr className="flex-1 md:flex-[2] lg:flex-[3] h-px bg-neutral-200 border-0" />
+              <hr className="flex-1 md:flex-[2] lg:flex-[3] dark:border-[#334155] bg-neutral-200 border" />
 
               <div className="w-2 h-2 rounded-full bg-accent shrink-0" />
             </div>
@@ -286,6 +290,8 @@ const ServicesPage = () => {
                     p-6
                     rounded-3xl
                     bg-white/80
+                    dark:bg-[#334155]
+                    dark:border-[#334155]
                     backdrop-blur-xl
                     border border-neutral-200
                     shadow-sm
@@ -301,6 +307,7 @@ const ServicesPage = () => {
                     w-16 h-16
                     rounded-2xl
                     bg-primary/10
+                    dark:bg-[#8B5CF6]/20
                     flex items-center justify-center
                     shrink-0
                     transition-all duration-300
@@ -308,16 +315,16 @@ const ServicesPage = () => {
                     group-hover:rotate-6
                   "
                   >
-                    <item.icon className="text-primary text-2xl group-hover:text-white transition-colors" />
+                    <item.icon className="text-primary text-2xl dark:text-[#8B5CF6] group-hover:text-white transition-colors" />
                   </div>
 
                   {/* متن */}
                   <div>
-                    <h3 className="text-xl font-bold text-primary mb-2">
+                    <h3 className="text-xl font-bold text-primary dark:text-[#8B5CF6] mb-2">
                       {item.title}
                     </h3>
 
-                    <p className="text-neutral-500 leading-8">
+                    <p className="text-neutral-500 dark:text-[#F8FAFC] leading-8">
                       {item.description}
                     </p>
                   </div>
@@ -369,23 +376,33 @@ const ServicesPage = () => {
               <div
                 className="
                   absolute
-                  top-4
-                  right-3
+                  -top-10
+                  -right-4
                   bg-white
+                 dark:bg-[#334155]/30
+                  dark:backdrop-blur-2xl
+                  dark:border-[#334155]
                   rounded-3xl
                   px-6 py-4
                   shadow-2xl
                   border border-neutral-100
                 "
               >
-                <p className="text-4xl font-black text-primary">+120</p>
-                <span className="text-neutral-500">پروژه موفق</span>
+                <p className="text-4xl font-black text-primary dark:text-[#8B5CF6]">
+                  +120
+                </p>
+                <span className="text-neutral-500 dark:text-white">
+                  پروژه موفق
+                </span>
               </div>
 
               <div
                 className="
                   absolute
                   md:-bottom-6
+                   dark:bg-[#334155]/30
+                  dark:backdrop-blur-2xl
+                  dark:border-[#334155]
                   -bottom-10
                   -left-6
                   bg-white
@@ -395,8 +412,12 @@ const ServicesPage = () => {
                   border border-neutral-100
                 "
               >
-                <p className="text-4xl font-black text-primary">+120</p>
-                <span className="text-neutral-500">پروژه موفق</span>
+                <p className="text-4xl font-black text-primary dark:text-[#8B5CF6]">
+                  +120
+                </p>
+                <span className="text-neutral-500 dark:text-white">
+                  پروژه موفق
+                </span>
               </div>
             </div>
           </div>
@@ -417,8 +438,8 @@ const ServicesPage = () => {
             absolute inset-0
             rotate-4
             rounded-[2rem]
-            bg-gradient-to-l bg-primary/30
-            -z-10
+            bg-gradient-to-l bg-primary/40
+            
     "
         />
 
@@ -432,7 +453,7 @@ const ServicesPage = () => {
                 gap-12
                 px-12 py-14
                 rounded-[2rem]
-                bg-gradient-to-l from-primary to-accent
+                bg-gradient-to-bl from-primary to-accent
                 shadow-[0_20px_60px_rgba(0,0,0,0.15)]
                 backdrop-blur-xl
               "

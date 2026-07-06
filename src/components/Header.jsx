@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaUser, FaBars, FaMoon } from "react-icons/fa";
 import logo from "/src/assets/logo/Levels 1.png";
@@ -52,11 +52,13 @@ const menuItems = [
     icon: <FaEnvelope />,
   },
 ];
+import { useTheme } from "../context/ThemeContext";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const {dark , toggle} = useTheme()
   return (
-    <header className="sticky top-0 z-50 bg-primary shadow-md">
+    <header className="sticky top-0 z-50 bg-primary dark:bg-[#8B5CF6] shadow-md">
       <div className="w-full max-w-[1600px] mx-auto h-20 px-3 flex items-center justify-between">
         {/* Logo & Navigation */}
         <div className="flex items-center gap-4 lg:gap-10">
@@ -65,7 +67,9 @@ const Header = () => {
             <ul className="flex items-center gap-2 md:gap-6 lg:gap-8">
               {menuItems.map((item) => (
                 <li className="flex justify-start items-center gap-2 hover:bg-white/20 hover:p-2 transition-all duration-300 ease-in-out rounded-md">
-                  <span className="text-white text-sm mt-1 hidden xl:block">{item.icon}</span>
+                  <span className="text-white text-sm mt-1 hidden xl:block">
+                    {item.icon}
+                  </span>
                   <Link className="text-white text-sm" to={item.path}>
                     {item.title}
                   </Link>
@@ -82,7 +86,10 @@ const Header = () => {
           </button>
 
           {/* Dark Mode */}
-          <button className="w-10 h-10 md:w-12 md:h-12 rounded-md bg-white/30 text-white flex items-center justify-center hover:scale-105 transition">
+          <button
+            onClick={toggle}
+            className="btn w-10 h-10 md:w-12 md:h-12 rounded-md bg-white/30 text-white flex items-center justify-center hover:scale-105 transition"
+          >
             <FaMoon />
           </button>
 
@@ -114,14 +121,14 @@ const Header = () => {
               lg:hidden
               absolute top-0 right-0
               w-[80%] max-w-sm h-dvh
-              bg-bg shadow-2xl z-50
+              bg-bg dark:bg-[#0F172A] shadow-2xl z-50
               transition-transform duration-500 ease-in-out
               lg:hidden
               ${isOpen ? "translate-x-0" : "translate-x-full"}
                 `}
           >
             {/* Header */}
-            <div className="w-full flex justify-between items-center p-4 border-b border-neutral-200">
+            <div className="w-full flex justify-between items-center p-4 border-b border-neutral-200 dark:border-[#334155]">
               <img
                 className="w-32 object-contain"
                 src={logo2}
@@ -133,9 +140,11 @@ const Header = () => {
                 className="
                   w-10 h-10
                   rounded-full
-                  flex justify-center items-center
+                  flex justify-center 
+                  items-center
                   cursor-pointer
                   bg-primary/10
+                  dark:bg-primary/30
                   text-primary
                   shadow-sm
                   hover:bg-primary
@@ -145,7 +154,7 @@ const Header = () => {
                   duration-300
                 "
               >
-                <FaTimes />
+                <FaTimes className="dark:text-[#8B5CF6]"  />
               </button>
             </div>
 
@@ -156,6 +165,8 @@ const Header = () => {
                   key={item.id}
                   className="
                     bg-white
+                    dark:bg-[#334155]
+                    dark:border-[#334155]
                     border border-neutral-100
                     w-11/12 mx-auto
                     rounded-xl
@@ -172,18 +183,16 @@ const Header = () => {
                     onClick={() => setIsOpen(false)}
                     className="flex items-center gap-4 h-full px-4 text-text"
                   >
-                    <span className="text-primary text-lg">{item.icon}</span>
+                    <span className="text-primary dark:text-[#8B5CF6] text-lg">{item.icon}</span>
 
-                    <span className="font-medium">{item.title}</span>
+                    <span className="font-medium dark:text-[#F8FAFC]">{item.title}</span>
                   </Link>
                 </li>
               ))}
               <Link to={"/login"}>
-                <button className="w-11/12 mx-auto px-4 cursor-pointer h-12 flex justify-center items-center gap-2 rounded-lg bg-primary text-white shadow-lg hover:scale-105 transition">
+                <button className="w-11/12 dark:bg-[#8B5CF6] mx-auto px-4 cursor-pointer h-12 flex justify-center items-center gap-2 rounded-lg bg-primary text-white shadow-lg hover:scale-105 transition">
                   <FaUser className="text-lg" />
-                  <span className="text-sm md:text-base">
-                    ورود | ثبت نام
-                  </span>
+                  <span className="text-sm md:text-base">ورود | ثبت نام</span>
                 </button>
               </Link>
             </ul>

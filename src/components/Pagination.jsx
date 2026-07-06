@@ -25,14 +25,18 @@ const Pagination = ({ items, isBlog }) => {
   return (
     <>
       <div className="w-full flex flex-col lg:flex-row justify-between items-center py-2 px-4">
-        <h2 className="text-xl text-primary font-bold">وبلاگ ها</h2>
-        <form className="w-8/12" action="">
-          <input
-            placeholder="جستجو وبلاگ ..."
-            className="w-full outline-none bg-white border border-neutral-200 h-12 rounded-md px-4"
-            type="text"
-          />
-        </form>
+        <h2 className="text-xl text-primary font-bold">
+          {isBlog ? <span>وبلاگ ها</span> : <span>نمونه پروژه ها</span>}
+        </h2>
+        {isBlog && (
+          <form className="w-8/12" action="">
+            <input
+              placeholder="جستجو وبلاگ ..."
+              className="w-full outline-none bg-white border border-neutral-200 h-12 rounded-md px-4"
+              type="text"
+            />
+          </form>
+        )}
       </div>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 p-3">
         {content.map((item) =>
@@ -79,8 +83,41 @@ const Pagination = ({ items, isBlog }) => {
               </div>
             </article>
           ) : (
-            <div>
-            
+            <div className="bg-white rounded-md border border-neutral-200">
+              <div className="relative h-56 overflow-hidden">
+                <img
+                  src={item.img}
+                  alt={item.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300 flex items-center justify-center">
+                  <p className="text-white opacity-0 group-hover:opacity-100 text-sm md:text-base font-bold transition-all">
+                    مشاهده جزئیات
+                  </p>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="p-4 flex flex-col">
+                <h4 className="text-lg font-bold text-purple-600">
+                  {item.title}
+                </h4>
+
+                <div className="mb-2">
+                  <p className="text-xs font-bold text-neutral-500 py-4">
+                    تکنولوژی‌ها
+                  </p>
+                  <div className="text-xs bg-primary/10 px-2 py-1 rounded-xl text-neutral-700">
+                    {item.technology}
+                  </div>
+                </div>
+
+                <p className="text-sm text-neutral-600 leading-6 line-clamp-3">
+                  {item.description}
+                </p>
+              </div>
             </div>
           ),
         )}

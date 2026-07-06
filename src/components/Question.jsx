@@ -42,7 +42,7 @@ const Question = () => {
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true }}
             transition={{
-              duration: 0.7,
+              duration: 0.5,
               ease: [0.22, 1, 0.36, 1],
               delay: index * 0.2,
             }}
@@ -51,8 +51,8 @@ const Question = () => {
             className={`
               ${
                 currentIndex === realIndex
-                  ? "bg-primary text-white shadow-lg shadow-primary/20"
-                  : "bg-white border border-primary/10 text-text hover:border-primary/30 hover:-translate-y-1 transition hover:shadow-md"
+                  ? "bg-primary dark:bg-[#8B5CF6] text-white shadow-lg shadow-primary/20"
+                  : "bg-white border border-primary/10 text-text hover:border-primary/30 hover:-translate-y-1 dark:bg-[#334155] transition hover:shadow-md"
               }
               w-full cursor-pointer flex justify-between items-center
               p-4 min-h-16 rounded-2xl
@@ -72,7 +72,9 @@ const Question = () => {
                 <FaQuestion />
               </span>
 
-              <span className="font-medium px-4">{box.question}</span>
+              <span className="font-medium px-4 dark:text-[#F8FAFC]">
+                {box.question}
+              </span>
             </div>
             <span
               className={`
@@ -97,25 +99,27 @@ const Question = () => {
               overflow-hidden transition-all duration-500
             `}
           >
-            <p className="px-4 text-text/80 leading-7">{box.answer}</p>
+            <p className="px-4 text-text/80 dark:text-[#94A3B8] leading-7">
+              {box.answer}
+            </p>
           </div>
         </div>
       );
     });
   return (
-    <section className="relative overflow-hidden py-20 px-4 bg-gradient-to-b from-primary-soft/20 to-white">
+    <section className="relative overflow-hidden py-20 px-4 dark:from-[#1E293B] dark:to-[#1E293B] bg-gradient-to-b from-primary-soft/20 to-white">
       <div className="absolute top-0 left-0 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
 
       <div className="absolute bottom-0 right-0 w-72 h-72 bg-accent/10 rounded-full blur-3xl"></div>
 
       <div className="relative z-10 max-w-3xl mx-auto text-center mb-14">
-        <h2 className="lg:text-3xl text-xl font-extrabold text-text mb-5">
+        <h2 className="lg:text-3xl text-xl font-extrabold text-text mb-5 dark:text-[#F8FAFC]">
           سوالات متداول
         </h2>
 
         <div className="w-32 h-1 mx-auto rounded-full bg-gradient-to-r from-primary via-accent to-primary mb-6"></div>
 
-        <p className="text-text/70 leading-8 max-w-2xl mx-auto">
+        <p className="text-text/70 leading-8 max-w-2xl mx-auto dark:text-[#94A3B8]">
           رایج‌ترین پرسش‌های مشتریان و همکاران ما را در این بخش مشاهده کنید. اگر
           پاسخ موردنظر خود را پیدا نکردید، تیم پشتیبانی آماده پاسخگویی به شما
           است.

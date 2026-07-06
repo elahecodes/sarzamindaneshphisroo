@@ -19,12 +19,12 @@ const WorkingWithUs = () => {
       title: "همکاری با ما",
       description:
         "ما همیشه به دنبال افراد خلاق و باانگیزه برای همکاری در پروژه‌های طراحی و توسعه هستیم. اگر اهل کار تیمی و رشد در پروژه‌های واقعی هستید، مشتاق همکاری با شما هستیم.",
-      className: "bg-slate-50 border border-slate-200 text-slate-800",
+      className: "bg-slate-50 dark:bg-[#334155] dark:text-[#F8FAFC] dark:border-[#334155] border border-slate-200 text-slate-800",
     },
   ];
 
   return (
-    <section className="bg-white px-6 py-8">
+    <section className="bg-white dark:bg-[#0F172A] px-6 py-8">
       <div className="grid gap-6 md:grid-cols-2">
         {cards.map((card, index) => (
           <motion.div
@@ -54,7 +54,7 @@ const WorkingWithUs = () => {
 
                 <p
                   className={`max-w-md text-lg leading-8 ${
-                    card.id === 1 ? "text-white/90" : "text-slate-600"
+                    card.id === 1 ? "text-white/90" : "text-slate-600 dark:text-[#F8FAFC]"
                   }`}
                 >
                   {card.description}
@@ -65,7 +65,7 @@ const WorkingWithUs = () => {
                 className={`mt-8 w-fit rounded-xl px-6 py-3 font-bold transition ${
                   card.id === 1
                     ? "bg-white text-violet-700 hover:bg-slate-100"
-                    : "bg-primary text-white hover:opacity-90"
+                    : "bg-primary dark:bg-[#8B5CF6] text-white hover:opacity-90"
                 }`}
               >
                 {card.id === 1 ? "ثبت درخواست" : "ارسال رزومه"}

@@ -59,7 +59,7 @@ const Introduction = () => {
   }, []);
 
   return (
-    <section className="w-full bg-neutral-50 mt-2 md:mt-0 md:p-8">
+    <section className="w-full bg-neutral-50 dark:bg-[#0F172A] mt-2 md:mt-0 md:p-8">
       {/* HERO IMAGE */}
       <motion.div
         key={currentIndex}
@@ -83,7 +83,7 @@ const Introduction = () => {
 
       {/* MAIN CARD */}
       <div className="w-full md:w-11/12 mx-auto -mt-24 md:-mt-28">
-        <div className="bg-white/70 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/40 p-6 md:p-10">
+        <div className="bg-white/70 dark:bg-[#1E293B]/50 dark:border-[#334155] backdrop-blur-xl rounded-3xl shadow-2xl border border-white/40 p-6 md:p-10">
           {/* COUNTERS */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
             {counters.map((counter, index) => (
@@ -94,17 +94,17 @@ const Introduction = () => {
                 transition={{ delay: index * 0.3 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.05 }}
-                className={`rounded-2xl p-6 md:p-8 flex flex-col items-center justify-center text-center shadow-md transition-all ${
+                className={`rounded-2xl p-6 md:p-8 dark:bg-[#334155] flex flex-col items-center justify-center text-center shadow-md transition-all ${
                   index % 2 === 0
-                    ? "bg-purple-50 border-t-4 border-purple-500"
-                    : "bg-orange-50 border-b-4 border-orange-400"
+                    ? "bg-purple-50 border-t-4 border-purple-500 dark:border-[#8B5CF6]"
+                    : "bg-orange-50 border-b-4 border-orange-400 dark:border-[#FB923C]"
                 }`}
               >
-                <b className="text-4xl md:text-6xl text-purple-600">
+                <b className="text-4xl md:text-6xl text-purple-600 dark:text-[#8B5CF6]">
                   {counter}
                 </b>
 
-                <span className="mt-2 text-sm md:text-base text-neutral-600">
+                <span className="mt-2 text-sm md:text-base text-neutral-600 dark:text-neutral-200">
                   {counterTitles[index]}
                 </span>
               </motion.div>
@@ -118,11 +118,11 @@ const Introduction = () => {
             transition={{ duration: 1 }}
             className="mt-10 text-center md:text-right space-y-4"
           >
-            <h2 className="text-2xl md:text-3xl font-bold text-neutral-900">
+            <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-white">
               سرزمین دانش
             </h2>
 
-            <p className="text-sm md:text-lg leading-8 text-neutral-600 text-justify">
+            <p className="text-sm md:text-lg leading-8 text-neutral-600 dark:text-neutral-200 text-justify">
               شرکت «سرزمین دانش» با هدف توسعه دانش، مهارت و فناوری‌های نوین
               فعالیت می‌کند. این مجموعه تلاش دارد یادگیری را ساده‌تر، کاربردی‌تر
               و جذاب‌تر کند و پلی بین دانش نظری و مهارت عملی بسازد.
@@ -130,11 +130,11 @@ const Introduction = () => {
 
             {/* BUTTONS */}
             <div className="flex flex-col md:flex-row justify-center md:justify-start gap-4 mt-6">
-              <button className="px-6 py-3 rounded-xl bg-purple-600 text-white shadow-lg hover:shadow-purple-300 hover:-translate-y-1 transition-all">
+              <button className="px-6 py-3 rounded-xl bg-purple-600 dark:bg-[#8B5CF6] text-white shadow-lg hover:shadow-purple-300 hover:-translate-y-1 transition-all">
                 مطالعه بیشتر
               </button>
 
-              <button className="px-6 py-3 rounded-xl bg-orange-400 text-white shadow-lg hover:shadow-orange-300 hover:-translate-y-1 transition-all">
+              <button className="px-6 py-3 rounded-xl bg-orange-400 dark:bg-[#FB923C] text-white shadow-lg hover:shadow-orange-300 hover:-translate-y-1 transition-all">
                 همکاری با ما
               </button>
             </div>
