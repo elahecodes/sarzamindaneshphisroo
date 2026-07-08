@@ -47,7 +47,7 @@ const Contact = () => {
           ارتباط با ما
         </h2>
 
-        <p className="text-neutral-600 leading-8">
+        <p className="text-neutral-600 dark:text-[#F8FAFC] leading-8">
           برای ثبت سفارش، دریافت مشاوره یا پاسخ به سوالات خود می‌توانید از
           طریق راه‌های ارتباطی زیر با ما در تماس باشید.
         </p>
@@ -68,11 +68,12 @@ const Contact = () => {
               items-center
               gap-5
               p-7
+              dark:text-[#F8FAFC]
               rounded-[32px]
-
+              dark:border-[#334155]
               bg-gradient-to-br
               from-primary/10
-              via-white
+              via-[#334155]
               to-accent/10
 
               border
@@ -138,11 +139,11 @@ const Contact = () => {
             </div>
 
             <div className="relative z-10">
-              <h4 className="text-xl font-bold text-primary mb-2">
+              <h4 className="text-xl dark:text-[#F8FAFC] font-bold text-primary mb-2">
                 {item.title}
               </h4>
 
-              <p className="text-neutral-700 break-all">
+              <p className="text-neutral-700 dark:text-[#F8FAFC] break-all">
                 {item.value}
               </p>
             </div>

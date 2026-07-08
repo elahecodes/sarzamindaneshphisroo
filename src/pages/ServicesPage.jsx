@@ -70,7 +70,7 @@ const ServicesPage = () => {
       text: "همراهی از ایده تا اجرا",
       icon: <FaLightbulb />,
       position:
-        "md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 hidden sm:flex",
+        "md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 hidden md:flex",
     },
   ];
   const whyUs = [
@@ -185,6 +185,7 @@ const ServicesPage = () => {
                 flex items-center gap-2 md:gap-3
                 bg-white/85
                 dark:bg-[#334155]/20
+                dark:text-[white]
                  
                 backdrop-blur-xl
                 border border-white/40

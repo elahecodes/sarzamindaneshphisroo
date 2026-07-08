@@ -427,6 +427,7 @@ const ProjectOrder = () => {
                   h-52
                   p-4
                   bg-primary/10
+                  dark:text-[#94A3B8]
                   border
                   border-primary
                   rounded-xl
@@ -490,20 +491,20 @@ const ProjectOrder = () => {
               </div>
               
 
-              <div className=" bg-primary/10 border border-primary rounded-2xl p-4 mt-4 md:mt-0">
+              <div className=" bg-primary/10 border border-primary dark:border-[#8B5CF6] rounded-2xl p-4 mt-4 md:mt-0">
                 <label
                   className={`${lableStyles} mb-3 block text-xl text-primary font-bold`}
                 >
                   فایل یا نمونه طراحی
                 </label>
-                <p className="text-neutral-600 text-start">
+                <p className="text-neutral-600 dark:text-[#94A3B8] text-start">
                   اگه نمونه ای از پروژه درخواستی مد نظرتون هست در این قسمت آپلود
                   کنید.
                 </p>
 
                 <input
                   type="file"
-                  className="text-sm bg-accent checked:scale-90 w-50 p-3 mt-4 rounded-md text-white"
+                  className="text-sm bg-accent dark:bg-[#FB923C] checked:scale-90 w-50 p-3 mt-4 rounded-md text-white"
                 />
               </div>
             </div>
@@ -519,7 +520,9 @@ const ProjectOrder = () => {
               dark:bg-[#8B5CF6]
               text-white
               font-bold
-              hover:scale-105
+              hover:-translate-y-1
+              hover:scale-[1.01]
+              cursor-pointer
               transition-all
               hover:shadow-xl
             "
