@@ -113,7 +113,7 @@ const Question = () => {
       <div className="absolute bottom-0 right-0 w-72 h-72 bg-accent/10 rounded-full blur-3xl"></div>
 
       <div className="relative z-10 max-w-3xl mx-auto text-center mb-14">
-        <h2 className="lg:text-3xl text-xl font-extrabold text-text mb-5 dark:text-[#F8FAFC]">
+        <h2 className="lg:text-3xl text-xl font-title text-text mb-5 dark:text-[#F8FAFC]">
           سوالات متداول
         </h2>
 

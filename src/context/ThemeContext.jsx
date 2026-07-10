@@ -16,7 +16,6 @@ export function ThemeProvider({ children }) {
     }else {
       setDark(false)
     }
-    console.log(theme);
   }, []);
   
   useEffect(() => {

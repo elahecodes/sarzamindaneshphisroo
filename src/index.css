@@ -1,27 +1,37 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
+@font-face {
+  font-family: "estedadMedium";
+  src: url("/src/assets/fonts/Estedad-Medium.ttf");
+}
+@font-face {
+  font-family: "estedadBold";
+  src: url("/src/assets/fonts/Estedad-ExtraBold.ttf");
+}
+
 /* 🎨 Theme Variables (Tailwind v4) */
 @theme {
   /* 🟣 Primary (Purple) */
-  --color-primary: #7C3AED;
-  --color-primary-dark: #6D28D9;
-  --color-primary-light: #EDE9FE;
-  --color-primary-soft: #F5F3FF;
+  --color-primary: #7c3aed;
+  --color-primary-dark: #6d28d9;
+  --color-primary-light: #ede9fe;
+  --color-primary-soft: #f5f3ff;
 
   /* 🟠 Accent (Orange CTA) */
-  --color-accent: #F97316;
-  --color-accent-dark: #EA580C;
-  --color-accent-light: #FED7AA;
-  --color-accent-soft: #FFF7ED;
+  --color-accent: #f97316;
+  --color-accent-dark: #ea580c;
+  --color-accent-light: #fed7aa;
+  --color-accent-soft: #fff7ed;
 
   /* ⚪ Neutral */
   --color-text: #111827;
-  --color-muted: #6B7280;
-  --color-border: #E5E7EB;
-  --color-bg: #F9FAFB;
+  --color-muted: #6b7280;
+  --color-border: #e5e7eb;
+  --color-bg: #f9fafb;
+  --font-sans: "estedadMedium", sans-serif;
+  --font-title: "estedadBold", sans-serif;
 }
-
 
 @layer utilities {
   .swiper-button-next,
@@ -39,6 +49,7 @@
 }
 .box {
   box-shadow: 25px 30px 20px rgba(0, 0, 0, 0.137);
+  font-family: "estedadMedium";
 }
 .shadowCursor {
   width: 40px;
@@ -74,10 +85,13 @@
   animation-play-state: paused;
 }
 .card {
-  background: linear-gradient(
-  135deg,
-  #8b5cf6,
-  #a855f7,
-  #f97316
-);
+  background: linear-gradient(135deg, #8b5cf6, #a855f7, #f97316);
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

@@ -4,33 +4,44 @@ import { useState } from "react";
 const SignIn = () => {
   const [password, setPassword] = useState("");
   const [userName, setUserName] = useState("");
-  const hasMinLenght = password.length >= 8;
-  const hasUpperCase = /[A-Z]/.test(password);
-  const hasLowercase = /[a-z]/.test(password);
-  const hasNumber = /[0-9]/.test(password);
-  const isOnlyNumber = /^09\d+$/.test(userName);
-  const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password);
-  let errorMessageP;
-  let errorMessageU;
 
+  // اعتبارسنجی شماره تلفن
+  const isValidPhone = /^09\d{9}$/.test(userName);
+
+  // اعتبارسنجی رمز عبور
+  const hasMinLength = password.length >= 8;
+  const hasUpperCase = /[A-Z]/.test(password);
+  const hasLowerCase = /[a-z]/.test(password);
+  const hasNumber = /\d/.test(password);
+  const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+
+  const isPasswordValid =
+    hasMinLength &&
+    hasUpperCase &&
+    hasLowerCase &&
+    hasNumber &&
+    hasSpecialChar;
+
+  const canSubmit = isValidPhone && isPasswordValid;
+
+  let errorMessageP = "";
+  let errorMessageU = "";
+
+  // پیام خطای شماره تلفن
   switch (true) {
     case !userName.length:
       errorMessageU = "";
       break;
 
-    case userName.length !== 11:
-      errorMessageU = "لطفا شماره تلفن معتبر 11 رقمی وارد کنید";
-      break;
-
-    case !isOnlyNumber:
-      errorMessageU = "لطفا عدد وارد کنید";
+    case !isValidPhone:
+      errorMessageU = "لطفا شماره تلفن معتبر وارد کنید";
       break;
 
     default:
       errorMessageU = "";
-      break;
   }
 
+  // پیام خطای رمز
   switch (true) {
     case !password.length:
       errorMessageP = "";
@@ -40,7 +51,7 @@ const SignIn = () => {
       errorMessageP = "رمز انتخابی باید حداقل یک حرف بزرگ داشته باشد";
       break;
 
-    case !hasLowercase:
+    case !hasLowerCase:
       errorMessageP = "رمز انتخابی باید حداقل یک حرف کوچک داشته باشد";
       break;
 
@@ -52,7 +63,7 @@ const SignIn = () => {
       errorMessageP = "رمز انتخابی باید حداقل یک کاراکتر ویژه داشته باشد";
       break;
 
-    case !hasMinLenght:
+    case !hasMinLength:
       errorMessageP = "رمز انتخابی باید حداقل ۸ کاراکتر داشته باشد";
       break;
 
@@ -60,68 +71,137 @@ const SignIn = () => {
       errorMessageP = "";
   }
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!canSubmit) return;
+
+    console.log({
+      phone: userName,
+      password,
+    });
+
+    // ارسال اطلاعات به سرور
+  };
+
   return (
-    <div className="w-full max-w-[35rem] mx-auto h-dvh flex justify-center items-center pt-12">
-      <div className="absolute w-[22rem] h-[22rem] bg-accent/10 blur-3xl bottom-0 left-0 pointer-events-none" />
-      <div className="absolute w-[40rem] h-[40rem] bg-primary/10 blur-3xl top-0 right-0 pointer-events-none" />
+    <div className="w-full flex justify-center items-center pt-12">
+      {/* <div className="absolute w-[22rem] h-[22rem] bg-accent/10 blur-3xl bottom-0 left-0 pointer-events-none" />
+      <div className="absolute w-[40rem] h-[40rem] bg-primary/10 blur-3xl top-0 right-0 pointer-events-none" /> */}
+
       <form
-        className="z-20 w-11/12 h-full flex flex-col justify-start items-center gap-3"
-        action=""
+        onSubmit={handleSubmit}
+        className="z-20 w-11/12 md:w-5/12 flex flex-col justify-start items-center gap-3"
       >
-        <label className="text-2xl text-primary font-bold mb-8" htmlFor="">
+        <label className="text-2xl text-primary font-bold mb-8">
           ساخت حساب کاربری
         </label>
+
+        {/* شماره تلفن */}
         <input
-          onChange={(e) => setUserName(e.target.value)}
           value={userName}
-          className={`${!userName.length ? "border border-neutral-200" : userName.length < 11 || !isOnlyNumber ? "border border-accent" : "border border-green-500"} outline-none px-2 text-sm rounded w-full h-12 bg-white text-text`}
-          placeholder="شماره تلفن را وارد کنید"
-          minLength={10}
-          maxLength={30}
+          onChange={(e) => setUserName(e.target.value)}
           type="text"
+          placeholder="شماره تلفن را وارد کنید"
+          maxLength={11}
+          className={`${
+            !userName.length
+              ? "border border-neutral-200"
+              : !isValidPhone
+              ? "border border-accent"
+              : "border border-green-500"
+          } outline-none px-2 text-sm rounded w-full h-12 bg-white text-text`}
         />
-        <p>{errorMessageU}</p>
+
+        <p className="text-accent text-sm w-full">{errorMessageU}</p>
+
+        {/* رمز */}
         <input
-          onChange={(e) => setPassword(e.target.value)}
           value={password}
-          className={`${!password.length ? "border border-neutral-200" : !hasMinLenght || !hasUpperCase || !hasLowercase || !hasNumber || !hasSpecialChar ? "border border-accent" : "border border-green-500"} outline-none text-text px-2 text-sm rounded w-full h-12 bg-white`}
+          onChange={(e) => setPassword(e.target.value)}
+          type="password"
           placeholder="رمز را وارد کنید"
           minLength={8}
           maxLength={20}
-          type="text"
+          className={`${
+            !password.length
+              ? "border border-neutral-200"
+              : !isPasswordValid
+              ? "border border-accent"
+              : "border border-green-500"
+          } outline-none px-2 text-sm rounded w-full h-12 bg-white text-text`}
         />
-        <p className="text-neutral-700">{errorMessageP}</p>
-        <div className="w-full flex justify-between items-center">
-          <div className="flex flex-col">
-            <div className="text-sm text-neutral-700 flex justify-start items-center gap-2">
-              <div className="w-1.5 h-1.5 mt-0.5 bg-green-600 rounded-full"></div>
-              <span>حداقل ۸ کاراکتر</span>
-            </div>
-            <div className="text-sm text-neutral-700 flex justify-start items-center gap-2">
-              <div className="w-1.5 h-1.5 mt-0.5 bg-green-600 rounded-full"></div>
-              <span>حداقل یک حرف بزرگ</span>
-            </div>
-            <div className="text-sm text-neutral-700 flex justify-start items-center gap-2">
-              <div className="w-1.5 h-1.5 mt-0.5 bg-green-600 rounded-full"></div>
-              <span>حداقل یک حرف کوچک</span>
-            </div>
-            <div className="text-sm text-neutral-700 flex justify-start items-center gap-2">
-              <div className="w-1.5 h-1.5 mt-0.5 bg-green-600 rounded-full"></div>
-              <span>حداقل یک عدد</span>
-            </div>
-            <div className="text-sm text-neutral-700 flex justify-start items-center gap-2">
-              <div className="w-1.5 h-1.5 mt-0.5 bg-green-600 rounded-full"></div>
-              <span>حداقل یک کاراکتر ویژه</span>
-            </div>
+
+        <p className="text-accent text-sm w-full">{errorMessageP}</p>
+
+        {/* شرایط رمز */}
+        <div className="w-full flex flex-col gap-2">
+
+          <div className="flex items-center gap-2 text-sm">
+            <div
+              className={`w-2 h-2 rounded-full ${
+                hasMinLength ? "bg-green-500" : "bg-neutral-300"
+              }`}
+            />
+            <span>حداقل ۸ کاراکتر</span>
           </div>
+
+          <div className="flex items-center gap-2 text-sm">
+            <div
+              className={`w-2 h-2 rounded-full ${
+                hasUpperCase ? "bg-green-500" : "bg-neutral-300"
+              }`}
+            />
+            <span>حداقل یک حرف بزرگ (A-Z)</span>
+          </div>
+
+          <div className="flex items-center gap-2 text-sm">
+            <div
+              className={`w-2 h-2 rounded-full ${
+                hasLowerCase ? "bg-green-500" : "bg-neutral-300"
+              }`}
+            />
+            <span>حداقل یک حرف کوچک (a-z)</span>
+          </div>
+
+          <div className="flex items-center gap-2 text-sm">
+            <div
+              className={`w-2 h-2 rounded-full ${
+                hasNumber ? "bg-green-500" : "bg-neutral-300"
+              }`}
+            />
+            <span>حداقل یک عدد</span>
+          </div>
+
+          <div className="flex items-center gap-2 text-sm">
+            <div
+              className={`w-2 h-2 rounded-full ${
+                hasSpecialChar ? "bg-green-500" : "bg-neutral-300"
+              }`}
+            />
+            <span>حداقل یک کاراکتر ویژه (!@#$...)</span>
+          </div>
+
         </div>
-        <button className="bg-primary hover:bg-primary/90 transition-all cursor-pointer w-full h-12 rounded text-white mt-5">
+
+        <button
+          disabled={!canSubmit}
+          className={`w-full h-12 rounded text-white transition-all mt-5 ${
+            canSubmit
+              ? "bg-primary hover:bg-primary/90 cursor-pointer"
+              : "bg-neutral-300 cursor-not-allowed"
+          }`}
+        >
           ثبت
         </button>
+
         <div className="relative w-full">
           <span className="absolute right-0 top-3">
-            حساب کاربری دارید ؟{" "}
-            <Link to={"/login"} className="text-primary font-bold">
+            حساب کاربری دارید؟
+            <Link
+              to="/login"
+              className="text-primary font-bold mr-2"
+            >
               ورود به حساب
             </Link>
           </span>

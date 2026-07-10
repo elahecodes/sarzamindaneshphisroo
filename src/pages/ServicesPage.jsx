@@ -144,7 +144,9 @@ const ServicesPage = () => {
       <div className="absolute w-[22rem] h-[22rem] bg-accent/10 blur-3xl bottom-0 -left-10 pointer-events-none" />
 
       <section className="py-12 md:py-20 relative z-10 overflow-hidden">
-        <h4 className={`${SectionTitle} tracking-tight dark:text-[#8B5CF6]`}>
+        <h4
+          className={`${SectionTitle} tracking-tight dark:text-[#8B5CF6] font-title`}
+        >
           اعتماد، بزرگ‌ترین سرمایه ما
         </h4>
 
@@ -220,7 +222,7 @@ const ServicesPage = () => {
 
           <hr className="flex-1 bg-neutral-200 dark:border-[#334155] border border-neutral-200" />
 
-          <h2 className="mx-4 text-2xl dark:text-[#F8FAFC] font-bold whitespace-nowrap">
+          <h2 className="mx-4 text-xl lg:text-2xl font-title text-text dark:text-[#F8FAFC] font-bold whitespace-nowrap">
             خدماتی که ما ارائه می‌دهیم
           </h2>
 
@@ -262,13 +264,13 @@ const ServicesPage = () => {
             <div className="flex items-center w-full max-w-full">
               <div className="w-2 h-2 rounded-full bg-accent shrink-0" />
 
-              <hr className="flex-1 md:flex-[2] lg:flex-[3] dark:border-[#334155] bg-neutral-200 border" />
+              <hr className="flex-1 border-border md:flex-[2]  dark:border-[#334155] bg-neutral-200 border" />
 
-              <h2 className="mx-4 text-2xl dark:text-[#F8FAFC] font-bold whitespace-nowrap">
+              <h2 className="mx-4 dark:text-[#F8FAFC] text-xl lg:text-2xl font-title whitespace-nowrap">
                 چرا مارا انتخاب کنید؟
               </h2>
 
-              <hr className="flex-1 md:flex-[2] lg:flex-[3] dark:border-[#334155] bg-neutral-200 border" />
+              <hr className="flex-1 border-border md:flex-[2] lg:flex-[3] dark:border-[#334155] bg-neutral-200 border" />
 
               <div className="w-2 h-2 rounded-full bg-accent shrink-0" />
             </div>
@@ -288,6 +290,7 @@ const ServicesPage = () => {
                   className="
                     group
                     flex items-start gap-5
+                    
                     p-6
                     rounded-3xl
                     bg-white/80
@@ -321,7 +324,7 @@ const ServicesPage = () => {
 
                   {/* متن */}
                   <div>
-                    <h3 className="text-xl font-bold text-primary dark:text-[#8B5CF6] mb-2">
+                    <h3 className="text-xl font-title text-primary dark:text-[#8B5CF6] mb-2">
                       {item.title}
                     </h3>
 
@@ -460,7 +463,7 @@ const ServicesPage = () => {
               "
         >
           {/* متن */}
-          <div className="flex flex-col items-start gap-6 max-w-xl">
+          <div className="flex flex-col items-center md:items-start gap-6 max-w-xl">
             <span
               className="
                 px-4 py-2
@@ -473,7 +476,7 @@ const ServicesPage = () => {
               ✨ طراحی و توسعه اختصاصی
             </span>
 
-            <h2 className="text-3xl md:text-4xl font-extrabold leading-[1.6] md:leading-[1.8] text-white tracking-tight">
+            <h2 className="text-2xl text-center md:text-4xl font-title leading-[1.6] md:leading-[1.8] text-white tracking-tight">
               کسب‌وکار تو شایسته یک اجرای حرفه‌ای است
             </h2>
 
@@ -510,7 +513,9 @@ const ServicesPage = () => {
                 relative
                 before:-z-20
                 before:rounded-2xl
-                group-hover:before:animate-ping
+                before:animate-ping
+                before:bg-white/50
+                md:group-hover:before:animate-ping
                 group-hover:before:bg-white/50
                 "
             >
@@ -521,6 +526,8 @@ const ServicesPage = () => {
           {/* تصویر */}
           <div
             className="
+              hidden
+              md:block
               relative
               p-8
               rounded-full

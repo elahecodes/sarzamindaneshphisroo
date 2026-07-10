@@ -118,7 +118,7 @@ const Introduction = () => {
             transition={{ duration: 1 }}
             className="mt-10 text-center md:text-right space-y-4"
           >
-            <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-white">
+            <h2 className="text-2xl font-title md:text-3xl text-text dark:text-white">
               سرزمین دانش
             </h2>
 

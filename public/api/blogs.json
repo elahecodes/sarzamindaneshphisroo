@@ -1,212 +1,442 @@
 [
   {
     "id": 1,
-    "title": "آشنایی با React و مزایای آن",
-    "slug": "introduction-to-react",
+    "title": "React چیست و چرا محبوب است؟",
     "author": "الهه",
-    "category": "فرانت‌اند"
+    "category": "React",
+    "date": "1 مرداد ۱۴۰۵",
+    "readTime": "6 دقیقه",
+    "views": 1137,
+    "image": "https://picsum.photos/seed/tech1/1200/700",
+    "description": "این مقاله به بررسی موضوع «React چیست و چرا محبوب است؟» می‌پردازد.\n\nدر این مطلب مفهوم، مزایا، کاربردها و تأثیر آن بر توسعه وب مدرن بررسی شده است.\n\nهمچنین نمونه‌هایی از استفاده این فناوری در پروژه‌های واقعی و روند آینده آن معرفی می‌شود."
   },
   {
     "id": 2,
-    "title": "۱۰ ترفند کاربردی جاوااسکریپت",
-    "slug": "javascript-tips",
+    "title": "تاریخچه جاوااسکریپت",
     "author": "الهه",
-    "category": "جاوااسکریپت"
+    "category": "JavaScript",
+    "date": "2 مرداد ۱۴۰۵",
+    "readTime": "6 دقیقه",
+    "views": 1274,
+    "image": "https://picsum.photos/seed/tech2/1200/700",
+    "description": "این مقاله به بررسی موضوع «تاریخچه جاوااسکریپت» می‌پردازد.\n\nدر این مطلب مفهوم، مزایا، کاربردها و تأثیر آن بر توسعه وب مدرن بررسی شده است.\n\nهمچنین نمونه‌هایی از استفاده این فناوری در پروژه‌های واقعی و روند آینده آن معرفی می‌شود."
   },
   {
     "id": 3,
-    "title": "اصول طراحی رابط کاربری مدرن",
-    "slug": "modern-ui-design",
+    "title": "مقایسه React و Vue",
     "author": "الهه",
-    "category": "UI/UX"
+    "category": "React",
+    "date": "3 مرداد ۱۴۰۵",
+    "readTime": "6 دقیقه",
+    "views": 1411,
+    "image": "https://picsum.photos/seed/tech3/1200/700",
+    "description": "این مقاله به بررسی موضوع «مقایسه React و Vue» می‌پردازد.\n\nدر این مطلب مفهوم، مزایا، کاربردها و تأثیر آن بر توسعه وب مدرن بررسی شده است.\n\nهمچنین نمونه‌هایی از استفاده این فناوری در پروژه‌های واقعی و روند آینده آن معرفی می‌شود."
   },
   {
     "id": 4,
-    "title": "شروع کار با Git و GitHub",
-    "slug": "getting-started-with-git",
+    "title": "آینده TypeScript",
     "author": "الهه",
-    "category": "ابزارها"
+    "category": "TypeScript",
+    "date": "4 مرداد ۱۴۰۵",
+    "readTime": "6 دقیقه",
+    "views": 1548,
+    "image": "https://picsum.photos/seed/tech4/1200/700",
+    "description": "این مقاله به بررسی موضوع «آینده TypeScript» می‌پردازد.\n\nدر این مطلب مفهوم، مزایا، کاربردها و تأثیر آن بر توسعه وب مدرن بررسی شده است.\n\nهمچنین نمونه‌هایی از استفاده این فناوری در پروژه‌های واقعی و روند آینده آن معرفی می‌شود."
   },
   {
     "id": 5,
-    "title": "آشنایی با TypeScript برای فرانت‌اند",
-    "slug": "typescript-for-frontend",
+    "title": "چرا Vite جایگزین CRA شد؟",
     "author": "الهه",
-    "category": "TypeScript"
+    "category": "React",
+    "date": "5 مرداد ۱۴۰۵",
+    "readTime": "6 دقیقه",
+    "views": 1685,
+    "image": "https://picsum.photos/seed/tech5/1200/700",
+    "description": "این مقاله به بررسی موضوع «چرا Vite جایگزین CRA شد؟» می‌پردازد.\n\nدر این مطلب مفهوم، مزایا، کاربردها و تأثیر آن بر توسعه وب مدرن بررسی شده است.\n\nهمچنین نمونه‌هایی از استفاده این فناوری در پروژه‌های واقعی و روند آینده آن معرفی می‌شود."
   },
   {
     "id": 6,
-    "title": "مدیریت State در React",
-    "slug": "react-state-management",
+    "title": "Node.js چگونه کار می‌کند؟",
     "author": "الهه",
-    "category": "React"
+    "category": "Node.js",
+    "date": "6 مرداد ۱۴۰۵",
+    "readTime": "6 دقیقه",
+    "views": 1822,
+    "image": "https://picsum.photos/seed/tech6/1200/700",
+    "description": "این مقاله به بررسی موضوع «Node.js چگونه کار می‌کند؟» می‌پردازد.\n\nدر این مطلب مفهوم، مزایا، کاربردها و تأثیر آن بر توسعه وب مدرن بررسی شده است.\n\nهمچنین نمونه‌هایی از استفاده این فناوری در پروژه‌های واقعی و روند آینده آن معرفی می‌شود."
   },
   {
     "id": 7,
-    "title": "بهترین روش‌های نوشتن CSS تمیز",
-    "slug": "clean-css-practices",
+    "title": "معرفی Bun",
     "author": "الهه",
-    "category": "CSS"
+    "category": "Node.js",
+    "date": "7 مرداد ۱۴۰۵",
+    "readTime": "6 دقیقه",
+    "views": 1959,
+    "image": "https://picsum.photos/seed/tech7/1200/700",
+    "description": "این مقاله به بررسی موضوع «معرفی Bun» می‌پردازد.\n\nدر این مطلب مفهوم، مزایا، کاربردها و تأثیر آن بر توسعه وب مدرن بررسی شده است.\n\nهمچنین نمونه‌هایی از استفاده این فناوری در پروژه‌های واقعی و روند آینده آن معرفی می‌شود."
   },
   {
     "id": 8,
-    "title": "آشنایی با Flexbox",
-    "slug": "flexbox-guide",
+    "title": "تفاوت REST و GraphQL",
     "author": "الهه",
-    "category": "CSS"
+    "category": "Node.js",
+    "date": "8 مرداد ۱۴۰۵",
+    "readTime": "6 دقیقه",
+    "views": 2096,
+    "image": "https://picsum.photos/seed/tech8/1200/700",
+    "description": "این مقاله به بررسی موضوع «تفاوت REST و GraphQL» می‌پردازد.\n\nدر این مطلب مفهوم، مزایا، کاربردها و تأثیر آن بر توسعه وب مدرن بررسی شده است.\n\nهمچنین نمونه‌هایی از استفاده این فناوری در پروژه‌های واقعی و روند آینده آن معرفی می‌شود."
   },
   {
     "id": 9,
-    "title": "راهنمای کامل CSS Grid",
-    "slug": "css-grid-complete-guide",
+    "title": "SSR چیست؟",
     "author": "الهه",
-    "category": "CSS"
+    "category": "React",
+    "date": "9 مرداد ۱۴۰۵",
+    "readTime": "6 دقیقه",
+    "views": 2233,
+    "image": "https://picsum.photos/seed/tech9/1200/700",
+    "description": "این مقاله به بررسی موضوع «SSR چیست؟» می‌پردازد.\n\nدر این مطلب مفهوم، مزایا، کاربردها و تأثیر آن بر توسعه وب مدرن بررسی شده است.\n\nهمچنین نمونه‌هایی از استفاده این فناوری در پروژه‌های واقعی و روند آینده آن معرفی می‌شود."
   },
   {
     "id": 10,
-    "title": "چرا باید Git را یاد بگیریم؟",
-    "slug": "why-learn-git",
+    "title": "CSR چیست؟",
     "author": "الهه",
-    "category": "ابزارها"
+    "category": "React",
+    "date": "10 مرداد ۱۴۰۵",
+    "readTime": "6 دقیقه",
+    "views": 2370,
+    "image": "https://picsum.photos/seed/tech10/1200/700",
+    "description": "این مقاله به بررسی موضوع «CSR چیست؟» می‌پردازد.\n\nدر این مطلب مفهوم، مزایا، کاربردها و تأثیر آن بر توسعه وب مدرن بررسی شده است.\n\nهمچنین نمونه‌هایی از استفاده این فناوری در پروژه‌های واقعی و روند آینده آن معرفی می‌شود."
   },
   {
     "id": 11,
-    "title": "بهینه‌سازی عملکرد وب‌سایت",
-    "slug": "website-performance",
+    "title": "Jamstack چیست؟",
     "author": "الهه",
-    "category": "Performance"
+    "category": "JavaScript",
+    "date": "11 مرداد ۱۴۰۵",
+    "readTime": "6 دقیقه",
+    "views": 2507,
+    "image": "https://picsum.photos/seed/tech11/1200/700",
+    "description": "این مقاله به بررسی موضوع «Jamstack چیست؟» می‌پردازد.\n\nدر این مطلب مفهوم، مزایا، کاربردها و تأثیر آن بر توسعه وب مدرن بررسی شده است.\n\nهمچنین نمونه‌هایی از استفاده این فناوری در پروژه‌های واقعی و روند آینده آن معرفی می‌شود."
   },
   {
     "id": 12,
-    "title": "مفاهیم مهم ES6",
-    "slug": "important-es6-concepts",
+    "title": "Tailwind CSS یا Bootstrap؟",
     "author": "الهه",
-    "category": "JavaScript"
+    "category": "Tailwind CSS",
+    "date": "12 مرداد ۱۴۰۵",
+    "readTime": "6 دقیقه",
+    "views": 2644,
+    "image": "https://picsum.photos/seed/tech12/1200/700",
+    "description": "این مقاله به بررسی موضوع «Tailwind CSS یا Bootstrap؟» می‌پردازد.\n\nدر این مطلب مفهوم، مزایا، کاربردها و تأثیر آن بر توسعه وب مدرن بررسی شده است.\n\nهمچنین نمونه‌هایی از استفاده این فناوری در پروژه‌های واقعی و روند آینده آن معرفی می‌شود."
   },
   {
     "id": 13,
-    "title": "کار با API در React",
-    "slug": "working-with-api-react",
+    "title": "Atomic Design چیست؟",
     "author": "الهه",
-    "category": "React"
+    "category": "UI/UX",
+    "date": "13 مرداد ۱۴۰۵",
+    "readTime": "6 دقیقه",
+    "views": 2781,
+    "image": "https://picsum.photos/seed/tech13/1200/700",
+    "description": "این مقاله به بررسی موضوع «Atomic Design چیست؟» می‌پردازد.\n\nدر این مطلب مفهوم، مزایا، کاربردها و تأثیر آن بر توسعه وب مدرن بررسی شده است.\n\nهمچنین نمونه‌هایی از استفاده این فناوری در پروژه‌های واقعی و روند آینده آن معرفی می‌شود."
   },
   {
     "id": 14,
-    "title": "ساخت فرم‌های حرفه‌ای در React",
-    "slug": "professional-react-forms",
+    "title": "Dark Mode در طراحی",
     "author": "الهه",
-    "category": "React"
+    "category": "UI/UX",
+    "date": "14 مرداد ۱۴۰۵",
+    "readTime": "6 دقیقه",
+    "views": 2918,
+    "image": "https://picsum.photos/seed/tech14/1200/700",
+    "description": "این مقاله به بررسی موضوع «Dark Mode در طراحی» می‌پردازد.\n\nدر این مطلب مفهوم، مزایا، کاربردها و تأثیر آن بر توسعه وب مدرن بررسی شده است.\n\nهمچنین نمونه‌هایی از استفاده این فناوری در پروژه‌های واقعی و روند آینده آن معرفی می‌شود."
   },
   {
     "id": 15,
-    "title": "اصول طراحی ریسپانسیو",
-    "slug": "responsive-design-principles",
+    "title": "Design System چیست؟",
     "author": "الهه",
-    "category": "UI/UX"
+    "category": "UI/UX",
+    "date": "15 مرداد ۱۴۰۵",
+    "readTime": "6 دقیقه",
+    "views": 3055,
+    "image": "https://picsum.photos/seed/tech15/1200/700",
+    "description": "این مقاله به بررسی موضوع «Design System چیست؟» می‌پردازد.\n\nدر این مطلب مفهوم، مزایا، کاربردها و تأثیر آن بر توسعه وب مدرن بررسی شده است.\n\nهمچنین نمونه‌هایی از استفاده این فناوری در پروژه‌های واقعی و روند آینده آن معرفی می‌شود."
   },
   {
     "id": 16,
-    "title": "آشنایی با Tailwind CSS",
-    "slug": "tailwind-css-introduction",
+    "title": "Git چگونه توسعه تیمی را آسان می‌کند؟",
     "author": "الهه",
-    "category": "CSS"
+    "category": "Git",
+    "date": "16 مرداد ۱۴۰۵",
+    "readTime": "6 دقیقه",
+    "views": 3192,
+    "image": "https://picsum.photos/seed/tech16/1200/700",
+    "description": "این مقاله به بررسی موضوع «Git چگونه توسعه تیمی را آسان می‌کند؟» می‌پردازد.\n\nدر این مطلب مفهوم، مزایا، کاربردها و تأثیر آن بر توسعه وب مدرن بررسی شده است.\n\nهمچنین نمونه‌هایی از استفاده این فناوری در پروژه‌های واقعی و روند آینده آن معرفی می‌شود."
   },
   {
     "id": 17,
-    "title": "کار با Local Storage",
-    "slug": "working-with-local-storage",
+    "title": "GitHub چیست؟",
     "author": "الهه",
-    "category": "JavaScript"
+    "category": "Git",
+    "date": "17 مرداد ۱۴۰۵",
+    "readTime": "6 دقیقه",
+    "views": 3329,
+    "image": "https://picsum.photos/seed/tech17/1200/700",
+    "description": "این مقاله به بررسی موضوع «GitHub چیست؟» می‌پردازد.\n\nدر این مطلب مفهوم، مزایا، کاربردها و تأثیر آن بر توسعه وب مدرن بررسی شده است.\n\nهمچنین نمونه‌هایی از استفاده این فناوری در پروژه‌های واقعی و روند آینده آن معرفی می‌شود."
   },
   {
     "id": 18,
-    "title": "معرفی هوک useEffect",
-    "slug": "react-useeffect-hook",
+    "title": "Clean Code چیست؟",
     "author": "الهه",
-    "category": "React"
+    "category": "JavaScript",
+    "date": "18 مرداد ۱۴۰۵",
+    "readTime": "6 دقیقه",
+    "views": 3466,
+    "image": "https://picsum.photos/seed/tech18/1200/700",
+    "description": "این مقاله به بررسی موضوع «Clean Code چیست؟» می‌پردازد.\n\nدر این مطلب مفهوم، مزایا، کاربردها و تأثیر آن بر توسعه وب مدرن بررسی شده است.\n\nهمچنین نمونه‌هایی از استفاده این فناوری در پروژه‌های واقعی و روند آینده آن معرفی می‌شود."
   },
   {
     "id": 19,
-    "title": "هوک useRef در React",
-    "slug": "react-useref-hook",
+    "title": "Web Performance",
     "author": "الهه",
-    "category": "React"
+    "category": "JavaScript",
+    "date": "19 مرداد ۱۴۰۵",
+    "readTime": "6 دقیقه",
+    "views": 3603,
+    "image": "https://picsum.photos/seed/tech19/1200/700",
+    "description": "این مقاله به بررسی موضوع «Web Performance» می‌پردازد.\n\nدر این مطلب مفهوم، مزایا، کاربردها و تأثیر آن بر توسعه وب مدرن بررسی شده است.\n\nهمچنین نمونه‌هایی از استفاده این فناوری در پروژه‌های واقعی و روند آینده آن معرفی می‌شود."
   },
   {
     "id": 20,
-    "title": "بهترین افزونه‌های VS Code",
-    "slug": "best-vscode-extensions",
+    "title": "Lazy Loading",
     "author": "الهه",
-    "category": "ابزارها"
+    "category": "JavaScript",
+    "date": "20 مرداد ۱۴۰۵",
+    "readTime": "6 دقیقه",
+    "views": 3740,
+    "image": "https://picsum.photos/seed/tech20/1200/700",
+    "description": "این مقاله به بررسی موضوع «Lazy Loading» می‌پردازد.\n\nدر این مطلب مفهوم، مزایا، کاربردها و تأثیر آن بر توسعه وب مدرن بررسی شده است.\n\nهمچنین نمونه‌هایی از استفاده این فناوری در پروژه‌های واقعی و روند آینده آن معرفی می‌شود."
   },
   {
     "id": 21,
-    "title": "آشنایی با Node.js برای فرانت‌اندکارها",
-    "slug": "nodejs-for-frontend",
+    "title": "Code Splitting",
     "author": "الهه",
-    "category": "Node.js"
+    "category": "React",
+    "date": "21 مرداد ۱۴۰۵",
+    "readTime": "6 دقیقه",
+    "views": 3877,
+    "image": "https://picsum.photos/seed/tech21/1200/700",
+    "description": "این مقاله به بررسی موضوع «Code Splitting» می‌پردازد.\n\nدر این مطلب مفهوم، مزایا، کاربردها و تأثیر آن بر توسعه وب مدرن بررسی شده است.\n\nهمچنین نمونه‌هایی از استفاده این فناوری در پروژه‌های واقعی و روند آینده آن معرفی می‌شود."
   },
   {
     "id": 22,
-    "title": "مقدمه‌ای بر Web3",
-    "slug": "web3-introduction",
+    "title": "Virtual DOM",
     "author": "الهه",
-    "category": "Web3"
+    "category": "React",
+    "date": "22 مرداد ۱۴۰۵",
+    "readTime": "6 دقیقه",
+    "views": 4014,
+    "image": "https://picsum.photos/seed/tech22/1200/700",
+    "description": "این مقاله به بررسی موضوع «Virtual DOM» می‌پردازد.\n\nدر این مطلب مفهوم، مزایا، کاربردها و تأثیر آن بر توسعه وب مدرن بررسی شده است.\n\nهمچنین نمونه‌هایی از استفاده این فناوری در پروژه‌های واقعی و روند آینده آن معرفی می‌شود."
   },
   {
     "id": 23,
-    "title": "نکات مهم دسترس‌پذیری وب",
-    "slug": "web-accessibility-tips",
+    "title": "DOM چیست؟",
     "author": "الهه",
-    "category": "Accessibility"
+    "category": "JavaScript",
+    "date": "23 مرداد ۱۴۰۵",
+    "readTime": "6 دقیقه",
+    "views": 4151,
+    "image": "https://picsum.photos/seed/tech23/1200/700",
+    "description": "این مقاله به بررسی موضوع «DOM چیست؟» می‌پردازد.\n\nدر این مطلب مفهوم، مزایا، کاربردها و تأثیر آن بر توسعه وب مدرن بررسی شده است.\n\nهمچنین نمونه‌هایی از استفاده این فناوری در پروژه‌های واقعی و روند آینده آن معرفی می‌شود."
   },
   {
     "id": 24,
-    "title": "بهینه‌سازی تصاویر در وب",
-    "slug": "image-optimization-web",
+    "title": "ES6 چه تغییراتی آورد؟",
     "author": "الهه",
-    "category": "Performance"
+    "category": "JavaScript",
+    "date": "24 مرداد ۱۴۰۵",
+    "readTime": "6 دقیقه",
+    "views": 4288,
+    "image": "https://picsum.photos/seed/tech24/1200/700",
+    "description": "این مقاله به بررسی موضوع «ES6 چه تغییراتی آورد؟» می‌پردازد.\n\nدر این مطلب مفهوم، مزایا، کاربردها و تأثیر آن بر توسعه وب مدرن بررسی شده است.\n\nهمچنین نمونه‌هایی از استفاده این فناوری در پروژه‌های واقعی و روند آینده آن معرفی می‌شود."
   },
   {
     "id": 25,
-    "title": "کار با React Router",
-    "slug": "react-router-guide",
+    "title": "Flexbox یا Grid؟",
     "author": "الهه",
-    "category": "React"
+    "category": "CSS",
+    "date": "25 مرداد ۱۴۰۵",
+    "readTime": "6 دقیقه",
+    "views": 4425,
+    "image": "https://picsum.photos/seed/tech25/1200/700",
+    "description": "این مقاله به بررسی موضوع «Flexbox یا Grid؟» می‌پردازد.\n\nدر این مطلب مفهوم، مزایا، کاربردها و تأثیر آن بر توسعه وب مدرن بررسی شده است.\n\nهمچنین نمونه‌هایی از استفاده این فناوری در پروژه‌های واقعی و روند آینده آن معرفی می‌شود."
   },
   {
     "id": 26,
-    "title": "آشنایی با Context API",
-    "slug": "context-api-guide",
+    "title": "CSS Nesting",
     "author": "الهه",
-    "category": "React"
+    "category": "CSS",
+    "date": "26 مرداد ۱۴۰۵",
+    "readTime": "6 دقیقه",
+    "views": 4562,
+    "image": "https://picsum.photos/seed/tech26/1200/700",
+    "description": "این مقاله به بررسی موضوع «CSS Nesting» می‌پردازد.\n\nدر این مطلب مفهوم، مزایا، کاربردها و تأثیر آن بر توسعه وب مدرن بررسی شده است.\n\nهمچنین نمونه‌هایی از استفاده این فناوری در پروژه‌های واقعی و روند آینده آن معرفی می‌شود."
   },
   {
     "id": 27,
-    "title": "معرفی Vite و مزایای آن",
-    "slug": "vite-benefits",
+    "title": "Container Queries",
     "author": "الهه",
-    "category": "ابزارها"
+    "category": "CSS",
+    "date": "27 مرداد ۱۴۰۵",
+    "readTime": "6 دقیقه",
+    "views": 4699,
+    "image": "https://picsum.photos/seed/tech27/1200/700",
+    "description": "این مقاله به بررسی موضوع «Container Queries» می‌پردازد.\n\nدر این مطلب مفهوم، مزایا، کاربردها و تأثیر آن بر توسعه وب مدرن بررسی شده است.\n\nهمچنین نمونه‌هایی از استفاده این فناوری در پروژه‌های واقعی و روند آینده آن معرفی می‌شود."
   },
   {
     "id": 28,
-    "title": "مقایسه React و Vue",
-    "slug": "react-vs-vue",
+    "title": "Progressive Web App",
     "author": "الهه",
-    "category": "فرانت‌اند"
+    "category": "JavaScript",
+    "date": "28 مرداد ۱۴۰۵",
+    "readTime": "6 دقیقه",
+    "views": 4836,
+    "image": "https://picsum.photos/seed/tech28/1200/700",
+    "description": "این مقاله به بررسی موضوع «Progressive Web App» می‌پردازد.\n\nدر این مطلب مفهوم، مزایا، کاربردها و تأثیر آن بر توسعه وب مدرن بررسی شده است.\n\nهمچنین نمونه‌هایی از استفاده این فناوری در پروژه‌های واقعی و روند آینده آن معرفی می‌شود."
   },
   {
     "id": 29,
-    "title": "الگوهای طراحی در جاوااسکریپت",
-    "slug": "javascript-design-patterns",
+    "title": "WebAssembly",
     "author": "الهه",
-    "category": "JavaScript"
+    "category": "JavaScript",
+    "date": "29 مرداد ۱۴۰۵",
+    "readTime": "6 دقیقه",
+    "views": 4973,
+    "image": "https://picsum.photos/seed/tech29/1200/700",
+    "description": "این مقاله به بررسی موضوع «WebAssembly» می‌پردازد.\n\nدر این مطلب مفهوم، مزایا، کاربردها و تأثیر آن بر توسعه وب مدرن بررسی شده است.\n\nهمچنین نمونه‌هایی از استفاده این فناوری در پروژه‌های واقعی و روند آینده آن معرفی می‌شود."
   },
   {
     "id": 30,
-    "title": "ساخت پروژه فروشگاهی با React",
-    "slug": "react-ecommerce-project",
+    "title": "هوش مصنوعی در توسعه وب",
     "author": "الهه",
-    "category": "پروژه‌ها"
+    "category": "JavaScript",
+    "date": "30 مرداد ۱۴۰۵",
+    "readTime": "6 دقیقه",
+    "views": 5110,
+    "image": "https://picsum.photos/seed/tech30/1200/700",
+    "description": "این مقاله به بررسی موضوع «هوش مصنوعی در توسعه وب» می‌پردازد.\n\nدر این مطلب مفهوم، مزایا، کاربردها و تأثیر آن بر توسعه وب مدرن بررسی شده است.\n\nهمچنین نمونه‌هایی از استفاده این فناوری در پروژه‌های واقعی و روند آینده آن معرفی می‌شود."
+  },
+  {
+    "id": 31,
+    "title": "Edge Computing",
+    "author": "الهه",
+    "category": "Node.js",
+    "date": "31 مرداد ۱۴۰۵",
+    "readTime": "6 دقیقه",
+    "views": 5247,
+    "image": "https://picsum.photos/seed/tech31/1200/700",
+    "description": "این مقاله به بررسی موضوع «Edge Computing» می‌پردازد.\n\nدر این مطلب مفهوم، مزایا، کاربردها و تأثیر آن بر توسعه وب مدرن بررسی شده است.\n\nهمچنین نمونه‌هایی از استفاده این فناوری در پروژه‌های واقعی و روند آینده آن معرفی می‌شود."
+  },
+  {
+    "id": 32,
+    "title": "Micro Frontend",
+    "author": "الهه",
+    "category": "React",
+    "date": "32 مرداد ۱۴۰۵",
+    "readTime": "6 دقیقه",
+    "views": 5384,
+    "image": "https://picsum.photos/seed/tech32/1200/700",
+    "description": "این مقاله به بررسی موضوع «Micro Frontend» می‌پردازد.\n\nدر این مطلب مفهوم، مزایا، کاربردها و تأثیر آن بر توسعه وب مدرن بررسی شده است.\n\nهمچنین نمونه‌هایی از استفاده این فناوری در پروژه‌های واقعی و روند آینده آن معرفی می‌شود."
+  },
+  {
+    "id": 33,
+    "title": "Monorepo چیست؟",
+    "author": "الهه",
+    "category": "Git",
+    "date": "33 مرداد ۱۴۰۵",
+    "readTime": "6 دقیقه",
+    "views": 5521,
+    "image": "https://picsum.photos/seed/tech33/1200/700",
+    "description": "این مقاله به بررسی موضوع «Monorepo چیست؟» می‌پردازد.\n\nدر این مطلب مفهوم، مزایا، کاربردها و تأثیر آن بر توسعه وب مدرن بررسی شده است.\n\nهمچنین نمونه‌هایی از استفاده این فناوری در پروژه‌های واقعی و روند آینده آن معرفی می‌شود."
+  },
+  {
+    "id": 34,
+    "title": "Responsive Design",
+    "author": "الهه",
+    "category": "CSS",
+    "date": "34 مرداد ۱۴۰۵",
+    "readTime": "6 دقیقه",
+    "views": 5658,
+    "image": "https://picsum.photos/seed/tech34/1200/700",
+    "description": "این مقاله به بررسی موضوع «Responsive Design» می‌پردازد.\n\nدر این مطلب مفهوم، مزایا، کاربردها و تأثیر آن بر توسعه وب مدرن بررسی شده است.\n\nهمچنین نمونه‌هایی از استفاده این فناوری در پروژه‌های واقعی و روند آینده آن معرفی می‌شود."
+  },
+  {
+    "id": 35,
+    "title": "Accessibility",
+    "author": "الهه",
+    "category": "UI/UX",
+    "date": "35 مرداد ۱۴۰۵",
+    "readTime": "6 دقیقه",
+    "views": 5795,
+    "image": "https://picsum.photos/seed/tech35/1200/700",
+    "description": "این مقاله به بررسی موضوع «Accessibility» می‌پردازد.\n\nدر این مطلب مفهوم، مزایا، کاربردها و تأثیر آن بر توسعه وب مدرن بررسی شده است.\n\nهمچنین نمونه‌هایی از استفاده این فناوری در پروژه‌های واقعی و روند آینده آن معرفی می‌شود."
+  },
+  {
+    "id": 36,
+    "title": "Figma در طراحی رابط",
+    "author": "الهه",
+    "category": "UI/UX",
+    "date": "36 مرداد ۱۴۰۵",
+    "readTime": "6 دقیقه",
+    "views": 5932,
+    "image": "https://picsum.photos/seed/tech36/1200/700",
+    "description": "این مقاله به بررسی موضوع «Figma در طراحی رابط» می‌پردازد.\n\nدر این مطلب مفهوم، مزایا، کاربردها و تأثیر آن بر توسعه وب مدرن بررسی شده است.\n\nهمچنین نمونه‌هایی از استفاده این فناوری در پروژه‌های واقعی و روند آینده آن معرفی می‌شود."
+  },
+  {
+    "id": 37,
+    "title": "CI/CD چیست؟",
+    "author": "الهه",
+    "category": "Git",
+    "date": "37 مرداد ۱۴۰۵",
+    "readTime": "6 دقیقه",
+    "views": 6069,
+    "image": "https://picsum.photos/seed/tech37/1200/700",
+    "description": "این مقاله به بررسی موضوع «CI/CD چیست؟» می‌پردازد.\n\nدر این مطلب مفهوم، مزایا، کاربردها و تأثیر آن بر توسعه وب مدرن بررسی شده است.\n\nهمچنین نمونه‌هایی از استفاده این فناوری در پروژه‌های واقعی و روند آینده آن معرفی می‌شود."
+  },
+  {
+    "id": 38,
+    "title": "Docker برای فرانت‌اند",
+    "author": "الهه",
+    "category": "Node.js",
+    "date": "38 مرداد ۱۴۰۵",
+    "readTime": "6 دقیقه",
+    "views": 6206,
+    "image": "https://picsum.photos/seed/tech38/1200/700",
+    "description": "این مقاله به بررسی موضوع «Docker برای فرانت‌اند» می‌پردازد.\n\nدر این مطلب مفهوم، مزایا، کاربردها و تأثیر آن بر توسعه وب مدرن بررسی شده است.\n\nهمچنین نمونه‌هایی از استفاده این فناوری در پروژه‌های واقعی و روند آینده آن معرفی می‌شود."
+  },
+  {
+    "id": 39,
+    "title": "SEO در React",
+    "author": "الهه",
+    "category": "React",
+    "date": "39 مرداد ۱۴۰۵",
+    "readTime": "6 دقیقه",
+    "views": 6343,
+    "image": "https://picsum.photos/seed/tech39/1200/700",
+    "description": "این مقاله به بررسی موضوع «SEO در React» می‌پردازد.\n\nدر این مطلب مفهوم، مزایا، کاربردها و تأثیر آن بر توسعه وب مدرن بررسی شده است.\n\nهمچنین نمونه‌هایی از استفاده این فناوری در پروژه‌های واقعی و روند آینده آن معرفی می‌شود."
+  },
+  {
+    "id": 40,
+    "title": "بهینه‌سازی Core Web Vitals",
+    "author": "الهه",
+    "category": "JavaScript",
+    "date": "40 مرداد ۱۴۰۵",
+    "readTime": "6 دقیقه",
+    "views": 6480,
+    "image": "https://picsum.photos/seed/tech40/1200/700",
+    "description": "این مقاله به بررسی موضوع «بهینه‌سازی Core Web Vitals» می‌پردازد.\n\nدر این مطلب مفهوم، مزایا، کاربردها و تأثیر آن بر توسعه وب مدرن بررسی شده است.\n\nهمچنین نمونه‌هایی از استفاده این فناوری در پروژه‌های واقعی و روند آینده آن معرفی می‌شود."
   }
 ]

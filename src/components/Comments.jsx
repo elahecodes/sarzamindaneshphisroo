@@ -47,7 +47,7 @@ const Comments = () => {
         <div className="mb-20 flex items-center justify-center">
           <div className="h-2 w-2 rounded-full bg-accent" />
           <hr className="flex-1 border-neutral-300 dark:border-[#334155]" />
-          <h2 className="mx-5 text-center text-2xl dark:text-[#F8FAFC] md:text-3xl font-bold text-neutral-900">
+          <h2 className="mx-5 text-center text-2xl dark:text-[#F8FAFC] md:text-3xl font-title text-text">
              <span className="text-primary"> تجربه همکاری</span> با ما
           </h2>
           <hr className="flex-1 border-neutral-300 dark:border-[#334155]" />

@@ -46,7 +46,7 @@ const Portfolio = () => {
           <div className="w-2 h-2 rounded-full bg-accent" />
           <hr className="flex-1 border-neutral-200 dark:border-[#334155]" />
 
-          <h2 className="text-2xl font-bold mx-4 dark:text-[#F8FAFC] ">
+          <h2 className="text-2xl font-title text-text mx-4 dark:text-[#F8FAFC] ">
             جدیدترین <span className="text-primary">پروژه</span> های ما
           </h2>
 

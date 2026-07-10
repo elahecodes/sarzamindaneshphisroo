@@ -62,7 +62,7 @@ const Steps = () => {
       <div className="mb-20 flex items-center justify-center">
         <div className="h-2 w-2 rounded-full bg-accent" />
         <hr className="flex-1 border-neutral-300 dark:border-[#334155]" />
-        <h2 className="mx-5 text-center text-2xl md:text-3xl font-bold text-neutral-900 dark:text-[#F8FAFC] ">
+        <h2 className="mx-5 text-center text-2xl md:text-3xl font-title text-text dark:text-[#F8FAFC] ">
           فرایند <span className="text-primary">همکاری</span> با ما
         </h2>
         <hr className="flex-1 border-neutral-300 dark:border-[#334155]" />
@@ -112,7 +112,7 @@ const Steps = () => {
                     />
                   </div>
 
-                  <h3 className="text-center text-lg font-bold text-neutral-800 dark:text-[#F8FAFC]">
+                  <h3 className="text-center text-lg font-bold text-text dark:text-[#F8FAFC]">
                     {item.title}
                   </h3>
 

@@ -50,7 +50,7 @@ const WorkingWithUs = () => {
             {/* Content */}
             <div className="relative z-10 flex h-full flex-col justify-between">
               <div>
-                <h3 className="mb-5 text-3xl font-extrabold">{card.title}</h3>
+                <h3 className="mb-5 text-3xl font-title ">{card.title}</h3>
 
                 <p
                   className={`max-w-md text-lg leading-8 ${

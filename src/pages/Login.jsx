@@ -1,39 +1,129 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-const Login = () => {
-  return (
-    <div className="w-full max-w-[35rem] mx-auto h-dvh flex justify-center items-center pt-12">
-      <div className="absolute w-[22rem] h-[22rem] bg-accent/10 blur-3xl bottom-0 left-0 pointer-events-none" />
-      <div className="absolute w-[40rem] h-[40rem] bg-primary/10 blur-3xl top-0 right-1 pointer-events-none" />
 
+const Login = () => {
+  const [userName, setUserName] = useState("");
+  const [password, setPassword] = useState("");
+
+  const hasNumber = /^09\d{9}$/.test(userName);
+
+  let errorMessageU = "";
+  let errorMessageP = "";
+
+  switch (true) {
+    case !userName.length:
+      errorMessageU = "";
+      break;
+
+    case !hasNumber:
+      errorMessageU = "لطفا شماره تلفن معتبر وارد کنید";
+      break;
+
+    default:
+      errorMessageU = "";
+  }
+
+  switch (true) {
+    case !password.length:
+      errorMessageP = "";
+      break;
+
+    case password.length < 8:
+      errorMessageP = "رمز عبور باید حداقل ۸ کاراکتر باشد";
+      break;
+
+    default:
+      errorMessageP = "";
+  }
+
+  const isFormValid = hasNumber && password.length >= 8;
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!isFormValid) return;
+
+    console.log({
+      userName,
+      password,
+    });
+
+    // ارسال اطلاعات به API
+  };
+
+  return (
+    <div className="w-full h-dvh flex justify-center items-center pt-12">
       <form
-        className="w-11/12 z-20 h-full flex flex-col justify-start items-center gap-3"
-        action=""
+        onSubmit={handleSubmit}
+        className="w-11/12 md:w-5/12 z-20 h-full flex flex-col justify-start items-center gap-3"
       >
-        <label className="text-2xl text-primary font-bold mb-8" htmlFor="">
+        <label
+          htmlFor="username"
+          className="text-2xl text-primary font-bold mb-8"
+        >
           ورود به حساب کاربری
         </label>
+
         <input
-          className="border border-neutral-200 px-2 text-sm rounded w-full h-12 bg-white"
-          placeholder="ایمیل یا شماره تلفن را وارد کنید"
+          id="username"
           type="text"
+          placeholder="شماره موبایل"
+          value={userName}
+          onChange={(e) => setUserName(e.target.value)}
+          className={`${
+            userName.length === 0
+              ? "border-neutral-200"
+              : hasNumber
+              ? "border-green-400"
+              : "border-accent"
+          } border outline-none px-2 text-sm rounded w-full h-12 text-text bg-white`}
         />
+
+        <p className="text-accent text-sm w-full">
+          {errorMessageU}
+        </p>
+
         <input
-          className="border border-neutral-200 px-2 text-sm rounded w-full h-12 bg-white"
-          placeholder="رمز را وارد کنید"
-          type="text"
+          id="password"
+          type="password"
+          placeholder="رمز عبور"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          className={`${
+            password.length === 0
+              ? "border-neutral-200"
+              : password.length >= 8
+              ? "border-green-400"
+              : "border-accent"
+          } border outline-none px-2 text-sm rounded w-full h-12 text-text bg-white`}
         />
+
+        <p className="text-accent text-sm w-full">
+          {errorMessageP}
+        </p>
+
         <div className="w-full flex justify-between items-center">
           <span className="text-text text-sm hover:text-accent cursor-pointer transition-all">
             بازیابی رمز عبور
           </span>
         </div>
-        <button className="bg-primary w-full hover:bg-primary/90 transition-all cursor-pointer h-12 rounded text-white mt-5">
+
+        <button
+          type="submit"
+          disabled={!isFormValid}
+          className={`${
+            isFormValid
+              ? "bg-primary hover:bg-primary/90 cursor-pointer"
+              : "bg-neutral-300 cursor-not-allowed"
+          } w-full h-12 rounded text-white mt-5 transition-all`}
+        >
           اعمال
         </button>
+
         <div className="relative w-full">
           <span className="absolute right-0 top-3">
-            حساب کاربری ندارید ؟{" "}
-            <Link to={"/signin"} className="text-primary font-bold">
+            حساب کاربری ندارید؟{" "}
+            <Link to="/signin" className="text-primary font-bold">
               ثبت نام
             </Link>
           </span>

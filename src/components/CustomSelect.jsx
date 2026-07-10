@@ -1,5 +1,3 @@
-
-
 const CustomSelect = ({items , setValue , setOpen}) => {
     return (
         <div>

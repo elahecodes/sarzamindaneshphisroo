@@ -83,7 +83,7 @@ const Services = () => {
             className="group relative rounded-2xl border border-violet-100 dark:border-[#334155] bg-gradient-to-br from-white to-violet-50 dark:from-[#37475c] dark:to-[#1b2535] p-6 shadow-sm hover:shadow-xl cursor-pointer"
           >
             <div className="flex items-center justify-between mb-6">
-              <h3 className="text-lg font-bold text-neutral-800 dark:text-neutral-100 group-hover:text-primary dark:group-hover:text-white transition">
+              <h3 className="text-lg font-title text-text dark:text-neutral-100 group-hover:text-primary dark:group-hover:text-white transition">
                 {box.title}
               </h3>
 
