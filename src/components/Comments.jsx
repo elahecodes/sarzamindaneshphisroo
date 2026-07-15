@@ -54,7 +54,7 @@ const Comments = () => {
           <div className="h-2 w-2 rounded-full bg-accent" />
         </div>
 
-        <p className="text-neutral-500 mt-3">
+        <p className="text-text dark:text-text-dark lg:text-xl mt-3">
           بخشی از دیدگاه کارفرمایانی که به ما اعتماد کرده‌اند
         </p>
       </div>

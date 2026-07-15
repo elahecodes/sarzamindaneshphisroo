@@ -1,0 +1,10 @@
+{
+    "navbar" : {
+        "home" : "Home",
+        "aboutus" : "About us",
+        "contact" : "Contact",
+        "portfolio" : "Portfolio",
+        "blogs" : "Blogs",
+        "projectorder" : "ProjectOrder"
+    }
+}

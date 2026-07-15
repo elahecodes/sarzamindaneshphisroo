@@ -1,7 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import CustomSelect from "../components/CustomSelect";
+import ReCAPTCHA from "react-google-recaptcha";
 import {
+  FaGift,
+  FaClipboardList,
   FaPaintBrush,
+  FaShieldAlt,
+  FaRocket,
   FaGlobe,
   FaMobileAlt,
   FaDatabase,
@@ -18,9 +23,16 @@ import {
   FaTelegramPlane,
   FaArrowDown,
   FaEnvelope,
+  FaUser,
+  FaBuilding,
+  FaHeading,
+  FaFileAlt,
+  FaCogs,
+  FaPaperclip,
 } from "react-icons/fa";
-
 const ProjectOrder = () => {
+  const [captchaValue, setCaptchaValue] = useState(null);
+
   const [Project, setProject] = useState("انتخاب کنید ...");
   const [projectOpen, setProjectsOpen] = useState(false);
 
@@ -41,6 +53,17 @@ const ProjectOrder = () => {
   const refDeadline = useRef(null);
   const refPriority = useRef(null);
   const refCommunication = useRef(null);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!captchaValue) {
+      alert("لطفاً ابتدا کپچا را تایید کنید.");
+      return;
+    }
+
+    // ارسال فرم
+  };
 
   useEffect(() => {
     const handleDropdown = (e) => {
@@ -203,25 +226,51 @@ const ProjectOrder = () => {
       icon: <FaEnvelope className="text-primary w-3" />,
     },
   ];
+  const advantages = [
+    {
+      id: 1,
+      icon: FaGift,
+      text: "بررسی اولیه درخواست کاملاً رایگان",
+    },
+    {
+      id: 2,
+      icon: FaClock,
+      text: "پاسخگویی در کمتر از ۲۴ ساعت",
+    },
+    {
+      id: 3,
+      icon: FaShieldAlt,
+      text: "حفظ محرمانگی اطلاعات و ایده‌های شما",
+    },
+    {
+      id: 4,
+      icon: FaClipboardList,
+      text: "ارائه زمان‌بندی و برآورد هزینه شفاف",
+    },
+  ];
 
   const toggleBudget = () => setbudgetOpen((prev) => !prev);
 
   const inputStyles =
-    "h-12 bg-primary/10 dark:border-[#8B5CF6] text-[#111827] dark:text-[#94A3B8] px-2 outline-none border-primary border text-sm outline-none border-primary rounded-xl";
+    "h-12 bg-primary/10 text-text dark:text-secondary-text px-2 text-sm outline-none rounded-xl";
 
-  const lableStyles = "text-neutral-800 dark:text-[#F8FAFC]";
+  const lableStyles = "text-text dark:text-text-dark";
   return (
     <div>
-      <form className="p-4" action="">
+      <form onSubmit={handleSubmit} className="p-4" action="">
         <div>
-          <h4 className="text-xl font-bold dark:text-[#8B5CF6] text-primary mb-6">
+          <h4 className="flex items-center gap-2 text-xl font-bold text-primary dark:text-primary-dark mb-6">
+            <FaUser />
             اطلاعات کارفرما
           </h4>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* نام و نام خانوادگی */}
             <div className="flex flex-col gap-3">
-              <label className={lableStyles}>نام و نام خانوادگی</label>
+              <label className={`${lableStyles} flex items-center gap-2`}>
+                <FaUser className="text-primary text-sm" />
+                <span>نام و نام خانوادگی</span>
+              </label>
 
               <input
                 className={inputStyles}
@@ -232,7 +281,10 @@ const ProjectOrder = () => {
 
             {/* ایمیل */}
             <div className="flex flex-col gap-3">
-              <label className={lableStyles}>ایمیل</label>
+              <label className={`${lableStyles} flex items-center gap-2`}>
+                <FaEnvelope className="text-primary text-sm" />
+                <span>ایمیل</span>
+              </label>
 
               <input
                 className={inputStyles}
@@ -243,7 +295,10 @@ const ProjectOrder = () => {
 
             {/* شماره تماس */}
             <div className="flex flex-col gap-3">
-              <label className={lableStyles}>شماره تماس</label>
+              <label className={`${lableStyles} flex items-center gap-2`}>
+                <FaPhone className="text-primary text-sm" />
+                <span>شماره تماس</span>
+              </label>
 
               <input
                 className={inputStyles}
@@ -254,9 +309,12 @@ const ProjectOrder = () => {
 
             {/* نام شرکت */}
             <div className="flex flex-col gap-3">
-              <label className={lableStyles}>
-                نام شرکت{" "}
-                <span className="text-neutral-400 text-sm">(اختیاری)</span>
+              <label className={`${lableStyles} flex items-center gap-2`}>
+                <FaBuilding className="text-primary text-sm" />
+                <span>
+                  نام شرکت{" "}
+                  <span className="text-neutral-400 text-sm">(اختیاری)</span>
+                </span>
               </label>
 
               <input
@@ -268,18 +326,27 @@ const ProjectOrder = () => {
           </div>
         </div>
         <div className="flex flex-col mt-10 gap-6">
-          <h4 className="text-xl font-bold text-primary">اطلاعات پروژه</h4>
+          <h4 className="flex items-center gap-2 text-xl font-bold text-primary dark:text-primary-dark">
+            <FaFileAlt />
+            اطلاعات پروژه
+          </h4>
           {/* عنوان پروژه */}
 
           <section className="grid grid-cols-2 md:grid-cols-3 gap-6">
             <div className="flex flex-col gap-3">
-              <label className={lableStyles}>عنوان پروژه</label>
+              <label className={`${lableStyles} flex items-center gap-2`}>
+                <FaHeading className="text-primary text-sm" />
+                <span>عنوان پروژه</span>
+              </label>
               <input className={inputStyles} type="text" />
             </div>
 
             {/* نوع پروژه */}
             <div className="relative">
-              <label className={lableStyles}>نوع پروژه</label>
+              <label className={`${lableStyles} flex items-center gap-2`}>
+                <FaFileAlt className="text-primary text-sm" />
+                <span>نوع پروژه</span>
+              </label>
 
               <div
                 ref={refProject}
@@ -306,7 +373,10 @@ const ProjectOrder = () => {
 
             {/* بودجه */}
             <div className="relative">
-              <label className={lableStyles}>بودجه تقریبی</label>
+              <label className={`${lableStyles} flex items-center gap-2`}>
+                <FaMoneyBillWave className="text-primary text-sm" />
+                <span>بودجه تقریبی</span>
+              </label>
 
               <div
                 ref={refBudget}
@@ -330,10 +400,13 @@ const ProjectOrder = () => {
                 />
               )}
             </div>
-      
+
             {/* زمان تحویل */}
             <div className="relative">
-              <label className={lableStyles}>زمان تحویل مورد انتظار</label>
+              <label className={`${lableStyles} flex items-center gap-2`}>
+                <FaCalendarAlt className="text-primary text-sm" />
+                <span>زمان تحویل مورد انتظار</span>
+              </label>
 
               <div
                 ref={refDeadline}
@@ -359,7 +432,10 @@ const ProjectOrder = () => {
             </div>
             {/* اولویت */}
             <div className="relative">
-              <label className={lableStyles}>اولویت پروژه</label>
+              <label className={`${lableStyles} flex items-center gap-2`}>
+                <FaBolt className="text-primary text-sm" />
+                <span>اولویت پروژه</span>
+              </label>
 
               <div
                 ref={refPriority}
@@ -386,7 +462,10 @@ const ProjectOrder = () => {
 
             {/* روش ارتباط */}
             <div className="relative">
-              <label className={lableStyles}>روش ارتباط ترجیحی</label>
+              <label className={`${lableStyles} flex items-center gap-2`}>
+                <FaPhone className="text-primary text-sm" />
+                <span>روش ارتباط ترجیحی</span>
+              </label>
 
               <div
                 ref={refCommunication}
@@ -412,13 +491,11 @@ const ProjectOrder = () => {
             </div>
           </section>
 
-
-        
-
           {/* توضیحات */}
           <div className="my-8">
-            <label className={`${lableStyles} mb-3 block`}>
-              توضیح کامل پروژه
+            <label className={`${lableStyles} mb-3 flex items-center gap-2`}>
+              <FaFileAlt className="text-primary text-sm" />
+              <span>توضیح کامل پروژه</span>
             </label>
 
             <textarea
@@ -427,9 +504,7 @@ const ProjectOrder = () => {
                   h-52
                   p-4
                   bg-primary/10
-                  dark:text-[#94A3B8]
-                  border
-                  border-primary
+                  dark:text-secondary-text
                   rounded-xl
                   outline-none
                   resize-none
@@ -442,9 +517,10 @@ const ProjectOrder = () => {
           {/* امکانات مورد نیاز */}
           <div>
             <label
-              className={`${lableStyles} mb-4 block text-primary text-xl font-bold`}
+              className={`${lableStyles} mb-4 flex items-center gap-2 text-primary text-xl font-bold`}
             >
-              امکانات مورد نیاز
+              <FaCogs className="text-lg text-primary dark:text-primary-dark" />
+              <span>امکانات مورد نیاز</span>
             </label>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -489,13 +565,13 @@ const ProjectOrder = () => {
                   <span>سایر موارد</span>
                 </label>
               </div>
-              
 
-              <div className=" bg-primary/10 border border-primary dark:border-[#8B5CF6] rounded-2xl p-4 mt-4 md:mt-0">
+              <div className=" bg-primary/10 rounded-2xl p-4 mt-4 md:mt-0">
                 <label
-                  className={`${lableStyles} mb-3 block text-xl text-primary font-bold`}
+                  className={`${lableStyles} mb-3 flex items-center gap-2 text-xl text-primary font-bold`}
                 >
-                  فایل یا نمونه طراحی
+                  <FaPaperclip className="text-lg text-primary dark:text-primary-dark" />
+                  <span>فایل یا نمونه طراحی</span>
                 </label>
                 <p className="text-neutral-600 dark:text-[#94A3B8] text-start">
                   اگه نمونه ای از پروژه درخواستی مد نظرتون هست در این قسمت آپلود
@@ -510,25 +586,114 @@ const ProjectOrder = () => {
             </div>
           </div>
           {/* دکمه ارسال */}
-          <button
-            type="submit"
-            className="
-              w-full md:w-64
-              h-14
-              rounded-xl
-              bg-primary
-              dark:bg-[#8B5CF6]
-              text-white
-              font-bold
-              hover:-translate-y-1
-              hover:scale-[1.01]
-              cursor-pointer
-              transition-all
-              hover:shadow-xl
-            "
+          <div
+            className="mt-12 rounded-3xl bg-bg dark:bg-primary/10
+           p-4 md:p-8"
           >
-            ثبت سفارش پروژه
-          </button>
+            <div className="flex flex-col-reverse lg:flex-row items-center gap-10">
+              {/* فرم */}
+              <div className="w-full lg:w-5/12">
+                <div className="overflow-hidden rounded-3xl bg-white dark:bg-[#0F172A] shadow-2xl border border-primary/20">
+                  {/* Header */}
+                  <div className="relative overflow-hidden bg-primary dark:bg-primary-dark p-6">
+                    <div className="absolute -top-10 -left-10 h-32 w-32 rounded-full bg-white/10 blur-2xl"></div>
+                    <div className="absolute -bottom-12 -right-10 h-32 w-32 rounded-full bg-white/10 blur-2xl"></div>
+
+                    <div className="relative flex items-center gap-4">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/20">
+                        <FaShieldAlt className="text-2xl text-white" />
+                      </div>
+
+                      <div>
+                        <h4 className="text-lg font-bold text-white">
+                          تایید امنیتی
+                        </h4>
+
+                        <p className="mt-1 text-sm text-white/80">
+                          لطفاً برای جلوگیری از ارسال درخواست‌های اسپم، تایید
+                          امنیتی را انجام دهید.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Body */}
+                  <div className="space-y-6 p-6">
+                    <div className="flex justify-center rounded-2xl border border-dashed border-primary/20 bg-primary/5 p-5 dark:bg-slate-800">
+                      <ReCAPTCHA
+                        sitekey="YOUR_SITE_KEY"
+                        onChange={(value) => setCaptchaValue(value)}
+                      />
+                    </div>
+
+                    <button
+                      type="submit"
+                      className="
+                          cursor-pointer
+                          group
+                          flex h-14 w-full
+                          items-center justify-center gap-3
+                          rounded-2xl
+                          bg-gradient-to-r
+                          from-primary
+                          to-accent
+                          text-white
+                          font-bold
+                          shadow-lg
+                          transition-all
+                          duration-300
+                          hover:-translate-y-1
+                          hover:shadow-2xl
+                          active:scale-95
+                        "
+                    >
+                      <FaRocket className="transition-transform duration-300 group-hover:-rotate-12 group-hover:translate-x-1" />
+                      <span>ثبت سفارش پروژه</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              {/* متن */}
+              <div className="w-full lg:w-7/12 space-y-6">
+                <h2 className="text-3xl  font-extrabold text-text dark:text-white leading-relaxed">
+                  آماده‌ایم ایده‌ی شما را به یک
+                  <span className="text-primary dark:text-primary-dark">
+                    {" "}
+                    محصول حرفه‌ای{" "}
+                  </span>
+                  تبدیل کنیم.
+                </h2>
+
+                <p className="text-sm md:text-base text-neutral-600 dark:text-slate-400 leading-8">
+                  فرم سفارش را تکمیل کنید تا تیم ما درخواست شما را بررسی کند. پس
+                  از بررسی، در کوتاه‌ترین زمان ممکن برای هماهنگی، ارائه مشاوره،
+                  برآورد هزینه و زمان اجرای پروژه با شما تماس خواهیم گرفت.
+                </p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {advantages.map((item) => {
+                    const Icon = item.icon;
+
+                    return (
+                      <div
+                        key={item.id}
+                        className="group flex cursor-pointer items-center gap-3 rounded-2xl bg-white dark:bg-slate-800 p-4 shadow-md transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
+                      >
+                        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 transition-all duration-500 group-hover:bg-primary">
+                          <Icon className="text-lg text-primary transition-all duration-500 group-hover:scale-125 group-hover:rotate-12 group-hover:text-white" />
+                        </div>
+
+                        <span className="font-medium text-neutral-700 transition-colors duration-300 dark:text-white group-hover:text-primary dark:group-hover:text-primary-dark">
+                          {item.text}
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </form>
     </div>

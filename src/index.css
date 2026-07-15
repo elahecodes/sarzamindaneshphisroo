@@ -14,7 +14,6 @@
 @theme {
   /* 🟣 Primary (Purple) */
   --color-primary: #7c3aed;
-  --color-primary-dark: #6d28d9;
   --color-primary-light: #ede9fe;
   --color-primary-soft: #f5f3ff;
 
@@ -31,6 +30,16 @@
   --color-bg: #f9fafb;
   --font-sans: "estedadMedium", sans-serif;
   --font-title: "estedadBold", sans-serif;
+
+  --color-primary-dark: #8b5cf6;
+  --color-accent-dark: #fb923c;
+  --color-border-dark: #e5e7eb;
+  --color-bg-dark: #0f172a;
+  --color-text-dark: #F8FAFC;
+  --color-secondary-text: #CBD5E1;
+  --color-card-dark: #334155;
+  --color-surface:#1E293B;
+  --color-border-dark:#334155;
 }
 
 @layer utilities {

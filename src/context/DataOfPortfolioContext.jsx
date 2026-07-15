@@ -19,8 +19,8 @@ export const DataOfPortfolioContext = ({ children }) => {
 
   useEffect(() => {
     async function loadData() {
-      const portfolio = await getData();
-      setPortfolio(portfolio);
+      const items = await getData();
+      setPortfolio(items);
     }
     loadData();
   }, []);

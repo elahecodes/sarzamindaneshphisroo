@@ -51,7 +51,7 @@ const Services = () => {
   ];
 
   return (
-    <section className="px-6 py-20 bg-white dark:bg-[#1E293B]">
+    <section className="px-6 py-20 bg-white dark:bg-bg-dark">
       {/* Header */}
       <div className="flex justify-center items-center w-full">
         <div className="w-2 h-2 rounded-full bg-accent"></div>
@@ -87,7 +87,7 @@ const Services = () => {
                 {box.title}
               </h3>
 
-              <div className="w-12 h-12 rounded-xl bg-violet-100 dark:bg-neutral-400 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-xl bg-violet-100 dark:bg-bg-dark flex items-center justify-center">
                 <img src={box.icon} alt="" className="w-6 h-6" />
               </div>
             </div>

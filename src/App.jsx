@@ -6,13 +6,14 @@ import ScrollToTop from "./components/scrollToTop";
 import { ThemeProvider } from "./context/ThemeContext";
 import DataOfBlogsContext from "./context/DataOfBlogsContext";
 import DataOfPortfolioContext from "./context/DataOfPortfolioContext";
+import i18next from "../i18next";
 import "./App.css";
 const SignIn = lazy(() => import("./pages/SignIn"));
 const Home = lazy(() => import("./pages/Home"));
 const Login = lazy(() => import("./pages/Login"));
 const Blogs = lazy(() => import("./pages/Blogs"));
 const Portfolio = lazy(() => import("./pages/Portfolio"));
-const Services = lazy(() => import("./pages/ServicesPage"));
+const AboutUs = lazy(() => import("./pages/AboutUs"));
 const Projectorder = lazy(() => import("./pages/ProjectOrder"));
 const Contact = lazy(() => import("./pages/Contact"));
 const PortfolioPage = lazy(() => import("./pages/PortfolioPage"));
@@ -31,7 +32,7 @@ function App() {
                 <Route path="/home" element={<Home />} />
                 <Route path="/blogs" element={<Blogs />} />
                 <Route path="/portfolio" element={<Portfolio />} />
-                <Route path="/services" element={<Services />} />
+                <Route path="/aboutus" element={<AboutUs />} />
                 <Route path="/projectorder" element={<Projectorder />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/portfolioPage/:id" element={<PortfolioPage />} />

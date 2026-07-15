@@ -58,7 +58,7 @@ const Pagination = ({ items, isBlog }) => {
 
   return (
     <>
-      <div className="mb-8 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+      <div className="mb-8 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between mt-3 mx-2">
         <motion.div
           variants={container}
           initial="hidden"
@@ -254,7 +254,7 @@ const Pagination = ({ items, isBlog }) => {
                 </div>
 
                 {/* Content */}
-                <div className="flex h-[250px] flex-col p-6">
+                <div className="flex h-[150px] lg:h-[200px] flex-col p-2 lg:p-6">
                   {/* Author */}
                   <div className="mb-4 flex items-center justify-between text-sm text-slate-500 dark:text-slate-400">
                     <span>{item.author}</span>
@@ -267,9 +267,9 @@ const Pagination = ({ items, isBlog }) => {
                   {/* Title */}
                   <h2
                     className="
-                    py-2
-                    line-clamp-2
-                    text-xl
+                    line-clamp-1
+                    lg:text-xl
+                    text-sm
                     font-extrabold
                     text-slate-900
                     dark:text-white
@@ -284,9 +284,7 @@ const Pagination = ({ items, isBlog }) => {
                   {/* Description */}
                   <p
                     className="
-                    py-2
-                    mt-4
-                    line-clamp-3
+                    line-clamp-1
                     text-sm
                     leading-7
                     text-slate-600
@@ -297,7 +295,7 @@ const Pagination = ({ items, isBlog }) => {
                   </p>
 
                   {/* Footer */}
-                  <div className="mt-auto pt-6 flex items-center justify-between">
+                  <div className="mt-auto flex items-center justify-between">
                     <span
                       className="
                         text-sm
@@ -413,32 +411,17 @@ const Pagination = ({ items, isBlog }) => {
                 </div>
 
                 {/* Content */}
-                <div className="p-6 flex flex-col h-[260px]">
-                  {/* Tech */}
-                  <div className="mb-4 flex flex-wrap gap-2">
-                    <span
-                      className="
-                        rounded
-                        bg-violet-100
-                        dark:bg-violet-500/20
-                        px-3 py-1
-                        text-xs font-semibold
-                        text-violet-700
-                        dark:text-violet-300
-                      "
-                    >
-                      {item.technology}
-                    </span>
-                  </div>
-
+                <div className="p-2 flex flex-col h-[170px] ">
+                
                   {/* Title */}
                   <h3
                     className="
-                      text-xl
+                      text-sm
+                      lg:text-lg
                       font-extrabold
                       text-slate-900
                       dark:text-white
-                      transition-colors
+                      transition-colors  
                       group-hover:text-violet-600
                     "
                   >
@@ -451,21 +434,24 @@ const Pagination = ({ items, isBlog }) => {
                       mt-4
                       text-sm
                       leading-7
+                      lg:h-14
                       text-slate-600
                       dark:text-slate-400
-                      line-clamp-3
+                      lg:line-clamp-2
+                      line-clamp-1
                     "
                   >
                     {item.description}
                   </p>
 
                   {/* Footer */}
-                  <div className="mt-auto pt-6 flex items-center justify-between">
+                  <div className="mt-auto flex items-center justify-between">
                     <span
                       className="
                         text-sm
                         font-semibold
-                        text-violet-600
+                        text-primary
+                        dark:text-primary-dark
                         group-hover:translate-x-1
                         transition-transform
                       "
@@ -482,6 +468,7 @@ const Pagination = ({ items, isBlog }) => {
                         flex items-center justify-center
                         text-violet-600
                         transition
+                        dark:text-primary-dark
                         group-hover:bg-violet-600
                         group-hover:text-white
                         rotate-y-180

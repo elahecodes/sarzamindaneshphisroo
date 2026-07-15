@@ -38,12 +38,11 @@ const Question = () => {
       return (
         <div className="mb-4" key={box.id}>
           <motion.button
-            initial={{ opacity: 0, y: 40, scale: 0.95 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            viewport={{ once: true }}
+            initial={{ opacity: 0, y: 80 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            // viewport={{ once: true }}
             transition={{
               duration: 0.5,
-              ease: [0.22, 1, 0.36, 1],
               delay: index * 0.2,
             }}
             whileHover={{ y: -6, scale: 1.03 }}
@@ -52,7 +51,7 @@ const Question = () => {
               ${
                 currentIndex === realIndex
                   ? "bg-primary dark:bg-[#8B5CF6] text-white shadow-lg shadow-primary/20"
-                  : "bg-white border border-primary/10 text-text hover:border-primary/30 hover:-translate-y-1 dark:bg-[#334155] transition hover:shadow-md"
+                  : "bg-white border border-primary/10 text-text hover:border-primary/30 dark:bg-[#334155] hover:shadow-md"
               }
               w-full cursor-pointer flex justify-between items-center
               p-4 min-h-16 rounded-2xl
@@ -64,12 +63,12 @@ const Question = () => {
                   ${
                     currentIndex === realIndex
                       ? "bg-white/20 text-white"
-                      : "bg-gradient-to-br from-primary-soft to-accent-light text-primary"
+                      : "bg-gradient-to-br from-primary-soft to-accent-light dark:from-primary-dark to-surface text-primary"
                   }
                   w-11 h-11 rounded-xl flex justify-center items-center shrink-0
                 `}
               >
-                <FaQuestion />
+                <FaQuestion className="dark:text-text-dark" />
               </span>
 
               <span className="font-medium px-4 dark:text-[#F8FAFC]">

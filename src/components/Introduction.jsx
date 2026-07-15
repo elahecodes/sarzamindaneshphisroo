@@ -59,7 +59,7 @@ const Introduction = () => {
   }, []);
 
   return (
-    <section className="w-full bg-neutral-50 dark:bg-[#0F172A] mt-2 md:mt-0 md:p-8">
+    <section className="w-full bg-bg dark:bg-bg-dark dark:bg-dark mt-2 md:mt-0 md:p-8">
       {/* HERO IMAGE */}
       <motion.div
         key={currentIndex}
@@ -83,7 +83,7 @@ const Introduction = () => {
 
       {/* MAIN CARD */}
       <div className="w-full md:w-11/12 mx-auto -mt-24 md:-mt-28">
-        <div className="bg-white/70 dark:bg-[#1E293B]/50 dark:border-[#334155] backdrop-blur-xl rounded-3xl shadow-2xl border border-white/40 p-6 md:p-10">
+        <div className="bg-white/70 dark:bg-[#1E293B]/50 dark:border-[#334155] backdrop-blur-xl rounded-3xl shadow-2xl dark:shadow-black/30 border border-white/40 dark:border-none p-6 md:p-10">
           {/* COUNTERS */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
             {counters.map((counter, index) => (

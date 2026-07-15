@@ -85,15 +85,12 @@ const SignIn = () => {
   };
 
   return (
-    <div className="w-full flex justify-center items-center pt-12">
-      {/* <div className="absolute w-[22rem] h-[22rem] bg-accent/10 blur-3xl bottom-0 left-0 pointer-events-none" />
-      <div className="absolute w-[40rem] h-[40rem] bg-primary/10 blur-3xl top-0 right-0 pointer-events-none" /> */}
-
+    <div className="w-full h-dvh flex justify-center items-center pt-12">
       <form
         onSubmit={handleSubmit}
-        className="z-20 w-11/12 md:w-5/12 flex flex-col justify-start items-center gap-3"
+        className="w-11/12 md:w-5/12 z-20 h-full flex flex-col justify-start items-center gap-3"
       >
-        <label className="text-2xl text-primary font-bold mb-8">
+        <label className="text-2xl text-primary dark:text-primary-dark font-bold mb-8">
           ساخت حساب کاربری
         </label>
 
@@ -106,16 +103,20 @@ const SignIn = () => {
           maxLength={11}
           className={`${
             !userName.length
-              ? "border border-neutral-200"
+              ? "border-neutral-200 dark:border-bg-dark"
               : !isValidPhone
-              ? "border border-accent"
-              : "border border-green-500"
-          } outline-none px-2 text-sm rounded w-full h-12 bg-white text-text`}
+              ? "border-accent"
+              : "border-green-500"
+          } border outline-none px-2 text-sm rounded w-full h-12
+          bg-white dark:bg-primary/10
+          text-text dark:text-secondary-text`}
         />
 
-        <p className="text-accent text-sm w-full">{errorMessageU}</p>
+        <p className="text-accent dark:text-accent-dark text-sm w-full">
+          {errorMessageU}
+        </p>
 
-        {/* رمز */}
+        {/* رمز عبور */}
         <input
           value={password}
           onChange={(e) => setPassword(e.target.value)}
@@ -125,22 +126,27 @@ const SignIn = () => {
           maxLength={20}
           className={`${
             !password.length
-              ? "border border-neutral-200"
+              ? "border-neutral-200 dark:border-bg-dark"
               : !isPasswordValid
-              ? "border border-accent"
-              : "border border-green-500"
-          } outline-none px-2 text-sm rounded w-full h-12 bg-white text-text`}
+              ? "border-accent"
+              : "border-green-500"
+          } border outline-none px-2 text-sm rounded w-full h-12
+          bg-white dark:bg-primary/10
+          text-text dark:text-secondary-text`}
         />
 
-        <p className="text-accent text-sm w-full">{errorMessageP}</p>
+        <p className="text-accent dark:text-accent-dark text-sm w-full">
+          {errorMessageP}
+        </p>
 
         {/* شرایط رمز */}
-        <div className="w-full flex flex-col gap-2">
-
+        <div className="w-full flex flex-col gap-2 dark:text-secondary-text">
           <div className="flex items-center gap-2 text-sm">
             <div
               className={`w-2 h-2 rounded-full ${
-                hasMinLength ? "bg-green-500" : "bg-neutral-300"
+                hasMinLength
+                  ? "bg-green-500"
+                  : "bg-neutral-300 dark:bg-neutral-600"
               }`}
             />
             <span>حداقل ۸ کاراکتر</span>
@@ -149,7 +155,9 @@ const SignIn = () => {
           <div className="flex items-center gap-2 text-sm">
             <div
               className={`w-2 h-2 rounded-full ${
-                hasUpperCase ? "bg-green-500" : "bg-neutral-300"
+                hasUpperCase
+                  ? "bg-green-500"
+                  : "bg-neutral-300 dark:bg-neutral-600"
               }`}
             />
             <span>حداقل یک حرف بزرگ (A-Z)</span>
@@ -158,7 +166,9 @@ const SignIn = () => {
           <div className="flex items-center gap-2 text-sm">
             <div
               className={`w-2 h-2 rounded-full ${
-                hasLowerCase ? "bg-green-500" : "bg-neutral-300"
+                hasLowerCase
+                  ? "bg-green-500"
+                  : "bg-neutral-300 dark:bg-neutral-600"
               }`}
             />
             <span>حداقل یک حرف کوچک (a-z)</span>
@@ -167,7 +177,9 @@ const SignIn = () => {
           <div className="flex items-center gap-2 text-sm">
             <div
               className={`w-2 h-2 rounded-full ${
-                hasNumber ? "bg-green-500" : "bg-neutral-300"
+                hasNumber
+                  ? "bg-green-500"
+                  : "bg-neutral-300 dark:bg-neutral-600"
               }`}
             />
             <span>حداقل یک عدد</span>
@@ -176,12 +188,13 @@ const SignIn = () => {
           <div className="flex items-center gap-2 text-sm">
             <div
               className={`w-2 h-2 rounded-full ${
-                hasSpecialChar ? "bg-green-500" : "bg-neutral-300"
+                hasSpecialChar
+                  ? "bg-green-500"
+                  : "bg-neutral-300 dark:bg-neutral-600"
               }`}
             />
             <span>حداقل یک کاراکتر ویژه (!@#$...)</span>
           </div>
-
         </div>
 
         <button
@@ -189,18 +202,18 @@ const SignIn = () => {
           className={`w-full h-12 rounded text-white transition-all mt-5 ${
             canSubmit
               ? "bg-primary hover:bg-primary/90 cursor-pointer"
-              : "bg-neutral-300 cursor-not-allowed"
+              : "bg-neutral-300 dark:bg-neutral-500 cursor-not-allowed"
           }`}
         >
           ثبت
         </button>
 
         <div className="relative w-full">
-          <span className="absolute right-0 top-3">
+          <span className="absolute right-0 top-3 dark:text-text-dark">
             حساب کاربری دارید؟
             <Link
               to="/login"
-              className="text-primary font-bold mr-2"
+              className="text-primary dark:text-primary-dark font-bold mr-2"
             >
               ورود به حساب
             </Link>
@@ -212,3 +225,4 @@ const SignIn = () => {
 };
 
 export default SignIn;
+

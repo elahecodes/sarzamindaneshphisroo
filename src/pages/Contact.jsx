@@ -44,7 +44,7 @@ const Contact = () => {
   return (
     <section className="w-11/12 max-w-7xl mx-auto py-10">
       <div className="mb-7 flex flex-col items-start gap-2">
-        <h2 className="text-2xl font-extrabold text-primary">
+        <h2 className="text-2xl font-extrabold dark:text-primary-dark text-primary">
           ارتباط با ما
         </h2>
 

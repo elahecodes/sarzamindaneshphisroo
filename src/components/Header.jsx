@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FaUser, FaBars, FaMoon } from "react-icons/fa";
 import logo from "/src/assets/logo/Levels 1.png";
 import logo2 from "/src/assets/logo/لوگو سربرگ3.png";
+import { useTranslation } from "react-i18next";
 import {
   FaHome,
   FaCogs,
@@ -17,37 +18,32 @@ import {
 
 const menuItems = [
   {
-    title: "صفحه اصلی",
+    title: "navbar.home",
     path: "/home",
     icon: <FaHome />,
   },
   {
-    title: "خدمات",
-    path: "/services",
-    icon: <FaCogs />,
-  },
-  {
-    title: "نمونه کارها",
+    title: "navbar.portfolio",
     path: "/portfolio",
     icon: <FaProjectDiagram />,
   },
   {
-    title: "درباره ما",
-    path: "/about",
+    title: "navbar.aboutus",
+    path: "/aboutus",
     icon: <FaUsers />,
   },
   {
-    title: "وبلاگ‌ها",
+    title: "navbar.blogs",
     path: "/blogs",
     icon: <FaBlog />,
   },
   {
-    title: "تماس با ما",
+    title: "navbar.contact",
     path: "/contact",
     icon: <FaPhoneAlt />,
   },
   {
-    title: "درخواست پروژه",
+    title: "navbar.projectorder",
     path: "/projectorder",
     icon: <FaEnvelope />,
   },
@@ -57,6 +53,7 @@ import { useTheme } from "../context/ThemeContext";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const {dark , toggle} = useTheme()
+  const {t , i18n} = useTranslation()
   return (
     <header className="sticky top-0 z-50 bg-primary dark:bg-[#8B5CF6] shadow-md">
       <div className="w-full max-w-[1600px] mx-auto h-20 px-3 flex items-center justify-between">
@@ -71,7 +68,7 @@ const Header = () => {
                     {item.icon}
                   </span>
                   <Link className="text-white text-sm" to={item.path}>
-                    {item.title}
+                    {t(item.title)}
                   </Link>
                 </li>
               ))}
@@ -81,8 +78,8 @@ const Header = () => {
         {/* Actions */}
         <div className="flex items-center gap-2 md:gap-3">
           {/* Language */}
-          <button className="w-10 h-10 md:w-12 md:h-12 rounded-md bg-white/30 flex items-center justify-center hover:scale-105 transition">
-            <span className="fi fi-us"></span>
+          <button onClick={() => i18n.changeLanguage(i18n.language === "fa" ? "en" : "fa")} className="w-10 h-10 md:w-12 md:h-12 rounded-md bg-white/30 flex items-center justify-center hover:scale-105 transition">
+            <span className={`fi ${i18n.language === "fa" ? "fi-us" : "fi-ir"}`}></span>
           </button>
 
           {/* Dark Mode */}

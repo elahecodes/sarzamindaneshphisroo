@@ -1,5 +1,6 @@
 import { createRoot } from 'react-dom/client';
 import {BrowserRouter} from "react-router-dom"
+import i18next from "../i18next";
 import './index.css'
 import App from './App.jsx'
 import "flag-icons/css/flag-icons.min.css"

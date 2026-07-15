@@ -36,24 +36,24 @@ const BlogPage = () => {
     .slice(0, 3);
 
   return (
-    <section className="bg-slate-50 min-h-screen py-12">
+    <section className="bg-slate-50 dark:bg-bg-dark min-h-screen py-12">
       <div className="max-w-7xl mx-auto px-5">
         {/* Breadcrumb */}
 
         <div className="flex items-center gap-2 text-sm text-gray-500 mb-8">
-          <Link to="/" className="hover:text-violet-600">
+          <Link to="/" className="hover:text-violet-600 dark:text-secondary-text">
             خانه
           </Link>
 
           <span>/</span>
 
-          <Link to="/blogs" className="hover:text-violet-600">
+          <Link to="/blogs" className="hover:text-violet-600 dark:text-secondary-text">
             وبلاگ
           </Link>
 
           <span>/</span>
 
-          <span className="text-gray-700">{item.title}</span>
+          <span className="text-gray-700 dark:text-text-dark">{item.title}</span>
         </div>
 
         {/* Hero */}
@@ -80,48 +80,47 @@ const BlogPage = () => {
 
         {/* Content */}
 
-        <div className="bg-white rounded-[32px] shadow-lg mt-10 p-8 md:p-12">
+        <div className="bg-white dark:bg-surface rounded-[32px] shadow-lg mt-10 p-8 md:p-12">
           {/* Meta */}
 
           <div className="flex flex-wrap gap-6 border-b border-gray-200 pb-8">
             <div className="flex items-center gap-2 text-gray-600">
               <FaUser className="text-violet-600" />
-              <span>{item.author}</span>
+              <span className="dark:text-secondary-text">{item.author}</span>
             </div>
 
             <div className="flex items-center gap-2 text-gray-600">
               <FaCalendarAlt className="text-violet-600" />
-              <span>{item.date}</span>
+              <span className="dark:text-secondary-text">{item.date}</span>
             </div>
 
             <div className="flex items-center gap-2 text-gray-600">
               <FaClock className="text-violet-600" />
-              <span>{item.readTime}</span>
+              <span className="dark:text-secondary-text">{item.readTime}</span>
             </div>
 
             <div className="flex items-center gap-2 text-gray-600">
               <FaEye className="text-violet-600" />
-              <span>{item.views} بازدید</span>
+              <span className="dark:text-secondary-text">
+                {item.views} بازدید
+              </span>
             </div>
           </div>
 
           {/* Author Card */}
 
-          <div className="bg-violet-50 rounded-2xl p-6 mt-10 flex items-center gap-4">
-            <div className="w-16 h-16 min-w-16 rounded-full bg-violet-600 text-white flex items-center justify-center text-2xl font-bold">
-              {item.author?.charAt(0)}
-            </div>
-
-            <div className="flex-1 min-w-0">
-              <h3 className="font-bold text-lg sm:text-xl text-gray-800 truncate">
+          <div className="bg-violet-50 dark:bg-bg-dark rounded-2xl p-6 mt-10 flex items-center flex-col gap-4">
+            <div className="flex justify-start w-full items-center gap-4">
+              <div className="lg:w-16 w-12 h-12 lg:h-16 min-w-12 rounded-full bg-violet-600 text-white flex items-center justify-center text-2xl font-bold">
+                {item.author?.charAt(0)}
+              </div>
+              <h3 className="dark:text-text-dark font-bold text-lg sm:text-xl text-gray-800 truncate">
                 {item.author}
               </h3>
-
-              <p className="text-sm sm:text-base text-gray-600 mt-2 leading-7">
-                نویسنده و تولیدکننده محتوای تخصصی در حوزه برنامه‌نویسی و توسعه
-                وب.
-              </p>
             </div>
+          <p className="text-sm dark:text-text-dark sm:text-base text-gray-600 mt-2 leading-7">
+            نویسنده و تولیدکننده محتوای تخصصی در حوزه برنامه‌نویسی و توسعه وب.
+          </p>
           </div>
 
           {/* Article */}
@@ -129,17 +128,17 @@ const BlogPage = () => {
           <article className="mt-12">
             <div className="space-y-8 text-lg leading-[2.4] text-gray-700">
               {item.description.split("\n\n").map((paragraph, index) => (
-                <p key={index}>{paragraph}</p>
+                <p className="dark:text-text-dark" key={index}>
+                  {paragraph}
+                </p>
               ))}
             </div>
           </article>
 
           {/* Tags */}
 
-          {/* Tags */}
-
           <div className="mt-14 border-t border-border pt-8">
-            <h3 className="flex items-center gap-2 text-xl font-bold mb-6">
+            <h3 className="flex items-center gap-2 text-lg lg:text-xl dark:text-text-dark font-bold mb-6">
               <FaTag className="text-violet-600" />
               تگ‌ها
             </h3>
@@ -179,7 +178,9 @@ const BlogPage = () => {
           </div>
 
           <div className="mt-14 border-t border-border pt-8">
-            <h3 className="font-bold text-2xl mb-6">اشتراک‌گذاری مقاله</h3>
+            <h3 className="font-bold dark:text-text-dark text-lg lg:text-xl mb-6">
+              اشتراک‌گذاری مقاله
+            </h3>
 
             <div className="flex items-center justify-center sm:justify-start gap-4">
               <button
@@ -207,11 +208,9 @@ const BlogPage = () => {
 
           {/* Related Blogs */}
 
-          {/* Related Blogs */}
-
           {relatedBlogs.length > 0 && (
             <div className="mt-20 border-t border-border pt-12">
-              <h2 className="flex items-center gap-3 text-3xl font-bold mb-8">
+              <h2 className="flex items-center gap-3 text-lg lg:text-xl dark:text-text-dark font-bold mb-8">
                 <MdOutlineArticle className="text-violet-600 text-4xl" />
                 مقالات مرتبط
               </h2>
@@ -221,7 +220,7 @@ const BlogPage = () => {
                   <Link
                     key={blog.id}
                     to={`/blogs/${blog.id}`}
-                    className="min-w-[300px] sm:min-w-[340px] md:min-w-0 bg-white border border-gray-200 rounded-2xl overflow-hidden hover:-translate-y-2 hover:shadow-xl transition duration-300 snap-start flex-shrink-0"
+                    className="min-w-[230px] sm:min-w-[340px] md:min-w-0 bg-primary-light dark:border-border-dark dark:bg-bg-dark rounded-2xl overflow-hidden hover:-translate-y-2 hover:shadow-xl transition duration-300 snap-start flex-shrink-0"
                   >
                     <img
                       src={blog.image}
@@ -234,7 +233,7 @@ const BlogPage = () => {
                         {blog.category}
                       </span>
 
-                      <h3 className="font-bold text-lg mt-3 line-clamp-2">
+                      <h3 className="font-bold dark:text-text-dark text-lg mt-3 line-clamp-2">
                         {blog.title}
                       </h3>
 
