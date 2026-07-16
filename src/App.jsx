@@ -7,6 +7,7 @@ import { ThemeProvider } from "./context/ThemeContext";
 import DataOfBlogsContext from "./context/DataOfBlogsContext";
 import DataOfPortfolioContext from "./context/DataOfPortfolioContext";
 import i18next from "../i18next";
+import Loading from "./assets/LoadingIcon/Spin@1x-1.0s-200px-200px.gif";
 import "./App.css";
 const SignIn = lazy(() => import("./pages/SignIn"));
 const Home = lazy(() => import("./pages/Home"));
@@ -24,7 +25,13 @@ function App() {
     <ThemeProvider>
       <DataOfPortfolioContext>
         <DataOfBlogsContext>
-          <Suspense fallback={<p>loading...</p>}>
+          <Suspense
+            fallback={
+              <div className="absolute top-24 lg:top-1/2 left-1/2 -translate-x-1/2 w-full transparent flex justify-center item-center">
+                <img className="w-24 lg:w-32" src={Loading} alt="loading" />
+              </div>
+            }
+          >
             <ScrollToTop />
             <Routes>
               <Route element={<MainLayout />}>

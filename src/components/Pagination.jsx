@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { MdOutlineArticle } from "react-icons/md";
 import { HiOutlineBriefcase } from "react-icons/hi2";
+import loadingGif from "../assets/LoadingIcon/Ellipsis@1x-2.8s-200px-200px.gif";
 
 const Pagination = ({ items, isBlog }) => {
   const [quantity, setQuantity] = useState(10);
@@ -306,7 +307,7 @@ const Pagination = ({ items, isBlog }) => {
                         group-hover:translate-x-1
                       "
                     >
-                      مطالعه مقاله →
+                      مطالعه مقاله
                     </span>
 
                     <div
@@ -412,7 +413,6 @@ const Pagination = ({ items, isBlog }) => {
 
                 {/* Content */}
                 <div className="p-2 flex flex-col h-[170px] ">
-                
                   {/* Title */}
                   <h3
                     className="
@@ -456,7 +456,7 @@ const Pagination = ({ items, isBlog }) => {
                         transition-transform
                       "
                     >
-                      مشاهده جزئیات →
+                      مشاهده جزئیات
                     </span>
 
                     <div
@@ -489,8 +489,11 @@ const Pagination = ({ items, isBlog }) => {
         </div>
       )}
       {quantity < items.length && (
-        <div ref={loaderRef} className="h-10 bg-red-500">
-          در حال بارگذاری...
+        <div
+          ref={loaderRef}
+          className="flex justify-center items-center w-full"
+        >
+          <img src={loadingGif} alt="Loading..." className="w-20 lg:w-28" />
         </div>
       )}
     </>
