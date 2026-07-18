@@ -1,18 +1,14 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-
+import { useTranslation } from "react-i18next";
 const Introduction = () => {
   const [images, setImages] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [counters, setCounters] = useState([0, 0, 0, 0]);
-  const targets = [100, 27, 30, 56];
 
-  const counterTitles = [
-    "پروژه انجام شده",
-    "مشتری فعال",
-    "دوره آموزشی",
-    "همکار حرفه‌ای",
-  ];
+  const { t } = useTranslation();
+  const counterTitles = t("introduction.items", { returnObjects: true });
+  const targets = [100, 27, 30, 56];
 
   async function getData() {
     try {
@@ -97,7 +93,7 @@ const Introduction = () => {
                 className={`rounded-2xl p-6 md:p-8 dark:bg-[#334155] flex flex-col items-center justify-center text-center shadow-md transition-all ${
                   index % 2 === 0
                     ? "bg-purple-50 border-t-4 border-purple-500 dark:border-[#8B5CF6]"
-                    : "bg-orange-50 border-b-4 border-orange-400 dark:border-[#FB923C]"
+                    : "bg-orange-50 border-b-4 border-accent dark:border-accent-dark"
                 }`}
               >
                 <b className="text-4xl md:text-6xl text-purple-600 dark:text-[#8B5CF6]">
@@ -118,24 +114,22 @@ const Introduction = () => {
             transition={{ duration: 1 }}
             className="mt-10 text-center md:text-right space-y-4"
           >
-            <h2 className="text-2xl font-title md:text-3xl text-text dark:text-white">
-              سرزمین دانش
+            <h2 className="text-2xl w-full text-start font-title md:text-3xl text-text dark:text-white">
+              {t("introduction.title")}
             </h2>
 
             <p className="text-sm md:text-lg leading-8 text-neutral-600 dark:text-neutral-200 text-justify">
-              شرکت «سرزمین دانش» با هدف توسعه دانش، مهارت و فناوری‌های نوین
-              فعالیت می‌کند. این مجموعه تلاش دارد یادگیری را ساده‌تر، کاربردی‌تر
-              و جذاب‌تر کند و پلی بین دانش نظری و مهارت عملی بسازد.
+              {t("introduction.description")}
             </p>
 
             {/* BUTTONS */}
             <div className="flex flex-col md:flex-row justify-center md:justify-start gap-4 mt-6">
               <button className="px-6 py-3 rounded-xl bg-purple-600 dark:bg-[#8B5CF6] text-white shadow-lg hover:shadow-purple-300 hover:-translate-y-1 transition-all">
-                مطالعه بیشتر
+                {t("introduction.readmoreBtn")}
               </button>
 
-              <button className="px-6 py-3 rounded-xl bg-orange-400 dark:bg-[#FB923C] text-white shadow-lg hover:shadow-orange-300 hover:-translate-y-1 transition-all">
-                همکاری با ما
+              <button className="px-6 py-3 rounded-xl bg-accent dark:bg-accent-dark text-white shadow-lg hover:shadow-orange-300 hover:-translate-y-1 transition-all">
+                {t("introduction.workBtn")}
               </button>
             </div>
           </motion.div>

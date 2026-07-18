@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Translation, useTranslation } from "react-i18next";
 import {
   FaFlag,
   FaSearch,
@@ -8,51 +9,38 @@ import {
 } from "react-icons/fa";
 
 const Steps = () => {
+  const { t, i18n } = useTranslation();
+  const Steps = t("steps.items", { returnObjects: true });
   const steps = [
     {
       id: 1,
       icon: FaFlag,
       iconColor: "text-purple-600",
       color: "bg-gradient-to-br from-purple-600 to-purple-500 text-white",
-      title: "شروع همکاری",
-      description:
-        "درخواست پروژه ثبت شده و اهداف، امکانات و انتظارات به‌طور کامل بررسی می‌شوند.",
     },
     {
       id: 2,
       icon: FaSearch,
       iconColor: "text-purple-600",
       color: "bg-gradient-to-br from-purple-500 to-fuchsia-500 text-white",
-      title: "بررسی و تحلیل",
-      description:
-        "ساختار پروژه، نیازهای فنی و تجربه کاربری برای دستیابی به بهترین نتیجه تحلیل می‌شوند.",
     },
     {
       id: 3,
       icon: FaCalendarAlt,
       iconColor: "text-purple-600",
       color: "bg-gradient-to-br from-fuchsia-500 to-orange-400 text-white",
-      title: "توافق و برنامه‌ریزی",
-      description:
-        "زمان‌بندی، هزینه و مراحل اجرا مشخص شده و پس از تایید، پروژه وارد فاز عملیاتی می‌شود.",
     },
     {
       id: 4,
       icon: FaCode,
       iconColor: "text-purple-600",
       color: "bg-gradient-to-br from-purple-500 to-fuchsia-500 text-white",
-      title: "طراحی و پیاده‌سازی",
-      description:
-        "فرآیند طراحی رابط کاربری و توسعه بخش‌های مختلف پروژه با دقت و استانداردهای روز انجام می‌شود.",
     },
     {
       id: 5,
       icon: FaCheckCircle,
       iconColor: "text-green-500",
       color: "bg-gradient-to-br from-purple-600 to-purple-500 text-white",
-      title: "تحویل نهایی",
-      description:
-        "پروژه پس از تست و بررسی کامل تحویل داده شده و پشتیبانی لازم ارائه می‌شود.",
     },
   ];
 
@@ -62,9 +50,16 @@ const Steps = () => {
       <div className="mb-20 flex items-center justify-center">
         <div className="h-2 w-2 rounded-full bg-accent" />
         <hr className="flex-1 border-neutral-300 dark:border-[#334155]" />
-        <h2 className="mx-5 text-center text-2xl md:text-3xl font-title text-text dark:text-[#F8FAFC] ">
-          فرایند <span className="text-primary">همکاری</span> با ما
-        </h2>
+        {i18n.language === "fa" ? (
+          <h2 className="mx-2 md:mx-5 text-center text-2xl lg:text-3xl md:text-3xl font-title text-text dark:text-[#F8FAFC] ">
+            فرایند <span className="text-primary">همکاری</span> با ما
+          </h2>
+        ) : (
+          <h2 className="mx-2 md:mx-5 text-center text-2xl lg:text-3xl md:text-3xl font-title text-text dark:text-[#F8FAFC] ">
+            Our <span className="text-primary">Work</span> Process
+          </h2>
+        )}
+
         <hr className="flex-1 border-neutral-300 dark:border-[#334155]" />
         <div className="h-2 w-2 rounded-full bg-accent" />
       </div>
@@ -97,7 +92,7 @@ const Steps = () => {
                 <motion.div
                   initial={{ opacity: 0, y: 40, scale: 0.95 }}
                   whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                   viewport={{ once: true }}
+                  viewport={{ once: true }}
                   transition={{
                     duration: 0.7,
                     ease: [0.22, 1, 0.36, 1],
@@ -113,11 +108,11 @@ const Steps = () => {
                   </div>
 
                   <h3 className="text-center text-lg font-bold text-text dark:text-[#F8FAFC]">
-                    {item.title}
+                    {Steps[index].title}
                   </h3>
 
                   <p className="text-center text-sm leading-7 text-neutral-600 dark:text-[#94A3B8]">
-                    {item.description}
+                    {Steps[index].description}
                   </p>
                 </motion.div>
               </li>
@@ -160,11 +155,11 @@ const Steps = () => {
                   </div>
 
                   <h3 className="mb-3 text-lg font-bold dark:text-[#F8FAFC] text-neutral-800">
-                    {item.title}
+                    {Steps[index].title}
                   </h3>
 
                   <p className="text-sm leading-7 text-neutral-600 dark:text-[#94A3B8]">
-                    {item.description}
+                    {Steps[index].description}
                   </p>
                 </motion.div>
               </li>

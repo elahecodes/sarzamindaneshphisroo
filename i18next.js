@@ -1,6 +1,8 @@
 import i18next from "i18next";
 import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
+import fa from "./src/locales/fa.json";
+import en from "./src/locales/en.json";
 
 i18next
   .use(LanguageDetector)
@@ -8,29 +10,13 @@ i18next
   .init({
     resources: {
       fa: {
-        translation: {
-          navbar: {
-            home: "صفحه اصلی",
-            aboutus: "درباره ما",
-            contact: "تماس با ما",
-            portfolio: "نمونه کارها",
-            blogs: "وبلاگ‌ها",
-            projectorder: "درخواست پروژه",
-          },
-        },
+        translation: 
+          fa,
       },
 
       en: {
-        translation: {
-          navbar: {
-            home: "Home",
-            portfolio: "Portfolio",
-            aboutus: "About Us",
-            blogs: "Blogs",
-            contact: "Contact",
-            projectorder: "Project Request",
-          },
-        },
+        translation: 
+          en,
       },
     },
 

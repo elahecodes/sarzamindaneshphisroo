@@ -1,53 +1,20 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import softIcon from "../assets/icons/soft.png";
 import smartHomeIcon from "../assets/icons/smartHome.png";
 import hardwareIcon from "../assets/icons/mouse.png";
 import robotIcon from "../assets/icons/robot.png";
 
 const Services = () => {
+  const { t, i18n } = useTranslation();
+  const services = t("services.items", { returnObjects: true });
   const data = [
-    {
-      id: 1,
-      icon: robotIcon,
-      title: "ربات های صنعتی",
-      description:
-        "ربات‌های صنعتی دستگاه‌های خودکار برای انجام وظایف کارخانه‌ای هستند.",
-    },
-    {
-      id: 2,
-      icon: smartHomeIcon,
-      title: "خانه های هوشمند",
-      description:
-        "خانه‌های هوشمند با دستگاه‌های متصل، امکانات کنترل و اتوماسیون را فراهم می‌کنند.",
-    },
-    {
-      id: 3,
-      icon: hardwareIcon,
-      title: "سیستم های سخت افزاری",
-      description:
-        "سیستم‌های سخت‌افزاری شامل اجزای فیزیکی و قابل لمس یک دستگاه هستند.",
-    },
-    {
-      id: 4,
-      icon: softIcon,
-      title: "سامانه های نرم افزاری",
-      description:
-        "سامانه‌های نرم‌افزاری برنامه‌هایی برای اجرای وظایف و مدیریت داده‌ها هستند.",
-    },
-    {
-      id: 5,
-      icon: softIcon,
-      title: "طراحی و تولید دیتابیس",
-      description:
-        "طراحی ساختار داده‌ها برای ذخیره‌سازی و مدیریت اطلاعات بهینه.",
-    },
-    {
-      id: 6,
-      icon: softIcon,
-      title: "مشاوره",
-      description:
-        "ارائه مشاوره تخصصی برای انتخاب و اجرای راهکارهای نرم‌افزاری و سخت‌افزاری.",
-    },
+    { id: 1, icon: robotIcon },
+    { id: 2, icon: smartHomeIcon },
+    { id: 3, icon: hardwareIcon },
+    { id: 4, icon: softIcon },
+    { id: 5, icon: softIcon },
+    { id: 6, icon: softIcon },
   ];
 
   return (
@@ -56,8 +23,16 @@ const Services = () => {
       <div className="flex justify-center items-center w-full">
         <div className="w-2 h-2 rounded-full bg-accent"></div>
         <hr className="border flex-1 border-neutral-200 dark:border-[#334155]" />
-        <h2 className="text-2xl text-center font-bold mx-4 dark:text-white">
-          <span className="text-primary ">خدماتی</span> که ارائه میدهیم
+        <h2 className="text-2xl lg:text-3xl text-center font-bold mx-4 dark:text-white">
+          {i18n.language === "fa" ? (
+            <div>
+              <span className="text-primary">خدماتی</span> که ارائه میدهیم
+            </div>
+          ) : (
+            <div>
+              <span>our</span> <span className="text-primary">Services</span>
+            </div>
+          )}
         </h2>
         <hr className="border flex-1 border-neutral-200 dark:border-[#334155]" />
         <div className="w-2 h-2 rounded-full bg-accent"></div>
@@ -74,7 +49,7 @@ const Services = () => {
               y: -8,
               transition: { duration: 0.2 },
             }}
-            viewport={{once: true}}
+            viewport={{ once: true }}
             transition={{
               duration: 0.6,
               delay: index * 0.15,
@@ -84,15 +59,15 @@ const Services = () => {
           >
             <div className="flex items-center justify-between mb-6">
               <h3 className="text-lg font-title text-text dark:text-neutral-100 group-hover:text-primary dark:group-hover:text-white transition">
-                {box.title}
+                {services[index].title}
               </h3>
 
               <div className="w-12 h-12 rounded-xl bg-violet-100 dark:bg-bg-dark flex items-center justify-center">
                 <img src={box.icon} alt="" className="w-6 h-6" />
               </div>
             </div>
-            <p className="text-sm leading-7 dark:text-neutral-100 text-neutral-600">
-              {box.description}
+            <p className="text-sm leading-7 dark:text-secondary-text text-neutral-600">
+              {services[index].text}
             </p>
             <div className="absolute bottom-0 left-0 h-1 w-0 bg-primary group-hover:w-full transition-all duration-300 rounded-b-2xl"></div>
           </motion.div>

@@ -1,10 +1,452 @@
 {
-    "navbar" : {
-        "home" : "Home",
-        "aboutus" : "About us",
-        "contact" : "Contact",
-        "portfolio" : "Portfolio",
-        "blogs" : "Blogs",
-        "projectorder" : "ProjectOrder"
+  "navbar": {
+    "home": "Home",
+    "aboutus": "About us",
+    "contact": "Contact",
+    "portfolio": "Portfolio",
+    "blogs": "Blogs",
+    "projectorder": "ProjectOrder"
+  },
+  "introduction": {
+    "title": "Knowledge Land",
+    "description": "Knowledge Land aims to develop knowledge, skills, and modern technologies. We strive to make learning simpler, more practical, and engaging while bridging the gap between theory and practice.",
+    "readmoreBtn": "Read More",
+    "workBtn": "Work With Us",
+    "items": [
+      "Completed Projects",
+      "Active Clients",
+      "Training Courses",
+      "Professional Team Members"
+    ]
+  },
+  "services": {
+    "title": "Our Services",
+
+    "items": [
+      {
+        "id": 1,
+        "title": "Modern Web Application Development",
+        "text": "Design and development of modern, fast, and scalable web applications with a focus on user experience, professional user interfaces, and the latest technologies."
+      },
+      {
+        "id": 2,
+        "title": "Admin & User Dashboards",
+        "text": "Design and implementation of management panels, analytical dashboards, and custom user portals with optimized interfaces and advanced features."
+      },
+      {
+        "id": 3,
+        "title": "Website Design & Development",
+        "text": "Development of corporate, e-commerce, educational, personal, and service websites with responsive design and SEO best practices."
+      },
+      {
+        "id": 4,
+        "title": "Industrial Robotics & Automation",
+        "text": "Design, development, and implementation of industrial robotic systems, automation lines, and smart solutions for manufacturing and process control."
+      },
+      {
+        "id": 5,
+        "title": "Hardware Design & Manufacturing",
+        "text": "Design, prototyping, and production of electronic boards, smart devices, microcontroller-based systems, and custom hardware solutions."
+      },
+      {
+        "id": 6,
+        "title": "Smart Home Solutions",
+        "text": "Providing smart building solutions, including lighting, security, HVAC, electronic device control, and centralized management through mobile and web applications."
+      },
+      {
+        "id": 7,
+        "title": "Technology & Digital Transformation Consulting",
+        "text": "Professional consulting services for technology selection, requirements analysis, system architecture, and digital business growth strategies."
+      },
+      {
+        "id": 8,
+        "title": "Database Design & Development",
+        "text": "Design, optimization, and implementation of relational and NoSQL databases with a focus on security, scalability, and high performance."
+      }
+    ]
+  },
+  "portfolioHome": {
+    "text": "The projects featured in this section represent real-world solutions designed and developed by our team, showcasing our expertise, creativity, and hands-on experience.",
+    "readMore": "View More Projects",
+    "showDetails": "Show Details",
+
+    "cards": [
+      {
+        "title": "Sales Management Dashboard",
+        "tech": "React.js Tailwind CSS Recharts React Query Context API",
+        "text": "An advanced management dashboard for analyzing sales, monitoring real-time statistics, tracking revenue charts, managing orders, customers, and products."
+      },
+      {
+        "title": "Online Cosmetics Store",
+        "tech": "React.js Tailwind CSS React Router Redux Toolkit Axios",
+        "text": "A complete e-commerce platform featuring product browsing, categories, search functionality, and a shopping cart."
+      },
+      {
+        "title": "Restaurant Management Panel",
+        "tech": "React.js Tailwind CSS Context API Axios React Hook Form",
+        "text": "A management system for handling orders, menus, and table reservations for restaurants."
+      },
+      {
+        "title": "Corporate Website",
+        "tech": "HTML CSS JavaScript Tailwind CSS",
+        "text": "A modern corporate website showcasing company services, team members, and portfolio projects."
+      },
+      {
+        "title": "Weather Application",
+        "tech": "React.js Tailwind CSS OpenWeather API Axios Day.js",
+        "text": "A weather application that displays real-time weather information using the OpenWeather API."
+      },
+      {
+        "title": "Task & Project Manager",
+        "tech": "React.js Tailwind CSS LocalStorage Zustand",
+        "text": "A task management application for creating, editing, organizing, and tracking projects and daily tasks."
+      },
+      {
+        "title": "Programming Blog",
+        "tech": "Next.js Tailwind CSS Markdown Prisma",
+        "text": "A modern educational blog for publishing programming tutorials and technical articles."
+      },
+      {
+        "title": "Online Booking System",
+        "tech": "React.js Node.js Express MongoDB JWT",
+        "text": "An online appointment and service booking system with secure user authentication."
+      }
+    ]
+  },
+  "steps": {
+    "items": [
+      {
+        "title": "Project Request",
+        "description": "Your project request is submitted, and the goals, requirements, and expectations are carefully reviewed."
+      },
+      {
+        "title": "Research & Analysis",
+        "description": "The project structure, technical requirements, and user experience are analyzed to ensure the best possible outcome."
+      },
+      {
+        "title": "Planning & Agreement",
+        "description": "The timeline, budget, and implementation phases are defined. Once approved, the project moves into development."
+      },
+      {
+        "title": "Design & Development",
+        "description": "The user interface is designed, and the project is developed according to modern standards and best practices."
+      },
+      {
+        "title": "Project Delivery",
+        "description": "After thorough testing and quality assurance, the project is delivered along with the necessary support."
+      }
+    ]
+  },
+
+  "workwithus": {
+    "items": [
+      {
+        "title": "Request a Project",
+        "description": "If you're looking for a professional website for your business or startup, we'd be delighted to help you through every stage of design and development."
+      },
+      {
+        "title": "Join Our Team",
+        "description": "We're always looking for creative and motivated people to collaborate on design and development projects. If you enjoy teamwork and want to grow by working on real-world projects, we'd love to hear from you."
+      }
+    ]
+  },
+
+  "comments": {
+    "items": [
+      {
+        "id": 1,
+        "avatar": "/images/testimonials/ali-rezaei.jpg",
+        "fullName": "Ali Rezaei",
+        "position": "Sales Manager",
+        "review": "Working with this team was a truly professional experience. Every stage of the project was completed on schedule, and the final result exceeded our expectations."
+      },
+      {
+        "id": 2,
+        "avatar": "/images/testimonials/sara-mohammadi.jpg",
+        "fullName": "Sara Mohammadi",
+        "position": "Marketing Manager",
+        "review": "The user interface was beautifully designed and highly user-friendly. The team's consistent communication and quick responses ensured a smooth project from start to finish."
+      },
+      {
+        "id": 3,
+        "avatar": "/images/testimonials/amir-hosseini.jpg",
+        "fullName": "Amir Hosseini",
+        "position": "Startup CEO",
+        "review": "From requirement analysis to final implementation, everything was handled professionally. We will definitely work with this team again on future projects."
+      },
+      {
+        "id": 4,
+        "avatar": "/images/testimonials/negar-ahmadi.jpg",
+        "fullName": "Negar Ahmadi",
+        "position": "Product Manager",
+        "review": "Their attention to detail and deep understanding of our business needs resulted in exactly the outcome we were looking for."
+      },
+      {
+        "id": 5,
+        "avatar": "/images/testimonials/mohammad-karimi.jpg",
+        "fullName": "Mohammad Karimi",
+        "position": "E-commerce Store Owner",
+        "review": "Fast delivery, high-quality code, and professional design were the team's greatest strengths. We are completely satisfied with the final product."
+      },
+      {
+        "id": 6,
+        "avatar": "/images/testimonials/zahra-sharifi.jpg",
+        "fullName": "Zahra Sharifi",
+        "position": "HR Manager",
+        "review": "It was a pleasure working with this team. They patiently reviewed and implemented every one of our requests with great care."
+      },
+      {
+        "id": 7,
+        "avatar": "/images/testimonials/hossein-naderi.jpg",
+        "fullName": "Hossein Naderi",
+        "position": "IT Manager",
+        "review": "The project was delivered on time, and all the technical standards we required were fully met."
+      },
+      {
+        "id": 8,
+        "avatar": "/images/testimonials/maryam-akbari.jpg",
+        "fullName": "Maryam Akbari",
+        "position": "Brand Manager",
+        "review": "Their creativity in both design and development gave our website a modern and professional look. It was an outstanding collaboration."
+      }
+    ]
+  },
+  "question": {
+    "title": "Frequently Asked Questions",
+    "text": "Find answers to the most common questions from our clients and partners. If you can't find what you're looking for, our support team is always here to help.",
+    "items": [
+      {
+        "id": 1,
+        "question": "What services do you provide?",
+        "answer": "We specialize in website development, web applications, custom software solutions, UI/UX design, and IT consulting services."
+      },
+      {
+        "id": 2,
+        "question": "How long does a project take?",
+        "answer": "The project timeline depends on its complexity and requirements. After the initial consultation, we provide a detailed schedule."
+      },
+      {
+        "id": 3,
+        "question": "Do you provide support after project delivery?",
+        "answer": "Yes. All projects include a technical support period, and long-term maintenance plans are also available."
+      },
+      {
+        "id": 4,
+        "question": "How is the project cost calculated?",
+        "answer": "Pricing is based on the required features, development time, and overall project complexity. We always provide transparent quotations."
+      },
+      {
+        "id": 5,
+        "question": "Do you develop custom software?",
+        "answer": "Yes. We build fully customized software solutions tailored to your business needs and goals."
+      },
+      {
+        "id": 6,
+        "question": "Which technologies do you use?",
+        "answer": "Our team works with modern technologies such as React, Node.js, TypeScript, Laravel, Python, and modern database systems."
+      },
+      {
+        "id": 7,
+        "question": "Do you work remotely?",
+        "answer": "Yes. Our entire workflow—including planning, design, development, and support—can be completed remotely."
+      },
+      {
+        "id": 8,
+        "question": "How can I request a project?",
+        "answer": "You can submit your project request through our contact form, email, or the contact numbers available on our website."
+      },
+      {
+        "id": 9,
+        "question": "Do you offer UI/UX design services?",
+        "answer": "Yes. Our UI/UX services include user research, wireframing, prototyping, and high-fidelity interface design."
+      },
+      {
+        "id": 10,
+        "question": "Can you upgrade existing software?",
+        "answer": "Yes. We provide software modernization, redesign, optimization, and feature enhancement services for existing applications."
+      }
+    ]
+  },
+  "footer": {
+    "company": {
+      "title": "Sarzamin Danesh Pishro",
+      "description": "Providing innovative software solutions including website design, web application development, enterprise software, and digital transformation consulting for modern businesses."
+    },
+
+    "mainServices": {
+      "title": "Main Services",
+      "items": [
+        "Corporate Website Design",
+        "E-commerce Website Development",
+        "Custom Admin Panel",
+        "Enterprise Software"
+      ]
+    },
+
+    "otherServices": {
+      "title": "Additional Services",
+      "items": [
+        "SEO Optimization",
+        "Technical Support",
+        "Digital Consulting",
+        "Training & Deployment"
+      ]
+    },
+
+    "contact": {
+      "title": "Contact Us",
+      "phone": "+98 21 1234 5678",
+      "email": "info@sarzamindanesh.ir",
+      "address": "No. 125, Valiasr Street, Tehran, Iran"
+    },
+
+    "licenses": {
+      "title": "Certificates",
+      "items": [
+        {
+          "id": 1,
+          "name": "Iran Computer Trade Organization"
+        },
+        {
+          "id": 2,
+          "name": "High Council of Informatics"
+        },
+        {
+          "id": 3,
+          "name": "Professional Association"
+        }
+      ]
+    },
+
+    "social": {
+      "whatsapp": "WhatsApp",
+      "instagram": "Instagram",
+      "telegram": "Telegram",
+      "linkedin": "LinkedIn"
+    },
+
+    "copyright": "© 2026 All rights reserved by Sarzamin Danesh Pishro."
+  },
+  "aboutUs": {
+    "trust": {
+      "title": "Trust Is Our Greatest Asset",
+      "description": "Over the years, we have successfully delivered numerous software design and development projects, earning the trust of our clients through commitment, quality, transparency, and continuous collaboration. We are proud to have contributed to the growth of businesses across different industries and remain dedicated to delivering innovative, reliable, and long-lasting solutions.",
+      "achievements": [
+        {
+          "text": "30+ Successful Projects"
+        },
+        {
+          "text": "Commitment to Security & Quality Standards"
+        },
+        {
+          "text": "Powered by Modern Technologies"
+        },
+        {
+          "text": "Dedicated to Quality & Client Satisfaction"
+        },
+        {
+          "text": "Supporting You from Idea to Delivery"
+        }
+      ]
+    },
+
+    "story": {
+      "badge": "About Us",
+      "title": "Our Story",
+
+      "paragraph1": "Our journey began in 2024 with a vision to provide innovative and comprehensive technology solutions. From the very beginning, our goal has been more than delivering products or services—we believe technology creates real value when it simplifies processes, improves efficiency, and empowers businesses to grow.",
+
+      "goal": "Our mission is to deliver smart, scalable, and sustainable solutions in software, hardware, automation, and information technology, enabling organizations and businesses to accelerate their digital transformation with confidence.",
+
+      "paragraph2": "Every project starts with understanding our clients' real needs. After a thorough analysis, we handle design, development, implementation, testing, and support according to modern industry standards. Quality, innovation, commitment, and continuous support are the values that define our work and build long-term partnerships with our clients."
+    },
+
+    "services": {
+      "title": "Our Services",
+      "items": [
+        {
+          "title": "Software Development",
+          "text": "Designing and developing scalable web, desktop, and mobile applications using modern technologies and architectures."
+        },
+        {
+          "title": "IT Consulting",
+          "text": "Providing expert consulting to help businesses choose the most effective software, hardware, and infrastructure solutions."
+        },
+        {
+          "title": "Website Design & Development",
+          "text": "Building modern, responsive, and SEO-friendly websites with a strong focus on user experience and performance."
+        },
+        {
+          "title": "AI & Automation",
+          "text": "Implementing artificial intelligence solutions, process automation, and smart systems to improve productivity."
+        },
+        {
+          "title": "Hardware & Infrastructure",
+          "text": "Supplying, deploying, and supporting hardware, networking equipment, and IT infrastructure."
+        },
+        {
+          "title": "Smart Building Solutions",
+          "text": "Implementing intelligent systems for lighting, security, energy management, and building automation."
+        },
+        {
+          "title": "Business Analysis & Consulting",
+          "text": "Analyzing business requirements and delivering innovative strategies to optimize processes and drive growth."
+        },
+        {
+          "title": "Database & Infrastructure",
+          "text": "Designing, implementing, and optimizing secure, reliable, and scalable database and infrastructure solutions."
+        }
+      ]
+    },
+
+    "whyUs": {
+      "title": "Why Choose Us?",
+      "description": "We're more than a development team—we're your trusted partner in business growth and success.",
+      "textBox": "Successful Projects",
+      "titlePhoto": "Your Growth Partner",
+      "descriptionPhoto": "From the initial idea to the final delivery, we're with you every step of the way.",
+      "items": [
+        {
+          "title": "Expert Team",
+          "description": "A skilled team of experienced developers and designers with a proven track record across diverse projects."
+        },
+        {
+          "title": "On-Time Delivery",
+          "description": "We are committed to meeting deadlines while delivering high-quality results."
+        },
+        {
+          "title": "Ongoing Support",
+          "description": "Our relationship doesn't end with delivery—we continue to provide reliable support whenever you need it."
+        },
+        {
+          "title": "Security & Quality",
+          "description": "We follow industry best practices to ensure security, reliability, and quality throughout every stage of development."
+        },
+        {
+          "title": "Modern Technologies",
+          "description": "We leverage the latest tools and technologies to build fast, secure, and scalable digital products."
+        },
+        {
+          "title": "Creative Solutions",
+          "description": "We develop innovative ideas and tailored solutions that align with your business goals."
+        }
+      ],
+
+      "image": {
+        "title": "Your Growth Partner",
+        "description": "From the first idea to the final launch, we're with you every step of the way."
+      },
+
+      "cards": {
+        "projects": "Successful Projects"
+      }
+    },
+
+    "cta": {
+      "badge": "✨ Custom Design & Development",
+      "title": "Your Business Deserves a Professional Digital Solution",
+      "description": "Share your idea with us, and we'll take care of the rest with creativity, expertise, and confidence.",
+      "button": "Request a Project"
     }
+  }
 }

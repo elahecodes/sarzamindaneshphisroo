@@ -12,65 +12,84 @@ import {
   FaShieldAlt,
 } from "react-icons/fa";
 
+import { FaWhatsapp } from "react-icons/fa6";
+import { useTranslation } from "react-i18next";
 import anjomanSenfi from "../assets/images/anjomanSenfi.jpeg";
 import anformatic from "../assets/images/25.webp";
 import senfiRayaneei from "../assets/images/download.jpg";
 
-import { FaWhatsapp } from "react-icons/fa6";
-
 const Footer = () => {
+  const { t } = useTranslation();
+
+  const mainServices = t("footer.mainServices.items", {
+    returnObjects: true,
+  });
+
+  const otherServices = t("footer.otherServices.items", {
+    returnObjects: true,
+  });
+
+  const licenses = t("footer.licenses.items", {
+    returnObjects: true,
+  });
+
+  const licenseImages = [senfiRayaneei, anformatic, anjomanSenfi];
+
   const itemStyle =
-    "cursor-pointer dark:text-[#94A3B8] rounded-lg px-3 py-2 transition-all duration-300 hover:bg-white/40 hover:text-primary hover:translate-x-1";
+    "cursor-pointer dark:text-[#94A3B8] rounded-lg px-3 py-2 transition-all duration-300 hover:bg-white/40 hover:text-primary dark:hover:text-primary-dark dark:hover:bg-black/50 hover:translate-x-1";
 
   return (
     <footer className="w-full border-t border-neutral-300 dark:border-[#334155] bg-gradient-to-l from-accent-light/30 dark:from-[#1a2848] dark:to-[#121924] to-primary-light py-10 md:py-12">
-      <div className="w-11/12 max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-5 gap-6 md:gap-10">
+      <div className="w-full px-6 mx-auto grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6 md:gap-2">
         {/* معرفی شرکت */}
-        <div className="col-span-2 lg:col-span-1">
+        <div className="col-span-2 lg:col-span-1 flex flex-col justify-start">
           <h4 className="text-lg md:text-xl dark:text-[#F8FAFC] font-bold mb-3 md:mb-4 flex items-center gap-2">
             <FaBuilding className="text-primary text-lg md:text-xl" />
-            سرزمین دانش پیشرو
+            {t("footer.company.title")}
           </h4>
 
-          <p className="text-xs md:text-sm dark:text-[#94A3B8] leading-7 md:leading-8 text-neutral-700 text-justify">
-            ارائه‌دهنده راهکارهای نوین نرم‌افزاری در زمینه طراحی وب‌سایت، توسعه
-            سامانه‌های تحت وب، نرم‌افزارهای سازمانی و مشاوره تحول دیجیتال برای
-            کسب‌وکارهای مدرن.
+          <p className="text-xs md:text-sm dark:text-[#94A3B8] leading-7 md:leading-8 text-neutral-700">
+            {t("footer.company.description")}
           </p>
         </div>
+
         {/* خدمات اصلی */}
-        <div>
+        <div className="flex flex-col items-start">
           <h4 className="text-base md:text-xl dark:text-[#F8FAFC] font-bold mb-3 md:mb-4 flex items-center gap-2">
             <FaBriefcase className="text-primary text-lg md:text-xl" />
-            خدمات اصلی
+            {t("footer.mainServices.title")}
           </h4>
 
           <ul className="space-y-2 text-xs md:text-sm text-neutral-700">
-            <li className={itemStyle}>طراحی سایت شرکتی</li>
-            <li className={itemStyle}>فروشگاه اینترنتی</li>
-            <li className={itemStyle}>پنل مدیریت اختصاصی</li>
-            <li className={itemStyle}>نرم‌افزارهای سازمانی</li>
+            {mainServices.map((item, index) => (
+              <li key={index} className={itemStyle}>
+                {item}
+              </li>
+            ))}
           </ul>
         </div>
+
         {/* خدمات جانبی */}
-        <div>
+        <div className="flex flex-col items-start">
           <h4 className="text-base md:text-xl dark:text-[#F8FAFC] font-bold mb-3 md:mb-4 flex items-center gap-2">
             <FaCogs className="text-primary text-lg md:text-xl" />
-            خدمات جانبی
+            {t("footer.otherServices.title")}
           </h4>
 
           <ul className="space-y-2 text-xs md:text-sm text-neutral-700">
-            <li className={itemStyle}>سئو و بهینه‌سازی</li>
-            <li className={itemStyle}>پشتیبانی فنی</li>
-            <li className={itemStyle}>مشاوره دیجیتال</li>
-            <li className={itemStyle}>آموزش و استقرار</li>
+            {otherServices.map((item, index) => (
+              <li key={index} className={itemStyle}>
+                {item}
+              </li>
+            ))}
           </ul>
         </div>
+
         {/* ارتباط با ما */}
-        <div>
+        <div className="flex flex-col items-start">
           <h4 className="text-base md:text-xl dark:text-[#F8FAFC] font-bold mb-3 md:mb-4 flex items-center gap-2">
             <FaHeadset className="text-primary text-lg md:text-xl" />
-            ارتباط با ما
+            {t("footer.contact.title")}
           </h4>
 
           <div className="space-y-3 md:space-y-4 text-neutral-700 text-xs md:text-sm">
@@ -79,7 +98,7 @@ const Footer = () => {
               className="flex dark:text-[#94A3B8] items-center gap-2 md:gap-3 hover:text-primary"
             >
               <FaPhone className="text-primary text-sm md:text-base" />
-              <span>۰۲۱-۱۲۳۴۵۶۷۸</span>
+              <span>{t("footer.contact.phone")}</span>
             </a>
 
             <a
@@ -87,79 +106,77 @@ const Footer = () => {
               className="flex dark:text-[#94A3B8] items-center gap-2 md:gap-3 hover:text-primary"
             >
               <FaEnvelope className="text-primary text-sm md:text-base" />
-              <span>info@sarzamindanesh.ir</span>
+              <span>{t("footer.contact.email")}</span>
             </a>
 
             <div className="flex items-start gap-2 md:gap-3 hover:text-primary">
               <FaMapMarkerAlt className="mt-1 text-primary text-sm md:text-base" />
               <span className="dark:text-[#94A3B8]">
-                تهران، خیابان ولیعصر، پلاک ۱۲۵
+                {t("footer.contact.address")}
               </span>
             </div>
           </div>
         </div>
+
         {/* مجوزها */}
         <div>
           <h4 className="text-base md:text-xl dark:text-[#F8FAFC] font-bold mb-4 flex items-center gap-2">
             <FaShieldAlt className="text-primary text-xl" />
-            مجوزها
+            {t("footer.licenses.title")}
           </h4>
 
-          <div className="grid grid-cols-3  gap-3">
-            <a
-              href="#"
-              className="group h-[70px] bg-white rounded-2xl border border-neutral-200 flex items-center justify-center shadow-sm hover:shadow-xl hover:border-primary/40 hover:-translate-y-1 transition-all duration-300"
-            >
-              <img
-                src={senfiRayaneei}
-                alt="نظام صنفی رایانه‌ای"
-                className="w-[60px] h-[30px] lg:w-[100px] object-contain transition-transform duration-300 group-hover:scale-110"
-              />
-            </a>
-
-            <a
-              href="#"
-              className="group h-[70px] bg-white rounded-2xl border border-neutral-200 flex items-center justify-center shadow-sm hover:shadow-xl hover:border-primary/40 hover:-translate-y-1 transition-all duration-300"
-            >
-              <img
-                src={anformatic}
-                alt="انفورماتیک"
-                className="w-[60px] h-[30px] lg:w-[100px] object-contain transition-transform duration-300 group-hover:scale-110"
-              />
-            </a>
-
-            <a
-              href="#"
-              className="group h-[70px] bg-white rounded-2xl border border-neutral-200 flex items-center justify-center shadow-sm hover:shadow-xl hover:border-primary/40 hover:-translate-y-1 transition-all duration-300"
-            >
-              <img
-                src={anjomanSenfi}
-                alt="انجمن صنفی"
-                className="w-[60px] h-[30px] lg:w-[100px] object-contain transition-transform duration-300 group-hover:scale-110"
-              />
-            </a>
+          <div className="grid grid-cols-3 gap-3">
+            {licenses.map((item, index) => (
+              <a
+                key={item.id}
+                href="#"
+                title={item.name}
+                className="group h-[70px] bg-white rounded-2xl border border-neutral-200 flex items-center justify-center shadow-sm hover:shadow-xl hover:border-primary/40 hover:-translate-y-1 transition-all duration-300"
+              >
+                <img
+                  src={licenseImages[index]}
+                  alt={item.name}
+                  className="w-[60px] h-[30px] lg:w-[100px] object-contain transition-transform duration-300 group-hover:scale-110"
+                />
+              </a>
+            ))}
           </div>
-        </div>{" "}
-        {/* شبکه‌های اجتماعی - موبایل پایین‌تر */}
+        </div>
+
+        {/* شبکه‌های اجتماعی */}
         <div className="col-span-2 lg:col-span-4 flex justify-center lg:justify-start gap-4 mt-6 lg:mt-0 text-lg md:text-2xl">
-          <a className="text-green-500 hover:scale-110 transition">
+          <a
+            aria-label={t("footer.social.whatsapp")}
+            className="text-green-500 hover:scale-110 transition"
+          >
             <FaWhatsapp />
           </a>
-          <a className="text-pink-500 hover:scale-110 transition">
+
+          <a
+            aria-label={t("footer.social.instagram")}
+            className="text-pink-500 hover:scale-110 transition"
+          >
             <FaInstagramSquare />
           </a>
-          <a className="text-sky-500 hover:scale-110 transition">
+
+          <a
+            aria-label={t("footer.social.telegram")}
+            className="text-sky-500 hover:scale-110 transition"
+          >
             <FaTelegramPlane />
           </a>
-          <a className="text-blue-700 hover:scale-110 transition">
+
+          <a
+            aria-label={t("footer.social.linkedin")}
+            className="text-blue-700 hover:scale-110 transition"
+          >
             <FaLinkedin />
           </a>
         </div>
       </div>
 
-      {/* کپی‌رایت */}
       <div className="w-11/12 max-w-7xl mx-auto mt-8 pt-5 dark:border-[#334155] border-t dark:text-[#F8FAFC] border-neutral-300 text-center text-xs md:text-sm text-neutral-600">
-        © 2026 تمامی حقوق برای شرکت سرزمین دانش پیشرو محفوظ است.
+        {t("footer.copyright")}
       </div>
     </footer>
   );

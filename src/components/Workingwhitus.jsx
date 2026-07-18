@@ -1,25 +1,24 @@
 import { motion } from "framer-motion";
 import projectIcon from "../assets/icons/project.png";
 import teamIcon from "../assets/icons/team.png";
+import { useTranslation } from "react-i18next";
 
 const WorkingWithUs = () => {
+  const { t, i18n } = useTranslation();
+  const Cards = t("workwithus.items", { returnObjects: true });
+  const position = i18n.language === "fa" ? "left-3" : "right-3";
   const cards = [
     {
       id: 1,
       icon: projectIcon,
-      title: "سفارش پروژه",
-      description:
-        "اگر برای کسب‌وکار یا استارتاپ خود به یک وب‌سایت حرفه‌ای نیاز داری، خوشحال می‌شویم در مسیر طراحی و توسعه کنارت باشیم.",
       className:
         "bg-gradient-to-br from-violet-600 via-purple-600 to-orange-500 text-white",
     },
     {
       id: 2,
       icon: teamIcon,
-      title: "همکاری با ما",
-      description:
-        "ما همیشه به دنبال افراد خلاق و باانگیزه برای همکاری در پروژه‌های طراحی و توسعه هستیم. اگر اهل کار تیمی و رشد در پروژه‌های واقعی هستید، مشتاق همکاری با شما هستیم.",
-      className: "bg-slate-50 dark:bg-[#334155] dark:text-[#F8FAFC] dark:border-[#334155] border border-slate-200 text-slate-800",
+      className:
+        "bg-slate-50 dark:bg-[#334155] dark:text-[#F8FAFC] dark:border-[#334155] border border-slate-200 text-slate-800",
     },
   ];
 
@@ -50,14 +49,18 @@ const WorkingWithUs = () => {
             {/* Content */}
             <div className="relative z-10 flex h-full flex-col justify-between">
               <div>
-                <h3 className="mb-5 text-3xl font-title ">{card.title}</h3>
+                <h3 className="mb-5 text-3xl font-title">
+                  {Cards[index].title}
+                </h3>
 
                 <p
                   className={`max-w-md text-lg leading-8 ${
-                    card.id === 1 ? "text-white/90" : "text-slate-600 dark:text-[#F8FAFC]"
+                    card.id === 1
+                      ? "text-white/90"
+                      : "text-slate-600 dark:text-secondary-text"
                   }`}
                 >
-                  {card.description}
+                  {Cards[index].description}
                 </p>
               </div>
 
@@ -68,7 +71,13 @@ const WorkingWithUs = () => {
                     : "bg-primary dark:bg-[#8B5CF6] text-white hover:opacity-90"
                 }`}
               >
-                {card.id === 1 ? "ثبت درخواست" : "ارسال رزومه"}
+                {i18n.language === "fa"
+                  ? card.id === 1
+                    ? "ثبت درخواست"
+                    : "ارسال رزومه"
+                  : card.id === 1
+                    ? "Submit Request"
+                    : "Send Resume"}
               </button>
             </div>
 
@@ -76,8 +85,8 @@ const WorkingWithUs = () => {
             <img
               src={card.icon}
               alt={card.title}
-              className={`absolute left-3 bottom-3 transition duration-500 group-hover:scale-110 ${
-                card.id === 1 ? "opacity-40 w-44" : "opacity-40 w-32"
+              className={`absolute bottom-3 ${position} transition duration-500 group-hover:scale-110 ${
+                card.id === 1 ? "opacity-40 w-44" : "opacity-40 w-32 dark:opacity-70"
               }`}
             />
           </motion.div>

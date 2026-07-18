@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 import arrow from "../assets/icons/back.png";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 const Portfolio = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const { t, i18n } = useTranslation();
+  const cards = t("portfolioHome.cards", { returnObjects: true });
 
   async function getData() {
     try {
@@ -45,25 +48,38 @@ const Portfolio = () => {
         <div className="flex items-center w-full max-full">
           <div className="w-2 h-2 rounded-full bg-accent" />
           <hr className="flex-1 border-neutral-200 dark:border-[#334155]" />
-
-          <h2 className="text-2xl font-title text-text mx-4 dark:text-[#F8FAFC] ">
-            جدیدترین <span className="text-primary">پروژه</span> های ما
-          </h2>
+          {i18n.language === "fa" ? (
+            <h2 className="text-2xl lg:text-3xl font-title text-text mx-4 dark:text-[#F8FAFC]">
+              جدیدترین{" "}
+              <span className="text-primary text-2xl lg:text-3xl font-title text-primary">
+                پروژه
+              </span>{" "}
+              های ما
+            </h2>
+          ) : (
+            <h2 className="mx-1 md:mx-4">
+              <span className="text-2xl lg:text-3xl font-title text-text dark:text-text-dark">
+                latest
+              </span>{" "}
+              <span className="text-primary text-2xl lg:text-3xl font-title mx-1 text-primary dark:text-primary-dark">
+                Projects
+              </span>
+            </h2>
+          )}
 
           <hr className="flex-1 border-neutral-200 dark:border-[#334155]" />
           <div className="w-2 h-2 rounded-full bg-accent" />
         </div>
 
         <p className="text-neutral-600 dark:text-[#F8FAFC]  max-w-2xl leading-7">
-          نمونه‌کارهایی که در این بخش می‌بینید حاصل طراحی و توسعه پروژه‌های
-          واقعی هستند و تجربه عملی تیم ما را نشان می‌دهند.
+          {t("portfolioHome.text")}
         </p>
 
         <a
           href="#"
           className="flex items-center gap-2 text-orange-500 hover:gap-3 transition-all"
         >
-          مشاهده بیشتر پروژه‌ها
+          {t("portfolioHome.readMore")}
           <img className="w-4" src={arrow} alt="arrow" />
         </a>
       </motion.div>
@@ -104,7 +120,7 @@ const Portfolio = () => {
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300 flex items-center justify-center">
                     <p className="text-white opacity-0 group-hover:opacity-100 text-sm md:text-base font-bold transition-all">
-                      مشاهده جزئیات
+                      {t("portfolioHome.showDetails")}
                     </p>
                   </div>
                 </div>
@@ -112,18 +128,22 @@ const Portfolio = () => {
                 {/* Content */}
                 <div className="p-4 flex flex-col gap-3">
                   <h4 className="text-lg font-bold text-purple-600 dark:text-[#8B5CF6]">
-                    {item.title}
+                    {cards[index].title}
                   </h4>
 
                   <div>
-                    <p className="text-xs font-bold text-neutral-500 dark:text-[#F8FAFC] py-4">تکنولوژی‌ها</p>
+                    <p className="text-xs font-bold text-neutral-500 dark:text-[#F8FAFC] py-4">
+                      {i18n.language === "fa"
+                        ? "تکنولوژی‌ها"
+                        : "technology"}{" "}
+                    </p>
                     <div className="text-xs dark:text-[#F8FAFC]  bg-primary/10 px-2 py-1 rounded-xl text-neutral-700">
-                      {item.technology}
+                      {cards[index].tech}
                     </div>
                   </div>
 
                   <p className="text-sm text-neutral-600 dark:text-[#F8FAFC]  leading-6 line-clamp-3">
-                    {item.description}
+                    {cards[index].text}
                   </p>
                 </div>
               </motion.div>
@@ -154,7 +174,7 @@ const Portfolio = () => {
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300 flex items-center justify-center">
                     <p className="text-white opacity-0 group-hover:opacity-100 text-sm md:text-base font-bold transition-all">
-                      مشاهده جزئیات
+                      {t("portfolioHome.showDetails")}
                     </p>
                   </div>
                 </div>
@@ -165,9 +185,10 @@ const Portfolio = () => {
                     {item.title}
                   </h4>
 
-                 
                   <div>
-                    <p className="text-xs font-bold text-neutral-500 dark:text-[#F8FAFC] py-4">تکنولوژی‌ها</p>
+                    <p className="text-xs font-bold text-neutral-500 dark:text-[#F8FAFC] py-4">
+                      تکنولوژی‌ها
+                    </p>
                     <div className="text-xs dark:text-[#F8FAFC]  bg-primary/10 px-2 py-1 rounded-xl text-neutral-700">
                       {item.technology}
                     </div>

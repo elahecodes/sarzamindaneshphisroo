@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaUser, FaBars, FaMoon } from "react-icons/fa";
 import logo from "/src/assets/logo/Levels 1.png";
@@ -6,9 +6,7 @@ import logo2 from "/src/assets/logo/لوگو سربرگ3.png";
 import { useTranslation } from "react-i18next";
 import {
   FaHome,
-  FaCogs,
   FaBlog,
-  FaQuestionCircle,
   FaUsers,
   FaPhoneAlt,
   FaProjectDiagram,
@@ -52,8 +50,8 @@ import { useTheme } from "../context/ThemeContext";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const {dark , toggle} = useTheme()
-  const {t , i18n} = useTranslation()
+  const { dark, toggle } = useTheme();
+  const { t, i18n } = useTranslation();
   return (
     <header className="sticky top-0 z-50 bg-primary dark:bg-[#8B5CF6] shadow-md">
       <div className="w-full max-w-[1600px] mx-auto h-20 px-3 flex items-center justify-between">
@@ -78,8 +76,15 @@ const Header = () => {
         {/* Actions */}
         <div className="flex items-center gap-2 md:gap-3">
           {/* Language */}
-          <button onClick={() => i18n.changeLanguage(i18n.language === "fa" ? "en" : "fa")} className="w-10 h-10 md:w-12 md:h-12 rounded-md bg-white/30 flex items-center justify-center hover:scale-105 transition">
-            <span className={`fi ${i18n.language === "fa" ? "fi-us" : "fi-ir"}`}></span>
+          <button
+            onClick={() =>
+              i18n.changeLanguage(i18n.language === "fa" ? "en" : "fa")
+            }
+            className="w-10 h-10 md:w-12 md:h-12 rounded-md bg-white/30 flex items-center justify-center hover:scale-105 transition"
+          >
+            <span
+              className={`fi ${i18n.language === "fa" ? "fi-us" : "fi-ir"}`}
+            ></span>
           </button>
 
           {/* Dark Mode */}
@@ -94,9 +99,14 @@ const Header = () => {
           <Link to={"/login"}>
             <button className="hidden cursor-pointer lg:flex h-10 md:h-12 px-4 md:px-5 items-center gap-2 rounded-lg bg-white text-primary shadow-lg hover:scale-105 transition">
               <FaUser className="text-lg" />
-              <span className="text-sm md:text-base hidden xl:block">
-                ورود | ثبت نام
-              </span>
+              {i18n.language === "fa" ? (
+                <span className="text-sm md:text-base hidden xl:block">
+                  ورود | ثبت نام
+                  <span className="text-sm md:text-base hidden xl:block"></span>
+                </span>
+              ) : (
+                <span className="text-sm md:text-base hidden xl:block">Login | signUp</span>
+              )}
             </button>
           </Link>
 
@@ -151,7 +161,7 @@ const Header = () => {
                   duration-300
                 "
               >
-                <FaTimes className="dark:text-[#8B5CF6]"  />
+                <FaTimes className="dark:text-[#8B5CF6]" />
               </button>
             </div>
 
@@ -180,9 +190,13 @@ const Header = () => {
                     onClick={() => setIsOpen(false)}
                     className="flex items-center gap-4 h-full px-4 text-text"
                   >
-                    <span className="text-primary dark:text-[#8B5CF6] text-lg">{item.icon}</span>
+                    <span className="text-primary dark:text-[#8B5CF6] text-lg">
+                      {item.icon}
+                    </span>
 
-                    <span className="font-medium dark:text-[#F8FAFC]">{item.title}</span>
+                    <span className="font-medium dark:text-[#F8FAFC]">
+                      {item.title}
+                    </span>
                   </Link>
                 </li>
               ))}

@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
 import { FaArrowDown, FaQuestion } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 const Question = () => {
   const [question, setQuestion] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(-1);
+  const { t } = useTranslation();
+  const questions = t("question.items", { returnObjects: true });
 
   async function getData() {
     try {
@@ -40,6 +43,7 @@ const Question = () => {
           <motion.button
             initial={{ opacity: 0, y: 80 }}
             whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             // viewport={{ once: true }}
             transition={{
               duration: 0.5,
@@ -63,7 +67,7 @@ const Question = () => {
                   ${
                     currentIndex === realIndex
                       ? "bg-white/20 text-white"
-                      : "bg-gradient-to-br from-primary-soft to-accent-light dark:from-primary-dark to-surface text-primary"
+                      : "bg-gradient-to-br from-primary-soft to-accent-light dark:from-primary-dark dark:to-surface text-primary"
                   }
                   w-11 h-11 rounded-xl flex justify-center items-center shrink-0
                 `}
@@ -72,7 +76,7 @@ const Question = () => {
               </span>
 
               <span className="font-medium px-4 dark:text-[#F8FAFC]">
-                {box.question}
+                {questions[index].question}
               </span>
             </div>
             <span
@@ -99,7 +103,7 @@ const Question = () => {
             `}
           >
             <p className="px-4 text-text/80 dark:text-[#94A3B8] leading-7">
-              {box.answer}
+              {questions[index].answer}
             </p>
           </div>
         </div>
@@ -108,20 +112,17 @@ const Question = () => {
   return (
     <section className="relative overflow-hidden py-20 px-4 dark:from-[#1E293B] dark:to-[#1E293B] bg-gradient-to-b from-primary-soft/20 to-white">
       <div className="absolute top-0 left-0 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
-
       <div className="absolute bottom-0 right-0 w-72 h-72 bg-accent/10 rounded-full blur-3xl"></div>
 
       <div className="relative z-10 max-w-3xl mx-auto text-center mb-14">
         <h2 className="lg:text-3xl text-xl font-title text-text mb-5 dark:text-[#F8FAFC]">
-          سوالات متداول
+          {t("question.title")}
         </h2>
 
         <div className="w-32 h-1 mx-auto rounded-full bg-gradient-to-r from-primary via-accent to-primary mb-6"></div>
 
         <p className="text-text/70 leading-8 max-w-2xl mx-auto dark:text-[#94A3B8]">
-          رایج‌ترین پرسش‌های مشتریان و همکاران ما را در این بخش مشاهده کنید. اگر
-          پاسخ موردنظر خود را پیدا نکردید، تیم پشتیبانی آماده پاسخگویی به شما
-          است.
+          {t("question.text")}
         </p>
       </div>
 

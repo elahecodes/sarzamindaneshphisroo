@@ -22,8 +22,11 @@ import project from "../assets/images/project.png";
 import softwareTeam from "../assets/images/softwareTeam.jpg";
 import softwareTeam2 from "../assets/images/softwareTeam2.jpg";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import i18next from "i18next";
 
 const AboutUs = () => {
+  const { t } = useTranslation();
   const [items, setItems] = useState([]);
 
   async function getData() {
@@ -48,27 +51,22 @@ const AboutUs = () => {
 
   const achievements = [
     {
-      text: "انجام بیش از ۳۰ پروژه موفق",
       icon: <FaCheckCircle />,
       position: "md:left-[8%] md:top-[18%] left-4 top-4",
     },
     {
-      text: "رعایت استانداردهای امنیت و کیفیت",
       icon: <FaShieldAlt />,
       position: "md:right-[8%] md:top-[20%] right-4 top-28",
     },
     {
-      text: "استفاده از فناوری‌های روز",
       icon: <FaRocket />,
       position: "md:left-[10%] md:bottom-[18%] left-4 bottom-20",
     },
     {
-      text: "تعهد به کیفیت و رضایت مشتری",
       icon: <FaHandshake />,
       position: "md:right-[5%] md:bottom-[12%] right-4 bottom-4",
     },
     {
-      text: "همراهی از ایده تا اجرا",
       icon: <FaLightbulb />,
       position:
         "md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 hidden md:flex",
@@ -78,49 +76,31 @@ const AboutUs = () => {
     {
       id: 1,
       icon: FaUsers,
-      title: "تیم متخصص",
-      description:
-        "تیمی متشکل از توسعه‌دهندگان و طراحان حرفه‌ای با تجربه اجرای پروژه‌های متنوع.",
     },
 
     {
       id: 2,
       icon: FaClock,
-      title: "تحویل به‌موقع",
-      description:
-        "متعهد به زمان‌بندی پروژه و ارائه خروجی باکیفیت در موعد مقرر هستیم.",
     },
 
     {
       id: 3,
       icon: FaHeadset,
-      title: "پشتیبانی دائمی",
-      description:
-        "پس از تحویل پروژه نیز در کنار شما هستیم و خدمات پشتیبانی ارائه می‌دهیم.",
     },
 
     {
       id: 4,
       icon: FaShieldAlt,
-      title: "امنیت و کیفیت",
-      description:
-        "رعایت استانداردهای فنی، امنیتی و تضمین کیفیت در تمامی مراحل توسعه.",
     },
 
     {
       id: 5,
       icon: FaRocket,
-      title: "فناوری‌های روز",
-      description:
-        "استفاده از ابزارها و تکنولوژی‌های مدرن برای ساخت محصولات سریع و مقیاس‌پذیر.",
     },
 
     {
       id: 6,
       icon: FaLightbulb,
-      title: "راهکارهای خلاقانه",
-      description:
-        "ارائه ایده‌ها و راه‌حل‌های نوآورانه متناسب با نیاز و اهداف کسب‌وکار شما.",
     },
   ];
   const SectionTitle =
@@ -136,7 +116,11 @@ const AboutUs = () => {
     7: <FaLightbulb className="text-white text-3xl" />,
     8: <FaDatabase className="text-white text-3xl" />,
   };
-
+  const achievementsText = t("aboutUs.trust.achievements", {
+    returnObjects: true,
+  });
+  const servicesText = t("aboutUs.services.items", { returnObjects: true });
+  const whyUsText = t("aboutUs.whyUs.items", { returnObjects: true });
   return (
     <div className="relative overflow-hidden">
       {/* background blobs (کنترل شده) */}
@@ -152,7 +136,7 @@ const AboutUs = () => {
           transition={{ duration: 0.6 }}
           className={`${SectionTitle} tracking-tight dark:text-[#8B5CF6] font-title`}
         >
-          اعتماد، بزرگ‌ترین سرمایه ما
+          {t("aboutUs.trust.title")}
         </motion.h4>
 
         <motion.p
@@ -162,12 +146,7 @@ const AboutUs = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mt-5 md:mt-6 mx-auto w-11/12 md:w-8/12 dark:text-[#94A3B8] text-center text-sm md:text-base text-neutral-600 leading-8 md:leading-9"
         >
-          ما مفتخریم که طی سال‌ها فعالیت حرفه‌ای، با اجرای ده‌ها پروژه موفق در
-          حوزه طراحی و توسعه نرم‌افزار، اعتماد مشتریان خود را به دست آورده‌ایم.
-          این اعتماد نتیجه تعهد، کیفیت، شفافیت و همراهی مستمر ما در تمامی مراحل
-          همکاری است. امروز افتخار می‌کنیم که بخشی از مسیر رشد کسب‌وکارهای مختلف
-          بوده‌ایم و همچنان با انگیزه و مسئولیت‌پذیری در کنار مشتریان خود برای
-          خلق راهکارهای نوآورانه و ماندگار قدم برمی‌داریم.
+          {t("aboutUs.trust.description")}
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -225,7 +204,9 @@ const AboutUs = () => {
                 {item.icon}
               </span>
 
-              <span className="whitespace-nowrap">{item.text}</span>
+              <span className="whitespace-nowrap">
+                {achievementsText[index].text}
+              </span>
             </motion.div>
           ))}
         </motion.div>
@@ -251,11 +232,11 @@ const AboutUs = () => {
               transition={{ duration: 0.8 }}
             >
               <span className="text-sm text-gray-500 dark:text-gray-400">
-                درباره مجموعه
+                {t("aboutUs.story.badge")}
               </span>
 
               <h3 className="mt-1 text-3xl font-title text-text dark:text-text-dark">
-                داستان ما
+                {t("aboutUs.story.title")}
               </h3>
             </motion.div>
           </div>
@@ -268,15 +249,7 @@ const AboutUs = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              فعالیت مجموعه ما از سال{" "}
-              <span className="font-bold text-primary dark:text-primary-dark">
-                ۱۴۰۳
-              </span>{" "}
-              با هدف ارائه راهکارهای جامع و نوآورانه در حوزه فناوری آغاز شد. از
-              همان ابتدا، چشم‌انداز ما فراتر از ارائه یک خدمت یا محصول بود؛ ما
-              بر این باوریم که فناوری زمانی ارزشمند است که بتواند فرآیندها را
-              ساده‌تر، بهره‌وری را افزایش دهد و مسیر رشد کسب‌وکارها را هموار
-              کند.
+              {t("aboutUs.story.paragraph1")}
             </motion.p>
 
             {/* باکس هدف */}
@@ -290,10 +263,7 @@ const AboutUs = () => {
               <FaLightbulb className="mt-1 text-2xl text-orange-500" />
 
               <p className="leading-8 text-gray-700 dark:text-gray-200">
-                هدف ما ارائه راهکارهای هوشمند، پایدار و قابل توسعه در حوزه
-                نرم‌افزار، سخت‌افزار، اتوماسیون و فناوری اطلاعات است تا
-                سازمان‌ها و کسب‌وکارها بتوانند با اطمینان بیشتری مسیر رشد و تحول
-                دیجیتال خود را طی کنند.
+                {t("aboutUs.story.goal")}
               </p>
             </motion.div>
 
@@ -303,11 +273,8 @@ const AboutUs = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
-              در تمامی پروژه‌ها، نیازهای واقعی مشتری نقطه آغاز کار ماست. پس از
-              بررسی دقیق شرایط، مراحل طراحی، اجرا، پیاده‌سازی، آزمایش و پشتیبانی
-              با رعایت استانداردهای روز انجام می‌شود. کیفیت، نوآوری، تعهد و
-              پشتیبانی مستمر، ارزش‌هایی هستند که در تمام خدمات ما جریان دارند و
-              پایه‌ای برای ایجاد همکاری‌های بلندمدت با مشتریان محسوب می‌شوند.
+              {" "}
+              {t("aboutUs.story.paragraph2")}
             </motion.p>
           </div>
         </div>
@@ -326,7 +293,7 @@ const AboutUs = () => {
             transition={{ duration: 0.5 }}
             className="mx-1 lg:mx-4 text-xl lg:text-2xl font-title text-text dark:text-[#F8FAFC] font-bold whitespace-nowrap"
           >
-            خدماتی که ما ارائه می‌دهیم
+            {t("aboutUs.services.title")}
           </motion.h2>
 
           <hr className="flex-1 bg-neutral-200 dark:border-[#334155] border border-neutral-200" />
@@ -335,7 +302,7 @@ const AboutUs = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
-          {items.map((item) => (
+          {items.map((item, index) => (
             <motion.article
               initial={{ opacity: 0, y: 70 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -349,11 +316,11 @@ const AboutUs = () => {
               </div>
 
               <h2 className="text-lg font-bold text-primary dark:text-[#8B5CF6] min-h-[50px]">
-                {item.title}
+                {servicesText[index].title}
               </h2>
 
               <p className="text-neutral-600 text-sm leading-6 dark:text-[#F8FAFC]">
-                {item.text}
+                {servicesText[index].text}
               </p>
             </motion.article>
           ))}
@@ -380,7 +347,7 @@ const AboutUs = () => {
                 transition={{ duration: 0.7 }}
                 className="mx-4 dark:text-[#F8FAFC] text-xl lg:text-2xl font-title whitespace-nowrap"
               >
-                چرا مارا انتخاب کنید؟
+                {t("aboutUs.whyUs.title")}
               </motion.h2>
 
               <hr className="flex-1 border-border md:flex-[2] lg:flex-[3] dark:border-[#334155] bg-neutral-200 border" />
@@ -395,15 +362,14 @@ const AboutUs = () => {
               transition={{ duration: 0.7, delay: 0.3 }}
               className="text-neutral-500 mt-4 text-lg leading-8"
             >
-              ما فقط یک تیم توسعه نیستیم؛ بلکه شریک رشد و موفقیت کسب‌وکار شما
-              هستیم.
+              {t("aboutUs.whyUs.description")}
             </motion.p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mt-16">
             {/* لیست ویژگی‌ها */}
             <div className="space-y-5">
-              {whyUs.map((item) => (
+              {whyUs.map((item, index) => (
                 <motion.div
                   initial={{ opacity: 0, y: 80 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -446,11 +412,11 @@ const AboutUs = () => {
                   {/* متن */}
                   <div>
                     <h3 className="text-xl font-title text-primary dark:text-[#8B5CF6] mb-2">
-                      {item.title}
+                      {whyUsText[index].title}
                     </h3>
 
                     <p className="text-neutral-500 dark:text-[#F8FAFC] leading-8">
-                      {item.description}
+                      {whyUsText[index].description}
                     </p>
                   </div>
                 </motion.div>
@@ -491,11 +457,11 @@ const AboutUs = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
 
                 {/* متن روی تصویر */}
-                <div className="absolute bottom-8 right-8 text-white">
-                  <h3 className="text-3xl font-bold mb-3">همراه رشد شما</h3>
+                <div className={`absolute bottom-8 ${i18next.language === "fa"? "right-8":"left-8 right-8"}  text-white`}>
+                  <h3 className="text-3xl font-bold mb-3">{t("aboutUs.whyUs.titlePhoto")}</h3>
 
                   <p className="text-white/90 leading-8">
-                    از ایده اولیه تا اجرای نهایی، در کنار شما هستیم.
+                  {t("aboutUs.whyUs.descriptionPhoto")}
                   </p>
                 </div>
               </motion.div>
@@ -525,7 +491,7 @@ const AboutUs = () => {
                   +120
                 </p>
                 <span className="text-neutral-500 dark:text-white">
-                  پروژه موفق
+                  {t("aboutUs.whyUs.textBox")}
                 </span>
               </motion.div>
 
@@ -553,7 +519,7 @@ const AboutUs = () => {
                   +120
                 </p>
                 <span className="text-neutral-500 dark:text-white">
-                  پروژه موفق
+                  {t("aboutUs.whyUs.textBox")}
                 </span>
               </motion.div>
             </div>
@@ -610,16 +576,14 @@ const AboutUs = () => {
                 backdrop-blur-md
               "
             >
-              ✨ طراحی و توسعه اختصاصی
+              {t("aboutUs.cta.badge")}
             </span>
-
-            <h2 className="text-2xl text-center md:text-4xl font-title leading-[1.6] md:leading-[1.8] text-white tracking-tight">
-              کسب‌وکار تو شایسته یک اجرای حرفه‌ای است
+            <h2 className="text-2xl text-start text-center md:text-3xl font-title leading-[1.6] md:leading-[1.8] text-white tracking-tight">
+              {t("aboutUs.cta.title")}
             </h2>
 
-            <p className="mt-4 text-base md:text-lg leading-8 md:leading-9 text-white/85 max-w-xl">
-              فقط کافی است ایده‌ات را با ما در میان بگذاری؛ بقیه مسیر را با
-              اطمینان، خلاقیت و تجربه پیش می‌بریم.
+            <p className="mt-4 w-full text-base text-start md:text-lg leading-8 md:leading-9 text-white/85 max-w-xl">
+              {t("aboutUs.cta.description")}
             </p>
 
             <Link
@@ -656,7 +620,7 @@ const AboutUs = () => {
                 group-hover:before:bg-white/50
                 "
             >
-              سفارش پروژه
+              {t("aboutUs.cta.button")}
             </Link>
           </div>
 

@@ -6,8 +6,8 @@ import ScrollToTop from "./components/scrollToTop";
 import { ThemeProvider } from "./context/ThemeContext";
 import DataOfBlogsContext from "./context/DataOfBlogsContext";
 import DataOfPortfolioContext from "./context/DataOfPortfolioContext";
-import i18next from "../i18next";
 import Loading from "./assets/LoadingIcon/Spin@1x-1.0s-200px-200px.gif";
+import Direction from "./components/direction";
 import "./App.css";
 const SignIn = lazy(() => import("./pages/SignIn"));
 const Home = lazy(() => import("./pages/Home"));
@@ -21,6 +21,7 @@ const PortfolioPage = lazy(() => import("./pages/PortfolioPage"));
 const BlogPage = lazy(() => import("./pages/BlogPage"));
 
 function App() {
+  Direction()
   return (
     <ThemeProvider>
       <DataOfPortfolioContext>
