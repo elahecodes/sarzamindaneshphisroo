@@ -447,6 +447,166 @@
       "title": "Your Business Deserves a Professional Digital Solution",
       "description": "Share your idea with us, and we'll take care of the rest with creativity, expertise, and confidence.",
       "button": "Request a Project"
+    },
+    "contact": {
+      "title": "Contact Us",
+      "description": "For project inquiries, consultation, or any questions, feel free to reach out to us through the following contact methods.",
+
+      "items": [
+        {
+          "title": "Phone",
+          "value": "+98 912 345 6789"
+        },
+        {
+          "title": "Email",
+          "value": "info@company.com"
+        },
+        {
+          "title": "Instagram",
+          "value": "@company"
+        },
+        {
+          "title": "WhatsApp",
+          "value": "+98 912 345 6789"
+        },
+        {
+          "title": "Company Address",
+          "value": "123 Vali-e-Asr St., Tehran, Iran"
+        }
+      ]
+    }
+  },
+  "projectOrder": {
+    "selects": {
+      "project": "Select...",
+      "budget": "Select Budget",
+      "deadline": "Delivery Time...",
+      "priority": "Project Priority...",
+      "communication": "Communication Method..."
+    },
+
+    "employer": {
+      "title": "Client Information",
+
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "Enter your full name",
+
+      "email": "Email",
+      "emailPlaceholder": "example@gmail.com",
+
+      "phone": "Phone Number",
+      "phonePlaceholder": "0912 123 4567",
+
+      "company": "Company Name",
+      "optional": "Optional",
+      "companyPlaceholder": "Enter your company or brand name"
+    },
+
+    "projectTypes": {
+      "ui": "UI Design",
+      "website": "Website",
+      "app": "Application",
+      "database": "Database Design",
+      "hardware": "Hardware",
+      "other": "Other"
+    },
+
+    "budget": {
+      "less10": "Less than 10 million Tomans",
+      "ten30": "10 to 30 million Tomans",
+      "thirty50": "30 to 50 million Tomans",
+      "fifty100": "50 to 100 million Tomans",
+      "more100": "More than 100 million Tomans",
+      "consult": "I need consultation"
+    },
+
+    "deadline": {
+      "week": "Less than one week",
+      "twoWeeks": "1 to 2 weeks",
+      "month": "2 to 4 weeks",
+      "threeMonths": "1 to 3 months",
+      "noLimit": "No time limit"
+    },
+
+    "priority": {
+      "normal": "Normal",
+      "urgent": "Urgent",
+      "veryUrgent": "Very Urgent"
+    },
+
+    "communication": {
+      "phone": "Phone Call",
+      "whatsapp": "WhatsApp",
+      "telegram": "Telegram",
+      "email": "Email"
+    },
+
+    "project": {
+      "title": "Project Information",
+
+      "projectTitle": "Project Title",
+      "projectTitlePlaceholder": "Enter project title",
+
+      "projectType": "Project Type",
+
+      "budget": "Estimated Budget",
+
+      "deadline": "Expected Delivery Time",
+
+      "priority": "Project Priority",
+
+      "communication": "Preferred Communication Method",
+
+      "description": "Complete Project Description",
+
+      "descriptionPlaceholder": "Enter goals, features, examples, and required details..."
+    },
+
+    "features": {
+      "title": "Required Features",
+
+      "items": [
+        "Admin Panel",
+        "Payment Gateway",
+        "Multi Language",
+        "SEO",
+        "Mobile Application",
+        "API Integration",
+        "SMS System",
+        "Other Items"
+      ]
+    },
+
+    "upload": {
+      "title": "File or Design Sample",
+      "description": "If you have any examples or samples of your desired project, upload them here."
+    },
+
+    "security": {
+      "title": "Security Verification",
+      "description": "Please complete the security verification to prevent spam requests.",
+      "button": "Submit Project Request"
+    },
+
+    "hero": {
+      "title1": "We are ready to turn your idea into a",
+      "title2": "professional product",
+      "title3": ".",
+
+      "description": "Complete the project request form and our team will review your requirements. After evaluation, we will contact you as soon as possible for consultation, cost estimation, and project planning."
+    },
+
+    "advantages": {
+      "items": [
+        "Free initial project review",
+        "Response within 24 hours",
+        "Complete confidentiality of your information and ideas",
+        "Clear timeline and cost estimation"
+      ]
+    },
+
+    "captcha": {
+      "error": "Please verify the captcha first."
     }
   }
 }

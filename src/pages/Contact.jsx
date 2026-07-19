@@ -5,57 +5,52 @@ import {
   FaWhatsapp,
   FaMapMarkerAlt,
 } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 const contactItems = [
   {
-    title: "شماره تماس",
-    value: "+98 912 345 6789",
     icon: <FaPhoneAlt />,
     href: "tel:+989123456789",
   },
   {
-    title: "ایمیل",
-    value: "info@company.com",
     icon: <FaEnvelope />,
     href: "mailto:info@company.com",
   },
   {
-    title: "اینستاگرام",
-    value: "@company",
     icon: <FaInstagram />,
     href: "https://instagram.com/company",
     external: true,
   },
   {
-    title: "واتساپ",
-    value: "+98 912 345 6789",
     icon: <FaWhatsapp />,
     href: "https://wa.me/989123456789",
     external: true,
   },
   {
-    title: "آدرس شرکت",
-    value: "تهران، خیابان ولیعصر، پلاک ۱۲۳",
     icon: <FaMapMarkerAlt />,
   },
 ];
 
 const Contact = () => {
+  const { t } = useTranslation();
+
+const contactText = t("aboutUs.contact.items", {
+  returnObjects: true,
+});
   return (
     <section className="w-11/12 max-w-7xl mx-auto py-10">
       <div className="mb-7 flex flex-col items-start gap-2">
         <h2 className="text-2xl font-extrabold dark:text-primary-dark text-primary">
-          ارتباط با ما
+            {t("aboutUs.contact.title")}
         </h2>
 
         <p className="leading-8 text-neutral-600 dark:text-slate-300">
-          برای ثبت سفارش، دریافت مشاوره یا پاسخ به سوالات خود می‌توانید از
-          طریق راه‌های ارتباطی زیر با ما در تماس باشید.
+          {t("aboutUs.contact.description")}
         </p>
       </div>
 
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {contactItems.map((item) => {
+        {contactItems.map((item, index) => {
           const Card = (
             <>
               <div
@@ -101,11 +96,11 @@ const Contact = () => {
 
               <div className="relative z-10">
                 <h4 className="mb-2 text-xl font-bold text-primary dark:text-white">
-                  {item.title}
+                  {contactText[index].title}
                 </h4>
 
                 <p className="break-words text-neutral-700 dark:text-slate-300">
-                  {item.value}
+                  {contactText[index].value}
                 </p>
               </div>
             </>
@@ -141,7 +136,7 @@ const Contact = () => {
           if (item.href) {
             return (
               <a
-                key={item.title}
+               key={index}
                 href={item.href}
                 aria-label={`${item.title}: ${item.value}`}
                 target={item.external ? "_blank" : undefined}
@@ -155,7 +150,7 @@ const Contact = () => {
 
           return (
             <div
-              key={item.title}
+              key={index}
               className={classes}
             >
               {Card}
