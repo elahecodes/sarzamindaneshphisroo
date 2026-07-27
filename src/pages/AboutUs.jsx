@@ -26,7 +26,7 @@ import { useTranslation } from "react-i18next";
 import i18next from "i18next";
 
 const AboutUs = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [items, setItems] = useState([]);
 
   async function getData() {
@@ -60,7 +60,7 @@ const AboutUs = () => {
     },
     {
       icon: <FaRocket />,
-      position: "md:left-[10%] md:bottom-[18%] left-4 bottom-20",
+      position: "md:left-[10%] md:bottom-[18%] left-4 bottom-24",
     },
     {
       icon: <FaHandshake />,
@@ -104,7 +104,7 @@ const AboutUs = () => {
     },
   ];
   const SectionTitle =
-    "text-3xl md:text-4xl font-extrabold text-primary text-center";
+    "text-2xl md:text-4xl font-extrabold text-primary text-center";
 
   const icons = {
     1: <FaLaptopCode className="text-white text-3xl" />,
@@ -179,7 +179,7 @@ const AboutUs = () => {
               viewport={{ once: true }}
               transition={{
                 duration: 1,
-                delay: (index + 1) * 0.2,
+                delay: 1 * index,
               }}
               className={`
                   absolute
@@ -235,7 +235,7 @@ const AboutUs = () => {
                 {t("aboutUs.story.badge")}
               </span>
 
-              <h3 className="mt-1 text-3xl font-title text-text dark:text-text-dark">
+              <h3 className="mt-1 text-2xl lg:text-3xl font-title text-text dark:text-text-dark">
                 {t("aboutUs.story.title")}
               </h3>
             </motion.div>
@@ -252,17 +252,28 @@ const AboutUs = () => {
               {t("aboutUs.story.paragraph1")}
             </motion.p>
 
-            {/* باکس هدف */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.7 }}
-              className="flex items-start gap-4 rounded-2xl border-r-4 border-accent dark:border-accent-dark bg-orange-50 p-5 dark:bg-orange-500/10"
+              className="relative overflow-hidden rounded-2xl border-r-4 border-accent dark:border-accent-dark bg-orange-50 dark:bg-orange-500/10 p-5"
             >
-              <FaLightbulb className="mt-1 text-2xl text-orange-500" />
+              {/* Desktop */}
+              <FaLightbulb className="hidden sm:block mt-1 text-2xl text-orange-500 shrink-0" />
 
-              <p className="leading-8 text-gray-700 dark:text-gray-200">
+              {/* Mobile Decorative */}
+              <FaLightbulb
+                className={`absolute sm:hidden -translate-y-1/2 text-[8rem] text-orange-500/10 -bottom-9 ${
+                  i18n.language === "fa" ? "left-0" : "right-0"
+                }`}
+              />
+
+              <p
+                className={`relative z-10 leading-8 text-start text-gray-700 dark:text-gray-200 ${
+                  i18n.language === "fa" ? "pl-10" : "pr-10"
+                }`}
+              >
                 {t("aboutUs.story.goal")}
               </p>
             </motion.div>
@@ -280,7 +291,7 @@ const AboutUs = () => {
         </div>
       </section>
       {/* SERVICES */}
-      <section className="mt-30 relative z-10 px-8">
+      <section className="mt-10 lg:mt-30 relative z-10 px-8">
         <div className="flex items-center w-full max-w-full mb-16">
           <div className="w-2 h-2 rounded-full bg-accent shrink-0" />
 
@@ -291,7 +302,7 @@ const AboutUs = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="mx-1 lg:mx-4 text-xl lg:text-2xl font-title text-text dark:text-[#F8FAFC] font-bold whitespace-nowrap"
+            className="mx-3 lg:mx-4 text-xl lg:text-2xl font-title text-text dark:text-[#F8FAFC] font-bold whitespace-nowrap"
           >
             {t("aboutUs.services.title")}
           </motion.h2>
@@ -315,11 +326,11 @@ const AboutUs = () => {
                 {icons[item.id]}
               </div>
 
-              <h2 className="text-lg font-bold text-primary dark:text-[#8B5CF6] min-h-[50px]">
+              <h2 className="text-lg font-bold text-primary dark:text-[#8B5CF6] min-h-[20px]">
                 {servicesText[index].title}
               </h2>
 
-              <p className="text-neutral-600 text-sm leading-6 dark:text-[#F8FAFC]">
+              <p className="text-neutral-600 text-sm leading-6 dark:text-text-dark">
                 {servicesText[index].text}
               </p>
             </motion.article>
@@ -345,7 +356,7 @@ const AboutUs = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7 }}
-                className="mx-4 dark:text-[#F8FAFC] text-xl lg:text-2xl font-title whitespace-nowrap"
+                className="mx-3 lg:mx-4 dark:text-[#F8FAFC] text-xl lg:text-2xl font-title whitespace-nowrap"
               >
                 {t("aboutUs.whyUs.title")}
               </motion.h2>
@@ -360,7 +371,7 @@ const AboutUs = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              className="text-neutral-500 mt-4 text-lg leading-8"
+              className="text-neutral-500 mt-4 lg:text-lg leading-8"
             >
               {t("aboutUs.whyUs.description")}
             </motion.p>
@@ -388,6 +399,8 @@ const AboutUs = () => {
                     backdrop-blur-xl
                     border border-neutral-200
                     shadow-sm
+                    cursor-default
+                    transition-all
                     hover:shadow-2xl
                     hover:border-primary/20
                   "
@@ -404,6 +417,7 @@ const AboutUs = () => {
                     transition-all duration-300
                     group-hover:bg-primary
                     group-hover:rotate-6
+                  
                   "
                   >
                     <item.icon className="text-primary text-2xl dark:text-[#8B5CF6] group-hover:text-white transition-colors" />
@@ -415,7 +429,7 @@ const AboutUs = () => {
                       {whyUsText[index].title}
                     </h3>
 
-                    <p className="text-neutral-500 dark:text-[#F8FAFC] leading-8">
+                    <p className="text-neutral-500 dark:text-text-dark leading-8">
                       {whyUsText[index].description}
                     </p>
                   </div>
@@ -435,6 +449,7 @@ const AboutUs = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.7 }}
                 className="
+                
                   group
                   relative
                   w-full
@@ -457,11 +472,15 @@ const AboutUs = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
 
                 {/* متن روی تصویر */}
-                <div className={`absolute bottom-8 ${i18next.language === "fa"? "right-8":"left-8 right-8"}  text-white`}>
-                  <h3 className="text-3xl font-bold mb-3">{t("aboutUs.whyUs.titlePhoto")}</h3>
+                <div
+                  className={`absolute bottom-8 ${i18next.language === "fa" ? "right-8" : "left-8 right-8"}  text-white`}
+                >
+                  <h3 className="text-3xl font-bold mb-3">
+                    {t("aboutUs.whyUs.titlePhoto")}
+                  </h3>
 
                   <p className="text-white/90 leading-8">
-                  {t("aboutUs.whyUs.descriptionPhoto")}
+                    {t("aboutUs.whyUs.descriptionPhoto")}
                   </p>
                 </div>
               </motion.div>
@@ -475,6 +494,7 @@ const AboutUs = () => {
                 transition={{ duration: 0.5, delay: 1 }}
                 className="
                   absolute
+                  cursor-default
                   -top-10
                   -right-4
                   bg-white
@@ -556,7 +576,7 @@ const AboutUs = () => {
                 group
                 relative z-10
                 flex flex-col lg:flex-row
-                items-center justify-between
+                items-center justify-center
                 gap-12
                 px-12 py-14
                 rounded-[2rem]
@@ -569,20 +589,21 @@ const AboutUs = () => {
           <div className="flex flex-col items-center md:items-start gap-6 max-w-xl">
             <span
               className="
-                px-4 py-2
+                md:px-4 md:py-2
+                p-2
                 rounded-full
                 bg-white/20
-                text-white text-sm
+                text-white text-xs md:text-sm
                 backdrop-blur-md
               "
             >
               {t("aboutUs.cta.badge")}
             </span>
-            <h2 className="text-2xl text-start text-center md:text-3xl font-title leading-[1.6] md:leading-[1.8] text-white tracking-tight">
+            <h2 className="text-xl md:text-start text-center md:text-3xl font-title leading-[1.6] md:leading-[1.8] text-white tracking-tight">
               {t("aboutUs.cta.title")}
             </h2>
 
-            <p className="mt-4 w-full text-base text-start md:text-lg leading-8 md:leading-9 text-white/85 max-w-xl">
+            <p className="mt-4 w-full text-base text-center md:text-start md:text-lg leading-8 md:leading-9 text-white/85 max-w-xl">
               {t("aboutUs.cta.description")}
             </p>
 
@@ -591,11 +612,12 @@ const AboutUs = () => {
               className="
                 flex
                 justify-center items-center
-                w-64 h-16
+                md:w-64 md:h-16
+                w-48 h-14
+                md:text-xl
                 rounded-2xl
                 bg-accent
                 text-white
-                text-xl
                 font-bold
                 border-2 border-white/30
                 transition-all duration-300
@@ -628,7 +650,7 @@ const AboutUs = () => {
           <div
             className="
               hidden
-              md:block
+              lg:block
               relative
               p-8
               rounded-full

@@ -111,7 +111,7 @@ const Question = () => {
     });
   return (
     <section className="relative overflow-hidden py-20 px-4 dark:from-[#1E293B] dark:to-[#1E293B] bg-gradient-to-b from-primary-soft/20 to-white">
-      <div className="absolute top-0 left-0 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
+      <div className="absolute top-0 -left-20 w-[30rem] h-[30rem] bg-primary/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 right-0 w-72 h-72 bg-accent/10 rounded-full blur-3xl"></div>
 
       <div className="relative z-10 max-w-3xl mx-auto text-center mb-14">

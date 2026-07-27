@@ -36,7 +36,7 @@ const Footer = () => {
   const licenseImages = [senfiRayaneei, anformatic, anjomanSenfi];
 
   const itemStyle =
-    "cursor-pointer dark:text-[#94A3B8] rounded-lg px-3 py-2 transition-all duration-300 hover:bg-white/40 hover:text-primary dark:hover:text-primary-dark dark:hover:bg-black/50 hover:translate-x-1";
+    "cursor-pointer dark:text-[#94A3B8] rounded-lg px-3 py-1 lg:py-2 transition-all duration-300 hover:bg-white/40 hover:text-primary dark:hover:text-primary-dark dark:hover:bg-black/50 hover:translate-x-1";
 
   return (
     <footer className="w-full border-t border-neutral-300 dark:border-[#334155] bg-gradient-to-l from-accent-light/30 dark:from-[#1a2848] dark:to-[#121924] to-primary-light py-10 md:py-12">
@@ -44,7 +44,7 @@ const Footer = () => {
         {/* معرفی شرکت */}
         <div className="col-span-2 lg:col-span-1 flex flex-col justify-start">
           <h4 className="text-lg md:text-xl dark:text-[#F8FAFC] font-bold mb-3 md:mb-4 flex items-center gap-2">
-            <FaBuilding className="text-primary text-lg md:text-xl" />
+            <FaBuilding className="text-primary md:text-lg md:text-xl" />
             {t("footer.company.title")}
           </h4>
 
@@ -55,8 +55,8 @@ const Footer = () => {
 
         {/* خدمات اصلی */}
         <div className="flex flex-col items-start">
-          <h4 className="text-base md:text-xl dark:text-[#F8FAFC] font-bold mb-3 md:mb-4 flex items-center gap-2">
-            <FaBriefcase className="text-primary text-lg md:text-xl" />
+          <h4 className="text-sm md:text-xl dark:text-[#F8FAFC] font-bold mb-3 md:mb-4 flex items-center gap-2">
+            <FaBriefcase className="text-primary md:text-lg md:text-xl" />
             {t("footer.mainServices.title")}
           </h4>
 
@@ -71,8 +71,8 @@ const Footer = () => {
 
         {/* خدمات جانبی */}
         <div className="flex flex-col items-start">
-          <h4 className="text-base md:text-xl dark:text-[#F8FAFC] font-bold mb-3 md:mb-4 flex items-center gap-2">
-            <FaCogs className="text-primary text-lg md:text-xl" />
+          <h4 className="text-sm md:text-xl dark:text-text-dark font-bold mb-3 md:mb-4 flex items-center gap-2">
+            <FaCogs className="text-primary md:text-lg md:text-xl" />
             {t("footer.otherServices.title")}
           </h4>
 
@@ -87,17 +87,17 @@ const Footer = () => {
 
         {/* ارتباط با ما */}
         <div className="flex flex-col items-start">
-          <h4 className="text-base md:text-xl dark:text-[#F8FAFC] font-bold mb-3 md:mb-4 flex items-center gap-2">
-            <FaHeadset className="text-primary text-lg md:text-xl" />
+          <h4 className="text-sm md:text-xl dark:text-[#F8FAFC] font-bold mb-3 md:mb-4 flex items-center gap-2">
+            <FaHeadset className="text-primary md:text-lg md:text-xl" />
             {t("footer.contact.title")}
           </h4>
 
-          <div className="space-y-3 md:space-y-4 text-neutral-700 text-xs md:text-sm">
+          <div className="space-y-3 mt-2 sm:mt-0 md:space-y-4 text-neutral-700 text-xs md:text-sm">
             <a
               href="tel:02112345678"
               className="flex dark:text-[#94A3B8] items-center gap-2 md:gap-3 hover:text-primary"
             >
-              <FaPhone className="text-primary text-sm md:text-base" />
+              <FaPhone className="text-primary md:text-sm md:text-base" />
               <span>{t("footer.contact.phone")}</span>
             </a>
 
@@ -105,7 +105,7 @@ const Footer = () => {
               href="mailto:info@sarzamindanesh.ir"
               className="flex dark:text-[#94A3B8] items-center gap-2 md:gap-3 hover:text-primary"
             >
-              <FaEnvelope className="text-primary text-sm md:text-base" />
+              <FaEnvelope className="text-primary md:text-sm md:text-base" />
               <span>{t("footer.contact.email")}</span>
             </a>
 
@@ -120,8 +120,8 @@ const Footer = () => {
 
         {/* مجوزها */}
         <div>
-          <h4 className="text-base md:text-xl dark:text-[#F8FAFC] font-bold mb-4 flex items-center gap-2">
-            <FaShieldAlt className="text-primary text-xl" />
+          <h4 className="text-sm md:text-xl dark:text-[#F8FAFC] font-bold mb-4 flex items-center gap-2">
+            <FaShieldAlt className="text-primary md:text-xl" />
             {t("footer.licenses.title")}
           </h4>
 

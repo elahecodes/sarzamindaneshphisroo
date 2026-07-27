@@ -1,10 +1,15 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaUser, FaBars, FaMoon } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
+import { useTheme } from "../context/ThemeContext";
+
 import logo from "/src/assets/logo/Levels 1.png";
 import logo2 from "/src/assets/logo/لوگو سربرگ3.png";
-import { useTranslation } from "react-i18next";
+
 import {
+  FaUser,
+  FaBars,
+  FaMoon,
   FaHome,
   FaBlog,
   FaUsers,
@@ -16,55 +21,66 @@ import {
 
 const menuItems = [
   {
+    id: 1,
     title: "navbar.home",
     path: "/home",
     icon: <FaHome />,
   },
   {
+    id: 2,
     title: "navbar.portfolio",
     path: "/portfolio",
     icon: <FaProjectDiagram />,
   },
   {
+    id: 3,
     title: "navbar.aboutus",
     path: "/aboutus",
     icon: <FaUsers />,
   },
   {
+    id: 4,
     title: "navbar.blogs",
     path: "/blogs",
     icon: <FaBlog />,
   },
   {
+    id: 5,
     title: "navbar.contact",
     path: "/contact",
     icon: <FaPhoneAlt />,
   },
   {
+    id: 6,
     title: "navbar.projectorder",
     path: "/projectorder",
     icon: <FaEnvelope />,
   },
 ];
-import { useTheme } from "../context/ThemeContext";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { dark, toggle } = useTheme();
+  const { toggle } = useTheme();
   const { t, i18n } = useTranslation();
+
   return (
     <header className="sticky top-0 z-50 bg-primary dark:bg-[#8B5CF6] shadow-md">
-      <div className="w-full max-w-[1600px] mx-auto h-20 px-3 flex items-center justify-between">
-        {/* Logo & Navigation */}
+      <div className="w-full max-w-[1600px] mx-auto h-20 px-3 flex flex-row-reverse lg:flex-row items-center justify-between">
+        {/* Logo & Desktop Menu */}
         <div className="flex items-center gap-4 lg:gap-10">
           <img src={logo} alt="Company Logo" className="w-32 object-contain" />
+
           <nav className="hidden lg:block">
             <ul className="flex items-center gap-2 md:gap-6 lg:gap-8">
               {menuItems.map((item) => (
-                <li className="flex justify-start items-center gap-2 hover:bg-white/20 hover:p-2 transition-all duration-300 ease-in-out rounded-md">
-                  <span className="text-white text-sm mt-1 hidden xl:block">
+                <li
+                  key={item.id}
+                  className="flex items-center gap-2 hover:bg-white/20 hover:p-2 rounded-md transition-all duration-300"
+                >
+                  <span className="text-white text-sm hidden xl:block">
                     {item.icon}
                   </span>
+
                   <Link className="text-white text-sm" to={item.path}>
                     {t(item.title)}
                   </Link>
@@ -73,8 +89,15 @@ const Header = () => {
             </ul>
           </nav>
         </div>
+
         {/* Actions */}
         <div className="flex items-center gap-2 md:gap-3">
+          <button
+            onClick={() => setIsOpen(true)}
+            className="lg:hidden w-10 h-10 md:w-12 md:h-12 rounded-md bg-white/20 text-white text-xl flex items-center justify-center cursor-pointer"
+          >
+            <FaBars />
+          </button>
           {/* Language */}
           <button
             onClick={() =>
@@ -90,100 +113,66 @@ const Header = () => {
           {/* Dark Mode */}
           <button
             onClick={toggle}
-            className="btn w-10 h-10 md:w-12 md:h-12 rounded-md bg-white/30 text-white flex items-center justify-center hover:scale-105 transition"
+            className="w-10 h-10 md:w-12 md:h-12 rounded-md bg-white/30 text-white flex items-center justify-center hover:scale-105 transition"
           >
             <FaMoon />
           </button>
 
-          {/* Login */}
-          <Link to={"/login"}>
-            <button className="hidden cursor-pointer lg:flex h-10 md:h-12 px-4 md:px-5 items-center gap-2 rounded-lg bg-white text-primary shadow-lg hover:scale-105 transition">
+          {/* Login Desktop */}
+          <Link to="/login">
+            <button className="hidden lg:flex h-10 md:h-12 px-4 md:px-5 items-center gap-2 rounded-lg bg-white text-primary shadow-lg hover:scale-105 transition cursor-pointer">
               <FaUser className="text-lg" />
-              {i18n.language === "fa" ? (
-                <span className="text-sm md:text-base hidden xl:block">
-                  ورود | ثبت نام
-                  <span className="text-sm md:text-base hidden xl:block"></span>
-                </span>
-              ) : (
-                <span className="text-sm md:text-base hidden xl:block">Login | signUp</span>
-              )}
+
+              <span className="text-sm md:text-base hidden xl:block">
+                {t("navbar.loginSignup")}
+              </span>
             </button>
           </Link>
 
-          {/* Mobile Menu */}
-          <button
-            onClick={() => setIsOpen(true)}
-            className="lg:hidden cursor-pointer w-10 h-10 md:w-12 md:h-12 text-xl text-white bg-white/20 rounded-md flex items-center justify-center"
-          >
-            <FaBars />
-          </button>
           {isOpen && (
             <div
               className="fixed inset-0 bg-black/50 z-40"
               onClick={() => setIsOpen(false)}
             />
           )}
+
+          {/* Mobile Menu */}
           <nav
-            className={`
-              lg:hidden
-              absolute top-0 right-0
-              w-[80%] max-w-sm h-dvh
-              bg-bg dark:bg-[#0F172A] shadow-2xl z-50
-              transition-transform duration-500 ease-in-out
-              lg:hidden
-              ${isOpen ? "translate-x-0" : "translate-x-full"}
-                `}
+            className={`fixed top-0 h-dvh w-[80%] max-w-sm
+              overflow-y-auto overscroll-contain
+              bg-bg dark:bg-[#0F172A]
+              shadow-2xl z-50 transition-transform opacity-0 duration-500 lg:hidden
+              ${i18n.language === "fa" ? "right-0" : "left-0"}
+              ${
+                isOpen
+                  ? "translate-x-0 opacity-100"
+                  : i18n.language === "fa"
+                    ? "translate-x-full"
+                    : "-translate-x-full"
+              }`}
           >
             {/* Header */}
-            <div className="w-full flex justify-between items-center p-4 border-b border-neutral-200 dark:border-[#334155]">
+            <div className="flex justify-between items-center p-4 border-b border-neutral-200 dark:border-[#334155]">
               <img
-                className="w-32 object-contain"
                 src={logo2}
                 alt="Company Logo"
+                className="w-32 object-contain"
               />
 
               <button
                 onClick={() => setIsOpen(false)}
-                className="
-                  w-10 h-10
-                  rounded-full
-                  flex justify-center 
-                  items-center
-                  cursor-pointer
-                  bg-primary/10
-                  dark:bg-primary/30
-                  text-primary
-                  shadow-sm
-                  hover:bg-primary
-                  hover:text-white
-                  hover:scale-105
-                  transition-all
-                  duration-300
-                "
+                className="w-10 h-10 rounded-full flex items-center justify-center bg-primary/10 dark:bg-primary/30 hover:bg-primary hover:text-white transition-all duration-300"
               >
                 <FaTimes className="dark:text-[#8B5CF6]" />
               </button>
             </div>
 
-            {/* Menu Items */}
             <ul className="flex flex-col gap-3 py-6">
+              {" "}
               {menuItems.map((item) => (
                 <li
                   key={item.id}
-                  className="
-                    bg-white
-                    dark:bg-[#334155]
-                    dark:border-[#334155]
-                    border border-neutral-100
-                    w-11/12 mx-auto
-                    rounded-xl
-                    h-14
-                    overflow-hidden
-                    hover:border-primary
-                    hover:bg-primary/5
-                    transition-all
-                    duration-300
-                  "
+                  className="bg-white dark:bg-[#334155] border border-neutral-100 dark:border-[#334155] w-11/12 mx-auto rounded-xl h-14 overflow-hidden hover:border-primary hover:bg-primary/5 transition-all duration-300"
                 >
                   <Link
                     to={item.path}
@@ -195,17 +184,22 @@ const Header = () => {
                     </span>
 
                     <span className="font-medium dark:text-[#F8FAFC]">
-                      {item.title}
+                      {t(item.title)}
                     </span>
                   </Link>
                 </li>
               ))}
-              <Link to={"/login"}>
-                <button className="w-11/12 dark:bg-[#8B5CF6] mx-auto px-4 cursor-pointer h-12 flex justify-center items-center gap-2 rounded-lg bg-primary text-white shadow-lg hover:scale-105 transition">
-                  <FaUser className="text-lg" />
-                  <span className="text-sm md:text-base">ورود | ثبت نام</span>
-                </button>
-              </Link>
+              <li className="w-11/12 mx-auto">
+                <Link to="/login" onClick={() => setIsOpen(false)}>
+                  <button className="w-full h-12 flex items-center justify-center gap-2 rounded-lg bg-primary dark:bg-[#8B5CF6] text-white shadow-lg hover:scale-105 transition cursor-pointer">
+                    <FaUser className="text-lg" />
+
+                    <span className="text-sm md:text-base">
+                      {t("navbar.loginSignup")}
+                    </span>
+                  </button>
+                </Link>
+              </li>
             </ul>
           </nav>
         </div>

@@ -12,7 +12,7 @@ const CustomSelect = ({ items, setValue, setOpen }) => {
             className="
               flex items-center gap-2 mb-2 h-10 px-2
               rounded-xl bg-primary-light
-            dark:bg-bg-dark
+              dark:bg-bg-dark
               hover:scale-[1.02]
               hover:shadow-md
               cursor-pointer

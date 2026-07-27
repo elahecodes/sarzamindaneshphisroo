@@ -4,15 +4,40 @@ import { motion } from "framer-motion";
 import { MdOutlineArticle } from "react-icons/md";
 import { HiOutlineBriefcase } from "react-icons/hi2";
 import loadingGif from "../assets/LoadingIcon/Ellipsis@1x-2.8s-200px-200px.gif";
-
+import { useTranslation } from "react-i18next";
+import { useMemo } from "react";
 const Pagination = ({ items, isBlog }) => {
+  const { t, i18n } = useTranslation();
+  const portfolioText = t("portfolioData.items", { returnObjects: true });
+  const blogsText = t("blogsData.items", { returnObjects: true });
   const [quantity, setQuantity] = useState(10);
   const [value, setValue] = useState("");
-
   const loaderRef = useRef(null);
-  const filteredItems = items.filter((item) =>
-    item.title.toLowerCase().includes(value.toLowerCase()),
+
+  const blogMap = useMemo(
+    () => Object.fromEntries(blogsText.map((item) => [item.id, item])),
+    [blogsText],
   );
+
+  useEffect(() => {
+    setQuantity(10);
+  }, [value]);
+
+  const portfolioMap = useMemo(
+    () => Object.fromEntries(portfolioText.map((item) => [item.id, item])),
+    [portfolioText],
+  );
+
+  const filteredItems = useMemo(() => {
+    return items.filter((item) => {
+      const title = isBlog
+        ? blogMap[item.id]?.title
+        : portfolioMap[item.id]?.title;
+
+      return title?.toLowerCase().includes(value.toLowerCase());
+    });
+  }, [items, value, isBlog, blogMap, portfolioMap]);
+
   const content = filteredItems.slice(0, quantity);
 
   useEffect(() => {
@@ -107,8 +132,9 @@ const Pagination = ({ items, isBlog }) => {
             >
               <span className="h-2 w-2 animate-pulse rounded-full bg-green-500"></span>
 
-              <span className="font-semibold text-violet-700 dark:text-violet-300">
-                {items.length} مورد منتشر شده
+              <span className="font-semibold mx-2 text-violet-700 dark:text-violet-300">
+                <span className="mx-1">{items.length}</span>
+                {t("pagination.published")}
               </span>
             </motion.div>
 
@@ -118,8 +144,8 @@ const Pagination = ({ items, isBlog }) => {
               className="mt-7 text-2xl font-black leading-tight text-slate-900 dark:text-white md:text-3xl lg:text-4xl"
             >
               {isBlog
-                ? "وبلاگ‌های تخصصی برنامه‌نویسی"
-                : "نمونه پروژه‌های اجرا شده"}
+                ? t("pagination.blog.title")
+                : t("pagination.portfolio.title")}
             </motion.h2>
 
             {/* Animated Line */}
@@ -137,11 +163,11 @@ const Pagination = ({ items, isBlog }) => {
             {/* Description */}
             <motion.p
               variants={item}
-              className="mt-6 max-w-3xl text-base leading-9 text-slate-600 dark:text-slate-400 lg:text-lg"
+              className="mt-6 max-w-3xl text-base text-slate-600 dark:text-slate-400 text-justify lg:text-lg"
             >
               {isBlog
-                ? "مجموعه‌ای از مقالات تخصصی در زمینه React، JavaScript، طراحی رابط کاربری، تکنولوژی و تجربیات عملی توسعه وب که به شما کمک می‌کند دانش خود را به‌روز نگه دارید."
-                : "مجموعه‌ای از پروژه‌های طراحی و توسعه وب که با React، Tailwind CSS و JavaScript پیاده‌سازی شده‌اند و نمایانگر تجربه ما در ساخت رابط‌های کاربری سریع، مدرن و ریسپانسیو هستند."}
+                ? t("pagination.blog.description")
+                : t("pagination.portfolio.description")}
             </motion.p>
 
             {/* Search */}
@@ -150,29 +176,30 @@ const Pagination = ({ items, isBlog }) => {
                 <input
                   onChange={(e) => setValue(e.target.value)}
                   value={value}
-                  placeholder="جستجوی مقاله..."
+                  placeholder={t("pagination.blog.searchPlaceholder")}
                   className="
-            h-14
-            w-full
-            rounded-2xl
-            border
-            border-slate-200
-            bg-white
-            px-6
-            text-slate-700
-            
-            outline-none
-            transition-all
-            duration-300
-            placeholder:text-slate-400
-            focus:scale-[1.02]
-            focus:border-violet-500
-            focus:ring-4
-            focus:ring-violet-500/20
-            dark:border-slate-700
-            dark:bg-slate-900
-            dark:text-white
-          "
+                    h-14
+                    w-full
+                    rounded-2xl
+                    border
+                    border-slate-200
+                   bg-white
+                   xl:bg-primary/10
+                    px-6
+                    text-slate-700 
+                    outline-none
+                    transition-all
+                    duration-300
+                    placeholder:text-slate-400
+                    focus:scale-[1.02]
+                    focus:border-primary
+                    dark:focus:border-primary-dark
+                    focus:ring-4
+                    focus:ring-violet-500/20
+                    dark:border-slate-700
+                    dark:bg-bg-dark
+                    dark:text-text-dark
+                  "
                 />
               </motion.div>
             )}
@@ -182,9 +209,12 @@ const Pagination = ({ items, isBlog }) => {
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 p-3">
         {content.map((item) =>
           isBlog ? (
-            <Link to={`/blogPage/${item.id}`} className="group block h-full">
+            <Link
+              key={item.id}
+              to={`/blogPage/${item.id}`}
+              className="group block h-full"
+            >
               <motion.article
-                key={item.id}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
@@ -250,7 +280,7 @@ const Pagination = ({ items, isBlog }) => {
                     text-slate-800
                   "
                   >
-                    {item.category}
+                    {blogMap[item.id]?.category}
                   </span>
                 </div>
 
@@ -258,10 +288,10 @@ const Pagination = ({ items, isBlog }) => {
                 <div className="flex h-[150px] lg:h-[200px] flex-col p-2 lg:p-6">
                   {/* Author */}
                   <div className="mb-4 flex items-center justify-between text-sm text-slate-500 dark:text-slate-400">
-                    <span>{item.author}</span>
+                    <span>{blogMap?.[item.id]?.author}</span>
 
                     <span className="rounded-full bg-violet-100 dark:bg-violet-500/20 px-3 py-1 text-xs text-violet-700 dark:text-violet-300">
-                      ۵ دقیقه مطالعه
+                      {t("pagination.blog.readTime")}
                     </span>
                   </div>
 
@@ -279,7 +309,7 @@ const Pagination = ({ items, isBlog }) => {
                     group-hover:text-violet-600
                   "
                   >
-                    {item.title}
+                    <span>{blogMap?.[item.id]?.title}</span>
                   </h2>
 
                   {/* Description */}
@@ -292,7 +322,7 @@ const Pagination = ({ items, isBlog }) => {
                     dark:text-slate-400
                   "
                   >
-                    {item.description}
+                    {blogMap?.[item.id]?.description}
                   </p>
 
                   {/* Footer */}
@@ -307,11 +337,11 @@ const Pagination = ({ items, isBlog }) => {
                         group-hover:translate-x-1
                       "
                     >
-                      مطالعه مقاله
+                      {blogMap[item.id]?.readMore}
                     </span>
 
                     <div
-                      className="
+                      className={`
                         flex
                         h-10
                         w-10
@@ -325,8 +355,8 @@ const Pagination = ({ items, isBlog }) => {
                         duration-300
                         group-hover:bg-violet-600
                         group-hover:text-white
-                        rotate-y-180
-                      "
+                       ${i18n.language === "fa" ? " rotate-y-180" : " rotate-y-0"}
+                      `}
                     >
                       →
                     </div>
@@ -377,6 +407,7 @@ const Pagination = ({ items, isBlog }) => {
                       bg-gradient-to-t
                       from-black/70
                       via-black/20
+                      h-56
                       to-transparent
                       opacity-0
                       group-hover:opacity-100
@@ -406,7 +437,7 @@ const Pagination = ({ items, isBlog }) => {
                       backdrop-blur-md
                     "
                     >
-                      مشاهده پروژه
+                      {portfolioMap[item.id]?.readMore}
                     </span>
                   </div>
                 </div>
@@ -425,7 +456,7 @@ const Pagination = ({ items, isBlog }) => {
                       group-hover:text-violet-600
                     "
                   >
-                    {item.title}
+                    {portfolioMap[item.id]?.title}
                   </h3>
 
                   {/* Description */}
@@ -433,15 +464,15 @@ const Pagination = ({ items, isBlog }) => {
                     className="
                       mt-4
                       text-sm
-                      leading-7
+                      
                       lg:h-14
                       text-slate-600
                       dark:text-slate-400
-                      lg:line-clamp-2
-                      line-clamp-1
+                      line-clamp-2
+                     
                     "
                   >
-                    {item.description}
+                    {portfolioMap[item.id]?.description}
                   </p>
 
                   {/* Footer */}
@@ -456,12 +487,11 @@ const Pagination = ({ items, isBlog }) => {
                         transition-transform
                       "
                     >
-                      مشاهده جزئیات
+                      {portfolioMap[item.id]?.readMore}
                     </span>
 
                     <div
-                      className="
-                        h-10 w-10
+                      className={`h-10 w-10
                         rounded-full
                         bg-violet-100
                         dark:bg-violet-500/20
@@ -471,8 +501,7 @@ const Pagination = ({ items, isBlog }) => {
                         dark:text-primary-dark
                         group-hover:bg-violet-600
                         group-hover:text-white
-                        rotate-y-180
-                      "
+                        ${i18n.language === "fa" ? "rotate-y-180" : "rotate-y-0"}`}
                     >
                       →
                     </div>
@@ -485,7 +514,7 @@ const Pagination = ({ items, isBlog }) => {
       </div>
       {filteredItems.length === 0 && (
         <div className="col-span-full py-20 text-center text-slate-500">
-          موردی پیدا نشد.
+          {t("pagination.notFound")}
         </div>
       )}
       {quantity < items.length && (

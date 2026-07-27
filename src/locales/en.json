@@ -1,12 +1,4 @@
 {
-  "navbar": {
-    "home": "Home",
-    "aboutus": "About us",
-    "contact": "Contact",
-    "portfolio": "Portfolio",
-    "blogs": "Blogs",
-    "projectorder": "ProjectOrder"
-  },
   "introduction": {
     "title": "Knowledge Land",
     "description": "Knowledge Land aims to develop knowledge, skills, and modern technologies. We strive to make learning simpler, more practical, and engaging while bridging the gap between theory and practice.",
@@ -137,7 +129,6 @@
       }
     ]
   },
-
   "workwithus": {
     "items": [
       {
@@ -150,61 +141,60 @@
       }
     ]
   },
-
   "comments": {
     "items": [
       {
         "id": 1,
-        "avatar": "/images/testimonials/ali-rezaei.jpg",
+        "avatar": "/public/icons/user.png",
         "fullName": "Ali Rezaei",
         "position": "Sales Manager",
         "review": "Working with this team was a truly professional experience. Every stage of the project was completed on schedule, and the final result exceeded our expectations."
       },
       {
         "id": 2,
-        "avatar": "/images/testimonials/sara-mohammadi.jpg",
+        "avatar": "/public/icons/user.png",
         "fullName": "Sara Mohammadi",
         "position": "Marketing Manager",
         "review": "The user interface was beautifully designed and highly user-friendly. The team's consistent communication and quick responses ensured a smooth project from start to finish."
       },
       {
         "id": 3,
-        "avatar": "/images/testimonials/amir-hosseini.jpg",
+        "avatar": "/public/icons/user.png",
         "fullName": "Amir Hosseini",
         "position": "Startup CEO",
         "review": "From requirement analysis to final implementation, everything was handled professionally. We will definitely work with this team again on future projects."
       },
       {
         "id": 4,
-        "avatar": "/images/testimonials/negar-ahmadi.jpg",
+        "avatar": "/public/icons/user.png",
         "fullName": "Negar Ahmadi",
         "position": "Product Manager",
         "review": "Their attention to detail and deep understanding of our business needs resulted in exactly the outcome we were looking for."
       },
       {
         "id": 5,
-        "avatar": "/images/testimonials/mohammad-karimi.jpg",
+        "avatar": "/public/icons/user.png",
         "fullName": "Mohammad Karimi",
         "position": "E-commerce Store Owner",
         "review": "Fast delivery, high-quality code, and professional design were the team's greatest strengths. We are completely satisfied with the final product."
       },
       {
         "id": 6,
-        "avatar": "/images/testimonials/zahra-sharifi.jpg",
+        "avatar": "/public/icons/user.png",
         "fullName": "Zahra Sharifi",
         "position": "HR Manager",
         "review": "It was a pleasure working with this team. They patiently reviewed and implemented every one of our requests with great care."
       },
       {
         "id": 7,
-        "avatar": "/images/testimonials/hossein-naderi.jpg",
+        "avatar": "/public/icons/user.png",
         "fullName": "Hossein Naderi",
         "position": "IT Manager",
         "review": "The project was delivered on time, and all the technical standards we required were fully met."
       },
       {
         "id": 8,
-        "avatar": "/images/testimonials/maryam-akbari.jpg",
+        "avatar": "/public/icons/user.png",
         "fullName": "Maryam Akbari",
         "position": "Brand Manager",
         "review": "Their creativity in both design and development gave our website a modern and professional look. It was an outstanding collaboration."
@@ -270,7 +260,7 @@
   "footer": {
     "company": {
       "title": "Sarzamin Danesh Pishro",
-      "description": "Providing innovative software solutions including website design, web application development, enterprise software, and digital transformation consulting for modern businesses."
+      "description": "Delivering innovative software solutions, including website design, web application development, enterprise software, and digital transformation consulting for modern businesses."
     },
 
     "mainServices": {
@@ -330,7 +320,7 @@
   "aboutUs": {
     "trust": {
       "title": "Trust Is Our Greatest Asset",
-      "description": "Over the years, we have successfully delivered numerous software design and development projects, earning the trust of our clients through commitment, quality, transparency, and continuous collaboration. We are proud to have contributed to the growth of businesses across different industries and remain dedicated to delivering innovative, reliable, and long-lasting solutions.",
+      "description": "Our journey began in 2024 with a vision of delivering innovative and comprehensive technology solutions.",
       "achievements": [
         {
           "text": "30+ Successful Projects"
@@ -607,6 +597,793 @@
 
     "captcha": {
       "error": "Please verify the captcha first."
+    }
+  },
+  "pagination": {
+    "published": "Published Items",
+
+    "blog": {
+      "title": "Programming Articles",
+      "description": "A collection of professional articles about React, JavaScript, UI Design, modern technologies, and practical web development experiences to help you stay up to date.",
+      "searchPlaceholder": "Search articles...",
+      "readTime": "5 min read",
+      "readArticle": "Read Article"
+    },
+    "portfolio": {
+      "title": "Completed Projects",
+      "description": "A showcase of web design and development projects built with React, Tailwind CSS, and JavaScript, reflecting our experience in creating modern, fast, and responsive user interfaces.",
+      "viewProject": "View Project",
+      "viewDetails": "View Details"
+    },
+
+    "notFound": "No items found."
+  },
+  "portfolioData": {
+    "items": [
+      {
+        "readMore": "See Details",
+        "id": 1,
+        "title": "Sales Management Dashboard",
+        "description": "An advanced management dashboard for monitoring sales performance, revenue analytics, orders, customers, and products in real time."
+      },
+      {
+        "readMore": "See Details",
+        "id": 2,
+        "title": "Online Cosmetics Store",
+        "description": "A complete e-commerce website for showcasing beauty products with categories, search, filtering, and shopping cart functionality."
+      },
+      {
+        "readMore": "See Details",
+        "id": 3,
+        "title": "Restaurant Management Panel",
+        "description": "A restaurant management system for handling menus, customer orders, table reservations, and sales reports."
+      },
+      {
+        "readMore": "See Details",
+        "id": 4,
+        "title": "Corporate Website",
+        "description": "A modern business website designed to introduce company services, team members, and portfolio projects."
+      },
+      {
+        "id": 5,
+        "title": "Weather Application",
+        "readMore": "See Details",
+        "description": "A weather application that provides real-time weather updates and forecasts using external APIs."
+      },
+      {
+        "readMore": "See Details",
+        "id": 6,
+        "title": "Task & Project Manager",
+        "description": "A productivity tool for creating, organizing, editing, and tracking tasks and projects efficiently."
+      },
+      {
+        "readMore": "See Details",
+        "id": 7,
+        "title": "Programming Blog",
+        "description": "A modern educational blog for publishing programming tutorials and technical articles with an optimized reading experience."
+      },
+      {
+        "readMore": "See Details",
+        "id": 8,
+        "title": "Online Booking System",
+        "description": "An online booking platform that allows users to schedule appointments, manage reservations, and access a personal dashboard securely."
+      }
+    ]
+  },
+  "blogsData": {
+    "items": [
+      {
+        "id": 1,
+        "author": "Elahe",
+        "viewsWord": "view",
+        "readMore": "Read Article",
+        "category": "React",
+        "date": "July 23, 2026",
+        "readTime": "6 min",
+        "views": 1137,
+        "title": "What Is React and Why Is It So Popular?",
+        "description": "This article explores the topic \"What Is React and Why Is It So Popular?\"\n\nIt explains the concept, advantages, use cases, and its impact on modern web development.\n\nIt also introduces real-world examples and discusses the future of this technology."
+      },
+      {
+        "id": 2,
+        "author": "Elahe",
+        "viewsWord": "view",
+        "readMore": "Read Article",
+        "category": "JavaScript",
+        "date": "July 24, 2026",
+        "readTime": "6 min",
+        "views": 1274,
+        "title": "The History of JavaScript",
+        "description": "This article explores the history of JavaScript.\n\nIt covers its evolution, major milestones, practical applications, and influence on modern web development.\n\nIt also highlights real-world examples and future trends."
+      },
+      {
+        "id": 3,
+        "author": "Elahe",
+        "viewsWord": "view",
+        "readMore": "Read Article",
+        "category": "React",
+        "date": "July 25, 2026",
+        "readTime": "6 min",
+        "views": 1411,
+        "title": "React vs Vue",
+        "description": "This article compares React and Vue.\n\nIt discusses their strengths, differences, use cases, and impact on modern web development.\n\nIt also provides practical examples and future perspectives."
+      },
+      {
+        "id": 4,
+        "author": "Elahe",
+        "viewsWord": "view",
+        "readMore": "Read Article",
+        "category": "TypeScript",
+        "date": "July 26, 2026",
+        "readTime": "6 min",
+        "views": 1548,
+        "title": "The Future of TypeScript",
+        "description": "This article explores the future of TypeScript.\n\nIt discusses its benefits, adoption, use cases, and role in modern web development.\n\nIt also highlights real-world examples and upcoming trends."
+      },
+      {
+        "id": 5,
+        "author": "Elahe",
+        "viewsWord": "view",
+        "readMore": "Read Article",
+        "category": "React",
+        "date": "July 27, 2026",
+        "readTime": "6 min",
+        "views": 1685,
+        "title": "Why Did Vite Replace CRA?",
+        "description": "This article explains why Vite has become the preferred alternative to Create React App.\n\nIt covers performance improvements, developer experience, and modern tooling.\n\nIt also includes practical examples and future insights."
+      },
+      {
+        "id": 6,
+        "author": "Elahe",
+        "viewsWord": "view",
+        "readMore": "Read Article",
+        "category": "Node.js",
+        "date": "July 28, 2026",
+        "readTime": "6 min",
+        "views": 1822,
+        "title": "How Does Node.js Work?",
+        "description": "This article explains how Node.js works.\n\nIt covers the event loop, asynchronous programming, advantages, and practical applications.\n\nIt also includes real-world examples and future trends."
+      },
+      {
+        "id": 7,
+        "author": "Elahe",
+        "viewsWord": "view",
+        "readMore": "Read Article",
+        "category": "Node.js",
+        "date": "July 29, 2026",
+        "readTime": "6 min",
+        "views": 1959,
+        "title": "Introduction to Bun",
+        "description": "This article introduces Bun.\n\nIt explains its features, performance advantages, and how it compares to existing JavaScript runtimes.\n\nIt also discusses real-world use cases and future potential."
+      },
+      {
+        "id": 8,
+        "author": "Elahe",
+        "viewsWord": "view",
+        "readMore": "Read Article",
+        "category": "Node.js",
+        "date": "July 30, 2026",
+        "readTime": "6 min",
+        "views": 2096,
+        "title": "REST vs GraphQL",
+        "description": "This article compares REST and GraphQL.\n\nIt explains their differences, strengths, weaknesses, and common use cases.\n\nIt also provides practical examples and future insights."
+      },
+      {
+        "id": 9,
+        "author": "Elahe",
+        "viewsWord": "view",
+        "readMore": "Read Article",
+        "category": "React",
+        "date": "July 31, 2026",
+        "readTime": "6 min",
+        "views": 2233,
+        "title": "What Is SSR?",
+        "description": "This article explains Server-Side Rendering (SSR).\n\nIt covers its advantages, disadvantages, SEO benefits, and practical applications.\n\nIt also explores future trends in web development."
+      },
+      {
+        "id": 10,
+        "author": "Elahe",
+        "viewsWord": "view",
+        "readMore": "Read Article",
+        "category": "React",
+        "date": "August 1, 2026",
+        "readTime": "6 min",
+        "views": 2370,
+        "title": "What Is CSR?",
+        "description": "This article explains Client-Side Rendering (CSR).\n\nIt discusses how it works, its benefits, limitations, and practical use cases.\n\nIt also compares CSR with other rendering strategies."
+      },
+      {
+        "id": 11,
+        "author": "Elahe",
+        "viewsWord": "view",
+        "readMore": "Read Article",
+        "category": "JavaScript",
+        "date": "August 2, 2026",
+        "readTime": "6 min",
+        "views": 2507,
+        "title": "What Is Jamstack?",
+        "description": "This article introduces Jamstack.\n\nIt explains its architecture, benefits, and why it has become popular for modern web development.\n\nIt also covers practical examples and future possibilities."
+      },
+      {
+        "id": 12,
+        "author": "Elahe",
+        "viewsWord": "view",
+        "readMore": "Read Article",
+        "category": "Tailwind CSS",
+        "date": "August 3, 2026",
+        "readTime": "6 min",
+        "views": 2644,
+        "title": "Tailwind CSS or Bootstrap?",
+        "description": "This article compares Tailwind CSS and Bootstrap.\n\nIt discusses their strengths, weaknesses, and ideal use cases.\n\nIt also helps developers choose the right framework for their projects."
+      },
+      {
+        "id": 13,
+        "author": "Elahe",
+        "viewsWord": "view",
+        "readMore": "Read Article",
+        "category": "UI/UX",
+        "date": "August 4, 2026",
+        "readTime": "6 min",
+        "views": 2781,
+        "title": "What Is Atomic Design?",
+        "description": "This article explains the Atomic Design methodology.\n\nIt covers its principles, benefits, and role in building scalable design systems.\n\nIt also includes practical implementation examples."
+      },
+      {
+        "id": 14,
+        "author": "Elahe",
+        "viewsWord": "view",
+        "readMore": "Read Article",
+        "category": "UI/UX",
+        "date": "August 5, 2026",
+        "readTime": "6 min",
+        "views": 2918,
+        "title": "Dark Mode in UI Design",
+        "description": "This article explores Dark Mode in user interface design.\n\nIt discusses usability, accessibility, design principles, and best practices.\n\nIt also presents real-world examples and future trends."
+      },
+      {
+        "id": 15,
+        "author": "Elahe",
+        "viewsWord": "view",
+        "readMore": "Read Article",
+        "category": "UI/UX",
+        "date": "August 6, 2026",
+        "readTime": "6 min",
+        "views": 3055,
+        "title": "What Is a Design System?",
+        "description": "This article explains what a Design System is.\n\nIt covers its components, benefits, and importance in building consistent digital products.\n\nIt also includes practical implementation examples."
+      },
+      {
+        "id": 16,
+        "author": "Elahe",
+        "viewsWord": "view",
+        "readMore": "Read Article",
+        "category": "Git",
+        "date": "August 7, 2026",
+        "readTime": "6 min",
+        "views": 3192,
+        "title": "How Git Makes Team Development Easier",
+        "description": "This article explains how Git simplifies team collaboration.\n\nIt covers version control, branching, collaboration workflows, and practical applications.\n\nIt also introduces real-world examples and future trends."
+      },
+      {
+        "id": 17,
+        "author": "Elahe",
+        "viewsWord": "view",
+        "readMore": "Read Article",
+        "category": "Git",
+        "date": "August 8, 2026",
+        "readTime": "6 min",
+        "views": 3329,
+        "title": "What Is GitHub?",
+        "description": "This article introduces GitHub.\n\nIt explains repositories, collaboration features, Git integration, and practical use cases.\n\nIt also discusses its role in modern software development."
+      },
+      {
+        "id": 18,
+        "author": "Elahe",
+        "viewsWord": "view",
+        "readMore": "Read Article",
+        "category": "JavaScript",
+        "date": "August 9, 2026",
+        "readTime": "6 min",
+        "views": 3466,
+        "title": "What Is Clean Code?",
+        "description": "This article explains the concept of Clean Code.\n\nIt discusses readability, maintainability, best practices, and practical examples.\n\nIt also highlights its importance in software development."
+      },
+      {
+        "id": 19,
+        "author": "Elahe",
+        "viewsWord": "view",
+        "readMore": "Read Article",
+        "category": "JavaScript",
+        "date": "August 10, 2026",
+        "readTime": "6 min",
+        "views": 3603,
+        "title": "Web Performance",
+        "description": "This article explores Web Performance.\n\nIt discusses optimization techniques, Core Web Vitals, best practices, and real-world examples.\n\nIt also highlights future trends."
+      },
+      {
+        "id": 20,
+        "author": "Elahe",
+        "viewsWord": "view",
+        "readMore": "Read Article",
+        "category": "JavaScript",
+        "date": "August 11, 2026",
+        "readTime": "6 min",
+        "views": 3740,
+        "title": "Lazy Loading",
+        "description": "This article explains Lazy Loading.\n\nIt covers performance benefits, implementation techniques, practical use cases, and best practices.\n\nIt also discusses future improvements."
+      },
+      {
+        "id": 21,
+        "author": "Elahe",
+        "viewsWord": "view",
+        "readMore": "Read Article",
+        "category": "React",
+        "date": "August 12, 2026",
+        "readTime": "6 min",
+        "views": 3877,
+        "title": "What Is React and Why Is It So Popular?",
+        "description": "This article explores React, its advantages, use cases, and future."
+      },
+      {
+        "id": 22,
+        "author": "Elahe",
+        "viewsWord": "view",
+        "readMore": "Read Article",
+        "category": "React",
+        "date": "August 13, 2026",
+        "readTime": "6 min",
+        "views": 4014,
+        "title": "The History of JavaScript",
+        "description": "This article explores the history and evolution of JavaScript."
+      },
+      {
+        "id": 23,
+        "author": "Elahe",
+        "viewsWord": "view",
+        "readMore": "Read Article",
+        "category": "JavaScript",
+        "date": "August 14, 2026",
+        "readTime": "6 min",
+        "views": 4151,
+        "title": "React vs Vue",
+        "description": "This article compares React and Vue with practical examples."
+      },
+      {
+        "id": 24,
+        "author": "Elahe",
+        "viewsWord": "view",
+        "readMore": "Read Article",
+        "category": "JavaScript",
+        "date": "August 15, 2026",
+        "readTime": "6 min",
+        "views": 4288,
+        "title": "The Future of TypeScript",
+        "description": "This article explores the future of TypeScript and its ecosystem."
+      },
+      {
+        "id": 25,
+        "author": "Elahe",
+        "viewsWord": "view",
+        "readMore": "Read Article",
+        "category": "CSS",
+        "date": "August 16, 2026",
+        "readTime": "6 min",
+        "views": 4425,
+        "title": "Why Did Vite Replace CRA?",
+        "description": "This article explains why Vite replaced Create React App."
+      },
+      {
+        "id": 26,
+        "author": "Elahe",
+        "viewsWord": "view",
+        "readMore": "Read Article",
+        "category": "CSS",
+        "date": "August 17, 2026",
+        "readTime": "6 min",
+        "views": 4562,
+        "title": "How Does Node.js Work?",
+        "description": "This article explains how Node.js works and why it is popular."
+      },
+      {
+        "id": 27,
+        "author": "Elahe",
+        "viewsWord": "view",
+        "readMore": "Read Article",
+        "category": "CSS",
+        "date": "August 18, 2026",
+        "readTime": "6 min",
+        "views": 4699,
+        "title": "Introduction to Bun",
+        "description": "This article introduces Bun and its advantages."
+      },
+      {
+        "id": 28,
+        "author": "Elahe",
+        "viewsWord": "view",
+        "readMore": "Read Article",
+        "category": "JavaScript",
+        "date": "August 19, 2026",
+        "readTime": "6 min",
+        "views": 4836,
+        "title": "REST vs GraphQL",
+        "description": "This article compares REST and GraphQL with practical examples."
+      },
+      {
+        "id": 29,
+        "author": "Elahe",
+        "viewsWord": "view",
+        "readMore": "Read Article",
+        "category": "JavaScript",
+        "date": "August 20, 2026",
+        "readTime": "6 min",
+        "views": 4973,
+        "title": "What Is SSR?",
+        "description": "This article explains Server-Side Rendering and its benefits."
+      },
+      {
+        "id": 30,
+        "author": "Elahe",
+        "viewsWord": "view",
+        "readMore": "Read Article",
+        "category": "JavaScript",
+        "date": "August 21, 2026",
+        "readTime": "6 min",
+        "views": 5110,
+        "title": "What Is CSR?",
+        "description": "This article explains Client-Side Rendering and its use cases."
+      },
+      {
+        "id": 31,
+        "author": "Elahe",
+        "viewsWord": "view",
+        "readMore": "Read Article",
+        "category": "Node.js",
+        "date": "August 22, 2026",
+        "readTime": "6 min",
+        "views": 5247,
+        "title": "What Is Jamstack?",
+        "description": "This article introduces Jamstack and its architecture."
+      },
+      {
+        "id": 32,
+        "author": "Elahe",
+        "viewsWord": "view",
+        "readMore": "Read Article",
+        "category": "React",
+        "date": "August 23, 2026",
+        "readTime": "6 min",
+        "views": 5384,
+        "title": "Tailwind CSS or Bootstrap?",
+        "description": "This article compares Tailwind CSS and Bootstrap."
+      },
+      {
+        "id": 33,
+        "author": "Elahe",
+        "viewsWord": "view",
+        "readMore": "Read Article",
+        "category": "Git",
+        "date": "August 24, 2026",
+        "readTime": "6 min",
+        "views": 5521,
+        "title": "What Is Atomic Design?",
+        "description": "This article explains the Atomic Design methodology."
+      },
+      {
+        "id": 34,
+        "author": "Elahe",
+        "viewsWord": "view",
+        "readMore": "Read Article",
+        "category": "CSS",
+        "date": "August 25, 2026",
+        "readTime": "6 min",
+        "views": 5658,
+        "title": "Dark Mode in UI Design",
+        "description": "This article explores Dark Mode and its best practices."
+      },
+      {
+        "id": 35,
+        "author": "Elahe",
+        "viewsWord": "view",
+        "readMore": "Read Article",
+        "category": "UI/UX",
+        "date": "August 26, 2026",
+        "readTime": "6 min",
+        "views": 5795,
+        "title": "What Is a Design System?",
+        "description": "This article explains Design Systems and their importance in modern product development."
+      }
+    ]
+  },
+  "portfolioPage": {
+    "category": "Frontend Project",
+    "technologies": "Technologies Used",
+    "demo": "Live Demo",
+    "github": "GitHub Repository",
+    "features": "Project Features",
+    "about": "About the Project",
+    "notFound": "Project not found!",
+    "items": [
+      {
+        "id": 1,
+        "img": "/images/portfolio1.jpg",
+        "title": "Sales Management Dashboard",
+        "description": "An advanced dashboard for analyzing and managing sales with real-time statistics, revenue charts, order management, customers, and products.",
+        "about": "This project was developed to help businesses monitor sales performance and manage customers, products, and orders more efficiently. It provides real-time analytics, interactive charts, and a fully responsive interface for administrators.",
+        "technology": [
+          "React.js",
+          "Tailwind CSS",
+          "Recharts",
+          "React Query",
+          "Context API"
+        ],
+        "features": [
+          "Sales statistics",
+          "Revenue charts",
+          "Order management",
+          "Customer management",
+          "Product management",
+          "Advanced filters",
+          "Quick search",
+          "Responsive dashboard"
+        ]
+      },
+      {
+        "id": 2,
+        "img": "/images/portfolio1.jpg",
+        "title": "Online Cosmetics Store",
+        "description": "A complete e-commerce website with product listing, categories, search, and shopping cart.",
+        "about": "This online store was designed to provide a fast and seamless shopping experience. Users can browse products, search, filter by category or brand, and complete purchases through a modern shopping cart system.",
+        "technology": [
+          "React.js",
+          "Tailwind CSS",
+          "React Router",
+          "Redux Toolkit",
+          "Axios"
+        ],
+        "features": [
+          "Product listing",
+          "Product categories",
+          "Search",
+          "Price filtering",
+          "Brand filtering",
+          "Shopping cart",
+          "Product details page",
+          "Responsive design"
+        ]
+      },
+      {
+        "id": 3,
+        "img": "/images/portfolio1.jpg",
+        "title": "Restaurant Management Panel",
+        "description": "A complete restaurant management system for orders, menus, and table reservations.",
+        "about": "This management panel simplifies restaurant operations by allowing administrators to manage menus, customer orders, table reservations, and sales reports through a modern dashboard.",
+        "technology": [
+          "React.js",
+          "Tailwind CSS",
+          "Context API",
+          "Axios",
+          "React Hook Form"
+        ],
+        "features": [
+          "Menu management",
+          "Order management",
+          "Table reservation",
+          "Sales reports",
+          "Order editing",
+          "Form validation",
+          "Admin dashboard"
+        ]
+      },
+      {
+        "id": 4,
+        "img": "/images/portfolio1.jpg",
+        "title": "Corporate Website",
+        "description": "A modern corporate website for showcasing services, team members, and portfolio.",
+        "about": "This corporate website was built to introduce company services, projects, and team members. It features a clean design, responsive layout, and an engaging user experience.",
+        "technology": ["HTML", "CSS", "JavaScript", "Tailwind CSS"],
+        "features": [
+          "About page",
+          "Services section",
+          "Portfolio",
+          "Team members",
+          "Contact form",
+          "Image slider",
+          "Responsive design"
+        ]
+      },
+      {
+        "id": 5,
+        "img": "/images/portfolio1.jpg",
+        "title": "Weather Application",
+        "description": "A weather application that displays real-time weather data using an API.",
+        "about": "This application fetches live weather information from the OpenWeather API and displays current temperature, humidity, wind speed, and multi-day forecasts with a responsive interface.",
+        "technology": [
+          "React.js",
+          "Tailwind CSS",
+          "OpenWeather API",
+          "Axios",
+          "Day.js"
+        ],
+        "features": [
+          "Current temperature",
+          "Multi-day forecast",
+          "Humidity display",
+          "Wind speed",
+          "City search",
+          "Weather icons",
+          "Responsive design"
+        ]
+      },
+      {
+        "id": 6,
+        "img": "/images/portfolio1.jpg",
+        "title": "Task & Project Manager",
+        "description": "A task management application for creating, editing, and tracking daily tasks.",
+        "about": "This project helps users organize daily tasks efficiently. Users can create, edit, delete, and categorize tasks while storing data locally with LocalStorage and managing state using Zustand.",
+        "technology": ["React.js", "Tailwind CSS", "LocalStorage", "Zustand"],
+        "features": [
+          "Create tasks",
+          "Edit tasks",
+          "Delete tasks",
+          "Categories",
+          "Task status",
+          "LocalStorage support",
+          "Search"
+        ]
+      },
+      {
+        "id": 7,
+        "img": "/images/portfolio1.jpg",
+        "title": "Programming Blog",
+        "description": "A modern blog platform for publishing programming tutorials and articles.",
+        "about": "This programming blog allows users to browse categorized articles, search content, and read detailed tutorials with SEO optimization and Markdown support.",
+        "technology": ["Next.js", "Tailwind CSS", "Markdown", "Prisma"],
+        "features": [
+          "Article listing",
+          "Categories",
+          "Article search",
+          "Article details page",
+          "Comfortable reading experience",
+          "Markdown support",
+          "SEO optimization"
+        ]
+      },
+      {
+        "id": 8,
+        "img": "/images/portfolio1.jpg",
+        "title": "Online Service Booking System",
+        "description": "An online platform for scheduling appointments and booking services.",
+        "about": "This system allows users to book services online by selecting their preferred date and time, submitting booking requests, and tracking reservation status through a personal dashboard. Secure user authentication is implemented to ensure data privacy and account security.",
+        "technology": ["React.js", "Node.js", "Express", "MongoDB", "JWT"],
+        "features": [
+          "Online booking",
+          "Date and time selection",
+          "Booking form",
+          "User authentication",
+          "User dashboard",
+          "Booking management",
+          "Reservation status notifications"
+        ]
+      }
+    ]
+  },
+  "blogPage": {
+    "home": "Home",
+    "blogs": "Blogs",
+    "notFound": "Article not found!",
+    "views": "Views",
+
+    "authorDescription": "Author and technical content creator specializing in programming and web development.",
+
+    "tags": "Tags",
+    "position": "Writer and content producer specializing in programming and web development.",
+    "defaultTags": [
+      "Programming",
+      "Web Development",
+      "React",
+      "JavaScript",
+      "Frontend"
+    ],
+
+    "like": "Like",
+    "save": "Save Article",
+
+    "share": "Share Article",
+    "telegram": "Share on Telegram",
+    "twitter": "Share on X",
+    "whatsapp": "Share on WhatsApp",
+    "relatedBlogs": "Related Articles",
+    "back": "Back to Blogs"
+  },
+  "navbar": {
+    "home": "Company",
+    "portfolio": "Projects",
+    "aboutus": "About Us",
+    "blogs": "Blogs",
+    "contact": "Contact Us",
+    "projectorder": "Order Project",
+    "login": "Login",
+    "signup": "Sign Up",
+    "loginSignup": "Login | Sign Up"
+  },
+  "login": {
+    "title": "Login to your account",
+    "mobilePlaceholder": "Mobile Number",
+    "passwordPlaceholder": "Password",
+    "forgotPassword": "Forgot Password?",
+    "submit": "Login",
+    "noAccount": "Don't have an account?",
+    "signup": "Sign Up",
+
+    "errors": {
+      "phone": "Please enter a valid mobile number.",
+      "password": "Password must be at least 8 characters."
+    }
+  },
+  "signup": {
+    "title": "Create an Account",
+    "phonePlaceholder": "Enter your mobile number",
+    "passwordPlaceholder": "Enter your password",
+    "submit": "Sign Up",
+
+    "haveAccount": "Already have an account?",
+    "login": "Login",
+
+    "passwordRules": {
+      "minLength": "At least 8 characters",
+      "upperCase": "At least one uppercase letter (A-Z)",
+      "lowerCase": "At least one lowercase letter (a-z)",
+      "number": "At least one number",
+      "specialChar": "At least one special character (!@#$...)"
+    },
+
+    "errors": {
+      "phone": "Please enter a valid mobile number.",
+      "upperCase": "Password must contain at least one uppercase letter.",
+      "lowerCase": "Password must contain at least one lowercase letter.",
+      "number": "Password must contain at least one number.",
+      "specialChar": "Password must contain at least one special character.",
+      "minLength": "Password must be at least 8 characters."
+    }
+  },
+  "customSelect": {
+    "projectTypes": {
+      "ui": "UI Design",
+      "website": "Website",
+      "app": "Application",
+      "database": "Database Design",
+      "hardware": "Hardware",
+      "other": "Other"
+    },
+
+    "budget": {
+      "less10": "Less than 10 Million Tomans",
+      "ten30": "10 to 30 Million Tomans",
+      "thirty50": "30 to 50 Million Tomans",
+      "fifty100": "50 to 100 Million Tomans",
+      "more100": "More than 100 Million Tomans",
+      "consult": "Need Consultation"
+    },
+
+    "deadline": {
+      "week": "Less than one week",
+      "twoWeeks": "1 to 2 weeks",
+      "month": "2 to 4 weeks",
+      "threeMonths": "1 to 3 months",
+      "noLimit": "No time limit"
+    },
+
+    "priority": {
+      "normal": "Normal",
+      "urgent": "Urgent",
+      "veryUrgent": "Very Urgent"
+    },
+
+    "communication": {
+      "phone": "Phone Call",
+      "whatsapp": "WhatsApp",
+      "telegram": "Telegram",
+      "email": "Email"
     }
   }
 }

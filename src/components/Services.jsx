@@ -38,7 +38,7 @@ const Services = () => {
         <div className="w-2 h-2 rounded-full bg-accent"></div>
       </div>
       {/* Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-20">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-10 xl:mt-20">
         {data.map((box, index) => (
           <motion.div
             key={box.id}

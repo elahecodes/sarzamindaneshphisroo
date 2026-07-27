@@ -47,7 +47,7 @@ const Steps = () => {
   return (
     <section className="bg-neutral-50 dark:bg-[#0F172A] px-6 py-20 overflow-hidden">
       {/* عنوان */}
-      <div className="mb-20 flex items-center justify-center">
+      <div className="mb-10 xl:mb-32 flex items-center justify-center">
         <div className="h-2 w-2 rounded-full bg-accent" />
         <hr className="flex-1 border-neutral-300 dark:border-[#334155]" />
         {i18n.language === "fa" ? (

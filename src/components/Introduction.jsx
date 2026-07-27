@@ -59,10 +59,10 @@ const Introduction = () => {
       {/* HERO IMAGE */}
       <motion.div
         key={currentIndex}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.7 }}
-        viewport={{ once: true }}
+        // initial={{ opacity: 0 }}
+        // animate={{ opacity: 1 }}
+        // transition={{ duration: 0.7 }}
+        // viewport={{ once: true }}
         className="relative w-full h-[22rem] md:h-[30rem] rounded-2xl overflow-hidden shadow-xl"
       >
         {images.length > 0 && (
@@ -81,15 +81,15 @@ const Introduction = () => {
       <div className="w-full md:w-11/12 mx-auto -mt-24 md:-mt-28">
         <div className="bg-white/70 dark:bg-[#1E293B]/50 dark:border-[#334155] backdrop-blur-xl rounded-3xl shadow-2xl dark:shadow-black/30 border border-white/40 dark:border-none p-6 md:p-10">
           {/* COUNTERS */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
             {counters.map((counter, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.3 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.05 }}
+                // initial={{ opacity: 0, y: 30 }}
+                // whileInView={{ opacity: 1, y: 0 }}
+                // transition={{ delay: index * 0.3 }}
+                // viewport={{ once: true }}
+                // whileHover={{ scale: 1.05 }}
                 className={`rounded-2xl p-6 md:p-8 dark:bg-[#334155] flex flex-col items-center justify-center text-center shadow-md transition-all ${
                   index % 2 === 0
                     ? "bg-purple-50 border-t-4 border-purple-500 dark:border-[#8B5CF6]"
@@ -109,9 +109,9 @@ const Introduction = () => {
 
           {/* TEXT */}
           <motion.div
-            initial={{ opacity: 0, y: 100 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
+            // initial={{ opacity: 0, y: 100 }}
+            // whileInView={{ opacity: 1, y: 0 }}
+            // transition={{ duration: 1 }}
             className="mt-10 text-center md:text-right space-y-4"
           >
             <h2 className="text-2xl w-full text-start font-title md:text-3xl text-text dark:text-white">

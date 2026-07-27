@@ -27,8 +27,8 @@ const Comments = () => {
   return (
     <section className="overflow-hidden relative py-20 bg-white dark:bg-[#1E293B] px-[16px]">
       {/* Header */}
-      <div className="text-center mb-14">
-        <div className="mb-20 flex items-center justify-center">
+      <div className="text-center mb-8 lg:mb-14">
+        <div className="mb-10 xl:mb-20 flex items-center justify-center">
           <div className="h-2 w-2 rounded-full bg-accent" />
           <hr className="flex-1 border-neutral-300 dark:border-[#334155]" />
           {i18n.language === "fa" ? (
@@ -36,8 +36,8 @@ const Comments = () => {
               <span className="text-primary"> تجربه همکاری</span> با ما
             </h2>
           ) : (
-            <h2 className="mx-2 md:mx-5 text-center text-2xl lg:text-3xl dark:text-[#F8FAFC] md:text-3xl font-title text-text">
-              <span className="text-primary">Experience Working</span> With Us
+            <h2 className="mx-2 translate-y-4 lg:translate-y-0 md:mx-5 text-center text-2xl lg:text-3xl dark:text-[#F8FAFC] md:text-3xl font-title text-text">
+              <span className="text-primary">Experience Working</span><span className="block lg:inline"> With Us</span>
             </h2>
           )}
 
@@ -45,7 +45,7 @@ const Comments = () => {
           <div className="h-2 w-2 rounded-full bg-accent" />
         </div>
 
-        <p className="text-text dark:text-text-dark lg:text-xl mt-3">
+        <p className="text-text dark:text-text-dark lg:text-xl">
           {i18n.language === "fa"
             ? " بخشی از دیدگاه کارفرمایانی که به ما اعتماد کرده‌اند"
             : "Hear what our clients have to say about working with us"}
@@ -64,7 +64,7 @@ const Comments = () => {
               <img
                 src={chatIcon}
                 alt=""
-                className="absolute left-5 top-5 w-12 opacity-30"
+                className={`absolute top-5 w-12 opacity-30 ${i18n.language === "fa" ? " left-5" : "right-5"}`}
               />
 
               {/* User */}
@@ -73,7 +73,7 @@ const Comments = () => {
                 <img
                   src={item.avatar}
                   alt={item.fullName}
-                  className="w-14 h-14 rounded-full object-cover border-2 border-primary/30"
+                  className="w-9 h-9 rounded-full object-cover bg-white"
                 />
                 <div>
                   <h3 className="font-bold text-neutral-800 dark:text-[#F8FAFC]">

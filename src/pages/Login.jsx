@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Login = () => {
+  const { t } = useTranslation();
+
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
@@ -16,7 +19,7 @@ const Login = () => {
       break;
 
     case !hasNumber:
-      errorMessageU = "لطفا شماره تلفن معتبر وارد کنید";
+      errorMessageU = t("login.errors.phone");
       break;
 
     default:
@@ -29,7 +32,7 @@ const Login = () => {
       break;
 
     case password.length < 8:
-      errorMessageP = "رمز عبور باید حداقل ۸ کاراکتر باشد";
+      errorMessageP = t("login.errors.password");
       break;
 
     default:
@@ -48,60 +51,63 @@ const Login = () => {
       password,
     });
 
-    // ارسال اطلاعات به API
+    // ارسال به API
   };
 
   return (
     <div className="w-full h-dvh flex justify-center items-center pt-12">
       <form
         onSubmit={handleSubmit}
-        className="w-11/12 md:w-5/12 z-20 h-full flex flex-col justify-start items-center gap-3"
+        className="w-11/12 md:w-5/12 h-full flex flex-col justify-start items-center gap-3"
       >
         <label
           htmlFor="username"
-          className="text-2xl dark:text-primary-dark text-primary font-bold mb-8"
+          className="text-2xl font-bold mb-8 text-primary dark:text-primary-dark"
         >
-          ورود به حساب کاربری
+          {t("login.title")}
         </label>
 
         <input
           id="username"
           type="text"
-          placeholder="شماره موبایل"
           value={userName}
+          placeholder={t("login.mobilePlaceholder")}
           onChange={(e) => setUserName(e.target.value)}
           className={`${
             userName.length === 0
               ? "border-neutral-200 dark:border-bg-dark"
               : hasNumber
-                ? "border-green-400"
-                : "border-accent"
-          } border outline-none px-2 dark:bg-primary/10 dark:text-secondary-text text-sm rounded w-full h-12 text-text bg-white`}
+              ? "border-green-400"
+              : "border-accent"
+          } border outline-none px-2 rounded w-full h-12 text-sm bg-white text-text dark:bg-primary/10 dark:text-secondary-text`}
         />
 
-        <p className="text-accent text-sm w-full">{errorMessageU}</p>
+        <p className="text-accent text-sm w-full">
+          {errorMessageU}
+        </p>
 
         <input
           id="password"
           type="password"
-          placeholder="رمز عبور"
           value={password}
+          placeholder={t("login.passwordPlaceholder")}
           onChange={(e) => setPassword(e.target.value)}
           className={`${
             password.length === 0
               ? "border-neutral-200 dark:border-bg-dark"
               : password.length >= 8
-                ? "border-green-400"
-                : "border-accent"
-          } border outline-none px-2 text-sm rounded w-full h-12 text-text dark:bg-primary/10
-                  dark:text-secondary-text`}
+              ? "border-green-400"
+              : "border-accent"
+          } border outline-none px-2 bg-white rounded w-full h-12 text-sm text-text dark:bg-primary/10 dark:text-secondary-text`}
         />
 
-        <p className="text-accent dark:text-accent-dark text-sm w-full">{errorMessageP}</p>
+        <p className="text-accent dark:text-accent-dark text-sm w-full">
+          {errorMessageP}
+        </p>
 
         <div className="w-full flex justify-between items-center">
-          <span className="text-text text-sm hover:text-accent dark:text-accent-dark cursor-pointer transition-all">
-            بازیابی رمز عبور
+          <span className="text-sm cursor-pointer transition-all text-text hover:text-accent dark:text-accent-dark">
+            {t("login.forgotPassword")}
           </span>
         </div>
 
@@ -111,17 +117,20 @@ const Login = () => {
           className={`${
             isFormValid
               ? "bg-primary hover:bg-primary/90 cursor-pointer"
-              : "bg-neutral-300 cursor-not-allowed dark:bg-neutral-500"
+              : "bg-neutral-300 dark:bg-neutral-500 cursor-not-allowed"
           } w-full h-12 rounded text-white mt-5 transition-all`}
         >
-          اعمال
+          {t("login.submit")}
         </button>
 
         <div className="relative w-full">
-          <span className="absolute dark:text-text-dark right-0 top-3">
-            حساب کاربری ندارید؟{" "}
-            <Link to="/signin" className="text-primary dark:text-primary-dark font-bold">
-              ثبت نام
+          <span className="absolute right-0 top-3 dark:text-text-dark">
+            {t("login.noAccount")}{" "}
+            <Link
+              to="/signin"
+              className="text-primary dark:text-primary-dark font-bold"
+            >
+              {t("login.signup")}
             </Link>
           </span>
         </div>

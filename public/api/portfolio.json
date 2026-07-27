@@ -1,177 +1,34 @@
 [
   {
     "id": 1,
-    "img": "/images/portfolio1.jpg",
-    "title": "داشبورد مدیریت فروش",
-    "description": "یک داشبورد مدیریتی پیشرفته برای تحلیل و مدیریت فروش که امکان مشاهده آمار لحظه‌ای، بررسی نمودارهای درآمد، مدیریت سفارش‌ها، مشتریان و محصولات را فراهم می‌کند.",
-    "technology": [
-      "React.js",
-      "Tailwind CSS",
-      "Recharts",
-      "React Query",
-      "Context API"
-    ],
-    "features": [
-      "نمایش آمار فروش",
-      "نمودار درآمد",
-      "مدیریت سفارش‌ها",
-      "مدیریت مشتریان",
-      "مدیریت محصولات",
-      "فیلتر اطلاعات",
-      "جستجوی سریع",
-      "داشبورد ریسپانسیو"
-    ]
+    "img": "/images/portfolio1.jpg"
   },
   {
     "id": 2,
-    "img": "/images/portfolio1.jpg",
-    "title": "فروشگاه آنلاین محصولات آرایشی",
-    "description": "یک فروشگاه اینترنتی کامل با قابلیت نمایش محصولات، دسته‌بندی، جستجو و سبد خرید.",
-    "technology": [
-      "React.js",
-      "Tailwind CSS",
-      "React Router",
-      "Redux Toolkit",
-      "Axios"
-    ],
-    "features": [
-      "نمایش محصولات",
-      "دسته‌بندی محصولات",
-      "جستجو",
-      "فیلتر قیمت",
-      "فیلتر برند",
-      "سبد خرید",
-      "صفحه جزئیات محصول",
-      "طراحی ریسپانسیو"
-    ]
+    "img": "/images/portfolio1.jpg"
   },
   {
     "id": 3,
-    "img": "/images/portfolio1.jpg",
-    "title": "پنل مدیریت رستوران",
-    "description": "سیستم مدیریت سفارش‌ها، منو و رزرو میز برای رستوران.",
-    "technology": [
-      "React.js",
-      "Tailwind CSS",
-      "Context API",
-      "Axios",
-      "React Hook Form"
-    ],
-    "features": [
-      "مدیریت منو",
-      "ثبت سفارش",
-      "رزرو میز",
-      "گزارش فروش",
-      "ویرایش سفارش",
-      "فرم اعتبارسنجی",
-      "داشبورد مدیریتی"
-    ]
+    "img": "/images/portfolio1.jpg"
   },
   {
     "id": 4,
-    "img": "/images/portfolio1.jpg",
-    "title": "وب‌سایت معرفی شرکت",
-    "description": "وب‌سایتی مدرن برای معرفی خدمات، اعضای تیم و نمونه‌کارها.",
-    "technology": [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "Tailwind CSS"
-    ],
-    "features": [
-      "صفحه معرفی",
-      "بخش خدمات",
-      "نمونه‌کارها",
-      "اعضای تیم",
-      "فرم تماس",
-      "اسلایدر",
-      "ریسپانسیو"
-    ]
+    "img": "/images/portfolio1.jpg"
   },
   {
     "id": 5,
-    "img": "/images/portfolio1.jpg",
-    "title": "اپلیکیشن آب و هوا",
-    "description": "اپلیکیشن نمایش وضعیت آب و هوا با دریافت اطلاعات از API.",
-    "technology": [
-      "React.js",
-      "Tailwind CSS",
-      "OpenWeather API",
-      "Axios",
-      "Day.js"
-    ],
-    "features": [
-      "نمایش دمای لحظه‌ای",
-      "پیش‌بینی چند روزه",
-      "نمایش رطوبت",
-      "سرعت باد",
-      "جستجوی شهر",
-      "آیکون وضعیت آب و هوا",
-      "طراحی ریسپانسیو"
-    ]
+    "img": "/images/portfolio1.jpg"
   },
   {
     "id": 6,
-    "img": "/images/portfolio1.jpg",
-    "title": "مدیریت وظایف و پروژه‌ها",
-    "description": "ابزار مدیریت وظایف برای ثبت، ویرایش و پیگیری کارها.",
-    "technology": [
-      "React.js",
-      "Tailwind CSS",
-      "LocalStorage",
-      "Zustand"
-    ],
-    "features": [
-      "ایجاد وظیفه",
-      "ویرایش وظیفه",
-      "حذف وظیفه",
-      "دسته‌بندی",
-      "تغییر وضعیت",
-      "ذخیره در LocalStorage",
-      "جستجو"
-    ]
+    "img": "/images/portfolio1.jpg"
   },
   {
     "id": 7,
-    "img": "/images/portfolio1.jpg",
-    "title": "وبلاگ آموزشی برنامه‌نویسی",
-    "description": "وبلاگ انتشار مقالات آموزشی با ساختار مدرن.",
-    "technology": [
-      "Next.js",
-      "Tailwind CSS",
-      "Markdown",
-      "Prisma"
-    ],
-    "features": [
-      "نمایش مقالات",
-      "دسته‌بندی",
-      "جستجوی مقالات",
-      "صفحه جزئیات مقاله",
-      "مطالعه روان",
-      "پشتیبانی از Markdown",
-      "SEO"
-    ]
+    "img": "/images/portfolio1.jpg"
   },
   {
     "id": 8,
-    "img": "/images/portfolio1.jpg",
-    "title": "سامانه رزرو آنلاین خدمات",
-    "description": "سیستم رزرو وقت ملاقات و خدمات به صورت آنلاین.",
-    "technology": [
-      "React.js",
-      "Node.js",
-      "Express",
-      "MongoDB",
-      "JWT"
-    ],
-    "features": [
-      "رزرو آنلاین",
-      "انتخاب تاریخ و ساعت",
-      "فرم رزرو",
-      "احراز هویت",
-      "پنل کاربری",
-      "مدیریت درخواست‌ها",
-      "اعلان وضعیت رزرو"
-    ]
+    "img": "/images/portfolio1.jpg"
   }
 ]

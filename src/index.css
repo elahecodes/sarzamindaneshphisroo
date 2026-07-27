@@ -9,7 +9,9 @@
   font-family: "estedadBold";
   src: url("/src/assets/fonts/Estedad-ExtraBold.ttf");
 }
-
+body{
+  cursor: default;
+}
 /* 🎨 Theme Variables (Tailwind v4) */
 @theme {
   /* 🟣 Primary (Purple) */
