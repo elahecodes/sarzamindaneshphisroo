@@ -6,6 +6,8 @@ import { HiOutlineBriefcase } from "react-icons/hi2";
 import loadingGif from "../assets/LoadingIcon/Ellipsis@1x-2.8s-200px-200px.gif";
 import { useTranslation } from "react-i18next";
 import { useMemo } from "react";
+const MotionLink = motion(Link);
+
 const Pagination = ({ items, isBlog }) => {
   const { t, i18n } = useTranslation();
   const portfolioText = t("portfolioData.items", { returnObjects: true });
@@ -34,7 +36,8 @@ const Pagination = ({ items, isBlog }) => {
         ? blogMap[item.id]?.title
         : portfolioMap[item.id]?.title;
 
-      return title?.toLowerCase().includes(value.toLowerCase());
+      const searchValue = value.toLocaleLowerCase();
+      return title?.toLowerCase().includes(searchValue);
     });
   }, [items, value, isBlog, blogMap, portfolioMap]);
 
@@ -43,9 +46,10 @@ const Pagination = ({ items, isBlog }) => {
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting && quantity < filteredItems.length) {
-        setTimeout(() => {
+        const timeout = setTimeout(() => {
           setQuantity((prev) => Math.min(prev + 10, filteredItems.length));
         }, 1000);
+        return () => clearTimeout(timeout);
       }
     });
 
@@ -53,10 +57,10 @@ const Pagination = ({ items, isBlog }) => {
       observer.observe(loaderRef.current);
     }
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+    };
   }, [quantity, filteredItems.length]);
-
-  const MotionLink = motion(Link);
 
   const container = {
     hidden: {},
@@ -240,7 +244,9 @@ const Pagination = ({ items, isBlog }) => {
                 {/* Image */}
                 <div className="relative overflow-hidden">
                   <img
-                    src={item.image}
+                    loading="lazy"
+                    decoding="async"
+                    src={item.img}
                     alt={item.title}
                     className="
                     h-56
@@ -391,6 +397,7 @@ const Pagination = ({ items, isBlog }) => {
                 {/* Image */}
                 <div className="relative overflow-hidden">
                   <img
+                  
                     src={item.img}
                     alt={item.title}
                     className="
@@ -517,7 +524,7 @@ const Pagination = ({ items, isBlog }) => {
           {t("pagination.notFound")}
         </div>
       )}
-      {quantity < items.length && (
+      {quantity < filteredItems.length && (
         <div
           ref={loaderRef}
           className="flex justify-center items-center w-full"

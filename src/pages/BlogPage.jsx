@@ -1,6 +1,4 @@
-import { useContext } from "react";
 import { useParams, Link } from "react-router-dom";
-import { BlogsContext } from "../context/DataOfBlogsContext";
 import { useTranslation } from "react-i18next";
 import {
   FaUser,
@@ -16,14 +14,13 @@ import {
   FaUserEdit,
   FaTag,
 } from "react-icons/fa";
-import { MdOutlineArticle } from "react-icons/md";
-
-import { FaXTwitter } from "react-icons/fa6";
+import { FaXTwitter,FaBookOpen } from "react-icons/fa6";
 
 const BlogPage = () => {
   const { id } = useParams();
   const { t, i18n } = useTranslation();
-  const BlogsText = t("blogsData.items", { returnObjects: true });
+  const BlogsText =
+    t("blogsData.items", { returnObjects: true, defaultValue: [] }) || [];
 
   const item = BlogsText.find((blog) => blog.id === Number(id));
 
@@ -34,7 +31,10 @@ const BlogPage = () => {
       </div>
     );
   }
-  const Tags = t("blogPage.defaultTags", { returnObjects: true });
+  const Tags = t("blogPage.defaultTags", {
+    returnObjects: true,
+    defaultValue: [],
+  });
 
   const relatedBlogs = BlogsText.filter(
     (blog) => blog.category === item.category && blog.id !== item.id,
@@ -73,7 +73,9 @@ const BlogPage = () => {
 
         <div className="relative overflow-hidden rounded-[32px] shadow-xl">
           <img
-            src={item.image}
+            loading="lazy"
+            decoding="async"
+            src={item.img}
             alt={item.title}
             className="w-full h-[600px] object-cover"
           />
@@ -139,7 +141,7 @@ const BlogPage = () => {
 
             <div className="flex items-start gap-4 relative z-10">
               <div className="lg:w-16 w-12 h-12 lg:h-16 min-w-12 rounded-full bg-primary dark:bg-primary-dark text-white flex items-center justify-center text-2xl font-bold">
-                {item.author?.charAt(0)}
+                {item.author?.charAt(0) ?? "نویسنده"}
               </div>
 
               <div>
@@ -203,7 +205,7 @@ const BlogPage = () => {
               {t("blogPage.share")}
             </h3>
 
-            <div className="flex items-center justify-center sm:justify-start gap-4 dark:bg-bg-dark py-6 rounded-xl">
+            <div className="flex items-center justify-center sm:justify-start gap-4 dark:bg-bg-dark dark:bg-bg-dark/0 py-6 rounded-xl">
               <button
                 className="w-14 h-14 rounded-2xl bg-sky-500 text-white flex items-center justify-center text-2xl shadow-md hover:scale-110 hover:shadow-lg transition duration-300"
                 aria-label="اشتراک در تلگرام"
@@ -232,19 +234,21 @@ const BlogPage = () => {
           {relatedBlogs.length > 0 && (
             <div className="mt-8 pt-12">
               <h2 className="flex items-center gap-3 text-lg lg:text-xl dark:text-text-dark font-bold mb-8">
-                <MdOutlineArticle className="text-primary dark:text-primary text-2xl xl:text-4xl" />
+                <FaBookOpen className="text-primary dark:text-primary text-xl" />
                 {t("blogPage.relatedBlogs")}
               </h2>
 
-              <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 overflow-x-auto hide-scrollbar md:overflow-visible pb-4 snap-x snap-mandatory">
+              <div className="flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 overflow-x-auto hide-scrollbar md:overflow-visible pb-4 snap-x snap-mandatory">
                 {relatedBlogs.map((blog) => (
                   <Link
                     key={blog.id}
                     to={`/blogs/${blog.id}`}
-                    className="min-w-[230px] sm:min-w-[340px] md:min-w-0 bg-primary-light dark:border-border-dark dark:bg-bg-dark rounded-2xl overflow-hidden hover:-translate-y-2 hover:shadow-xl transition duration-300 snap-start flex-shrink-0"
+                    className="min-w-[230px] sm:min-w-[240px] md:min-w-0 bg-primary-light dark:border-border-dark dark:bg-bg-dark rounded-2xl overflow-hidden hover:-translate-y-2 hover:shadow-xl transition duration-300 snap-start flex-shrink-0"
                   >
                     <img
-                      src={blog.image}
+                      loading="lazy"
+                      decoding="async"
+                      src={blog.img}
                       alt={blog.title}
                       className="w-full h-52 object-cover"
                     />
