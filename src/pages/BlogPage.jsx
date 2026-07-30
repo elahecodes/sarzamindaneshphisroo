@@ -242,7 +242,7 @@ const BlogPage = () => {
                 {relatedBlogs.map((blog) => (
                   <Link
                     key={blog.id}
-                    to={`/blogs/${blog.id}`}
+                    to={`/blogPage/${blog.id}`}
                     className="min-w-[230px] sm:min-w-[240px] md:min-w-0 bg-primary-light dark:border-border-dark dark:bg-bg-dark rounded-2xl overflow-hidden hover:-translate-y-2 hover:shadow-xl transition duration-300 snap-start flex-shrink-0"
                   >
                     <img
