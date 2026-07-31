@@ -2,9 +2,10 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useTheme } from "../context/ThemeContext";
-
 import logo from "/src/assets/logo/Levels 1.png";
 import logo2 from "/src/assets/logo/لوگو سربرگ3.png";
+import logoEn from "/src/assets/logo/LogoEn.png";
+import logoEnPhone from "/src/assets/logo/LogoEnPhone.png";
 
 import {
   FaUser,
@@ -68,7 +69,15 @@ const Header = () => {
       <div className="w-full max-w-[1600px] mx-auto h-20 px-3 flex flex-row-reverse lg:flex-row items-center justify-between">
         {/* Logo & Desktop Menu */}
         <div className="flex items-center gap-4 lg:gap-10">
-          <img src={logo} alt="Company Logo" className="w-32 object-contain" />
+          {i18n.language === "fa" ? (
+            <img
+              src={logo}
+              alt="Company Logo"
+              className="w-32 object-contain"
+            />
+          ) : (
+            <img className="w-32 object-contain" src={logoEn} />
+          )}
 
           <nav className="hidden lg:block">
             <ul className="flex items-center gap-2 md:gap-6 lg:gap-8">
@@ -153,11 +162,19 @@ const Header = () => {
           >
             {/* Header */}
             <div className="flex justify-between items-center p-4 border-b border-neutral-200 dark:border-[#334155]">
-              <img
-                src={logo2}
-                alt="Company Logo"
-                className="w-32 object-contain"
-              />
+              {i18n.language === "fa" ? (
+                <img
+                  src={logo2}
+                  alt="Company Logo"
+                  className="w-32 object-contain"
+                />
+              ) : (
+                <img
+                  src={logoEnPhone}
+                  alt="Company Logo"
+                  className="w-32 object-contain"
+                />
+              )}
 
               <button
                 onClick={() => setIsOpen(false)}
