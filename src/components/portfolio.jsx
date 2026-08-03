@@ -52,8 +52,8 @@ const Portfolio = () => {
         whileHover={{ y: -6, scale: 1.03 }}
         className="flex flex-col items-center gap-6 text-center "
       >
-        <div className="flex items-center w-full max-full">
-          <div className="w-2 h-2 rounded-full bg-accent" />
+        <div className="flex max-w-7xl mx-auto items-center w-full max-full">
+          <div className="w-2 h-2 rounded-full bg-accent dark:bg-accent-dark" />
           <hr className="flex-1 border-neutral-200 dark:border-[#334155]" />
           {i18n.language === "fa" ? (
             <h2 className="text-2xl lg:text-3xl font-title text-text mx-4 dark:text-[#F8FAFC]">
@@ -85,7 +85,7 @@ const Portfolio = () => {
         <Link
           to={`/portfolio`}
           href="#"
-          className="flex items-center gap-2 text-orange-500 hover:gap-3 transition-all"
+          className="flex items-center gap-2 text-accent dark:text-accent-dark hover:gap-3 transition-all"
         >
           {t("portfolioHome.readMore")}
           <img
@@ -183,7 +183,7 @@ const Portfolio = () => {
           </section>
           {/* mobile */}
           <section className="lg:hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
-            {data.slice(1, 4).map((item, index) => (
+            {data.slice(1, 5).map((item, index) => (
               <Link to={`/portfolioPage/${item.id}`}>
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
@@ -219,7 +219,7 @@ const Portfolio = () => {
                       {portfolioMap[item.id]?.title}
                     </h4>
 
-                    <p className="text-sm dark:text-[#F8FAFC] text-neutral-600 leading-6 line-clamp-3">
+                    <p className="text-sm h-16 overflow-hidden dark:text-[#F8FAFC] text-neutral-600 leading-6 line-clamp-3">
                       {portfolioMap[item.id]?.description}
                     </p>
                     <div className="mt-auto flex items-center justify-between">

@@ -43,7 +43,7 @@ const PortfolioPage = () => {
           {/* Content */}
 
           <div>
-            <span className="inline-block mb-4 rounded-full bg-violet-100 dark:bg-violet-900/40 text-violet-600 dark:text-violet-300 px-4 py-2 text-sm">
+            <span className="inline-block mb-4 rounded-full bg-violet-100 dark:bg-violet-900/40 text-primary dark:text-primary-dark dark:text-violet-300 px-4 py-2 text-sm">
               {t("portfolioPage.category")}
             </span>
 
@@ -59,7 +59,7 @@ const PortfolioPage = () => {
 
             <div className="mt-10">
               <h2 className="flex items-center gap-3 text-[1.1rem] md:text-xl font-bold text-slate-800 dark:text-white mb-5">
-                <FaCode className="text-violet-600 text-2xl" />
+                <FaCode className="text-primary dark:text-primary-dark text-2xl" />
                 {t("portfolioPage.technologies")}
               </h2>
 
@@ -67,7 +67,7 @@ const PortfolioPage = () => {
                 {item.technology.map((tech) => (
                   <span
                     key={tech}
-                    className="px-4 py-2  text-sm rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200"
+                    className="px-4 py-2 text-sm rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200"
                   >
                     {tech}
                   </span>
@@ -82,7 +82,7 @@ const PortfolioPage = () => {
                 href={item.demo}
                 target="_blank"
                 rel="noreferrer"
-                className="px-8 py-3 flex justify-center items-center text-sm md:text-[1.1rem] rounded-xl bg-violet-600 hover:bg-violet-700 text-white duration-300"
+                className="px-8 py-3 flex justify-center items-center text-sm md:text-[1.1rem] rounded-xl bg-primary dark:bg-primary-dark hover:bg-violet-700 text-white duration-300"
               >
                 {t("portfolioPage.demo")}
               </a>
@@ -91,7 +91,7 @@ const PortfolioPage = () => {
                 href={item.github}
                 target="_blank"
                 rel="noreferrer"
-                className="px-8 py-3 flex justify-center items-center text-sm md:text-[1.1rem] rounded-xl border border-violet-600 text-violet-600 hover:bg-violet-600 hover:text-white duration-300"
+                className="lg:px-8 lg:py-3 flex justify-center items-center text-sm md:text-[1.1rem] rounded-xl border border-violet-600 text-primary dark:text-primary-dark hover:bg-primary hover:text-white duration-300"
               >
                 {t("portfolioPage.github")}
               </a>
@@ -103,7 +103,7 @@ const PortfolioPage = () => {
 
         <div className="mt-18">
           <h2 className="flex items-center justify-start md:text-center gap-3 text-xl lg:text-2xl font-bold text-slate-800 dark:text-white">
-            <FaRocket className="text-violet-600" />
+            <FaRocket className="text-primary dark:text-primary-dark" />
             {t("portfolioPage.features")}
           </h2>
 
@@ -116,7 +116,7 @@ const PortfolioPage = () => {
                 <div className="absolute -top-10 -right-10 w-28 h-28 rounded-full bg-violet-300/20 blur-3xl group-hover:bg-violet-400/30 duration-500"></div>
 
                 <div className="relative flex items-center gap-3">
-                  <div className="w-8 h-8 md:w-9 xl:w-12 md:h-9 xl:h-12 rounded-xl bg-violet-600 text-white flex items-center justify-center">
+                  <div className="w-8 h-8 md:w-9 xl:w-12 md:h-9 xl:h-12 rounded-xl bg-primary dark:bg-primary-dark text-white flex items-center justify-center">
                     <FaCheckCircle />
                   </div>
 
@@ -133,7 +133,7 @@ const PortfolioPage = () => {
 
         <div className="mt-12 bg-white dark:bg-slate-800 rounded-3xl p-4 md:p-10 border border-slate-200 dark:border-slate-700">
           <h2 className="flex items-center gap-3 text-xl lg:text-2xltext-xl lg:text-2xl font-bold text-slate-800 dark:text-white mb-6">
-            <FaLayerGroup className="text-violet-600" />
+            <FaLayerGroup className="text-primary dark:text-primary-dark" />
             {t("portfolioPage.about")}
           </h2>
 

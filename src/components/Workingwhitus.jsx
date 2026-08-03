@@ -24,8 +24,8 @@ const WorkingWithUs = () => {
   ];
 
   return (
-    <section className="bg-white xl:mt-14 dark:bg-[#0F172A] px-6 py-8">
-      <div className="grid gap-6 md:grid-cols-2">
+    <section className="bg-white max-w-7xl mx-auto xl:mt-14 dark:bg-[#0F172A] px-6 py-8">
+      <div className="grid gap-6 lg:grid-cols-2">
         {cards.map((card, index) => (
           <Link to={card.id === 1 ? "/projectorder" : "/home"}>
             <motion.div
@@ -43,20 +43,20 @@ const WorkingWithUs = () => {
                 ease: "easeOut",
               }}
               key={card.id}
-              className={`group relative h-[300px] overflow-hidden rounded-2xl p-8 min-h-[280px] hover:shadow-xl ${card.className}`}
+              className={`group relative overflow-hidden rounded-2xl  p-8 min-h-[300px] hover:shadow-xl ${card.className}`}
             >
               {/* Decoration */}
-              <div className="absolute -left-10 -bottom-10 h-40 w-40 rounded-full bg-white/10 blur-xl" />
+              <div className="absolute -left-10 -bottom-10 w-40 rounded-full bg-white/10 blur-xl" />
 
               {/* Content */}
               <div className="relative z-10 flex h-full flex-col justify-between">
                 <div>
-                  <h3 className="mb-5 text-3xl font-title">
+                  <h3 className="mb-5 text-xl lg:text-2xl xl:text-3xl font-title">
                     {Cards[index].title}
                   </h3>
 
                   <p
-                    className={`text-lg leading-8 ${
+                    className={`md:text-[1.2rem] text-sm min-h-28 md:h-20 xl:h-24 leading-8 ${
                       card.id === 1
                         ? "text-white/90"
                         : "text-slate-600 dark:text-secondary-text"
@@ -67,7 +67,7 @@ const WorkingWithUs = () => {
                 </div>
 
                 <button
-                  className={`mt-8 w-fit rounded-xl px-6 py-3 font-bold transition ${
+                  className={`mt-8 w-fit rounded-xl px-3 py-2 lg:px-6 lg:py-3 font-bold transition ${
                     card.id === 1
                       ? "bg-white text-violet-700 hover:bg-slate-100"
                       : "bg-primary dark:bg-[#8B5CF6] text-white hover:opacity-90"
@@ -89,8 +89,8 @@ const WorkingWithUs = () => {
                 alt={card.title}
                 className={`absolute bottom-3 ${position} transition duration-500 group-hover:scale-110 ${
                   card.id === 1
-                    ? "opacity-40 w-44"
-                    : "opacity-40 w-32 dark:opacity-70"
+                    ? "opacity-40 w-20 md:w-44"
+                    : "opacity-40 w-20 md:w-32 dark:opacity-70"
                 }`}
               />
             </motion.div>

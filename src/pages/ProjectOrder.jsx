@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import CustomSelect from "../components/CustomSelect";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useTranslation } from "react-i18next";
@@ -32,7 +32,7 @@ import {
   FaPaperclip,
 } from "react-icons/fa";
 const ProjectOrder = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [captchaValue, setCaptchaValue] = useState(null);
 
   const [Project, setProject] = useState(t("projectOrder.selects.project"));
@@ -52,6 +52,16 @@ const ProjectOrder = () => {
   );
   const [communicationOpen, setCommunicationOpen] = useState(false);
 
+  useEffect(() => {
+    setBudget(t("projectOrder.selects.budget", { returnObjects: true }));
+    setCommunication(
+      t("projectOrder.selects.communication", { returnObjects: true }),
+    );
+    setDeadline(t("projectOrder.selects.deadline", { returnObjects: true }));
+    setPriority(t("projectOrder.selects.priority", { returnObjects: true }));
+    setProject(t("projectOrder.selects.project", { returnObjects: true }));
+  }, [i18n.language]);
+
   const refProject = useRef(null);
   const refBudget = useRef(null);
   const refDeadline = useRef(null);
@@ -65,6 +75,22 @@ const ProjectOrder = () => {
     returnObjects: true,
   });
 
+  const projectTypesText = t("customSelect.projectTypes", {
+    returnObjects: true,
+  });
+  const budgetOptionsText = t("customSelect.budget", {
+    returnObjects: true,
+  });
+  const deadlineOptionsText = t("customSelect.deadline", {
+    returnObjects: true,
+  });
+  const priorityOptionsText = t("customSelect.priority", {
+    returnObjects: true,
+  });
+  const communicationOptionsText = t("customSelect.communication", {
+    returnObjects: true,
+  });
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -72,8 +98,6 @@ const ProjectOrder = () => {
       alert("لطفاً ابتدا کپچا را تایید کنید.");
       return;
     }
-
-    // ارسال فرم
   };
 
   useEffect(() => {
@@ -105,136 +129,137 @@ const ProjectOrder = () => {
       window.removeEventListener("click", handleDropdown);
     };
   }, []);
-  const projectTypes = [
+
+  const projectIcon = [
     {
       id: 1,
       text: "طراحی رابط کاربری",
-      icon: <FaPaintBrush className="text-primary w-3" />,
+      icon: (
+        <FaPaintBrush className="text-primary dark:text-primary-dark w-3" />
+      ),
     },
     {
       id: 2,
       text: "وبسایت",
-      icon: <FaGlobe className="text-primary w-3" />,
+      icon: <FaGlobe className="text-primary dark:text-primary-dark w-3" />,
     },
     {
       id: 3,
       text: "اپلیکیشن",
-      icon: <FaMobileAlt className="text-primary w-3" />,
+      icon: <FaMobileAlt className="text-primary dark:text-primary-dark w-3" />,
     },
     {
       id: 4,
       text: "طراحی دیتابیس",
-      icon: <FaDatabase className="text-primary w-3" />,
+      icon: <FaDatabase className="text-primary dark:text-primary-dark w-3" />,
     },
     {
       id: 5,
       text: "سخت افزار",
-      icon: <FaMicrochip className="text-primary w-3" />,
+      icon: <FaMicrochip className="text-primary dark:text-primary-dark w-3" />,
     },
     {
       id: 6,
       text: "غیره",
-      icon: <FaEllipsisH className="text-primary w-3" />,
+      icon: <FaEllipsisH className="text-primary dark:text-primary-dark w-3" />,
     },
   ];
-  const budgetOptions = [
+  const budgetIcon = [
     {
       id: 1,
-      text: "کمتر از ۱۰ میلیون تومان",
-      icon: <FaCoins className="text-primary w-3" />,
+      icon: <FaCoins className="text-primary dark:text-primary-dark w-3" />,
     },
     {
       id: 2,
-      text: "۱۰ تا ۳۰ میلیون تومان",
-      icon: <FaMoneyBillWave className="text-primary w-3" />,
+      icon: (
+        <FaMoneyBillWave className="text-primary dark:text-primary-dark w-3" />
+      ),
     },
     {
       id: 3,
-      text: "۳۰ تا ۵۰ میلیون تومان",
-      icon: <FaMoneyBillWave className="text-primary w-3" />,
+      icon: (
+        <FaMoneyBillWave className="text-primary dark:text-primary-dark w-3" />
+      ),
     },
     {
       id: 4,
-      text: "۵۰ تا ۱۰۰ میلیون تومان",
-      icon: <FaMoneyBillWave className="text-primary w-3" />,
+      icon: (
+        <FaMoneyBillWave className="text-primary dark:text-primary-dark w-3" />
+      ),
     },
     {
       id: 5,
-      text: "بیش از ۱۰۰ میلیون تومان",
-      icon: <FaMoneyBillWave className="text-primary w-3" />,
+      icon: (
+        <FaMoneyBillWave className="text-primary dark:text-primary-dark w-3" />
+      ),
     },
     {
       id: 6,
-      text: "نیاز به مشاوره دارم",
-      icon: <FaEllipsisH className="text-primary w-3" />,
+      icon: <FaEllipsisH className="text-primary dark:text-primary-dark w-3" />,
     },
   ];
 
-  const deadlineOptions = [
+  const deadlineIcon = [
     {
       id: 1,
-      text: "کمتر از یک هفته",
-      icon: <FaBolt className="text-primary w-3" />,
+      icon: <FaBolt className="text-primary dark:text-primary-dark w-3" />,
     },
     {
       id: 2,
-      text: "۱ تا ۲ هفته",
-      icon: <FaClock className="text-primary w-3" />,
+      icon: <FaClock className="text-primary dark:text-primary-dark w-3" />,
     },
     {
       id: 3,
-      text: "۲ تا ۴ هفته",
-      icon: <FaCalendarAlt className="text-primary w-3" />,
+      icon: (
+        <FaCalendarAlt className="text-primary dark:text-primary-dark w-3" />
+      ),
     },
     {
       id: 4,
-      text: "۱ تا ۳ ماه",
-      icon: <FaCalendarAlt className="text-primary w-3" />,
+      icon: (
+        <FaCalendarAlt className="text-primary dark:text-primary-dark w-3" />
+      ),
     },
     {
       id: 5,
-      text: "محدودیت زمانی ندارم",
-      icon: <FaEllipsisH className="text-primary w-3" />,
+      icon: <FaEllipsisH className="text-primary dark:text-primary-dark w-3" />,
     },
   ];
 
-  const priorityOptions = [
+  const priorityIcon = [
     {
       id: 1,
-      text: "عادی",
-      icon: <FaClock className="text-primary w-3" />,
+      icon: <FaClock className="text-primary dark:text-primary-dark w-3" />,
     },
     {
       id: 2,
-      text: "فوری",
-      icon: <FaBolt className="text-primary w-3" />,
+      icon: <FaBolt className="text-primary dark:text-primary-dark w-3" />,
     },
     {
       id: 3,
-      text: "خیلی فوری",
-      icon: <FaExclamationTriangle className="text-primary w-3" />,
+      icon: (
+        <FaExclamationTriangle className="text-primary dark:text-primary-dark w-3" />
+      ),
     },
   ];
-  const communicationOptions = [
+  const communicationIcon = [
     {
       id: 1,
-      text: "تماس تلفنی",
-      icon: <FaPhone className="text-primary w-3" />,
+      icon: <FaPhone className="text-primary dark:text-primary-dark w-3" />,
     },
     {
       id: 2,
-      text: "واتساپ",
-      icon: <FaWhatsapp className="text-primary w-3" />,
+      icon: <FaWhatsapp className="text-primary dark:text-primary-dark w-3" />,
     },
     {
       id: 3,
-      text: "تلگرام",
-      icon: <FaTelegramPlane className="text-primary w-3" />,
+      icon: (
+        <FaTelegramPlane className="text-primary dark:text-primary-dark w-3" />
+      ),
     },
     {
       id: 4,
-      text: "ایمیل",
-      icon: <FaEnvelope className="text-primary w-3" />,
+      icon: <FaEnvelope className="text-primary dark:text-primary-dark w-3" />,
     },
   ];
   const advantages = [
@@ -259,14 +284,16 @@ const ProjectOrder = () => {
   const toggleBudget = () => setbudgetOpen((prev) => !prev);
 
   const inputStyles =
-    "h-12 bg-primary/10 text-text dark:text-secondary-text px-2 text-sm outline-none rounded-xl";
+    "h-9 md:h-12 bg-primary/10 text-xs md:text-sm text-text dark:text-secondary-text px-2 text-sm outline-none rounded-xl";
 
-  const lableStyles = "text-text dark:text-text-dark";
+  const lableStyles =
+    "text-text text-[0.9rem] md:text-sm h-[2rem] dark:text-text-dark";
+  const iconStyle = `absolute ${i18n.language === "fa" ? "left-3" : "right-3"} top-14 text-primary dark:text-primary-dark transition-all`;
   return (
     <div>
-      <form onSubmit={handleSubmit} className="p-4" action="">
+      <form onSubmit={handleSubmit} className="w-full max-w-7xl mx-auto p-4" action="">
         <div>
-          <h4 className="flex items-center gap-2 text-xl font-bold text-primary dark:text-primary-dark mb-6">
+          <h4 className="flex items-center gap-2 text-xl font-bold text-primary dark:text-primary-dark dark:text-primary dark:text-primary-dark-dark mb-6">
             <FaUser />
             {t("projectOrder.employer.title")}
           </h4>
@@ -275,7 +302,7 @@ const ProjectOrder = () => {
             {/* نام و نام خانوادگی */}
             <div className="flex flex-col gap-3">
               <label className={`${lableStyles} flex items-center gap-2`}>
-                <FaUser className="text-primary text-sm" />
+                <FaUser className="text-primary dark:text-primary-dark text-sm" />
                 <span>{t("projectOrder.employer.fullName")}</span>
               </label>
 
@@ -289,7 +316,7 @@ const ProjectOrder = () => {
             {/* ایمیل */}
             <div className="flex flex-col gap-3">
               <label className={`${lableStyles} flex items-center gap-2`}>
-                <FaEnvelope className="text-primary text-sm" />
+                <FaEnvelope className="text-primary dark:text-primary-dark text-sm" />
                 <span>{t("projectOrder.employer.email")}</span>
               </label>
 
@@ -303,7 +330,7 @@ const ProjectOrder = () => {
             {/* شماره تماس */}
             <div className="flex flex-col gap-3">
               <label className={`${lableStyles} flex items-center gap-2`}>
-                <FaPhone className="text-primary text-sm" />
+                <FaPhone className="text-primary dark:text-primary-dark text-sm" />
                 <span>{t("projectOrder.employer.phone")}</span>
               </label>
 
@@ -317,7 +344,7 @@ const ProjectOrder = () => {
             {/* نام شرکت */}
             <div className="flex flex-col gap-3">
               <label className={`${lableStyles} flex items-center gap-2`}>
-                <FaBuilding className="text-primary text-sm" />
+                <FaBuilding className="text-primary dark:text-primary-dark text-sm" />
                 <span>
                   {t("projectOrder.employer.company")}
                   <span className="text-neutral-400 text-sm mx-2">
@@ -335,7 +362,7 @@ const ProjectOrder = () => {
           </div>
         </div>
         <div className="flex flex-col mt-10 gap-6">
-          <h4 className="flex items-center gap-2 text-xl font-bold text-primary dark:text-primary-dark">
+          <h4 className="flex items-center gap-2 text-xl font-bold text-primary dark:text-primary-dark dark:text-primary dark:text-primary-dark-dark">
             <FaFileAlt />
             {t("projectOrder.project.title")}
           </h4>
@@ -344,16 +371,20 @@ const ProjectOrder = () => {
           <section className="grid grid-cols-2 md:grid-cols-3 gap-6">
             <div className="flex flex-col gap-3">
               <label className={`${lableStyles} flex items-center gap-2`}>
-                <FaHeading className="text-primary text-sm" />
+                <FaHeading className="text-primary dark:text-primary-dark text-sm" />
                 <span>{t("projectOrder.project.projectTitle")}</span>
               </label>
-              <input className={inputStyles} type="text" />
+              <input
+                placeholder={t("projectOrder.project.projectTitlePlaceholder")}
+                className={inputStyles}
+                type="text"
+              />
             </div>
 
             {/* نوع پروژه */}
             <div className="relative">
               <label className={`${lableStyles} flex items-center gap-2`}>
-                <FaFileAlt className="text-primary text-sm" />
+                <FaFileAlt className="text-primary dark:text-primary-dark text-sm" />
                 <span>{t("projectOrder.project.projectType")}</span>
               </label>
 
@@ -367,15 +398,16 @@ const ProjectOrder = () => {
                 <FaArrowDown
                   className={`${
                     projectOpen ? "rotate-180" : "rotate-0"
-                  } absolute left-3 top-14 text-primary transition-all`}
+                  } ${iconStyle}`}
                 />
               </div>
 
               {projectOpen && (
                 <CustomSelect
-                  items={projectTypes}
+                  items={projectTypesText}
                   setValue={setProject}
                   setOpen={setProjectsOpen}
+                  icon={projectIcon}
                 />
               )}
             </div>
@@ -383,7 +415,7 @@ const ProjectOrder = () => {
             {/* بودجه */}
             <div className="relative">
               <label className={`${lableStyles} flex items-center gap-2`}>
-                <FaMoneyBillWave className="text-primary text-sm" />
+                <FaMoneyBillWave className="text-primary dark:text-primary-dark text-sm" />
                 <span>{t("projectOrder.project.budget")}</span>
               </label>
 
@@ -397,15 +429,16 @@ const ProjectOrder = () => {
                 <FaArrowDown
                   className={`${
                     budgetOpen ? "rotate-180" : "rotate-0"
-                  } absolute left-3 top-14 text-primary transition-all`}
+                  } ${i18n.language === "fa" ? " left-3 " : "right-3"} absolute top-14 text-primary dark:text-primary-dark transition-all`}
                 />
               </div>
 
               {budgetOpen && (
                 <CustomSelect
-                  items={budgetOptions}
+                  items={budgetOptionsText}
                   setValue={setBudget}
                   setOpen={setbudgetOpen}
+                  icon={budgetIcon}
                 />
               )}
             </div>
@@ -413,8 +446,10 @@ const ProjectOrder = () => {
             {/* زمان تحویل */}
             <div className="relative">
               <label className={`${lableStyles} flex items-center gap-2`}>
-                <FaCalendarAlt className="text-primary text-sm" />
-                <span>{t("projectOrder.project.deadline")}</span>
+                <FaCalendarAlt className="text-primary dark:text-primary-dark text-sm" />
+                <span className="line-clamp-1">
+                  {t("projectOrder.project.deadline")}
+                </span>
               </label>
 
               <div
@@ -425,24 +460,23 @@ const ProjectOrder = () => {
                 {deadline}
 
                 <FaArrowDown
-                  className={`${
-                    deadlineOpen ? "rotate-180" : ""
-                  } absolute left-3 top-14 text-primary transition-all`}
+                  className={`${deadlineOpen ? "rotate-180" : ""} ${iconStyle}`}
                 />
               </div>
 
               {deadlineOpen && (
                 <CustomSelect
-                  items={deadlineOptions}
+                  items={deadlineOptionsText}
                   setValue={setDeadline}
                   setOpen={setDeadlineOpen}
+                  icon={deadlineIcon}
                 />
               )}
             </div>
             {/* اولویت */}
             <div className="relative">
               <label className={`${lableStyles} flex items-center gap-2`}>
-                <FaBolt className="text-primary text-sm" />
+                <FaBolt className="text-primary dark:text-primary-dark text-sm" />
                 <span>{t("projectOrder.project.priority")}</span>
               </label>
 
@@ -454,17 +488,16 @@ const ProjectOrder = () => {
                 {priority}
 
                 <FaArrowDown
-                  className={`${
-                    priorityOpen ? "rotate-180" : ""
-                  } absolute left-3 top-14 text-primary transition-all`}
+                  className={`${priorityOpen ? "rotate-180" : ""} ${iconStyle}`}
                 />
               </div>
 
               {priorityOpen && (
                 <CustomSelect
-                  items={priorityOptions}
+                  items={priorityOptionsText}
                   setValue={setPriority}
                   setOpen={setPriorityOpen}
+                  icon={priorityIcon}
                 />
               )}
             </div>
@@ -472,8 +505,10 @@ const ProjectOrder = () => {
             {/* روش ارتباط */}
             <div className="relative">
               <label className={`${lableStyles} flex items-center gap-2`}>
-                <FaPhone className="text-primary text-sm" />
-                <span>{t("projectOrder.project.communication")}</span>
+                <FaPhone className="text-primary dark:text-primary-dark text-sm" />
+                <span className="line-clamp-1">
+                  {t("projectOrder.project.communication")}
+                </span>
               </label>
 
               <div
@@ -486,15 +521,16 @@ const ProjectOrder = () => {
                 <FaArrowDown
                   className={`${
                     communicationOpen ? "rotate-180" : ""
-                  } absolute left-3 top-14 text-primary transition-all`}
+                  } ${iconStyle}`}
                 />
               </div>
 
               {communicationOpen && (
                 <CustomSelect
-                  items={communicationOptions}
+                  items={communicationOptionsText}
                   setValue={setCommunication}
                   setOpen={setCommunicationOpen}
+                  icon={communicationIcon}
                 />
               )}
             </div>
@@ -503,7 +539,7 @@ const ProjectOrder = () => {
           {/* توضیحات */}
           <div className="my-8">
             <label className={`${lableStyles} mb-3 flex items-center gap-2`}>
-              <FaFileAlt className="text-primary text-sm" />
+              <FaFileAlt className="text-primary dark:text-primary-dark text-sm" />
               <span>{t("projectOrder.project.description")}</span>
             </label>
 
@@ -526,9 +562,9 @@ const ProjectOrder = () => {
           {/* امکانات مورد نیاز */}
           <div>
             <label
-              className={`${lableStyles} mb-4 flex items-center gap-2 text-primary text-xl font-bold`}
+              className={`${lableStyles} mb-4 flex items-center gap-2 text-primary dark:text-primary-dark text-xl font-bold`}
             >
-              <FaCogs className="text-lg text-primary dark:text-primary-dark" />
+              <FaCogs className="text-lg text-primary dark:text-primary-dark dark:text-primary dark:text-primary-dark-dark" />
               <span>{t("projectOrder.features.title")}</span>
             </label>
 
@@ -537,25 +573,29 @@ const ProjectOrder = () => {
                 {featuresText.map((item, index) => (
                   <label className="flex items-center gap-2 bg-white dark:bg-[#1E293B] dark:text-white p-2 dark:border-[#334155] border border-neutral-200 rounded-md cursor-pointer hover:scale-105 transition-all hover:shadow-xl h-12 text-neutral-700">
                     <input type="checkbox" />
-                    <span>{featuresText[index]}</span>
+                    <span className="text-xs md:text-sm">
+                      {featuresText[index]}
+                    </span>
                   </label>
                 ))}
               </div>
 
               <div className=" bg-primary/10 rounded-2xl p-4 mt-4 md:mt-0">
                 <label
-                  className={`${lableStyles} mb-3 flex items-center gap-2 text-xl text-primary font-bold`}
+                  className={`${lableStyles} mb-3 flex items-center gap-2 text-xl text-primary dark:text-primary-dark font-bold`}
                 >
-                  <FaPaperclip className="text-lg text-primary dark:text-primary-dark" />
-                  <span>{t("projectOrder.upload.title")}</span>
+                  <FaPaperclip className="text-lg text-primary dark:text-primary-dark dark:text-primary dark:text-primary-dark-dark" />
+                  <span className="text-[1rem]">
+                    {t("projectOrder.upload.title")}
+                  </span>
                 </label>
-                <p className="text-neutral-600 dark:text-[#94A3B8] text-start">
+                <p className="text-neutral-600 dark:text-[#94A3B8] text-sm md:text-xl text-start">
                   {t("projectOrder.upload.description")}
                 </p>
 
                 <input
                   type="file"
-                  className="text-sm bg-accent dark:bg-[#FB923C] checked:scale-90 w-50 p-3 mt-4 rounded-md text-white"
+                  className="text-xs md:text-sm w-40 bg-accent dark:bg-[#FB923C] checked:scale-90 md:w-50 p-3 mt-4 rounded-md text-white"
                 />
               </div>
             </div>
@@ -574,9 +614,9 @@ const ProjectOrder = () => {
                     <div className="absolute -top-10 -left-10 h-32 w-32 rounded-full bg-white/10 blur-2xl"></div>
                     <div className="absolute -bottom-12 -right-10 h-32 w-32 rounded-full bg-white/10 blur-2xl"></div>
 
-                    <div className="relative flex items-center gap-4">
-                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/20">
-                        <FaShieldAlt className="text-2xl text-white" />
+                    <div className="relative flex items-start md:items-center gap-4">
+                      <div className="flex md:h-14 md:w-14 items-center justify-center rounded-2xl md:bg-white/20">
+                        <FaShieldAlt className="text-2xl mt-2 text-white" />
                       </div>
 
                       <div>
@@ -630,13 +670,17 @@ const ProjectOrder = () => {
 
               {/* متن */}
               <div className="w-full lg:w-7/12 space-y-6">
-                <h2 className="text-3xl font-extrabold text-text dark:text-white leading-relaxed">
-                  {t("projectOrder.hero.title1")}
-
-                  <span className="text-primary dark:text-primary-dark">
-                    {" "}
-                    {t("projectOrder.hero.title2")}{" "}
-                  </span>
+                <h2 className="text-[1.2rem] md:text-[1.7rem] text-start xl:text-3xl font-extrabold text-text dark:text-white leading-relaxed">
+                  {t("projectOrder.hero.title1")}{" "}
+                  <span
+                    className={
+                      i18n.language === "fa"
+                        ? "text-primary dark:text-primary-dark"
+                        : "text-text dark:text-text-dark"
+                    }
+                  >
+                    {t("projectOrder.hero.title2")}
+                  </span>{" "}
                   {t("projectOrder.hero.title3")}
                 </h2>
 
@@ -651,13 +695,13 @@ const ProjectOrder = () => {
                     return (
                       <div
                         key={item.id}
-                        className="group flex cursor-pointer items-center gap-3 rounded-2xl bg-white dark:bg-slate-800 p-4 shadow-md transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
+                        className="group h-16 md:h-24 flex cursor-pointer items-center gap-3 rounded-2xl bg-white dark:bg-slate-800 p-4 shadow-md transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
                       >
-                        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 transition-all duration-500 group-hover:bg-primary">
-                          <Icon className="text-lg text-primary transition-all duration-500 group-hover:scale-125 group-hover:rotate-12 group-hover:text-white" />
+                        <div className="flex w-8 h-8 md:h-12 md:w-12 items-center justify-center rounded-xl bg-primary/10 transition-all duration-500 group-hover:bg-primary">
+                          <Icon className="text-sm md:text-lg text-primary dark:text-primary-dark transition-all duration-500 group-hover:scale-125 group-hover:rotate-12 group-hover:text-white" />
                         </div>
 
-                        <span className="font-medium text-neutral-700 transition-colors duration-300 dark:text-white group-hover:text-primary dark:group-hover:text-primary-dark">
+                        <span className="font-medium text-sm md:text-[1.1rem] w-10/12 text-neutral-700 transition-colors duration-300 dark:text-white group-hover:text-primary dark:text-primary-dark dark:group-hover:text-primary dark:text-primary-dark-dark">
                           {advantagesText[index]}
                         </span>
                       </div>

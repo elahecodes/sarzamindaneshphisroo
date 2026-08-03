@@ -18,7 +18,7 @@ const Services = () => {
   ];
 
   return (
-    <section className="px-6 py-20 bg-white dark:bg-bg-dark">
+    <section className="px-6  max-w-7xl mx-auto py-20 bg-white dark:bg-bg-dark">
       {/* Header */}
       <div className="flex justify-center items-center w-full">
         <div className="w-2 h-2 rounded-full bg-accent"></div>
@@ -26,11 +26,11 @@ const Services = () => {
         <h2 className="text-2xl lg:text-3xl text-center font-bold mx-4 dark:text-white">
           {i18n.language === "fa" ? (
             <div>
-              <span className="text-primary">خدماتی</span> که ارائه میدهیم
+              <span className="text-primary dark:text-primary-dark">خدماتی</span> که ارائه میدهیم
             </div>
           ) : (
             <div>
-              <span>our</span> <span className="text-primary">Services</span>
+              <span>our</span> <span className="text-primary dark:text-primary-dark">Services</span>
             </div>
           )}
         </h2>
@@ -58,7 +58,7 @@ const Services = () => {
             className="group relative rounded-2xl border border-violet-100 dark:border-[#334155] bg-gradient-to-br from-white to-violet-50 dark:from-[#37475c] dark:to-[#1b2535] p-6 shadow-sm hover:shadow-xl cursor-pointer"
           >
             <div className="flex items-center justify-between mb-6">
-              <h3 className="text-lg font-title text-text dark:text-neutral-100 group-hover:text-primary dark:group-hover:text-white transition">
+              <h3 className="text-lg font-title text-text dark:text-neutral-100 group-hover:text-primary dark:text-primary-dark dark:group-hover:text-white transition">
                 {services[index].title}
               </h3>
 

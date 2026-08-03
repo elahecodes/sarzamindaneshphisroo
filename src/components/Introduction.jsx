@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 const Introduction = () => {
   const [images, setImages] = useState([]);
@@ -59,11 +60,11 @@ const Introduction = () => {
       {/* HERO IMAGE */}
       <motion.div
         key={currentIndex}
-        // initial={{ opacity: 0 }}
-        // animate={{ opacity: 1 }}
-        // transition={{ duration: 0.7 }}
-        // viewport={{ once: true }}
-        className="relative w-full h-[22rem] md:h-[30rem] rounded-2xl overflow-hidden shadow-xl"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.7 }}
+        viewport={{ once: true }}
+        className="relative w-full  max-w-7xl mx-auto h-[22rem] md:h-[30rem] rounded-2xl overflow-hidden shadow-xl"
       >
         {images.length > 0 && (
           <img
@@ -85,11 +86,11 @@ const Introduction = () => {
             {counters.map((counter, index) => (
               <motion.div
                 key={index}
-                // initial={{ opacity: 0, y: 30 }}
-                // whileInView={{ opacity: 1, y: 0 }}
-                // transition={{ delay: index * 0.3 }}
-                // viewport={{ once: true }}
-                // whileHover={{ scale: 1.05 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.3 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.05 }}
                 className={`rounded-2xl p-6 md:p-8 dark:bg-[#334155] flex flex-col items-center justify-center text-center shadow-md transition-all ${
                   index % 2 === 0
                     ? "bg-purple-50 border-t-4 border-purple-500 dark:border-[#8B5CF6]"
@@ -109,9 +110,9 @@ const Introduction = () => {
 
           {/* TEXT */}
           <motion.div
-            // initial={{ opacity: 0, y: 100 }}
-            // whileInView={{ opacity: 1, y: 0 }}
-            // transition={{ duration: 1 }}
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
             className="mt-10 text-center md:text-right space-y-4"
           >
             <h2 className="text-2xl w-full text-start font-title md:text-3xl text-text dark:text-white">
@@ -124,13 +125,16 @@ const Introduction = () => {
 
             {/* BUTTONS */}
             <div className="flex flex-col md:flex-row justify-center md:justify-start gap-4 mt-6">
-              <button className="px-6 py-3 rounded-xl bg-purple-600 dark:bg-[#8B5CF6] text-white shadow-lg hover:shadow-purple-300 hover:-translate-y-1 transition-all">
-                {t("introduction.readmoreBtn")}
-              </button>
-
-              <button className="px-6 py-3 rounded-xl bg-accent dark:bg-accent-dark text-white shadow-lg hover:shadow-orange-300 hover:-translate-y-1 transition-all">
-                {t("introduction.workBtn")}
-              </button>
+              <Link className="px-6 py-3 rounded-xl bg-primary dark:bg-primary-dark text-white shadow-lg hover:shadow-purple-300 hover:-translate-y-1 transition-all" to={`/aboutus`}>
+                <button>
+                  {t("introduction.readmoreBtn")}
+                </button>
+              </Link>
+              <Link className="px-6 py-3 rounded-xl bg-accent dark:bg-accent-dark text-white shadow-lg hover:shadow-orange-300 hover:-translate-y-1 transition-all" to={`/projectorder`}>
+                <button>
+                  {t("introduction.workBtn")}
+                </button>
+              </Link>
             </div>
           </motion.div>
         </div>

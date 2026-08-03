@@ -84,7 +84,7 @@ const SignIn = () => {
   };
 
   return (
-    <div className="w-full h-dvh flex justify-center items-center pt-12">
+    <div className="w-full h-screen flex justify-center items-center pt-12">
       <form
         onSubmit={handleSubmit}
         className="w-11/12 md:w-5/12 h-full flex flex-col justify-start items-center gap-3"

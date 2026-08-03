@@ -1,12 +1,12 @@
-const CustomSelect = ({ items, setValue, setOpen }) => {
+const CustomSelect = ({ items, setValue, setOpen, icon }) => {
   return (
     <div>
       <div className="bg-bg dark:bg-surface z-20 p-3 rounded-xl shadow-xl absolute top-22 left-0">
-        {items.map((item) => (
+        {items.map((item, index) => (
           <div
             key={item.id}
             onClick={() => {
-              setValue(item.text);
+              setValue(item);
               setOpen(false);
             }}
             className="
@@ -19,9 +19,9 @@ const CustomSelect = ({ items, setValue, setOpen }) => {
               transition-all
              "
           >
-            {item.icon}
+            {icon[index].icon}
             <span className="text-xs md:text-sm dark:text-text-dark">
-              {item.text}
+              {item}
             </span>
           </div>
         ))}

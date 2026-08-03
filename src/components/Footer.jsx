@@ -40,7 +40,7 @@ const Footer = () => {
 
   return (
     <footer className="w-full border-t border-neutral-300 dark:border-[#334155] bg-gradient-to-l from-accent-light/30 dark:from-[#1a2848] dark:to-[#121924] to-primary-light py-10 md:py-12">
-      <div className="w-full px-6 mx-auto grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6 md:gap-2">
+      <div className="w-full max-w-7xl mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6 md:gap-2">
         {/* معرفی شرکت */}
         <div className="col-span-2 lg:col-span-1 flex flex-col justify-start">
           <h4 className="text-lg md:text-xl dark:text-[#F8FAFC] font-bold mb-3 md:mb-4 flex items-center gap-2">
@@ -48,7 +48,7 @@ const Footer = () => {
             {t("footer.company.title")}
           </h4>
 
-          <p className="text-xs md:text-sm dark:text-[#94A3B8] leading-7 md:leading-8 text-neutral-700">
+          <p className="text-xs xl:dark:bg-transparent xl:text-start dark:bg-card-dark/50 bg-white/50 text-center p-1 rounded-md md:text-sm dark:text-[#94A3B8] leading-7 md:leading-8 text-neutral-700">
             {t("footer.company.description")}
           </p>
         </div>
@@ -125,18 +125,18 @@ const Footer = () => {
             {t("footer.licenses.title")}
           </h4>
 
-          <div className="grid grid-cols-3 gap-3">
+          <div className="md:grid md:grid-cols-3 flex gap-1">
             {licenses.map((item, index) => (
               <a
                 key={item.id}
                 href="#"
                 title={item.name}
-                className="group h-[70px] bg-white rounded-2xl border border-neutral-200 flex items-center justify-center shadow-sm hover:shadow-xl hover:border-primary/40 hover:-translate-y-1 transition-all duration-300"
+                className="group h-[50px] md:h-[70px] bg-white rounded-md md:rounded-2xl border border-neutral-200 flex items-center justify-center shadow-sm hover:shadow-xl hover:border-primary/40 hover:-translate-y-1 transition-all duration-300"
               >
                 <img
                   src={licenseImages[index]}
                   alt={item.name}
-                  className="w-[60px] h-[30px] lg:w-[100px] object-contain transition-transform duration-300 group-hover:scale-110"
+                  className="w-[70px] h-[30px] lg:w-[100px] object-contain transition-transform duration-300 group-hover:scale-110"
                 />
               </a>
             ))}

@@ -127,11 +127,11 @@
     "items": [
       {
         "title": "سفارش پروژه",
-        "description": "اگر برای کسب‌وکار یا استارتاپ خود به یک وب‌سایت حرفه‌ای نیاز داری، خوشحال می‌شویم در مسیر طراحی و توسعه کنارت باشیم."
+        "description": "اگر برای کسب‌وکار یا استارتاپ خود به یک وب‌سایت حرفه‌ای نیاز داری، خوشحال می‌شویم در مسیر طراحی و توسعه کنارت باشیم. با طراحی مدرن و فناوری‌های روز، ایده‌هایت را به یک محصول حرفه‌ای تبدیل می‌کنیم."
       },
       {
         "title": "همکاری با ما",
-        "description": "ما همیشه به دنبال افراد خلاق و باانگیزه برای همکاری در پروژه‌های طراحی و توسعه هستیم. اگر اهل کار تیمی و رشد در پروژه‌های واقعی هستید، مشتاق همکاری با شما هستیم."
+        "description": "ما همیشه به دنبال افراد خلاق و باانگیزه برای همکاری در پروژه‌های طراحی و توسعه هستیم. اگر به کار تیمی و یادگیری مستمر علاقه‌مند هستی، از همکاری با تو استقبال می‌کنیم."
       }
     ]
   },
@@ -139,56 +139,56 @@
     "items": [
       {
         "id": 1,
-        "avatar": "/public/icons/user.png",
+        "avatar": "/icons/user.png",
         "fullName": "علی رضایی",
         "position": "مدیر فروش",
         "review": "همکاری با این تیم تجربه‌ای بسیار حرفه‌ای بود. تمامی مراحل پروژه طبق زمان‌بندی انجام شد و کیفیت نهایی فراتر از انتظارات ما بود."
       },
       {
         "id": 2,
-        "avatar": "/public/icons/user.png",
+        "avatar": "/icons/user.png",
         "fullName": "سارا محمدی",
         "position": "مدیر مارکتینگ",
         "review": "طراحی رابط کاربری بسیار زیبا و کاربرپسند انجام شد. ارتباط مستمر و پاسخگویی سریع تیم باعث شد پروژه بدون هیچ مشکلی پیش برود."
       },
       {
         "id": 3,
-        "avatar": "/public/icons/user.png",
+        "avatar": "/icons/user.png",
         "fullName": "امیر حسینی",
         "position": "مدیرعامل استارتاپ",
         "review": "از تحلیل نیازها تا پیاده‌سازی نهایی، همه چیز کاملاً حرفه‌ای انجام شد. قطعاً برای پروژه‌های بعدی نیز همکاری خواهیم کرد."
       },
       {
         "id": 4,
-        "avatar": "/public/icons/user.png",
+        "avatar": "/icons/user.png",
         "fullName": "نگار احمدی",
         "position": "مدیر محصول",
         "review": "توجه به جزئیات و درک صحیح نیازهای کسب‌وکار ما باعث شد نتیجه نهایی دقیقاً مطابق انتظارمان باشد."
       },
       {
         "id": 5,
-        "avatar": "/public/icons/user.png",
+        "avatar": "/icons/user.png",
         "fullName": "محمد کریمی",
         "position": "صاحب فروشگاه اینترنتی",
         "review": "سرعت اجرا، کیفیت کدنویسی و طراحی حرفه‌ای از نقاط قوت این تیم بود. از نتیجه کار کاملاً رضایت داریم."
       },
       {
         "id": 6,
-        "avatar": "/public/icons/user.png",
+        "avatar": "/icons/user.png",
         "fullName": "زهرا شریفی",
         "position": "مدیر منابع انسانی",
         "review": "همکاری بسیار لذت‌بخشی داشتیم. تیم با صبر و حوصله تمامی درخواست‌های ما را بررسی و اجرا کرد."
       },
       {
         "id": 7,
-        "avatar": "/public/icons/user.png",
+        "avatar": "/icons/user.png",
         "fullName": "حسین نادری",
         "position": "مدیر فناوری اطلاعات",
         "review": "پروژه در زمان مقرر تحویل داده شد و از نظر فنی نیز استانداردهای مورد نظر ما به‌خوبی رعایت شده بود."
       },
       {
         "id": 8,
-        "avatar": "/public/icons/user.png",
+        "avatar": "/icons/user.png",
         "fullName": "مریم اکبری",
         "position": "مدیر برند",
         "review": "خلاقیت بالا در طراحی و پیاده‌سازی باعث شد وب‌سایت ما ظاهری مدرن و حرفه‌ای پیدا کند. همکاری فوق‌العاده‌ای بود."
@@ -662,7 +662,7 @@
     "items": [
       {
         "id": 1,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "مشاهده",
         "author": "الهه",
         "readMore": "مطالعه مقاله",
@@ -676,7 +676,7 @@
       },
       {
         "id": 2,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "مشاهده",
         "author": "الهه",
         "readMore": "مطالعه مقاله",
@@ -690,7 +690,7 @@
       },
       {
         "id": 3,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "مشاهده",
         "author": "الهه",
         "readMore": "مطالعه مقاله",
@@ -704,7 +704,7 @@
       },
       {
         "id": 4,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "مشاهده",
         "author": "الهه",
         "readMore": "مطالعه مقاله",
@@ -718,7 +718,7 @@
       },
       {
         "id": 5,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "مشاهده",
         "author": "الهه",
         "readMore": "مطالعه مقاله",
@@ -732,7 +732,7 @@
       },
       {
         "id": 6,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "مشاهده",
         "author": "الهه",
         "readMore": "مطالعه مقاله",
@@ -746,7 +746,7 @@
       },
       {
         "id": 7,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "مشاهده",
         "author": "الهه",
         "readMore": "مطالعه مقاله",
@@ -760,7 +760,7 @@
       },
       {
         "id": 8,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "مشاهده",
         "author": "الهه",
         "readMore": "مطالعه مقاله",
@@ -774,7 +774,7 @@
       },
       {
         "id": 9,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "مشاهده",
         "author": "الهه",
         "readMore": "مطالعه مقاله",
@@ -788,7 +788,7 @@
       },
       {
         "id": 10,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "مشاهده",
         "author": "الهه",
         "readMore": "مطالعه مقاله",
@@ -802,7 +802,7 @@
       },
       {
         "id": 11,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "مشاهده",
         "author": "الهه",
         "readMore": "مطالعه مقاله",
@@ -816,7 +816,7 @@
       },
       {
         "id": 12,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "مشاهده",
         "author": "الهه",
         "readMore": "مطالعه مقاله",
@@ -830,7 +830,7 @@
       },
       {
         "id": 13,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "مشاهده",
         "author": "الهه",
         "readMore": "مطالعه مقاله",
@@ -844,7 +844,7 @@
       },
       {
         "id": 14,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "مشاهده",
         "author": "الهه",
         "readMore": "مطالعه مقاله",
@@ -858,7 +858,7 @@
       },
       {
         "id": 15,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "مشاهده",
         "author": "الهه",
         "readMore": "مطالعه مقاله",
@@ -872,7 +872,7 @@
       },
       {
         "id": 16,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "مشاهده",
         "author": "الهه",
         "readMore": "مطالعه مقاله",
@@ -886,7 +886,7 @@
       },
       {
         "id": 17,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "مشاهده",
         "author": "الهه",
         "readMore": "مطالعه مقاله",
@@ -900,7 +900,7 @@
       },
       {
         "id": 18,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "مشاهده",
         "author": "الهه",
         "readMore": "مطالعه مقاله",
@@ -914,7 +914,7 @@
       },
       {
         "id": 19,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "مشاهده",
         "author": "الهه",
         "readMore": "مطالعه مقاله",
@@ -928,7 +928,7 @@
       },
       {
         "id": 20,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "مشاهده",
         "author": "الهه",
         "readMore": "مطالعه مقاله",
@@ -942,7 +942,7 @@
       },
       {
         "id": 21,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "مشاهده",
         "author": "الهه",
         "readMore": "مطالعه مقاله",
@@ -956,7 +956,7 @@
       },
       {
         "id": 22,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "مشاهده",
         "author": "الهه",
         "readMore": "مطالعه مقاله",
@@ -970,7 +970,7 @@
       },
       {
         "id": 23,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "مشاهده",
         "author": "الهه",
         "readMore": "مطالعه مقاله",
@@ -984,7 +984,7 @@
       },
       {
         "id": 24,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "مشاهده",
         "author": "الهه",
         "readMore": "مطالعه مقاله",
@@ -998,7 +998,7 @@
       },
       {
         "id": 25,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "مشاهده",
         "author": "الهه",
         "readMore": "مطالعه مقاله",
@@ -1012,7 +1012,7 @@
       },
       {
         "id": 26,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "مشاهده",
         "author": "الهه",
         "readMore": "مطالعه مقاله",
@@ -1026,7 +1026,7 @@
       },
       {
         "id": 27,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "مشاهده",
         "author": "الهه",
         "readMore": "مطالعه مقاله",
@@ -1040,7 +1040,7 @@
       },
       {
         "id": 28,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "مشاهده",
         "author": "الهه",
         "readMore": "مطالعه مقاله",
@@ -1054,7 +1054,7 @@
       },
       {
         "id": 29,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "مشاهده",
         "author": "الهه",
         "readMore": "مطالعه مقاله",
@@ -1068,7 +1068,7 @@
       },
       {
         "id": 30,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "مشاهده",
         "author": "الهه",
         "readMore": "مطالعه مقاله",
@@ -1082,7 +1082,7 @@
       },
       {
         "id": 31,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "مشاهده",
         "author": "الهه",
         "readMore": "مطالعه مقاله",
@@ -1096,7 +1096,7 @@
       },
       {
         "id": 32,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "مشاهده",
         "author": "الهه",
         "readMore": "مطالعه مقاله",
@@ -1110,7 +1110,7 @@
       },
       {
         "id": 33,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "مشاهده",
         "author": "الهه",
         "readMore": "مطالعه مقاله",
@@ -1124,7 +1124,7 @@
       },
       {
         "id": 34,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "مشاهده",
         "author": "الهه",
         "readMore": "مطالعه مقاله",
@@ -1138,7 +1138,7 @@
       },
       {
         "id": 35,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "مشاهده",
         "author": "الهه",
         "readMore": "مطالعه مقاله",
@@ -1405,43 +1405,34 @@
     }
   },
   "customSelect": {
-    "projectTypes": {
-      "ui": "طراحی رابط کاربری",
-      "website": "وب‌سایت",
-      "app": "اپلیکیشن",
-      "database": "طراحی دیتابیس",
-      "hardware": "سخت‌افزار",
-      "other": "سایر"
-    },
+    "projectTypes": [
+      "طراحی رابط کاربری",
+      "وب‌سایت",
+      "اپلیکیشن",
+      "طراحی پایگاه داده",
+      "سخت‌افزار",
+      "سایر"
+    ],
 
-    "budget": {
-      "less10": "کمتر از ۱۰ میلیون تومان",
-      "ten30": "۱۰ تا ۳۰ میلیون تومان",
-      "thirty50": "۳۰ تا ۵۰ میلیون تومان",
-      "fifty100": "۵۰ تا ۱۰۰ میلیون تومان",
-      "more100": "بیش از ۱۰۰ میلیون تومان",
-      "consult": "نیاز به مشاوره دارم"
-    },
+    "budget": [
+      "کمتر از ۱۰ میلیون تومان",
+      "۱۰ تا ۳۰ میلیون تومان",
+      "۳۰ تا ۵۰ میلیون تومان",
+      "۵۰ تا ۱۰۰ میلیون تومان",
+      "بیشتر از ۱۰۰ میلیون تومان",
+      "نیاز به مشاوره دارم"
+    ],
 
-    "deadline": {
-      "week": "کمتر از یک هفته",
-      "twoWeeks": "۱ تا ۲ هفته",
-      "month": "۲ تا ۴ هفته",
-      "threeMonths": "۱ تا ۳ ماه",
-      "noLimit": "محدودیت زمانی ندارم"
-    },
+    "deadline": [
+      "کمتر از یک هفته",
+      "۱ تا ۲ هفته",
+      "۲ تا ۴ هفته",
+      "۱ تا ۳ ماه",
+      "محدودیت زمانی ندارم"
+    ],
 
-    "priority": {
-      "normal": "عادی",
-      "urgent": "فوری",
-      "veryUrgent": "خیلی فوری"
-    },
+    "priority": ["عادی", "فوری", "بسیار فوری"],
 
-    "communication": {
-      "phone": "تماس تلفنی",
-      "whatsapp": "واتساپ",
-      "telegram": "تلگرام",
-      "email": "ایمیل"
-    }
+    "communication": ["تماس تلفنی", "واتساپ", "تلگرام", "ایمیل"]
   }
 }

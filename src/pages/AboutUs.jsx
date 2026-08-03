@@ -41,9 +41,6 @@ const AboutUs = () => {
       console.log(error);
     }
   }
-  //   ارم انجمن صنفی کسب و کار اینترنتی
-  // ارم انجمن انفورماتیک ایران
-  // ارم نظام صنفی رایانه ای کشور
 
   useEffect(() => {
     getData();
@@ -52,24 +49,28 @@ const AboutUs = () => {
   const achievements = [
     {
       icon: <FaCheckCircle />,
-      position: "md:left-[8%] md:top-[18%] left-4 top-4",
+      position:
+        "left-4 top-12 md:left-[-5%] md:top-[12%] lg:left-[8%] lg:top-[18%]",
     },
     {
       icon: <FaShieldAlt />,
-      position: "md:right-[8%] md:top-[20%] right-4 top-28",
+      position:
+        "right-4 top-30 md:right-[-6%] md:top-[25%] lg:right-[8%] lg:top-[20%]",
     },
     {
       icon: <FaRocket />,
-      position: "md:left-[10%] md:bottom-[18%] left-4 bottom-24",
+      position:
+        "left-4 bottom-28 md:left-[-10%] md:bottom-[25%] lg:left-[10%] lg:bottom-[18%]",
     },
     {
       icon: <FaHandshake />,
-      position: "md:right-[5%] md:bottom-[12%] right-4 bottom-4",
+      position:
+        "right-4 bottom-12 md:right-[-4%] md:bottom-[12%] lg:right-[5%] lg:bottom-[12%]",
     },
     {
       icon: <FaLightbulb />,
       position:
-        "md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 hidden md:flex",
+        "hidden md:flex md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2",
     },
   ];
   const whyUs = [
@@ -104,7 +105,7 @@ const AboutUs = () => {
     },
   ];
   const SectionTitle =
-    "text-2xl md:text-4xl font-extrabold text-primary text-center";
+    "text-2xl md:text-3xl xl:text-4xl font-extrabold text-primary text-center";
 
   const icons = {
     1: <FaLaptopCode className="text-white text-3xl" />,
@@ -128,7 +129,7 @@ const AboutUs = () => {
       <div className="absolute w-[40rem] h-[40rem] bg-primary/10 dark:bg-primary/20 blur-3xl top-[50rem] -left-12 pointer-events-none" />
       <div className="absolute w-[22rem] h-[22rem] bg-accent/10 blur-3xl bottom-0 -left-10 pointer-events-none" />
 
-      <section className="py-12 md:py-20 relative z-10 overflow-hidden">
+      <section className="py-12 md:py-20 relative z-10 overflow-hidden max-w-7xl mx-auto">
         <motion.h4
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -144,7 +145,7 @@ const AboutUs = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-5 md:mt-6 mx-auto w-11/12 md:w-8/12 dark:text-[#94A3B8] text-center text-sm md:text-base text-neutral-600 leading-8 md:leading-9"
+          className="mt-5 md:mt-6 mx-auto px-3 md:px-0 md:w-8/12 dark:text-[#94A3B8] text-center text-[1rem] md:text-[1.3rem] text-neutral-600 leading-8 md:leading-9"
         >
           {t("aboutUs.trust.description")}
         </motion.p>
@@ -179,7 +180,6 @@ const AboutUs = () => {
               viewport={{ once: true }}
               transition={{
                 duration: 1,
-                delay: 1 * index,
               }}
               className={`
                   absolute
@@ -191,8 +191,8 @@ const AboutUs = () => {
                   backdrop-blur-xl
                   border border-white/40
                   shadow-xl md:shadow-2xl
-                  py-2 md:py-3
-                  px-3 md:px-5
+                  py-1 lg:py-3
+                  px-2 lg:px-5
                   rounded-full
                   hover:scale-105 md:hover:scale-110 
                   cursor-default
@@ -211,8 +211,8 @@ const AboutUs = () => {
           ))}
         </motion.div>
       </section>
-      <section className="py-2 m-4">
-        <div className="relative overflow-hidden rounded-3xl bg-bg p-8 d dark:bg-bg-dark md:p-12">
+      <section className="py-2 m-4 max-w-7xl mx-auto">
+        <div className="relative max-w-7xl mx-auto overflow-hidden rounded-3xl bg-bg p-8 d dark:bg-bg-dark md:p-12">
           {/* عنوان */}
           <div className="mb-10 flex items-center gap-5">
             <motion.div
@@ -242,7 +242,7 @@ const AboutUs = () => {
           </div>
 
           {/* متن */}
-          <div className="space-y-6 leading-9 text-justify text-text dark:text-text-dark">
+          <div className="space-y-6 leading-9 md:text-[1.3rem] text-justify text-text dark:text-text-dark">
             <motion.p
               initial={{ opacity: 0, y: 80 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -257,10 +257,10 @@ const AboutUs = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.7 }}
-              className="relative overflow-hidden rounded-2xl border-r-4 border-accent dark:border-accent-dark bg-orange-50 dark:bg-orange-500/10 p-5"
+              className="relative w-full overflow-hidden rounded-2xl border-r-4 border-accent dark:border-accent-dark bg-orange-50 dark:bg-orange-500/10 p-3"
             >
               {/* Desktop */}
-              <FaLightbulb className="hidden sm:block mt-1 text-2xl text-orange-500 shrink-0" />
+              <FaLightbulb className="hidden sm:block mb-2 text-2xl text-orange-500 shrink-0" />
 
               {/* Mobile Decorative */}
               <FaLightbulb
@@ -270,9 +270,7 @@ const AboutUs = () => {
               />
 
               <p
-                className={`relative z-10 leading-8 text-start text-gray-700 dark:text-gray-200 ${
-                  i18n.language === "fa" ? "pl-10" : "pr-10"
-                }`}
+                className={`relative w-full z-10 leading-8 text-justify text-gray-700 font-bold dark:text-gray-200`}
               >
                 {t("aboutUs.story.goal")}
               </p>
@@ -291,7 +289,7 @@ const AboutUs = () => {
         </div>
       </section>
       {/* SERVICES */}
-      <section className="mt-10 lg:mt-30 relative z-10 px-8">
+      <section className="mt-10 max-w-7xl mx-auto lg:mt-30 relative z-10 px-8">
         <div className="flex items-center w-full max-w-full mb-16">
           <div className="w-2 h-2 rounded-full bg-accent shrink-0" />
 
@@ -339,7 +337,7 @@ const AboutUs = () => {
       </section>
 
       {/* WHY US */}
-      <section className="py-20 mt-20 relative overflow-hidden px-10">
+      <section className="max-w-7xl mx-auto py-20 mt-20 relative overflow-hidden px-10">
         {/* بک‌گراند تزئینی */}
         <div className="absolute top-0 right-20 w-72 h-72 bg-primary/10 rounded-full blur-[120px]" />
         <div className="absolute bottom-0 left-20 w-80 h-80 bg-accent/10 rounded-full blur-[120px]" />
@@ -371,7 +369,7 @@ const AboutUs = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              className="text-neutral-500 mt-4 lg:text-lg leading-8"
+              className="text-secondary-text mt-4 md:text-[1.2rem] lg:text-lg leading-8"
             >
               {t("aboutUs.whyUs.description")}
             </motion.p>
@@ -390,7 +388,6 @@ const AboutUs = () => {
                   className="
                     group
                     flex items-start gap-5
-                    
                     p-6
                     rounded-3xl
                     bg-white/80
@@ -449,11 +446,10 @@ const AboutUs = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.7 }}
                 className="
-                
                   group
                   relative
                   w-full
-                  max-w-lg
+                  max-w-
                   h-[500px]
                   rounded-[40px]
                   overflow-hidden
@@ -473,13 +469,13 @@ const AboutUs = () => {
 
                 {/* متن روی تصویر */}
                 <div
-                  className={`absolute bottom-8 ${i18next.language === "fa" ? "right-8" : "left-8 right-8"}  text-white`}
+                  className={`absolute bottom-18 md:bottom-8 ${i18next.language === "fa" ? "right-8" : "left-8 right-8"}  text-white`}
                 >
-                  <h3 className="text-3xl font-bold mb-3">
+                  <h3 className="text-2xl md:text-3xl font-bold mb-3">
                     {t("aboutUs.whyUs.titlePhoto")}
                   </h3>
 
-                  <p className="text-white/90 leading-8">
+                  <p className="text-white/90 md:w-9/12 leading-8">
                     {t("aboutUs.whyUs.descriptionPhoto")}
                   </p>
                 </div>
@@ -492,20 +488,19 @@ const AboutUs = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 1 }}
-                className="
+                className={`
                   absolute
                   cursor-default
                   -top-10
-                  -right-4
+                  ${i18n.language === "fa" ? "-right-4" : "-left-4"}
                   bg-white
-                 dark:bg-[#334155]/30
-                  dark:backdrop-blur-2xl
+                  dark:bg-[#334155]/30
+                    dark:backdrop-blur-2xl
                   dark:border-[#334155]
-                  rounded-3xl
-                  px-6 py-4
-                  shadow-2xl
-                  border border-neutral-100
-                "
+                    rounded-3xl
+                    px-6 py-4
+                    shadow-2xl
+                    border border-neutral-100`}
               >
                 <p className="text-4xl font-black text-primary dark:text-[#8B5CF6]">
                   +120
@@ -520,20 +515,19 @@ const AboutUs = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.5 }}
-                className="
+                className={`  
                   absolute
                   md:-bottom-6
-                   dark:bg-[#334155]/30
+                dark:bg-[#334155]/30
                   dark:backdrop-blur-2xl
-                  dark:border-[#334155]
-                  -bottom-10
-                  -left-6
+                dark:border-[#334155]
+                  -bottom-8
+                 ${i18n.language === "fa" ? "-left-6" : "-right-6"}
                   bg-white
                   rounded-3xl
                   px-6 py-4
                   shadow-2xl
-                  border border-neutral-100
-                "
+                  border border-neutral-100`}
               >
                 <p className="text-4xl font-black text-primary dark:text-[#8B5CF6]">
                   +120
@@ -555,6 +549,7 @@ const AboutUs = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
         className="
+        max-w-7xl mx-auto
             relative my-24 w-10/12 mx-auto
             overflow-visible
           "
@@ -578,7 +573,8 @@ const AboutUs = () => {
                 flex flex-col lg:flex-row
                 items-center justify-center
                 gap-12
-                px-12 py-14
+                lg:px-12 lg:py-14
+                px-3 py-6
                 rounded-[2rem]
                 bg-gradient-to-bl from-primary to-accent
                 shadow-[0_20px_60px_rgba(0,0,0,0.15)]
@@ -603,7 +599,7 @@ const AboutUs = () => {
               {t("aboutUs.cta.title")}
             </h2>
 
-            <p className="mt-4 w-full text-base text-center md:text-start md:text-lg leading-8 md:leading-9 text-white/85 max-w-xl">
+            <p className="mt-4 w-full text-base text-center md:text-start md:text-xl leading-8 md:leading-9 text-white/85 max-w-xl">
               {t("aboutUs.cta.description")}
             </p>
 
@@ -613,7 +609,7 @@ const AboutUs = () => {
                 flex
                 justify-center items-center
                 md:w-64 md:h-16
-                w-48 h-14
+                w-44 h-12
                 md:text-xl
                 rounded-2xl
                 bg-accent

@@ -145,56 +145,56 @@
     "items": [
       {
         "id": 1,
-        "avatar": "/public/icons/user.png",
+        "avatar": "/icons/user.png",
         "fullName": "Ali Rezaei",
         "position": "Sales Manager",
         "review": "Working with this team was a truly professional experience. Every stage of the project was completed on schedule, and the final result exceeded our expectations."
       },
       {
         "id": 2,
-        "avatar": "/public/icons/user.png",
+        "avatar": "/icons/user.png",
         "fullName": "Sara Mohammadi",
         "position": "Marketing Manager",
         "review": "The user interface was beautifully designed and highly user-friendly. The team's consistent communication and quick responses ensured a smooth project from start to finish."
       },
       {
         "id": 3,
-        "avatar": "/public/icons/user.png",
+        "avatar": "/icons/user.png",
         "fullName": "Amir Hosseini",
         "position": "Startup CEO",
         "review": "From requirement analysis to final implementation, everything was handled professionally. We will definitely work with this team again on future projects."
       },
       {
         "id": 4,
-        "avatar": "/public/icons/user.png",
+        "avatar": "/icons/user.png",
         "fullName": "Negar Ahmadi",
         "position": "Product Manager",
         "review": "Their attention to detail and deep understanding of our business needs resulted in exactly the outcome we were looking for."
       },
       {
         "id": 5,
-        "avatar": "/public/icons/user.png",
+        "avatar": "/icons/user.png",
         "fullName": "Mohammad Karimi",
         "position": "E-commerce Store Owner",
         "review": "Fast delivery, high-quality code, and professional design were the team's greatest strengths. We are completely satisfied with the final product."
       },
       {
         "id": 6,
-        "avatar": "/public/icons/user.png",
+        "avatar": "/icons/user.png",
         "fullName": "Zahra Sharifi",
         "position": "HR Manager",
         "review": "It was a pleasure working with this team. They patiently reviewed and implemented every one of our requests with great care."
       },
       {
         "id": 7,
-        "avatar": "/public/icons/user.png",
+        "avatar": "/icons/user.png",
         "fullName": "Hossein Naderi",
         "position": "IT Manager",
         "review": "The project was delivered on time, and all the technical standards we required were fully met."
       },
       {
         "id": 8,
-        "avatar": "/public/icons/user.png",
+        "avatar": "/icons/user.png",
         "fullName": "Maryam Akbari",
         "position": "Brand Manager",
         "review": "Their creativity in both design and development gave our website a modern and professional look. It was an outstanding collaboration."
@@ -320,7 +320,7 @@
   "aboutUs": {
     "trust": {
       "title": "Trust Is Our Greatest Asset",
-      "description": "Our journey began in 2024 with a vision of delivering innovative and comprehensive technology solutions.",
+      "description": "We are proud to have earned our clients’ trust through years of professional experience and successful software design and development projects. With commitment, quality, and transparency, we help businesses grow by creating innovative and lasting solutions.",
       "achievements": [
         {
           "text": "30+ Successful Projects"
@@ -545,7 +545,7 @@
 
       "priority": "Project Priority",
 
-      "communication": "Preferred Communication Method",
+      "communication": "Communication Method",
 
       "description": "Complete Project Description",
 
@@ -581,7 +581,7 @@
     "hero": {
       "title1": "We are ready to turn your idea into a",
       "title2": "professional product",
-      "title3": ".",
+      "title3": "",
 
       "description": "Complete the project request form and our team will review your requirements. After evaluation, we will contact you as soon as possible for consultation, cost estimation, and project planning."
     },
@@ -674,7 +674,7 @@
     "items": [
       {
         "id": 1,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "views",
         "author": "Elahe",
         "readMore": "Read Article",
@@ -688,7 +688,7 @@
       },
       {
         "id": 2,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "views",
         "author": "Elahe",
         "readMore": "Read Article",
@@ -702,7 +702,7 @@
       },
       {
         "id": 3,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "views",
         "author": "Elahe",
         "readMore": "Read Article",
@@ -716,7 +716,7 @@
       },
       {
         "id": 4,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "views",
         "author": "Elahe",
         "readMore": "Read Article",
@@ -730,7 +730,7 @@
       },
       {
         "id": 5,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "views",
         "author": "Elahe",
         "readMore": "Read Article",
@@ -744,7 +744,7 @@
       },
       {
         "id": 6,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "views",
         "author": "Elahe",
         "readMore": "Read Article",
@@ -758,7 +758,7 @@
       },
       {
         "id": 7,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "views",
         "author": "Elahe",
         "readMore": "Read Article",
@@ -772,7 +772,7 @@
       },
       {
         "id": 8,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "views",
         "author": "Elahe",
         "readMore": "Read Article",
@@ -786,7 +786,7 @@
       },
       {
         "id": 9,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "views",
         "author": "Elahe",
         "readMore": "Read Article",
@@ -800,7 +800,7 @@
       },
       {
         "id": 10,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "views",
         "author": "Elahe",
         "readMore": "Read Article",
@@ -814,7 +814,7 @@
       },
       {
         "id": 11,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "views",
         "author": "Elahe",
         "readMore": "Read Article",
@@ -828,7 +828,7 @@
       },
       {
         "id": 12,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "views",
         "author": "Elahe",
         "readMore": "Read Article",
@@ -842,7 +842,7 @@
       },
       {
         "id": 13,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "views",
         "author": "Elahe",
         "readMore": "Read Article",
@@ -856,7 +856,7 @@
       },
       {
         "id": 14,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "views",
         "author": "Elahe",
         "readMore": "Read Article",
@@ -870,7 +870,7 @@
       },
       {
         "id": 15,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "views",
         "author": "Elahe",
         "readMore": "Read Article",
@@ -884,7 +884,7 @@
       },
       {
         "id": 16,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "views",
         "author": "Elahe",
         "readMore": "Read Article",
@@ -898,7 +898,7 @@
       },
       {
         "id": 17,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "views",
         "author": "Elahe",
         "readMore": "Read Article",
@@ -912,7 +912,7 @@
       },
       {
         "id": 18,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "views",
         "author": "Elahe",
         "readMore": "Read Article",
@@ -926,7 +926,7 @@
       },
       {
         "id": 19,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "views",
         "author": "Elahe",
         "readMore": "Read Article",
@@ -940,7 +940,7 @@
       },
       {
         "id": 20,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "views",
         "author": "Elahe",
         "readMore": "Read Article",
@@ -954,7 +954,7 @@
       },
       {
         "id": 21,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "views",
         "author": "Elahe",
         "readMore": "Read Article",
@@ -968,7 +968,7 @@
       },
       {
         "id": 22,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "views",
         "author": "Elahe",
         "readMore": "Read Article",
@@ -982,7 +982,7 @@
       },
       {
         "id": 23,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "views",
         "author": "Elahe",
         "readMore": "Read Article",
@@ -996,7 +996,7 @@
       },
       {
         "id": 24,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "views",
         "author": "Elahe",
         "readMore": "Read Article",
@@ -1010,7 +1010,7 @@
       },
       {
         "id": 25,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "views",
         "author": "Elahe",
         "readMore": "Read Article",
@@ -1024,7 +1024,7 @@
       },
       {
         "id": 26,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "views",
         "author": "Elahe",
         "readMore": "Read Article",
@@ -1038,7 +1038,7 @@
       },
       {
         "id": 27,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "views",
         "author": "Elahe",
         "readMore": "Read Article",
@@ -1052,7 +1052,7 @@
       },
       {
         "id": 28,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "views",
         "author": "Elahe",
         "readMore": "Read Article",
@@ -1066,7 +1066,7 @@
       },
       {
         "id": 29,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "views",
         "author": "Elahe",
         "readMore": "Read Article",
@@ -1080,7 +1080,7 @@
       },
       {
         "id": 30,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "views",
         "author": "Elahe",
         "readMore": "Read Article",
@@ -1094,7 +1094,7 @@
       },
       {
         "id": 31,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "views",
         "author": "Elahe",
         "readMore": "Read Article",
@@ -1108,7 +1108,7 @@
       },
       {
         "id": 32,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "views",
         "author": "Elahe",
         "readMore": "Read Article",
@@ -1122,7 +1122,7 @@
       },
       {
         "id": 33,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "views",
         "author": "Elahe",
         "readMore": "Read Article",
@@ -1136,7 +1136,7 @@
       },
       {
         "id": 34,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "views",
         "author": "Elahe",
         "readMore": "Read Article",
@@ -1150,7 +1150,7 @@
       },
       {
         "id": 35,
-        "img": "/src/assets/images/images.png",
+        "img": "/images/images.png",
         "viewsWord": "views",
         "author": "Elahe",
         "readMore": "Read Article",
@@ -1417,43 +1417,34 @@
     }
   },
   "customSelect": {
-    "projectTypes": {
-      "ui": "UI Design",
-      "website": "Website",
-      "app": "Application",
-      "database": "Database Design",
-      "hardware": "Hardware",
-      "other": "Other"
-    },
+    "projectTypes": [
+      "UI Design",
+      "Website",
+      "Application",
+      "Database Design",
+      "Hardware",
+      "Other"
+    ],
 
-    "budget": {
-      "less10": "Less than 10 Million Tomans",
-      "ten30": "10 to 30 Million Tomans",
-      "thirty50": "30 to 50 Million Tomans",
-      "fifty100": "50 to 100 Million Tomans",
-      "more100": "More than 100 Million Tomans",
-      "consult": "Need Consultation"
-    },
+    "budget": [
+      "Less than 10 Million Tomans",
+      "10 to 30 Million Tomans",
+      "30 to 50 Million Tomans",
+      "50 to 100 Million Tomans",
+      "More than 100 Million Tomans",
+      "Need Consultation"
+    ],
 
-    "deadline": {
-      "week": "Less than one week",
-      "twoWeeks": "1 to 2 weeks",
-      "month": "2 to 4 weeks",
-      "threeMonths": "1 to 3 months",
-      "noLimit": "No time limit"
-    },
+    "deadline": [
+      "Less than one week",
+      "1 to 2 weeks",
+      "2 to 4 weeks",
+      "1 to 3 months",
+      "No time limit"
+    ],
 
-    "priority": {
-      "normal": "Normal",
-      "urgent": "Urgent",
-      "veryUrgent": "Very Urgent"
-    },
+    "priority": ["Normal", "Urgent", "Very Urgent"],
 
-    "communication": {
-      "phone": "Phone Call",
-      "whatsapp": "WhatsApp",
-      "telegram": "Telegram",
-      "email": "Email"
-    }
+    "communication": ["Phone Call", "WhatsApp", "Telegram", "Email"]
   }
 }

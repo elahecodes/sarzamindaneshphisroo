@@ -136,7 +136,7 @@ const Pagination = ({ items, isBlog }) => {
             >
               <span className="h-2 w-2 animate-pulse rounded-full bg-green-500"></span>
 
-              <span className="font-semibold mx-2 text-violet-700 dark:text-violet-300">
+              <span className="font-semibold mx-2 text-primary dark:text-violet-300">
                 <span className="mx-1">{items.length}</span>
                 {t("pagination.published")}
               </span>
@@ -167,7 +167,7 @@ const Pagination = ({ items, isBlog }) => {
             {/* Description */}
             <motion.p
               variants={item}
-              className="mt-6 max-w-3xl text-base text-slate-600 dark:text-slate-400 text-justify lg:text-lg"
+              className="mt-6 max-w-3xl text-base text-slate-600 dark:text-slate-400 text-center lg:text-lg"
             >
               {isBlog
                 ? t("pagination.blog.description")
@@ -182,15 +182,16 @@ const Pagination = ({ items, isBlog }) => {
                   value={value}
                   placeholder={t("pagination.blog.searchPlaceholder")}
                   className="
+                  
                     h-14
                     w-full
                     rounded-2xl
                     border
-                    border-slate-200
-                   bg-white
+                  border-slate-200
+                  bg-white
                    xl:bg-primary/10
                     px-6
-                    text-slate-700 
+                  text-slate-700 
                     outline-none
                     transition-all
                     duration-300
@@ -239,6 +240,7 @@ const Pagination = ({ items, isBlog }) => {
                     hover:shadow-2xl
                     hover:shadow-violet-500/10
                     hover:border-violet-400
+                    
                   "
               >
                 {/* Image */}
@@ -246,10 +248,11 @@ const Pagination = ({ items, isBlog }) => {
                   <img
                     loading="lazy"
                     decoding="async"
-                    src={item.img}
+                    src={blogMap[item.id]?.img}
                     alt={item.title}
                     className="
-                    h-56
+                    h-40
+                    lg:h-56
                     w-full
                     object-cover
                     transition-all
@@ -257,37 +260,7 @@ const Pagination = ({ items, isBlog }) => {
                     group-hover:scale-110
                   "
                   />
-
-                  {/* Overlay */}
-                  <div
-                    className="
-                    absolute
-                    inset-0
-                    bg-gradient-to-t
-                    from-black/70
-                    via-black/20
-                    to-transparent
-                  "
-                  />
-
-                  {/* Category */}
-                  <span
-                    className="
-                    absolute
-                    top-4
-                    right-4
-                    rounded-full
-                    bg-white/90
-                    backdrop-blur-md
-                    px-3
-                    py-1
-                    text-xs
-                    font-bold
-                    text-slate-800
-                  "
-                  >
-                    {blogMap[item.id]?.category}
-                  </span>
+                
                 </div>
 
                 {/* Content */}
@@ -296,7 +269,7 @@ const Pagination = ({ items, isBlog }) => {
                   <div className="mb-4 flex items-center justify-between text-sm text-slate-500 dark:text-slate-400">
                     <span>{blogMap?.[item.id]?.author}</span>
 
-                    <span className="rounded-full bg-violet-100 dark:bg-violet-500/20 px-3 py-1 text-xs text-violet-700 dark:text-violet-300">
+                    <span className="rounded-full bg-violet-100 dark:bg-violet-500/20 px-3 py-1 text-xs text-primary dark:text-violet-300">
                       {t("pagination.blog.readTime")}
                     </span>
                   </div>
@@ -337,7 +310,8 @@ const Pagination = ({ items, isBlog }) => {
                       className="
                         text-sm
                         font-bold
-                        text-violet-600
+                        text-primary
+                        dark:text-primary-dark
                         transition-transform
                         duration-300
                         group-hover:translate-x-1
@@ -356,7 +330,7 @@ const Pagination = ({ items, isBlog }) => {
                         rounded-full
                         bg-violet-100
                         dark:bg-violet-500/20
-                        text-violet-600
+                        text-primary
                         transition-all
                         duration-300
                         group-hover:bg-violet-600
@@ -397,7 +371,6 @@ const Pagination = ({ items, isBlog }) => {
                 {/* Image */}
                 <div className="relative overflow-hidden">
                   <img
-                  
                     src={item.img}
                     alt={item.title}
                     className="
@@ -460,7 +433,8 @@ const Pagination = ({ items, isBlog }) => {
                       text-slate-900
                       dark:text-white
                       transition-colors  
-                      group-hover:text-violet-600
+                      group-hover:text-primary 
+                      group-hover:dark:text-primary-dark
                     "
                   >
                     {portfolioMap[item.id]?.title}
@@ -471,7 +445,6 @@ const Pagination = ({ items, isBlog }) => {
                     className="
                       mt-4
                       text-sm
-                      
                       lg:h-14
                       text-slate-600
                       dark:text-slate-400
@@ -503,7 +476,7 @@ const Pagination = ({ items, isBlog }) => {
                         bg-violet-100
                         dark:bg-violet-500/20
                         flex items-center justify-center
-                        text-violet-600
+                        text-primary
                         transition
                         dark:text-primary-dark
                         group-hover:bg-violet-600

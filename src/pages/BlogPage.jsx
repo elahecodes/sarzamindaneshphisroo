@@ -14,13 +14,14 @@ import {
   FaUserEdit,
   FaTag,
 } from "react-icons/fa";
-import { FaXTwitter,FaBookOpen } from "react-icons/fa6";
+import { FaXTwitter, FaBookOpen } from "react-icons/fa6";
 
 const BlogPage = () => {
   const { id } = useParams();
   const { t, i18n } = useTranslation();
   const BlogsText =
     t("blogsData.items", { returnObjects: true, defaultValue: [] }) || [];
+  console.log(BlogsText[2].img);
 
   const item = BlogsText.find((blog) => blog.id === Number(id));
 
@@ -77,7 +78,7 @@ const BlogPage = () => {
             decoding="async"
             src={item.img}
             alt={item.title}
-            className="w-full h-[600px] object-cover"
+            className="w-full md:h-[400px] lg:h-[500px] xl:h-[600px] object-cover"
           />
 
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
@@ -100,7 +101,7 @@ const BlogPage = () => {
         <div className="bg-white dark:bg-surface rounded-[32px] shadow-lg mt-10 p-8 md:p-12">
           {/* Meta */}
 
-          <div className="flex flex-wrap gap-6 border-b border-gray-200 dark:border-neutral-600 pb-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 border-b border-gray-200 dark:border-neutral-600 pb-8">
             <div className="flex items-center gap-2 text-gray-600">
               <FaUser className="text-primary dark:text-primary-dark" />
               <span className="dark:text-secondary-text">{item.author}</span>
@@ -130,7 +131,7 @@ const BlogPage = () => {
             className="relative overflow-hidden bg-gradient-to-r from-violet-50 via-fuchsia-50 to-indigo-50
               dark:from-[#2a1f4a] dark:via-[#32224f] dark:to-[#1e2a4a]
               border border-violet-100 dark:border-border-dark
-              rounded-2xl p-6 mt-10"
+              rounded-2xl p-3 lg:p-6 mt-10"
           >
             {/* Decorative Icon */}
             <FaUserEdit
@@ -139,27 +140,29 @@ const BlogPage = () => {
               }`}
             />
 
-            <div className="flex items-start gap-4 relative z-10">
-              <div className="lg:w-16 w-12 h-12 lg:h-16 min-w-12 rounded-full bg-primary dark:bg-primary-dark text-white flex items-center justify-center text-2xl font-bold">
+            <div className="flex items-start flex-col gap-2 lg:gap-4 relative z-10">
+             <div className="flex items-center justify-start gap-3">
+               <div className="lg:w-16 md:w-12 md:h-12 lg:h-16 min-w-8 min-h-8 rounded-full bg-primary dark:bg-primary-dark text-white flex items-center justify-center lg:text-2xl font-bold">
                 {item.author?.charAt(0) ?? "نویسنده"}
               </div>
 
-              <div>
+              
                 <h3 className="font-bold text-lg dark:text-text-dark">
                   {item.author}
                 </h3>
+             </div>
 
                 <p className="text-sm sm:text-base text-gray-600 dark:text-secondary-text mt-2">
                   {t("blogPage.position")}
                 </p>
-              </div>
+              
             </div>
           </div>
 
           {/* Article */}
 
           <article className="mt-12">
-            <div className="space-y-8 text-lg leading-[1.8] text-gray-700">
+            <div className="space-y-8 lg:text-lg leading-[1.8] text-gray-700">
               <p className="dark:text-text-dark">{item.description}</p>
             </div>
           </article>
@@ -240,38 +243,36 @@ const BlogPage = () => {
 
               <div className="flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 overflow-x-auto hide-scrollbar md:overflow-visible pb-4 snap-x snap-mandatory">
                 {relatedBlogs.map((blog) => (
-                  <Link
-                    key={blog.id}
-                    to={`/blogPage/${blog.id}`}
-                    className="min-w-[230px] sm:min-w-[240px] md:min-w-0 bg-primary-light dark:border-border-dark dark:bg-bg-dark rounded-2xl overflow-hidden hover:-translate-y-2 hover:shadow-xl transition duration-300 snap-start flex-shrink-0"
-                  >
-                    <img
-                      loading="lazy"
-                      decoding="async"
-                      src={blog.img}
-                      alt={blog.title}
-                      className="w-full h-52 object-cover"
-                    />
+                  <Link key={blog.id} to={`/blogPage/${blog.id}`}>
+                    <div className="min-w-[200px] sm:min-w-[240px] md:min-w-none bg-primary-light dark:border-border-dark dark:bg-bg-dark rounded-2xl overflow-hidden hover:-translate-y-2 hover:shadow-xl transition duration-300 snap-start flex-shrink-0">
+                      <img
+                        loading="lazy"
+                        decoding="async"
+                        src={blog.img}
+                        alt={blog.title}
+                        className="w-full h-52 object-cover"
+                      />
 
-                    <div className="p-5">
-                      <span className="text-primary dark:text-primary-dark text-sm font-medium">
-                        {blog.category}
-                      </span>
+                      <div className="p-5">
+                        <span className="text-primary dark:text-primary-dark text-sm font-medium">
+                          {blog.category}
+                        </span>
 
-                      <h3 className="font-bold dark:text-text-dark text-lg mt-3 line-clamp-2">
-                        {blog.title}
-                      </h3>
+                        <h3 className="font-bold dark:text-text-dark line-clamp-1 text-lg mt-3">
+                          {blog.title}
+                        </h3>
 
-                      {/* اطلاعات مقاله */}
-                      <div className="flex flex-wrap items-center gap-4 mt-4 text-sm text-gray-500">
-                        <div className="flex items-center gap-1">
-                          <FaClock className="text-primary dark:text-primary-dark" />
-                          <span>{blog.readTime}</span>
-                        </div>
+                        {/* اطلاعات مقاله */}
+                        <div className="flex flex-wrap items-center gap-4 mt-4 text-sm text-gray-500">
+                          <div className="flex items-center gap-1">
+                            <FaClock className="text-primary dark:text-primary-dark" />
+                            <span>{blog.readTime}</span>
+                          </div>
 
-                        <div className="flex items-center gap-1">
-                          <FaEye className="text-primary dark:text-primary-dark" />
-                          <span>{blog.views}</span>
+                          <div className="flex items-center gap-1">
+                            <FaEye className="text-primary dark:text-primary-dark" />
+                            <span>{blog.views}</span>
+                          </div>
                         </div>
                       </div>
                     </div>

@@ -15,25 +15,25 @@ const Steps = () => {
     {
       id: 1,
       icon: FaFlag,
-      iconColor: "text-purple-600",
+      iconColor: "text-primary dark:text-primary-dark",
       color: "bg-gradient-to-br from-purple-600 to-purple-500 text-white",
     },
     {
       id: 2,
       icon: FaSearch,
-      iconColor: "text-purple-600",
+      iconColor: "text-primary dark:text-primary-dark",
       color: "bg-gradient-to-br from-purple-500 to-fuchsia-500 text-white",
     },
     {
       id: 3,
       icon: FaCalendarAlt,
-      iconColor: "text-purple-600",
+      iconColor: "text-primary dark:text-primary-dark",
       color: "bg-gradient-to-br from-fuchsia-500 to-orange-400 text-white",
     },
     {
       id: 4,
       icon: FaCode,
-      iconColor: "text-purple-600",
+      iconColor: "text-primary dark:text-primary-dark",
       color: "bg-gradient-to-br from-purple-500 to-fuchsia-500 text-white",
     },
     {
@@ -45,18 +45,18 @@ const Steps = () => {
   ];
 
   return (
-    <section className="bg-neutral-50 dark:bg-[#0F172A] px-6 py-20 overflow-hidden">
+    <section className="bg-neutral-50  max-w-7xl mx-auto dark:bg-[#0F172A] px-6 py-20 overflow-hidden">
       {/* عنوان */}
       <div className="mb-10 xl:mb-32 flex items-center justify-center">
         <div className="h-2 w-2 rounded-full bg-accent" />
         <hr className="flex-1 border-neutral-300 dark:border-[#334155]" />
         {i18n.language === "fa" ? (
           <h2 className="mx-2 md:mx-5 text-center text-2xl lg:text-3xl md:text-3xl font-title text-text dark:text-[#F8FAFC] ">
-            فرایند <span className="text-primary">همکاری</span> با ما
+            فرایند <span className="text-primary dark:text-primary-dark">همکاری</span> با ما
           </h2>
         ) : (
           <h2 className="mx-2 md:mx-5 text-center text-2xl lg:text-3xl md:text-3xl font-title text-text dark:text-[#F8FAFC] ">
-            Our <span className="text-primary">Work</span> Process
+            Our <span className="text-primary dark:text-primary-dark">Work</span> Process
           </h2>
         )}
 
@@ -123,14 +123,16 @@ const Steps = () => {
 
       {/* موبایل */}
       <div className="mx-auto max-w-2xl xl:hidden">
-        <ul className="relative space-y-8 border-r-2 border-purple-200 pr-8">
+        <ul
+          className={`relative space-y-8 ${i18n.language === "fa" ? "border-r-2 pr-8" : "border-l-2 pl-8"} border-purple-200`}
+        >
           {steps.map((item, index) => {
             const Icon = item.icon;
             return (
               <li key={item.id} className="relative">
                 {/* شماره */}
                 <div
-                  className={`absolute z-30 right-[-46px] top-5 flex h-12 w-12 items-center justify-center rounded-full shadow-md ring-4 ring-white ${item.color}`}
+                  className={`absolute z-30 ${i18n.language === "fa" ? "right-[-46px]" : "left-[-46px]"} top-5 flex h-12 w-12 items-center justify-center rounded-full shadow-md ring-4 ring-white ${item.color}`}
                 >
                   {item.id}
                 </div>

@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 const Question = () => {
   const [question, setQuestion] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(-1);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const questions = t("question.items", { returnObjects: true });
 
   async function getData() {
@@ -54,7 +54,7 @@ const Question = () => {
             className={`
               ${
                 currentIndex === realIndex
-                  ? "bg-primary dark:bg-[#8B5CF6] text-white shadow-lg shadow-primary/20"
+                  ? "bg-primary dark:text-primary-dark text-white shadow-lg shadow-primary/20"
                   : "bg-white border border-primary/10 text-text hover:border-primary/30 dark:bg-[#334155] hover:shadow-md"
               }
               w-full cursor-pointer flex justify-between items-center
@@ -75,7 +75,11 @@ const Question = () => {
                 <FaQuestion className="dark:text-text-dark" />
               </span>
 
-              <span className="font-medium px-4 dark:text-[#F8FAFC]">
+              <span
+                className={`font-medium px-4 dark:text-[#F8FAFC] ${
+                  i18n.language === "fa" ? "text-right" : "text-left"
+                }`}
+              >
                 {questions[index].question}
               </span>
             </div>
@@ -84,7 +88,7 @@ const Question = () => {
                 ${
                   currentIndex === realIndex
                     ? "rotate-180 text-white"
-                    : "text-primary"
+                    : "text-primary dark:text-primary-dark"
                 }
                 transition-all duration-300
               `}
@@ -110,7 +114,7 @@ const Question = () => {
       );
     });
   return (
-    <section className="relative overflow-hidden py-20 px-4 dark:from-[#1E293B] dark:to-[#1E293B] bg-gradient-to-b from-primary-soft/20 to-white">
+    <section className="relative  overflow-hidden py-20 px-4 dark:from-[#1E293B] dark:to-[#1E293B] bg-gradient-to-b from-primary-soft/20 to-white">
       <div className="absolute top-0 -left-20 w-[30rem] h-[30rem] bg-primary/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 right-0 w-72 h-72 bg-accent/10 rounded-full blur-3xl"></div>
 
@@ -126,7 +130,7 @@ const Question = () => {
         </p>
       </div>
 
-      <div className="relative z-10 flex flex-col lg:flex-row lg:gap-6">
+      <div className="relative  max-w-7xl mx-auto z-10 flex flex-col lg:flex-row lg:gap-6">
         <div className="flex-1">{renderQuestions(questionRight)}</div>
 
         <div className="flex-1">{renderQuestions(questionLeft, middle)}</div>

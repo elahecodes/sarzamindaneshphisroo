@@ -55,7 +55,7 @@ const Login = () => {
   };
 
   return (
-    <div className="w-full h-dvh flex justify-center items-center pt-12">
+    <div className="w-full h-screen flex justify-center items-center pt-12">
       <form
         onSubmit={handleSubmit}
         className="w-11/12 md:w-5/12 h-full flex flex-col justify-start items-center gap-3"
@@ -77,14 +77,12 @@ const Login = () => {
             userName.length === 0
               ? "border-neutral-200 dark:border-bg-dark"
               : hasNumber
-              ? "border-green-400"
-              : "border-accent"
+                ? "border-green-400"
+                : "border-accent"
           } border outline-none px-2 rounded w-full h-12 text-sm bg-white text-text dark:bg-primary/10 dark:text-secondary-text`}
         />
 
-        <p className="text-accent text-sm w-full">
-          {errorMessageU}
-        </p>
+        <p className="text-accent text-sm w-full">{errorMessageU}</p>
 
         <input
           id="password"
@@ -96,8 +94,8 @@ const Login = () => {
             password.length === 0
               ? "border-neutral-200 dark:border-bg-dark"
               : password.length >= 8
-              ? "border-green-400"
-              : "border-accent"
+                ? "border-green-400"
+                : "border-accent"
           } border outline-none px-2 bg-white rounded w-full h-12 text-sm text-text dark:bg-primary/10 dark:text-secondary-text`}
         />
 
@@ -122,9 +120,8 @@ const Login = () => {
         >
           {t("login.submit")}
         </button>
-
-        <div className="relative w-full">
-          <span className="absolute right-0 top-3 dark:text-text-dark">
+        <div className="w-full">
+          <span className="right-0 top-3 dark:text-text-dark">
             {t("login.noAccount")}{" "}
             <Link
               to="/signin"

@@ -33,11 +33,11 @@ const Comments = () => {
           <hr className="flex-1 border-neutral-300 dark:border-[#334155]" />
           {i18n.language === "fa" ? (
             <h2 className="mx-2 md:mx-5 text-center text-2xl lg:text-3xl dark:text-[#F8FAFC] md:text-3xl font-title text-text">
-              <span className="text-primary"> تجربه همکاری</span> با ما
+              <span className="text-primary dark:text-primary-dark"> تجربه همکاری</span> با ما
             </h2>
           ) : (
             <h2 className="mx-2 translate-y-4 lg:translate-y-0 md:mx-5 text-center text-2xl lg:text-3xl dark:text-[#F8FAFC] md:text-3xl font-title text-text">
-              <span className="text-primary">Experience Working</span><span className="block lg:inline"> With Us</span>
+              <span className="text-primary dark:text-primary-dark">Experience Working</span><span className="block lg:inline"> With Us</span>
             </h2>
           )}
 
@@ -80,7 +80,7 @@ const Comments = () => {
                     {item.fullName}
                   </h3>
 
-                  <span className="text-sm text-primary">{item.position}</span>
+                  <span className="text-sm text-primary dark:text-primary-dark">{item.position}</span>
                 </div>
               </div>
 
