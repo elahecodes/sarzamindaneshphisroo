@@ -64,7 +64,7 @@ const Introduction = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.7 }}
         viewport={{ once: true }}
-        className="relative w-full  max-w-7xl mx-auto h-[22rem] md:h-[30rem] rounded-2xl overflow-hidden shadow-xl"
+        className="relative w-full  max-w-[1440px] mx-auto h-[22rem] md:h-[30rem] rounded-2xl overflow-hidden shadow-xl"
       >
         {images.length > 0 && (
           <img

@@ -129,7 +129,7 @@ const AboutUs = () => {
       <div className="absolute w-[40rem] h-[40rem] bg-primary/10 dark:bg-primary/20 blur-3xl top-[50rem] -left-12 pointer-events-none" />
       <div className="absolute w-[22rem] h-[22rem] bg-accent/10 blur-3xl bottom-0 -left-10 pointer-events-none" />
 
-      <section className="py-12 md:py-20 relative z-10 overflow-hidden max-w-7xl mx-auto">
+      <section className="py-12 md:py-20 relative z-10 overflow-hidden max-w-[1440px] mx-auto">
         <motion.h4
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -189,6 +189,7 @@ const AboutUs = () => {
                   dark:bg-[#334155]/60
                   dark:text-white
                   backdrop-blur-xl
+                  transition-all
                   border border-white/40
                   shadow-xl md:shadow-2xl
                   py-1 lg:py-3
@@ -211,8 +212,8 @@ const AboutUs = () => {
           ))}
         </motion.div>
       </section>
-      <section className="py-2 m-4 max-w-7xl mx-auto">
-        <div className="relative max-w-7xl mx-auto overflow-hidden rounded-3xl bg-bg p-8 d dark:bg-bg-dark md:p-12">
+      <section className="py-2 m-4 max-w-[1440px] mx-auto">
+        <div className="relative max-w-[1440px] mx-auto overflow-hidden rounded-3xl bg-bg p-8 d dark:bg-bg-dark md:p-12">
           {/* عنوان */}
           <div className="mb-10 flex items-center gap-5">
             <motion.div
@@ -289,7 +290,7 @@ const AboutUs = () => {
         </div>
       </section>
       {/* SERVICES */}
-      <section className="mt-10 max-w-7xl mx-auto lg:mt-30 relative z-10 px-8">
+      <section className="mt-10 max-w-[1440px] mx-auto lg:mt-30 relative z-10 px-8">
         <div className="flex items-center w-full max-w-full mb-16">
           <div className="w-2 h-2 rounded-full bg-accent shrink-0" />
 
@@ -337,7 +338,7 @@ const AboutUs = () => {
       </section>
 
       {/* WHY US */}
-      <section className="max-w-7xl mx-auto py-20 mt-20 relative overflow-hidden px-10">
+      <section className="max-w-[1440px] mx-auto py-20 mt-20 relative overflow-hidden px-10">
         {/* بک‌گراند تزئینی */}
         <div className="absolute top-0 right-20 w-72 h-72 bg-primary/10 rounded-full blur-[120px]" />
         <div className="absolute bottom-0 left-20 w-80 h-80 bg-accent/10 rounded-full blur-[120px]" />
@@ -354,7 +355,7 @@ const AboutUs = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7 }}
-                className="mx-3 lg:mx-4 dark:text-[#F8FAFC] text-xl lg:text-2xl font-title whitespace-nowrap"
+                className="mx-3 lg:mx-4 dark:text-[#F8FAFC] text-xl text-text lg:text-2xl font-title whitespace-nowrap"
               >
                 {t("aboutUs.whyUs.title")}
               </motion.h2>
@@ -369,7 +370,7 @@ const AboutUs = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              className="text-secondary-text mt-4 md:text-[1.2rem] lg:text-lg leading-8"
+              className="dark:text-neutral-400 text-neutral-700 mt-4 md:text-[1.2rem] lg:text-lg leading-8"
             >
               {t("aboutUs.whyUs.description")}
             </motion.p>
@@ -549,7 +550,7 @@ const AboutUs = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
         className="
-        max-w-7xl mx-auto
+        max-w-[1440px] mx-auto
             relative my-24 w-10/12 mx-auto
             overflow-visible
           "

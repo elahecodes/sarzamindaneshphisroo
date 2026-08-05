@@ -130,7 +130,7 @@ const Question = () => {
         </p>
       </div>
 
-      <div className="relative  max-w-7xl mx-auto z-10 flex flex-col lg:flex-row lg:gap-6">
+      <div className="relative max-w-[1440px] mx-auto z-10 flex flex-col lg:flex-row lg:gap-6">
         <div className="flex-1">{renderQuestions(questionRight)}</div>
 
         <div className="flex-1">{renderQuestions(questionLeft, middle)}</div>

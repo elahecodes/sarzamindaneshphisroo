@@ -24,7 +24,7 @@ const WorkingWithUs = () => {
   ];
 
   return (
-    <section className="bg-white max-w-7xl mx-auto xl:mt-14 dark:bg-[#0F172A] px-6 py-8">
+    <section className="bg-white max-w-[1440px] mx-auto xl:mt-14 dark:bg-[#0F172A] px-6 py-8">
       <div className="grid gap-6 lg:grid-cols-2">
         {cards.map((card, index) => (
           <Link to={card.id === 1 ? "/projectorder" : "/home"}>

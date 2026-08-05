@@ -291,7 +291,7 @@ const ProjectOrder = () => {
   const iconStyle = `absolute ${i18n.language === "fa" ? "left-3" : "right-3"} top-14 text-primary dark:text-primary-dark transition-all`;
   return (
     <div>
-      <form onSubmit={handleSubmit} className="w-full max-w-7xl mx-auto p-4" action="">
+      <form onSubmit={handleSubmit} className="w-full max-w-[1440px] mx-auto p-4" action="">
         <div>
           <h4 className="flex items-center gap-2 text-xl font-bold text-primary dark:text-primary-dark dark:text-primary dark:text-primary-dark-dark mb-6">
             <FaUser />

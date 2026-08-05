@@ -211,7 +211,7 @@ const Pagination = ({ items, isBlog }) => {
           </div>
         </motion.div>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 p-3">
+      <div className="max-w-[1440px] mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 p-3">
         {content.map((item) =>
           isBlog ? (
             <Link

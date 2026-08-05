@@ -18,7 +18,7 @@ const Services = () => {
   ];
 
   return (
-    <section className="px-6  max-w-7xl mx-auto py-20 bg-white dark:bg-bg-dark">
+    <section className="px-6 max-w-[1440px] mx-auto py-20 bg-white dark:bg-bg-dark">
       {/* Header */}
       <div className="flex justify-center items-center w-full">
         <div className="w-2 h-2 rounded-full bg-accent"></div>

@@ -40,10 +40,10 @@ const Footer = () => {
 
   return (
     <footer className="w-full border-t border-neutral-300 dark:border-[#334155] bg-gradient-to-l from-accent-light/30 dark:from-[#1a2848] dark:to-[#121924] to-primary-light py-10 md:py-12">
-      <div className="w-full max-w-7xl mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6 md:gap-2">
+      <div className="w-full max-w-[1440px] mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6 md:gap-2">
         {/* معرفی شرکت */}
         <div className="col-span-2 lg:col-span-1 flex flex-col justify-start">
-          <h4 className="text-lg md:text-xl dark:text-[#F8FAFC] font-bold mb-3 md:mb-4 flex items-center gap-2">
+          <h4 className="text-lg md:text-xl dark:text-text-dark text-text font-bold mb-3 md:mb-4 flex items-center gap-2">
             <FaBuilding className="text-primary md:text-lg md:text-xl" />
             {t("footer.company.title")}
           </h4>
@@ -55,7 +55,7 @@ const Footer = () => {
 
         {/* خدمات اصلی */}
         <div className="flex flex-col items-start">
-          <h4 className="text-sm md:text-xl dark:text-[#F8FAFC] font-bold mb-3 md:mb-4 flex items-center gap-2">
+          <h4 className="text-sm md:text-xl dark:text-text-dark text-text font-bold mb-3 md:mb-4 flex items-center gap-2">
             <FaBriefcase className="text-primary md:text-lg md:text-xl" />
             {t("footer.mainServices.title")}
           </h4>
@@ -71,7 +71,7 @@ const Footer = () => {
 
         {/* خدمات جانبی */}
         <div className="flex flex-col items-start">
-          <h4 className="text-sm md:text-xl dark:text-text-dark font-bold mb-3 md:mb-4 flex items-center gap-2">
+          <h4 className="text-sm md:text-xl dark:text-text-dark text-text font-bold mb-3 md:mb-4 flex items-center gap-2">
             <FaCogs className="text-primary md:text-lg md:text-xl" />
             {t("footer.otherServices.title")}
           </h4>
@@ -87,7 +87,7 @@ const Footer = () => {
 
         {/* ارتباط با ما */}
         <div className="flex flex-col items-start">
-          <h4 className="text-sm md:text-xl dark:text-[#F8FAFC] font-bold mb-3 md:mb-4 flex items-center gap-2">
+          <h4 className="text-sm md:text-xl dark:text-text-dark text-text font-bold mb-3 md:mb-4 flex items-center gap-2">
             <FaHeadset className="text-primary md:text-lg md:text-xl" />
             {t("footer.contact.title")}
           </h4>
@@ -120,7 +120,7 @@ const Footer = () => {
 
         {/* مجوزها */}
         <div>
-          <h4 className="text-sm md:text-xl dark:text-[#F8FAFC] font-bold mb-4 flex items-center gap-2">
+          <h4 className="text-sm md:text-xl dark:text-text-dark text-text font-bold mb-4 flex items-center gap-2">
             <FaShieldAlt className="text-primary md:text-xl" />
             {t("footer.licenses.title")}
           </h4>

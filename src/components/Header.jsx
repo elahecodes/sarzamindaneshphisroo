@@ -66,7 +66,7 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 bg-primary dark:bg-[#8B5CF6] shadow-md">
-      <div className="w-full max-w-[1600px] mx-auto h-20 px-3 flex flex-row-reverse lg:flex-row items-center justify-between">
+      <div className="w-full  max-w-[1440px] mx-auto h-20 px-3 flex flex-row-reverse lg:flex-row items-center justify-between">
         {/* Logo & Desktop Menu */}
         <div className="flex items-center gap-4 lg:gap-10">
           {i18n.language === "fa" ? (

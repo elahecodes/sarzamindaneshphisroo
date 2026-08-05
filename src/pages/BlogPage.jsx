@@ -43,7 +43,7 @@ const BlogPage = () => {
 
   return (
     <section className="bg-slate-50 dark:bg-bg-dark min-h-screen py-12">
-      <div className="max-w-7xl mx-auto px-5">
+      <div className="max-w-[1440px] mx-auto px-5">
         {/* Breadcrumb */}
 
         <div className="flex items-center gap-2 text-sm text-gray-500 mb-8">
@@ -95,13 +95,12 @@ const BlogPage = () => {
             </h1>
           </div>
         </div>
-
         {/* Content */}
 
         <div className="bg-white dark:bg-surface rounded-[32px] shadow-lg mt-10 p-8 md:p-12">
           {/* Meta */}
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 border-b border-gray-200 dark:border-neutral-600 pb-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:flex lg:justify-start lg:items-center lg:gap-10 gap-6 border-b border-gray-200 dark:border-neutral-600 pb-8">
             <div className="flex items-center gap-2 text-gray-600">
               <FaUser className="text-primary dark:text-primary-dark" />
               <span className="dark:text-secondary-text">{item.author}</span>
@@ -141,21 +140,19 @@ const BlogPage = () => {
             />
 
             <div className="flex items-start flex-col gap-2 lg:gap-4 relative z-10">
-             <div className="flex items-center justify-start gap-3">
-               <div className="lg:w-16 md:w-12 md:h-12 lg:h-16 min-w-8 min-h-8 rounded-full bg-primary dark:bg-primary-dark text-white flex items-center justify-center lg:text-2xl font-bold">
-                {item.author?.charAt(0) ?? "نویسنده"}
-              </div>
+              <div className="flex items-center justify-start gap-3">
+                <div className="lg:w-16 md:w-12 md:h-12 lg:h-16 min-w-8 min-h-8 rounded-full bg-primary dark:bg-primary-dark text-white flex items-center justify-center lg:text-2xl font-bold">
+                  {item.author?.charAt(0) ?? "نویسنده"}
+                </div>
 
-              
                 <h3 className="font-bold text-lg dark:text-text-dark">
                   {item.author}
                 </h3>
-             </div>
+              </div>
 
-                <p className="text-sm sm:text-base text-gray-600 dark:text-secondary-text mt-2">
-                  {t("blogPage.position")}
-                </p>
-              
+              <p className="text-sm sm:text-base text-gray-600 dark:text-secondary-text mt-2">
+                {t("blogPage.position")}
+              </p>
             </div>
           </div>
 

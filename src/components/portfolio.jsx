@@ -52,7 +52,7 @@ const Portfolio = () => {
         whileHover={{ y: -6, scale: 1.03 }}
         className="flex flex-col items-center gap-6 text-center "
       >
-        <div className="flex max-w-7xl mx-auto items-center w-full max-full">
+        <div className="flex max-w-[1440px] mx-auto items-center w-full">
           <div className="w-2 h-2 rounded-full bg-accent dark:bg-accent-dark" />
           <hr className="flex-1 border-neutral-200 dark:border-[#334155]" />
           {i18n.language === "fa" ? (

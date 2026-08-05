@@ -45,7 +45,7 @@ const Steps = () => {
   ];
 
   return (
-    <section className="bg-neutral-50  max-w-7xl mx-auto dark:bg-[#0F172A] px-6 py-20 overflow-hidden">
+    <section className="bg-neutral-50 max-w-[1440px] mx-auto dark:bg-[#0F172A] px-6 py-20 overflow-hidden">
       {/* عنوان */}
       <div className="mb-10 xl:mb-32 flex items-center justify-center">
         <div className="h-2 w-2 rounded-full bg-accent" />
